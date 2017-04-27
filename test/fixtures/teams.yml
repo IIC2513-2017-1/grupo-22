@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  logo: MyString
+  trainer: MyString
+  foundation_date: 2017-04-27
+
+two:
+  name: MyString
+  description: MyText
+  logo: MyString
+  trainer: MyString
+  foundation_date: 2017-04-27

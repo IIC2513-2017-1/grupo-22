@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Torneys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Format</th>
+      <th>Location</th>
+      <th>Inscription limit date</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @torneys.each do |torney| %>
+      <tr>
+        <td><%= torney.name %></td>
+        <td><%= torney.description %></td>
+        <td><%= torney.format %></td>
+        <td><%= torney.location %></td>
+        <td><%= torney.inscription_limit_date %></td>
+        <td><%= torney.start_date %></td>
+        <td><%= torney.end_date %></td>
+        <td><%= link_to 'Show', torney %></td>
+        <td><%= link_to 'Edit', edit_torney_path(torney) %></td>
+        <td><%= link_to 'Destroy', torney, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Torney', new_torney_path %>

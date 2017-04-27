@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @torney.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @torney.description %>
+</p>
+
+<p>
+  <strong>Format:</strong>
+  <%= @torney.format %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @torney.location %>
+</p>
+
+<p>
+  <strong>Inscription limit date:</strong>
+  <%= @torney.inscription_limit_date %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @torney.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @torney.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_torney_path(@torney) %> |
+<%= link_to 'Back', torneys_path %>

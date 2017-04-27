@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :torneys
+  resources :teams
   get 'welcome/index'
 
   resources :users

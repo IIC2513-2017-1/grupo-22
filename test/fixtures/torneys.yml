@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  format: MyString
+  location: MyString
+  inscription_limit_date: 2017-04-27
+  start_date: 2017-04-27
+  end_date: 2017-04-27
+
+two:
+  name: MyString
+  description: MyText
+  format: MyString
+  location: MyString
+  inscription_limit_date: 2017-04-27
+  start_date: 2017-04-27
+  end_date: 2017-04-27
