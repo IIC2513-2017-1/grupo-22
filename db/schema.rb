@@ -10,10 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427021217) do
+ActiveRecord::Schema.define(version: 20170428030202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "matches", force: :cascade do |t|
+    t.integer  "home_team_id", null: false
+    t.integer  "away_team_id", null: false
+    t.date     "date"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "tourney_id"
+    t.index ["away_team_id"], name: "index_matches_on_away_team_id", using: :btree
+    t.index ["home_team_id", "away_team_id"], name: "index_matches_on_home_team_id_and_away_team_id", using: :btree
+    t.index ["home_team_id"], name: "index_matches_on_home_team_id", using: :btree
+    t.index ["tourney_id"], name: "index_matches_on_tourney_id", using: :btree
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string   "full_name"
+    t.string   "position"
+    t.string   "email"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "birth_date"
+    t.string   "ocupation"
+    t.string   "phote"
+    t.string   "leg"
+    t.integer  "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_players_on_team_id", using: :btree
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +60,27 @@ ActiveRecord::Schema.define(version: 20170427021217) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "teams_on_torneys", force: :cascade do |t|
+    t.integer  "team_id"
+    t.integer  "tourney_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_teams_on_torneys_on_team_id", using: :btree
+    t.index ["tourney_id"], name: "index_teams_on_torneys_on_tourney_id", using: :btree
+  end
+
+  create_table "tourneys", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "format"
+    t.string   "location"
+    t.date     "inscription_limit_date"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "full_name"
     t.string   "email",      null: false
@@ -34,4 +90,5 @@ ActiveRecord::Schema.define(version: 20170427021217) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "players", "teams"
 end

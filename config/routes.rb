@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :torneys
+  resources :tourneys
   resources :teams
   get 'welcome/index'
 

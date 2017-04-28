@@ -1,10 +1,10 @@
-<%= form_for(torney) do |f| %>
-  <% if torney.errors.any? %>
+<%= form_for(tourney) do |f| %>
+  <% if tourney.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(torney.errors.count, "error") %> prohibited this torney from being saved:</h2>
+      <h2><%= pluralize(tourney.errors.count, "error") %> prohibited this tourney from being saved:</h2>
 
       <ul>
-      <% torney.errors.full_messages.each do |message| %>
+      <% tourney.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

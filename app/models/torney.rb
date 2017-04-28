@@ -1,2 +1,0 @@
-class Torney < ApplicationRecord
-end
