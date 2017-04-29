@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tourneys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Format</th>
+      <th>Location</th>
+      <th>Inscription limit date</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tourneys.each do |tourney| %>
+      <tr>
+        <td><%= tourney.name %></td>
+        <td><%= tourney.description %></td>
+        <td><%= tourney.format %></td>
+        <td><%= tourney.location %></td>
+        <td><%= tourney.inscription_limit_date %></td>
+        <td><%= tourney.start_date %></td>
+        <td><%= tourney.end_date %></td>
+        <td><%= link_to 'Show', tourney %></td>
+        <td><%= link_to 'Edit', edit_tourney_path(tourney) %></td>
+        <td><%= link_to 'Destroy', tourney, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tourney', new_tourney_path %>
