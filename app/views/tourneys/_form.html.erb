@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, required: true %>
   </div>
 
   <div class="field">
@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :format %>
-    <%= f.text_field :format %>
+    <%= f.text_field :format, required: true %>
   </div>
 
   <div class="field">
@@ -33,17 +33,17 @@
 
   <div class="field">
     <%= f.label :inscription_limit_date %>
-    <%= f.date_select :inscription_limit_date %>
+    <%= f.date_select :inscription_limit_date, required: true %>
   </div>
 
   <div class="field">
     <%= f.label :start_date %>
-    <%= f.date_select :start_date %>
+    <%= f.date_select :start_date, required: true %>
   </div>
 
   <div class="field">
     <%= f.label :end_date %>
-    <%= f.date_select :end_date %>
+    <%= f.date_select :end_date, required: true %>
   </div>
 
   <div class="actions">
