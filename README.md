@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Cosas por hacer
+* Revisar las validaciones de lo ya establecido (users, requests, tourneys, teams, matches, players).
+    * Users está casi listo al parecer
+    * Torneys y Teams están más avanzados. Players también, pero hay que probarlo.
+    * Requests y Matches hay que revisarlos en profundidad.
+* Armas vistas y controladores faltantes (request, matches y players)
+* Si posible, agregar entidades para goles, faltas y varias entidades para establecer foros
