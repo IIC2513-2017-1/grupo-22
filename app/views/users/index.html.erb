@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Full name</th>
       <th>Email</th>
       <th>Username</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= user.id %></td>
         <td><%= user.full_name %></td>
         <td><%= user.email %></td>
         <td><%= user.username %></td>

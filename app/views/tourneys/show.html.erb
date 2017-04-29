@@ -35,5 +35,10 @@
   <%= @tourney.end_date %>
 </p>
 
+<p>
+  <strong>Owner</strong>
+  <%= @tourney.user_id %>
+</p>
+
 <%= link_to 'Edit', edit_tourney_path(@tourney) %> |
 <%= link_to 'Back', tourneys_path %>

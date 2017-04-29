@@ -16,9 +16,9 @@ end
 
 3.times do
   Team.create(name: Faker::Team.name, description: 'Description',
-  logo: 'logo.png', trainer: Faker::Name.name, foundation_date: Faker::Date.backward(30))
+  logo: 'logo.png', trainer: Faker::Name.name, foundation_date: Faker::Date.backward(30), user_id: User.first.id)
 end
 
 Tourney.create(name: Faker::Company.name, description: 'Description', format: 'torneo', location: Faker::Address.street_address,
  inscription_limit_date: Faker::Date.between(25.days.ago, 20.days.ago),
- start_date: Faker::Date.between(20.days.ago, 15.days.ago), end_date: Faker::Date.backward(7))
+ start_date: Faker::Date.between(20.days.ago, 15.days.ago), end_date: Faker::Date.backward(7), user_id: User.first.id)

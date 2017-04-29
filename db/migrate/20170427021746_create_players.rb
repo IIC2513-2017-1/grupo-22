@@ -10,7 +10,7 @@ class CreatePlayers < ActiveRecord::Migration[5.0]
       t.string :ocupation
       t.string :phote
       t.string :leg
-      t.references :team_id, foreign_key: true
+      t.references :team, foreign_key: true
 
       t.timestamps
     end

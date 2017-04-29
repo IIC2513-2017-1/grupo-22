@@ -6,6 +6,8 @@ class CreateTeams < ActiveRecord::Migration[5.0]
       t.string :logo
       t.string :trainer
       t.date :foundation_date
+      
+      t.belongs_to :user, index: true
 
       t.timestamps
     end

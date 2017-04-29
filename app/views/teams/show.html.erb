@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Add a player:', new_player_path(team_id: @team.id) %>
+
 <p>
   <strong>Name:</strong>
   <%= @team.name %>
@@ -23,6 +25,11 @@
 <p>
   <strong>Foundation date:</strong>
   <%= @team.foundation_date %>
+</p>
+
+<p>
+  <strong>Owner</strong>
+  <%= @team.user_id %>
 </p>
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
