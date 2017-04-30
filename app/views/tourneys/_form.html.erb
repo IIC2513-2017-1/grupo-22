@@ -46,7 +46,13 @@
     <%= f.date_select :end_date, required: true %>
   </div>
 
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.select :user_id, User.all.collect { |user| [ user.email, user.id ] }, { include_blank: true }, { required: true } %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

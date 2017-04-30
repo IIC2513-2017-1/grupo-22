@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  
+
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name, required: true %>
@@ -35,6 +35,11 @@
   <div class="field">
     <%= f.label :foundation_date %>
     <%= f.date_select :foundation_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.select :user_id, User.all.collect { |user| [ user.email, user.id ] }, { include_blank: true }, { required: true } %>
   </div>
 
   <div class="actions">
