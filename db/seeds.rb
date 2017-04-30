@@ -21,4 +21,5 @@ end
 
 Tourney.create(name: Faker::Company.name, description: 'Description', format: 'torneo', location: Faker::Address.street_address,
  inscription_limit_date: Faker::Date.between(25.days.ago, 20.days.ago),
- start_date: Faker::Date.between(20.days.ago, 15.days.ago), end_date: Faker::Date.backward(7), user_id: User.first.id)
+ start_date: Faker::Date.between(20.days.ago, 15.days.ago), end_date: Faker::Date.backward(7), user_id: User.first.id,
+ mail: Faker::Internet.email, price: '0', phone: '7777777-0')
