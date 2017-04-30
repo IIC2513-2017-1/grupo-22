@@ -13,6 +13,11 @@
       <th>Start date</th>
       <th>End date</th>
       <th>Owner</th>
+      <th>Schedule</th>
+      <th>Awards</th>
+      <th>Price</th>
+      <th>Phone</th>
+      <th>email</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,6 +33,11 @@
         <td><%= tourney.start_date %></td>
         <td><%= tourney.end_date %></td>
         <td><%= tourney.user_id %></td>
+	<td><%= tourney.schedule %></td>
+        <td><%= tourney.prize%></td>
+        <td><%= tourney.price %></td>
+        <td><%= tourney.phone %></td>
+        <td><%= tourney.mail%></td>
         <td><%= link_to 'Show', tourney %></td>
         <td><%= link_to 'Edit', edit_tourney_path(tourney) %></td>
         <td><%= link_to 'Destroy', tourney, method: :delete, data: { confirm: 'Are you sure?' } %></td>

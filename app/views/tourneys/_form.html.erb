@@ -22,8 +22,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :format %>
-    <%= f.text_field :format, required: true %>
+    <%= label :format, 'Formato' %>
+    <table>
+      <tr>
+        <td><%= f.radio_button :format, 'Playoffs', :checked => true %><%= label :format, 'Playoffs' %></td>
+        <td><%= f.radio_button :format, 'Torneo' %><%= label :format, 'Torneo' %></td>
+      </tr>
+  </table>
   </div>
 
   <div class="field">
