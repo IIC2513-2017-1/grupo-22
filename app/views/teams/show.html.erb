@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Add a player:', new_player_path(team_id: @team.id) %>
+<%= link_to 'Add a player:', new_team_player_path(@team) %>
 
 <p>
   <strong>Name:</strong>
@@ -31,6 +31,27 @@
   <strong>Owner</strong>
   <%= @team.user_id %>
 </p>
+
+<h2>Players</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @team.players.each do |player| %>
+      <tr>
+        <td><%= player.id %></td>
+        <td><%= player.full_name %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>
