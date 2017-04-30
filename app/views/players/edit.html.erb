@@ -1,0 +1,58 @@
+<h1>Edit player</h1>
+
+<% @team = Team.find(params[:team_id]) %>
+
+<%= form_for ([@player.team, @player]) do |f| %>
+
+  <p>
+    <%= f.label :full_name %><br>
+    <%= f.text_field :full_name, required: true %>
+  </p>
+
+  <p>
+    <%= f.label :position %><br>
+    <%= f.text_field :position %>
+  </p>
+
+  <p>
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </p>
+
+  <p>
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </p>
+
+  <p>
+    <%= f.label :birth_date %><br>
+    <%= f.date_select :birth_date %>
+  </p>
+
+  <p>
+    <%= f.label :ocupation %><br>
+    <%= f.text_field :ocupation %>
+  </p>
+
+  <p>
+    <%= f.label :phote %><br>
+    <%= f.text_field :phote %>
+  </p>
+
+  <p>
+    <%= f.label :leg %><br>
+    <%= f.text_field :leg %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', team_path(@team) %>

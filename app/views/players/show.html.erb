@@ -1,0 +1,53 @@
+<p>
+  <strong>Full name:</strong>
+  <%= @player.full_name %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @player.position %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @player.email %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @player.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @player.phone %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @player.position %>
+</p>
+
+<p>
+  <strong>Birth Date:</strong>
+  <%= @player.birth_date %>
+</p>
+
+<p>
+  <strong>Ocupation:</strong>
+  <%= @player.ocupation %>
+</p>
+
+<p>
+  <strong>Phote:</strong>
+  <%= @player.phote %>
+</p>
+
+<p>
+  <strong>Leg:</strong>
+  <%= @player.leg %>
+</p>
+
+
+<%= link_to 'Back to team', team_path(@player.team) %> |
+<%= link_to 'Edit player', edit_team_player_path %>
