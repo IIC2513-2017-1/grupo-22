@@ -1,5 +1,5 @@
 class PlayersController < ApplicationController
-  before_action :set_team, only: [:new, :create]
+  before_action :set_team, only: [:new, :create, :destroy]
 
   def new
     @player = @team.players.build
@@ -8,6 +8,12 @@ class PlayersController < ApplicationController
   def create
     #@team = Team.find(params[:team_id])
     @player = @team.players.create(player_params)
+    redirect_to team_path(@team)
+  end
+
+  def destroy
+    @player = @team.players.find(params[:id])
+    @player.destroy
     redirect_to team_path(@team)
   end
 
