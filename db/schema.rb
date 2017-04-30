@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170430163550) do
     t.string   "email"
     t.string   "address"
     t.string   "phone"
-    t.date   "birth_date"
+    t.date     "birth_date"
     t.string   "ocupation"
     t.string   "phote"
     t.string   "leg"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20170430163550) do
     t.integer  "user_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.string   "schedule"
+    t.time     "schedule"
     t.text     "prize"
     t.string   "price"
     t.string   "mail"

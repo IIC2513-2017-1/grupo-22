@@ -40,5 +40,30 @@
   <%= @tourney.user_id %>
 </p>
 
+<p>
+  <strong>Schedule</strong>
+  <%= @tourney.schedule %>
+</p>
+
+<p>
+  <strong>Prize</strong>
+  <%= @tourney.prize%>
+</p>
+
+<p>
+  <strong>Price</strong>
+  <%= @tourney.price%>
+</p>
+
+<p>
+  <strong>Email</strong>
+  <%= @tourney.mail %>
+</p>
+
+<p>
+  <strong>Phone</strong>
+  <%= @tourney.phone%>
+</p>
+
 <%= link_to 'Edit', edit_tourney_path(@tourney) %> |
 <%= link_to 'Back', tourneys_path %>

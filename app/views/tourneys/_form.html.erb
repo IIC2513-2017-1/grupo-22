@@ -56,6 +56,31 @@
     <%= f.select :user_id, User.all.collect { |user| [ user.email, user.id ] }, { include_blank: true }, { required: true } %>
   </div>
 
+  <div class="field">
+    <%= f.label :schedule  %>
+    <%= f.time_select :schedule, :ignore_date => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prize%>
+    <%= f.text_area :prize %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mail %>
+    <%= f.email_field :mail, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.text_field :phone, required: true %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
