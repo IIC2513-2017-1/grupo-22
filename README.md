@@ -1,10 +1,11 @@
 # README
 
-## Cosas por hacer para entrega 2
-* Revisar las validaciones de lo ya establecido (users, requests, tourneys, teams, matches, players).
-    * Users está casi listo al parecer
-    * Torneys y Teams están más avanzados. Players también ~~,pero hay que probarlo~~.
-    * Requests y Matches hay que revisarlos en profundidad.
-* Armas vistas y controladores faltantes (requests, matches y ~~players~~).
-    * Al parecer, requests y matches no son necesarios con vistas. En tal caos, ver los controladores
-* Si posible, agregar entidades para goles, faltas y varias entidades para establecer foros
+## LINK A APLICACIÓN
+https://powerful-fortress-71202.herokuapp.com/
+
+## Notas
+* Solo se implementó las entidades básicas por cuestiones de tiempo
+* Está implementado el CRUD de las principales (Teams, Tourneys, Users y Players), al igual que sus vistas.
+   * En ese aspecto, de las entidades requests y matches solo se implementó el modelo
+   * Players está dependiente de teams, así que solo se pueden ver los jugadores de dicha instancia de equipo
+* Hay un seed que contiene unos usuarios, equipos y un torneo armado. Jugadores deben armarse manualmente por el momento desde la vista.
