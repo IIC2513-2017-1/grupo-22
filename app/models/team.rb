@@ -1,8 +1,6 @@
 class Team < ApplicationRecord
   validates :name, presence: true, allow_blank: false, uniqueness: true
   validates :description, presence: true, allow_blank: false
-  validates :logo, presence: true, allow_blank: false 
-  validates :trainer, presence: true, allow_blank: false
     
   has_many :players, dependent: :destroy
   belongs_to :user
