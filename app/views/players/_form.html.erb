@@ -9,7 +9,7 @@
 
   <p>
     <%= f.label :position %><br>
-    <%= f.text_field :position, required: true %>
+    <%= f.select(:position, ['Arquero', 'Central', 'Lateral', 'Mediocampista', 'Delantero']) %>
   </p>
 
   <p>
@@ -39,12 +39,12 @@
 
   <p>
     <%= f.label :phote %><br>
-    <%= f.text_field :phote, required: true %>
+    <%= f.text_field :phote %>
   </p>
 
   <p>
     <%= f.label :leg %><br>
-    <%= f.text_field :leg %>
+    <%= f.select(:leg, ['Izquierdo', 'Derecho']) %>
   </p>
 
   <p>
