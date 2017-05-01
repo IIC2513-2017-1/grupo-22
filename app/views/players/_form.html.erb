@@ -9,12 +9,12 @@
 
   <p>
     <%= f.label :position %><br>
-    <%= f.text_field :position, required: true % %>
+    <%= f.text_field :position, required: true %>
   </p>
 
   <p>
     <%= f.label :email %><br>
-    <%= f.email_field :email, required: true % %>
+    <%= f.email_field :email, required: true %>
   </p>
 
   <p>
@@ -34,12 +34,13 @@
 
   <p>
     <%= f.label :ocupation %><br>
-    <%= f.text_field :ocupation, required: true % %>
+    <%= f.text_field :ocupation, required: true %>
   </p>
 
   <p>
     <%= f.label :phote %><br>
-    <%= f.text_field :phote, required: true % %>
+    <%= f.text_field :phote, required: true %>
+    <%= f.select :phote, options={['hola','holi'],2}%>
   </p>
 
   <p>
