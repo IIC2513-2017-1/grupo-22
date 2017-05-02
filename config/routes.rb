@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :requests
 
+  resource :session, only: [:new, :create, :destroy]
 
 
   root 'welcome#index'

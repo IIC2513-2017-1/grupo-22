@@ -1,0 +1,16 @@
+<h1>Login with yours credentials</h1>
+<div id="login-form">
+  <%= form_for :session, url: session_path do |f| %>
+    <div class="field">
+      <%= f.label :username %>
+      <%= f.text_field :username%>
+    </div>
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div class="actions">
+      <%= f.submit 'Login' %>
+    </div>
+  <% end %>
+</div>
