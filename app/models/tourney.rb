@@ -20,4 +20,5 @@ class Tourney < ApplicationRecord
       errors.add(:end_date, "Put error text here") if end_date < start_date
     end
   end
+
 end
