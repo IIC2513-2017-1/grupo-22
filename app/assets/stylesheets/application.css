@@ -14,9 +14,10 @@
  *= require_self
  */
 
-#logo{
-    text-align: center; 
+#main-menu {
+    text-align: center;
 }
+
 
 #titulo {
     text-align: center;
@@ -24,14 +25,24 @@
     font-weight: bolder;
 }
 
-#main-menu {
+#container-logo {
     text-align: center;
 }
+
 
 #project{
     text-align: center;
 }
 
+.logo, .logo:hover{
+	
+	text-decoration: none;
+    background: none;
+    text-align: center;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .button {
 	display:inline-block;
@@ -56,6 +67,7 @@
     display: inline-block;
     font-size: 10px;
 }
+
 .buttont {
     border: none;
     color: yellow;
@@ -63,6 +75,7 @@
     text-align: center;
     font-size: 25px;
 }
+
 .buttont:hover {
     color: black ;
     background-color: transparent;
