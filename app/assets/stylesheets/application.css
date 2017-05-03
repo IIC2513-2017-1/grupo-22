@@ -14,6 +14,12 @@
  *= require_self
  */
 
+
+header {
+    background-image: url('Fondo.jpg');
+
+}
+
 #main-menu {
     text-align: center;
 }
@@ -21,7 +27,7 @@
 
 #titulo {
     text-align: center;
-    color: yellow;
+    color: #FFD700;
     font-weight: bolder;
 }
 
@@ -35,8 +41,8 @@
 }
 
 .logo, .logo:hover{
-	
-	text-decoration: none;
+    
+    text-decoration: none;
     background: none;
     text-align: center;
     clear: both;
@@ -45,8 +51,8 @@
 }
 
 .button {
-	display:inline-block;
- 	background-color: #FFD700; 
+    display:inline-block;
+    background-color: #FFD700; 
     border: none;
     color: white;
     padding: 15px 50px;
@@ -58,7 +64,7 @@
 }
 
 .buttonl {
- 	background-color: #FFD700;
+    background-color: #FFD700;
     border: none;
     color: white;
     text-decoration: none;
@@ -66,17 +72,20 @@
     text-align: center;
     display: inline-block;
     font-size: 10px;
+    font-weight: bolder;
 }
+
+
 
 .buttont {
     border: none;
-    color: yellow;
+    color: #FFD700;
     text-decoration: none;
     text-align: center;
     font-size: 25px;
 }
 
 .buttont:hover {
-    color: black ;
+    color: white ;
     background-color: transparent;
 }

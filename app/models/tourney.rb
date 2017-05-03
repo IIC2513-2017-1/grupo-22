@@ -14,6 +14,7 @@ class Tourney < ApplicationRecord
   has_and_belongs_to_many :teams
   has_many :requests
   has_many :matches
+  has_one :foro, dependent: :destroy
 
   def validate_end_date_before_start_date
     if end_date && start_date

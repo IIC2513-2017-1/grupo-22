@@ -64,6 +64,10 @@
   <strong>Phone</strong>
   <%= @tourney.phone%>
 </p>
+<p>
+  <strong>Foro</strong>
+  <%= link_to 'Foro', foro_path(@foro) %>
+</p>
 
 <%= link_to 'Edit', edit_tourney_path(@tourney) %> |
 <%= link_to 'Back', tourneys_path %>

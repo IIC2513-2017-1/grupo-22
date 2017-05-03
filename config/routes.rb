@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  root 'welcome#index'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   get 'welcome/index'
 
   resources :tourneys do
@@ -10,13 +13,12 @@ Rails.application.routes.draw do
     resources :players
   end
 
+  resources :foros
+
   resources :users
 
   resources :requests
 
   resource :session, only: [:new, :create, :destroy]
 
-
-  root 'welcome#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,6 +1,10 @@
 class TourneysController < ApplicationController
   before_action :set_tourney, only: [:show, :edit, :update, :destroy]
 
+  def create_email
+     Email.create!(:account => email)
+  end
+
   # GET /tourneys
   # GET /tourneys.json
   def index
@@ -28,6 +32,8 @@ class TourneysController < ApplicationController
 
     respond_to do |format|
       if @tourney.save
+        foro = Foro.create({:title => "Foro de: " + @tourney.name, :description => "Descripcion del foro de: " + @tourney.name})
+        @tourney.foro = foro
         format.html { redirect_to @tourney, notice: 'Tourney was successfully created.' }
         format.json { render :show, status: :created, location: @tourney }
       else
@@ -65,6 +71,7 @@ class TourneysController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_tourney
       @tourney = Tourney.find(params[:id])
+      @foro = @tourney.foro
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
