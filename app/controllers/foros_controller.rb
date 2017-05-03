@@ -12,11 +12,9 @@ class ForosController < ApplicationController
 	end
 
 	def edit
-		@foro.save
 	end
 
 	def update
-		@foro.save
 	end
 
 	private
