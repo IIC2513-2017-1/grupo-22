@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+.timestamp {
+ color: #8c8c8c;
+}
+
+.button, .button1, .button2 {
+	display:inline-block;
+ 	background-color: #FFD700; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+IMG.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+#main-menu {
+    text-align: center;
+}

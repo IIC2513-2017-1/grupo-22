@@ -12,14 +12,14 @@
      <header>
       <div id="logo">
         <%= link_to root_path do %>
-          <img src="http://www.maicolfitness.com/wp-content/uploads/2015/10/maicol-sport-fitness-pelotas-futbol-voley-basquet-deporte-lima-peru-puma-45x3.jpg" width="200" height="200" alt="Resize pelota"/>
+          <img class=logo src="http://www.maicolfitness.com/wp-content/uploads/2015/10/maicol-sport-fitness-pelotas-futbol-voley-basquet-deporte-lima-peru-puma-45x3.jpg" width="200" height="200" alt="Resize pelota"/>
         <% end %>
       </div>
 
       <nav id="main-menu">
-        <%= link_to 'Users', users_path %>
-        <%= link_to 'Teams', teams_path %>
-        <%= link_to 'Tourneys', tourneys_path %>
+        <%= link_to 'Users', users_path, class: 'button' %>
+        <%= link_to 'Teams', teams_path, class: 'button1' %>
+        <%= link_to 'Tourneys', tourneys_path, class: 'button2' %>
       </nav>
 
       <div id="user-bar">
@@ -45,5 +45,5 @@
       <div id="project">© CreaTULiga 2017</div>
     </footer>
 </body>
-  </body>
+
 </html>
