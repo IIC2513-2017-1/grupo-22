@@ -20,10 +20,7 @@
   <body>
      <header>
       <div id="logo">
-        <%= link_to root_path do %>
-          <img class=logo src="http://www.maicolfitness.com/wp-content/uploads/2015/10/maicol-sport-fitness-pelotas-futbol-voley-basquet-deporte-lima-peru-puma-45x3.jpg" width="200" height="200" alt="Resize pelota"/>
-        <% end %>     
-      </div>
+        <%= link_to image_tag("Pelota.png", size: "300x300"), root_path, class: 'logo1' %>    
 	  <div id=titulo>
 	  	   <%= link_to 'CreaTuLiga', root_path, class: 'buttont' %>
 	  </div>

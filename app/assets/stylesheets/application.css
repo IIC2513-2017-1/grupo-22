@@ -14,14 +14,14 @@
  *= require_self
  */
 
-IMG.logo{
-    display: block;
-    margin-left: auto;
-    margin-right: auto 
+#logo{
+    text-align: center; 
 }
 
 #titulo {
     text-align: center;
+    color: yellow;
+    font-weight: bolder;
 }
 
 #main-menu {
@@ -32,20 +32,18 @@ IMG.logo{
     text-align: center;
 }
 
-.timestamp {
- color: #8c8c8c;
-}
 
 .button {
 	display:inline-block;
  	background-color: #FFD700; 
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 15px 50px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    font-weight: bolder;
 }
 
 .buttonl {
@@ -60,12 +58,12 @@ IMG.logo{
 }
 .buttont {
     border: none;
-    color: black;
+    color: yellow;
     text-decoration: none;
     text-align: center;
     font-size: 25px;
 }
 .buttont:hover {
     color: black ;
-    background-color: white;
+    background-color: transparent;
 }
