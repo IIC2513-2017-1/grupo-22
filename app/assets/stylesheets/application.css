@@ -18,9 +18,9 @@
  color: #8c8c8c;
 }
 
-.button, .button1, .button2 {
+.button {
 	display:inline-block;
- 	background-color: #FFD700; /* Green */
+ 	background-color: #FFD700; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -30,6 +30,19 @@
     font-size: 16px;
 }
 
+.buttonl {
+ 	background-color: #FFD700;
+    border: none;
+    color: white;
+    text-decoration: none;
+    padding: 5px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 10px;
+}
+
+
+
 IMG.logo{
     display: block;
     margin-left: auto;
@@ -37,5 +50,9 @@ IMG.logo{
 }
 
 #main-menu {
+    text-align: center;
+}
+
+#project{
     text-align: center;
 }
