@@ -14,6 +14,24 @@
  *= require_self
  */
 
+IMG.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+#titulo {
+    text-align: center;
+}
+
+#main-menu {
+    text-align: center;
+}
+
+#project{
+    text-align: center;
+}
+
 .timestamp {
  color: #8c8c8c;
 }
@@ -40,19 +58,14 @@
     display: inline-block;
     font-size: 10px;
 }
-
-
-
-IMG.logo{
-    display: block;
-    margin-left: auto;
-    margin-right: auto 
-}
-
-#main-menu {
+.buttont {
+    border: none;
+    color: black;
+    text-decoration: none;
     text-align: center;
+    font-size: 25px;
 }
-
-#project{
-    text-align: center;
+.buttont:hover {
+    color: black ;
+    background-color: white;
 }

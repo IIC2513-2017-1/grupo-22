@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myapp</title>
+    <title>CreaTuLiga</title>
+	<%= favicon_link_tag 'favicon.ico' %>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -22,9 +22,12 @@
       <div id="logo">
         <%= link_to root_path do %>
           <img class=logo src="http://www.maicolfitness.com/wp-content/uploads/2015/10/maicol-sport-fitness-pelotas-futbol-voley-basquet-deporte-lima-peru-puma-45x3.jpg" width="200" height="200" alt="Resize pelota"/>
-        <% end %>
+        <% end %>     
       </div>
-
+	  <div id=titulo>
+	  	   <%= link_to 'CreaTuLiga', root_path, class: 'buttont' %>
+	  </div>
+	  <p></p>
       <nav id="main-menu">
         <%= link_to 'Users', users_path, class: 'button' %>
         <%= link_to 'Teams', teams_path, class: 'button' %>
