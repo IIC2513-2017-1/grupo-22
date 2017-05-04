@@ -2,6 +2,10 @@ class ForosController < ApplicationController
 
 	before_action :set_foro, only: [:show, :edit, :update]
 
+	def index
+    	@foros = Foro.all
+  	end
+
 	def show
 
 	end

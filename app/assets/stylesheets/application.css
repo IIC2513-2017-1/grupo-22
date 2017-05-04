@@ -17,7 +17,6 @@
 
 header {
     background-image: url('Fondo.jpg');
-
 }
 
 #main-menu {
@@ -27,7 +26,6 @@ header {
 
 #titulo {
     text-align: center;
-    color: #FFD700;
     font-weight: bolder;
 }
 
@@ -40,19 +38,31 @@ header {
     text-align: center;
 }
 
-.logo, .logo:hover{
-    
+.logo, .logo:hover, .logo:active{    
     text-decoration: none;
+    border: none;
     background: none;
     text-align: center;
     clear: both;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.button {
+
+.button,.button:visited{
     display:inline-block;
     background-color: #FFD700; 
+    border: none;
+    color: black;
+    padding: 15px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.button:hover, .button:visited:hover{
+    display:inline-block;
+    background-color: black; 
     border: none;
     color: white;
     padding: 15px 50px;
@@ -63,8 +73,20 @@ header {
     font-weight: bolder;
 }
 
-.buttonl {
+.buttonl, .buttonl:visited{
     background-color: #FFD700;
+    border: none;
+    color: black;
+    text-decoration: none;
+    padding: 5px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bolder;
+}
+
+.buttonl:hover, .buttonl:visited:hover{
+    background-color: black;
     border: none;
     color: white;
     text-decoration: none;
@@ -76,8 +98,7 @@ header {
 }
 
 
-
-.buttont {
+.buttont, .buttont:visited {
     border: none;
     color: #FFD700;
     text-decoration: none;

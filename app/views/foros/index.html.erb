@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1 style="color: #FFD700;font-weight: bolder;"> Foros</h1>
+
+<ul style="list-style-type:disc">
+ <% @foros.each do |f| %>
+      <li><%= link_to f.title, foro_path(f) %></li>
+      <br>
+  <% end %>
+</ul> 
