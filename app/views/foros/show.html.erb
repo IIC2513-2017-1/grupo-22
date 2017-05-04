@@ -1,4 +1,4 @@
-<h1> Foro </h1>
+<h1 style="color: #FFD700;font-weight: bolder;"> Foro </h1>
 
 <p>
   <strong>Title:</strong>
@@ -10,11 +10,7 @@
   <%= @foro.description %>
 </p>
 <p>
-    <strong>Id:</strong>
-    <%= @foro.id %>
-  </p>
-<p>
-<h1>Topics</h1>
+<h1 style="color: #FFD700;font-weight: bolder;">Topics</h1>
 
 <% @foro.topics.each do |t| %>
   <p>
@@ -23,19 +19,18 @@
   </p>
  
   <p>
-    <strong>Contenido:</strong>
+    <strong>Description:</strong>
     <%= t.content %>
   </p>
-  <p>
-  <strong>Usuario</strong>
-    <%= t.user.username %>
-  </p>
+   <i style="color: gray;">
+    Created by <%= t.user.username %>
+  </i>
   <hr>
 <% end %>
 </p>
 <p>
 	<% if current_user %>
-		<h2>Add a Topic as: <%= current_user.username %></h2>
+		<h1 style="color: #FFD700; font-weight: bolder;">Add a Topic as  <%= current_user.username %></h1>
 		<%= form_for([@foro, @foro.topics.build]) do |f| %>
 		 <p>
 		    <%= f.label :title %><br>
@@ -51,3 +46,5 @@
 		<% end %>
 	<% end %>
 </p>
+
+<%= link_to 'Back', tourneys_path %>
