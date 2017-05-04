@@ -2,9 +2,11 @@ class ForosController < ApplicationController
 
 	before_action :set_foro, only: [:show, :edit, :update]
 
-
 	def show
 
+	end
+
+	def new
 	end
 
 	def create

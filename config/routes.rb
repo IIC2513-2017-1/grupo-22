@@ -13,7 +13,13 @@ Rails.application.routes.draw do
     resources :players
   end
 
-  resources :foros
+  resources :foros do 
+    resources :topics    
+  end
+
+  resources :topics do 
+    resources :comments    
+  end
 
   resources :users
 

@@ -32,7 +32,7 @@ class TourneysController < ApplicationController
 
     respond_to do |format|
       if @tourney.save
-        foro = Foro.create({:title => "Foro de: " + @tourney.name, :description => "Descripcion del foro de: " + @tourney.name})
+        foro = Foro.create({:title => "Foro de " + @tourney.name, :description => "Descripcion del foro de " + @tourney.name})
         @tourney.foro = foro
         format.html { redirect_to @tourney, notice: 'Tourney was successfully created.' }
         format.json { render :show, status: :created, location: @tourney }

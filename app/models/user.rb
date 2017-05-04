@@ -9,4 +9,7 @@ class User < ApplicationRecord
 
  	has_many :requests_send, foreign_key: 'sender_id', class_name: 'Request'
   	has_many :request_received, foreign_key: 'receiver_id', class_name: 'Request'
+  	has_many :topics
+  	has_many :comments
+
 end

@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170503195536) do
+ActiveRecord::Schema.define(version: 20170504194536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "topic_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_comments_on_topic_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+  end
 
   create_table "foros", force: :cascade do |t|
     t.integer  "tourney_id"
@@ -78,6 +88,17 @@ ActiveRecord::Schema.define(version: 20170503195536) do
     t.index ["tourney_id"], name: "index_teams_tourneys_on_tourney_id", using: :btree
   end
 
+  create_table "topics", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "foro_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["foro_id"], name: "index_topics_on_foro_id", using: :btree
+    t.index ["user_id"], name: "index_topics_on_user_id", using: :btree
+  end
+
   create_table "tourneys", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -108,5 +129,9 @@ ActiveRecord::Schema.define(version: 20170503195536) do
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
+  add_foreign_key "comments", "topics"
+  add_foreign_key "comments", "users"
   add_foreign_key "players", "teams"
+  add_foreign_key "topics", "foros"
+  add_foreign_key "topics", "users"
 end

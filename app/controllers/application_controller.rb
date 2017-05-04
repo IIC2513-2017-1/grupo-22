@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
 
 	def current_user
 		return @current_user if defined?(@current_user)
-    	@current_user = session.key?(:user_id) && User.find(session[:user_id])
- 	end
+		@current_user = session.key?(:user_id) && User.find(session[:user_id])
+	end
 end

@@ -1,0 +1,42 @@
+<h1> Topic </h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @topic.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @topic.content %>
+</p>
+<h1>Comments</h1>
+
+<% @topic.comments.each do |c| %>
+  <p>
+    <strong>Content</strong>
+    <%= c.content %>
+  </p>
+ 
+  <p>
+    Published by <%= c.user.username %>
+  </p>
+  <hr>
+<% end %>
+</p>
+<p>
+	<% if current_user %>
+		<h2>Add a Comment as: <%= current_user.username %></h2>
+		<%= form_for([@topic, @topic.comments.build]) do |c| %>
+		  <p>
+		    <%= c.label :content %><br>
+		    <%= c.text_area :content %>
+		  </p>
+		  <p>
+		    <%= c.submit %>
+		  </p>
+		<% end %>
+	<% end %>
+</p>
+
+
+<%= link_to 'Back', foro_path(@topic.foro) %>

@@ -9,3 +9,45 @@
   <strong>Description:</strong>
   <%= @foro.description %>
 </p>
+<p>
+    <strong>Id:</strong>
+    <%= @foro.id %>
+  </p>
+<p>
+<h1>Topics</h1>
+
+<% @foro.topics.each do |t| %>
+  <p>
+    <strong>Titulo:</strong>
+    <%= link_to t.title, foro_topic_path(t) %>
+  </p>
+ 
+  <p>
+    <strong>Contenido:</strong>
+    <%= t.content %>
+  </p>
+  <p>
+  <strong>Usuario</strong>
+    <%= t.user.username %>
+  </p>
+  <hr>
+<% end %>
+</p>
+<p>
+	<% if current_user %>
+		<h2>Add a Topic as: <%= current_user.username %></h2>
+		<%= form_for([@foro, @foro.topics.build]) do |f| %>
+		 <p>
+		    <%= f.label :title %><br>
+		    <%= f.text_field :title %>
+		  </p>
+		  <p>
+		    <%= f.label :content %><br>
+		    <%= f.text_area :content %>
+		  </p>
+		  <p>
+		    <%= f.submit %>
+		  </p>
+		<% end %>
+	<% end %>
+</p>

@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
+  include Secured
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in?, only: %i[edit update destroy]
 
   # GET /users
   # GET /users.json
