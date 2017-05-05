@@ -1,6 +1,5 @@
 body {
-  background-color: #fff;
-  color: #333;
+  color: #000;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -49,6 +48,7 @@ div {
   }
 }
 
+
 #notice {
   color: green;
 }
@@ -86,4 +86,9 @@ div {
 
 label {
   display: block;
+}
+
+textarea {
+    width: 240px;
+    height: 180px;
 }

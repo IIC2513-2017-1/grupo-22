@@ -1,16 +1,14 @@
-<h1 style="color: #FFD700;font-weight: bolder;">Login with yours credentials</h1>
+<h1 style="color: #FFD700;font-weight: bolder;">Login</h1>
 <div id="login-form">
   <%= form_for :session, url: session_path do |f| %>
-    <div class="field">
-      <%= f.label :username %>
-      <%= f.text_field :username%>
+    <div class="field" style="text-align: center;">
+      <%= f.text_field :username, placeholder:"Username"%>
     </div>
-    <div class="field">
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+    <div class="field" style="text-align: center;">
+      <%= f.password_field :password, placeholder:"Password" %>
     </div>
-    <div class="actions">
-      <%= f.submit 'Login' %>
+    <div class="actions" style="text-align: center;">
+      <%= f.submit 'Login'%>
     </div>
   <% end %>
 </div>
