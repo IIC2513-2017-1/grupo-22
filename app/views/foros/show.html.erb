@@ -12,6 +12,8 @@
 <p>
 <h1 style="color: #FFD700;font-weight: bolder;">Topics</h1>
 
+
+
 <% @foro.topics.each do |t| %>
   <p>
     <strong>Titulo:</strong>
@@ -39,7 +41,7 @@
 		    <%= f.text_area :content, placeholder:"Content" %>
 		  </p>
 		  <p>
-		    <%= f.submit %>
+		    <%= f.submit "Create" , class: "submit", id: 'submit'%>
 		  </p>
 		<% end %>
 	<% end %>

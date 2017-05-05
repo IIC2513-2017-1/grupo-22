@@ -65,7 +65,7 @@ header {
     display:inline-block;
     background-color: black; 
     border: none;
-    color: white;
+    color: #FFD700;
     padding: 15px 50px;
     text-align: center;
     text-decoration: none;
@@ -89,7 +89,7 @@ header {
 .buttonl:hover, .buttonl:visited:hover{
     background-color: black;
     border: none;
-    color: white;
+    color: #FFD700;
     text-decoration: none;
     padding: 5px 15px;
     text-align: center;
@@ -108,6 +108,53 @@ header {
 }
 
 .buttont:hover {
-    color: white ;
+    color: black;
     background-color: transparent;
+}
+
+textarea {
+    width: 240px;
+    height: 180px;
+    overflow: auto;
+}
+
+textarea:focus{
+    box-shadow: 0 0 4px #FFD700;
+    
+}
+
+input:focus{
+    box-shadow: 0 0 4px #FFD700;
+}
+
+input[type='submit'] {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: black;
+  border: none;
+  color: #FFD700;
+  text-align: center;
+  font-size: 16px;
+  padding: 15px 30px;
+  font-weight: bolder;
+}
+
+input[type='submit']:hover {
+  background-color: #FFD700;
+  color: black;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    gray;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    gray;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    gray;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    gray;
 }
