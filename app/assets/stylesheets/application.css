@@ -47,7 +47,6 @@ header {
     clear: both;
 }
 
-
 .button,.button:visited{
     display:inline-block;
     background-color: #FFD700; 
@@ -157,4 +156,56 @@ input[type='submit']:hover {
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
    color:    gray;
+}
+
+h1 {
+  color: #FFD700;
+  font-weight: bolder;
+}
+
+/* Efectos para botones de delete y editar*/
+.cruzedit {    
+    text-align: center;
+    display: block;
+}
+
+.cruzedit:hover {
+    background: none;
+}
+
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: black;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text a{
+  color: #FFD700;
+  background-color: black;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }

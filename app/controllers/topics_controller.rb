@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
 
-  before_action :set_topic, only: [:show]
+  before_action :set_topic, only: [:show, :edit, :update, :destroy]
 
   def show
   end
@@ -15,6 +15,18 @@ class TopicsController < ApplicationController
     redirect_to foro_path(@foro)
   end
 
+  def edit
+  end
+
+  def update
+    @topic.update(topic_params)
+    redirect_to foro_path(@topic.foro)
+  end
+
+  def destroy
+    @topic.destroy
+    redirect_to(:back)
+  end
  
   private
     def set_topic
