@@ -170,7 +170,7 @@ h1 {
   font-weight: bolder;
 }
 
-/* Efectos para botones edit y borrar */
+/* Efectos para botones edit, borrar y back */
 .cruzedit {    
     text-align: center;
     display: block;
@@ -180,6 +180,10 @@ h1 {
     background: none;
 }
 
+a.back, a.back:hover{
+  text-decoration: none;
+  background: none;
+}
 
 .container {
   position: relative;
@@ -215,11 +219,4 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-}
-
-/* Efectos para botones Back */
-a.back, a.back:hover{
-  text-decoration: none;
-  background-image: image-url("Back.png")
-
 }

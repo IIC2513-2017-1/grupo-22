@@ -28,8 +28,6 @@
 				Created by <%= t.user.username %>
 				</i>
 			</td>
-
-
 			<% if current_user%>
 				<% if current_user.id == t.user.id %>		
 					<td>
@@ -71,7 +69,6 @@
 	<% end %>
 <% end %>
 </p>
-
 <div class="container" style="width: 45px; height: 45px;">
 	<%= link_to image_tag("Back2.png", size: "45x45"), :back, class: 'back' %>
 	<div class="overlay">
