@@ -9,7 +9,7 @@
   <strong>Description:</strong>
   <%= @topic.content %>
 </p>
-<h1 style="color: #FFD700;font-weight: bolder;">Comments</h1>
+<h1>Comments</h1>
 <hr>
 
 <% @topic.comments.each do |c| %>
@@ -25,17 +25,22 @@
 </p>
 <p>
 	<% if current_user %>
-		<h1 style="color: #FFD700; font-weight: bolder;"">Create comment as <%= current_user.username %></h1>
+		<h1>Create comment as <%= current_user.username %></h1>
 		<%= form_for([@topic, @topic.comments.build]) do |c| %>
-		  <p>
+		  <p style="text-align: center;">
 		    <%= c.text_area :content, placeholder:"Content" %>
 		  </p>
-		  <p>
-		    <%= c.submit %>
+		  <p style="text-align: center;">
+		    <%= c.submit "Comment"%>
 		  </p>
 		<% end %>
 	<% end %>
 </p>
 
 
-<%= link_to 'Back', foro_path(@topic.foro) %>
+<div class="container" style="width: 45px; height: 45px;">
+	<%= link_to image_tag("Back2.png", size: "45x45"), :back, class: 'back' %>
+	<div class="overlay">
+		<div class="text"><%= link_to image_tag("Back.png", size: "45x45"), :back, class: 'back' %></div>
+	</div>
+</div>

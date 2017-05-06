@@ -20,5 +20,10 @@
   <%= @user.password %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_path(@user) %> 
+<div class="container" style="width: 45px; height: 45px;">
+  <%= link_to image_tag("Back2.png", size: "45x45"), users_path, class: 'back' %>
+  <div class="overlay">
+    <div class="text"><%= link_to image_tag("Back.png", size: "45x45"), users_path, class: 'back' %></div>
+  </div>
+</div>

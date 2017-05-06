@@ -18,6 +18,12 @@
 header {
     background-image: url('Fondo.jpg');
 }
+body, head{
+    width: 80%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
 #main-menu {
@@ -141,6 +147,7 @@ input[type='submit'] {
 input[type='submit']:hover {
   background-color: #FFD700;
   color: black;
+  cursor:pointer;
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -163,7 +170,7 @@ h1 {
   font-weight: bolder;
 }
 
-/* Efectos para botones de delete y editar*/
+/* Efectos para botones edit y borrar */
 .cruzedit {    
     text-align: center;
     display: block;
@@ -190,7 +197,7 @@ h1 {
   width: 100%;
   opacity: 0;
   transition: .3s ease;
-  background-color: black;
+  background-color: white;
 }
 
 .container:hover .overlay {
@@ -199,8 +206,8 @@ h1 {
 
 .text a{
   color: #FFD700;
-  background-color: black;
-  font-size: 12px;
+  background-color: transparent;
+  font-size: 15x;
   font-weight: bold;
   text-decoration: none;
   position: absolute;
@@ -208,4 +215,11 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+}
+
+/* Efectos para botones Back */
+a.back, a.back:hover{
+  text-decoration: none;
+  background-image: image-url("Back.png")
+
 }

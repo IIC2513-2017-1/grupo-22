@@ -4,3 +4,9 @@
 <% @team = Team.find(params[:team_id]) %>
 
 <%= link_to 'Back', team_path(@team) %>
+<div class="container" style="width: 45px; height: 45px;">
+  <%= link_to image_tag("Back2.png", size: "45x45"), team_path(@team), class: 'back' %>
+  <div class="overlay">
+    <div class="text"><%= link_to image_tag("Back.png", size: "45x45"), team_path(@team), class: 'back' %></div>
+  </div>
+</div>

@@ -1,11 +1,13 @@
-	<%= form_for topic do |t| %>
-	 <p>
-	    <%= t.text_field :title, placeholder:"Tittle" %>
-	  </p>
-	  <p>
-	    <%= t.text_area :content, placeholder:"Content" %>
-	  </p>
-	  <p>
-	    <%= t.submit "Edit" , class: "submit", id: 'submit'%>
-	  </p>
-	<% end %>
+<%= form_for topic do |t| %>
+ <p style="text-align: center";>
+    <%= t.text_field :title, placeholder:"Tittle" %>
+  </p>
+  <p style="text-align: center;">
+    <%= t.text_area :content, placeholder:"Content" %>
+  </p>
+  <p>
+  	<div class="actions" style="text-align: center;">
+      <%= t.submit "Edit" %>
+    </div>
+  </p>
+<% end %>
