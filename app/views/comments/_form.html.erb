@@ -1,0 +1,10 @@
+<%= form_for comment do |c| %>
+  <p style="text-align: center;">
+    <%= c.text_area :content, placeholder:"Content" %>
+  </p>
+  <p>
+  	<div class="actions" style="text-align: center;">
+      <%= c.submit "Edit" %>
+    </div>
+  </p>
+<% end %>
