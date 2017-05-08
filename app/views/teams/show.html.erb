@@ -1,35 +1,30 @@
 <p id="notice"><%= notice %></p>
 <h1> Info </h1>
-
-<p>
-  <strong>Name:</strong>
-  <%= @team.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @team.description %>
-</p>
-
-<p>
-  <strong>Logo:</strong>
-  <%= @team.logo %>
-</p>
-
-<p>
-  <strong>Trainer:</strong>
-  <%= @team.trainer %>
-</p>
-
-<p>
-  <strong>Foundation date:</strong>
-  <%= @team.foundation_date %>
-</p>
-
-<p>
-  <strong>Owner</strong>
-  <%= @team.user_id %>
-</p>
+<br>
+<br>
+<table class="perfil">
+  <tr>
+    <td class="subject">Name:</td>
+    <td class="value"><%=@team.name%></td>
+  </tr>
+  <tr>
+    <td class="subject">Description:</td>
+    <td class="value"><%=@team.description%></td>
+  </tr>
+  <tr>
+    <td class="subject">Trainer:</td>
+    <td class="value"><%=@team.trainer%></td>
+  </tr>
+  <tr>
+    <td class="subject">Foundation date:</td>
+    <td class="value"><%=@team.foundation_date%></td>
+  </tr>
+  <tr>
+    <td class="subject">Owner:</td>
+    <td class="value"><%=@team.user.username%></td>
+  </tr>
+</table>
+<br>
 <div class="container" style=" width: 45px; height: 45px; margin: 0 auto;">
     <%= image_tag("Edit.png", size: "45x45") %>
     <div class="overlay">
