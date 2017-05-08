@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1 style="color: #FFD700;font-weight: bolder;">Teams</h1>
+<h1>Teams</h1>
 
-<table>
+<table class="tabla">
   <thead>
     <tr>
       <th>ID</th>
@@ -18,7 +18,7 @@
 
   <tbody>
     <% @teams.each do |team| %>
-      <tr>
+      <tr data-link="<%= team_path(team)%>">
         <td><%= team.id %></td>
         <td><%= team.name %></td>
         <td><%= team.description %></td>
@@ -35,11 +35,23 @@
 </table>
 
 <br>
-
-<%= link_to 'New Team', new_team_path %> 
-<div class="container" style="width: 45px; height: 45px;">
-  <%= link_to image_tag("Back2.png", size: "45x45"), :back, class: 'back' %>
-  <div class="overlay">
-    <div class="text"><%= link_to image_tag("Back.png", size: "45x45"), root_path, class: 'back' %></div>
+<table style="width: 100%;">
+  <td>
+  <div class="container" style="width: 45px; height: 45px;">
+    <%= link_to image_tag("Back2.png", size: "45x45"), :back, class: 'back' %>
+    <div class="overlay">
+      <div class="text"><%= link_to image_tag("Back.png", size: "45x45"), root_path, class: 'back' %></div>
   </div>
 </div>
+  </td>
+  <td>
+  <% if current_user%>  
+  <div class="container" style="width: 45px; height: 45px;">
+    <%= link_to image_tag("Add4.png", size: "45x45"), new_team_path, class: 'back' %>
+    <div class="overlay">
+        <div class="text"><%= link_to "Add", new_team_path %></div>
+    </div>
+  </div>
+  </td>
+<% end %>
+</table>

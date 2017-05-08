@@ -2,7 +2,7 @@
 
 <h1 style="color: #FFD700;font-weight: bolder;">Users</h1>
 
-<table>
+<table class="tabla">
   <thead>
     <tr>
       <th>ID</th>
@@ -16,7 +16,7 @@
 
   <tbody>
     <% @users.each do |user| %>
-      <tr>
+      <tr data-link="<%= user_path(user)%>">
         <td><%= user.id %></td>
         <td><%= user.full_name %></td>
         <td><%= user.email %></td>
@@ -29,10 +29,7 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'New User', new_user_path %> 
 <div class="container" style="width: 45px; height: 45px;">
   <%= link_to image_tag("Back2.png", size: "45x45"), root_path, class: 'back' %>
   <div class="overlay">
