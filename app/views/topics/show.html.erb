@@ -27,7 +27,7 @@
 			  <div class="container">
 				<%= image_tag("Cruz.png", size: "45x45", class: 'cruzedit') %>
 				<div class="overlay">
-				  <div class="text"><%= link_to "Delete", topic_comment_path(@topic,c), method: :delete, data: { confirm: 'Are you sure?' } %></div>
+				  <div class="text"><%= link_to "DELETE", topic_comment_path(@topic,c), method: :delete, data: { confirm: 'Are you sure?' } %></div>
 				</div>
 			  </div>
 			</td>
@@ -35,7 +35,7 @@
 			  <div class="container">
 			    <%= image_tag("Edit.png", size: "45x45", class: 'cruzedit') %>
 			   <div class="overlay">
-			     <div class="text"><%= link_to "Edit", edit_topic_comment_path(@topic,c) %></div>
+			     <div class="text"><%= link_to "EDIT", edit_topic_comment_path(@topic,c) %></div>
 			   </div>
 			  </div>
 			</td>
