@@ -275,3 +275,65 @@ a.back, a.back:hover{
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
+
+/* Efectos para listas */
+.lista{
+  width: 80%;
+  margin: 0  auto;
+  font-weight: bolder;
+  color:black;
+}
+
+.lista ol{
+  counter-reset: li;
+  list-style: none;
+  *list-style: decimal;
+  font: 16px;
+  padding: 0;
+  margin-bottom: 4em;
+}
+
+.lista ol ol{
+    margin: 0 0 0 2em;
+}
+
+.lista a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    color: black;
+    text-decoration: none;
+    -moz-border-radius: .3em;
+    -webkit-border-radius: .3em;
+    border-radius: .3em;
+}
+
+.lista a:hover{
+    background: #FFD700;
+    text-decoration: none;
+}
+
+.lista a:visited{
+    text-decoration: none;
+    color: black;
+}
+.lista a:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: black;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    -moz-border-radius: 2em;
+    -webkit-border-radius: 2em;
+    border-radius: 2em;
+    color: #FFD700;
+}

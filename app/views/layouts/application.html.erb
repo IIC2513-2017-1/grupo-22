@@ -37,7 +37,7 @@
     <main>
       <% [:alert, :notice].each do |flash_type| %>
         <% if (flash_message = flash[flash_type]).present? %>
-          <div class="<%= flash_type %>"><%= flash_message %></div>
+          <div class="<%= flash_type %>" id=notice><%= flash_message %></div>
         <% end %>
       <% end %>
       <%= yield %>

@@ -1,6 +1,7 @@
 <h1>New player</h1>
 
 <%= render 'form' %>
+
 <% @team = Team.find(params[:team_id]) %>
 
 <%= link_to 'Back', team_path(@team) %>
