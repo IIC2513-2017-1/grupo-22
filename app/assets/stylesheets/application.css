@@ -125,12 +125,8 @@ textarea {
 
 textarea:focus{
     box-shadow: 0 0 4px #FFD700;
-    
 }
 
-input:focus{
-    box-shadow: 0 0 4px #FFD700;
-}
 
 input[type='submit'] {
   display: inline-block;

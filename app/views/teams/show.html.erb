@@ -28,12 +28,12 @@
 <% if current_user %>
   <% if current_user.id == @team.user.id %>
     <div class="container" style=" width: 45px; height: 45px; margin: 0 auto;">
-      <%= image_tag("Edit.png", size: "45x45") %>
-     </div> 
-    <div class="overlay">
-      <div class="text"><%= link_to "EDIT", edit_team_path(@team) %></div>
+      <%= image_tag("Edit.png", size: "45x45", class: 'cruzedit') %>
+     <div class="overlay">
+        <div class="text"><%= link_to "EDIT", edit_team_path(@team) %>
+        </div>
+     </div>
     </div>
-</div>
   <% end %>
 <% end %>
 <br>
@@ -46,7 +46,6 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @team.players.each do |player| %>
       <tr data-link="<%= team_player_path(@team, player)%>">
