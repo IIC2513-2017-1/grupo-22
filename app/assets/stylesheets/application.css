@@ -222,7 +222,8 @@ a.back, a.back:hover{
 
 .tabla {
   border-collapse: collapse;
-  width: 100%;  
+  width: 90%;
+  margin: 0 auto;  
 }
 
 .tabla tbody tr{
