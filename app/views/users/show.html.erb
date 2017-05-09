@@ -1,25 +1,26 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Full name:</strong>
-  <%= @user.full_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
+<h1>Profile</h1>
+<br>
+<br>
+<table class="perfil">
+  <tr>
+    <td class="subject">Full Name:</td>
+    <td class="value"><%=@user.full_name %></td>
+  </tr>
+  <tr>
+    <td class="subject">Email:</td>
+    <td class="value"><%=@user.email%></td>
+  </tr>
+  <tr>
+    <td class="subject">Username:</td>
+    <td class="value"><%=@user.username%></td>
+  </tr>
+  <tr>
+    <td class="subject">Password:</td>
+    <td class="value"><%=@user.password%></td>
+  </tr>
+</table>
+<br>
 <%= link_to 'Edit', edit_user_path(@user) %> 
 <div class="container" style="width: 45px; height: 45px;">
   <%= link_to image_tag("Back2.png", size: "45x45"), users_path, class: 'back' %>

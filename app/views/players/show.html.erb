@@ -1,52 +1,42 @@
-<p>
-  <strong>Full name:</strong>
-  <%= @player.full_name %>
-</p>
-
-<p>
-  <strong>Position:</strong>
-  <%= @player.position %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @player.email %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @player.address %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @player.phone %>
-</p>
-
-<p>
-  <strong>Position:</strong>
-  <%= @player.position %>
-</p>
-
-<p>
-  <strong>Birth Date:</strong>
-  <%= @player.birth_date %>
-</p>
-
-<p>
-  <strong>Ocupation:</strong>
-  <%= @player.ocupation %>
-</p>
-
-<p>
-  <strong>Phote:</strong>
-  <%= @player.phote %>
-</p>
-
-<p>
-  <strong>Leg:</strong>
-  <%= @player.leg %>
-</p>
+<h1>Info</h1>
+<table class="perfil">
+  <tr>
+    <td class="subject">Full Name:</td>
+    <td class="value"><%= @player.full_name %></td>
+  </tr>
+  <tr>
+    <td class="subject">Position:</td>
+    <td class="value"><%= @player.position %></td>
+  </tr>
+  <tr>
+    <td class="subject">Email:</td>
+    <td class="value"><%= @player.email %></td>
+  </tr>
+  <tr>
+    <td class="subject">Address:</td>
+    <td class="value"><%= @player.address %></td>
+  </tr>
+  <tr>
+    <td class="subject">Phone:</td>
+    <td class="value"><%= @player.phone %></td>
+  </tr>
+  <tr>
+    <td class="subject">Position:</td>
+    <td class="value"><%= @player.position %></td>
+  </tr>
+  <tr>
+    <td class="subject">Birth Date:</td>
+    <td class="value"><%= @player.birth_date %></td>
+  </tr>
+  <tr>
+    <td class="subject">Ocupation:</td>
+    <td class="value"><%= @player.ocupation %></td>
+  </tr>
+  <tr>
+    <td class="subject">Leg:</td>
+    <td class="value"><%= @player.leg %></td>
+  </tr>
+</table>
 
 <div class="container" style="width: 45px; height: 45px;">
   <%= link_to image_tag("Back2.png", size: "45x45"), team_path(@player.team), class: 'back' %>
