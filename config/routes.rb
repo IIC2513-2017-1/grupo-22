@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
-  
+
   get 'welcome/index'
 
   resources :tourneys do
+    post "add_team"
     resources :matches
   end
 
@@ -12,12 +13,12 @@ Rails.application.routes.draw do
     resources :players
   end
 
-  resources :foros do 
-    resources :topics    
+  resources :foros do
+    resources :topics
   end
 
-  resources :topics do 
-    resources :comments    
+  resources :topics do
+    resources :comments
   end
 
   resources :comments

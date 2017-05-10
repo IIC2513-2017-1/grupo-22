@@ -10,10 +10,8 @@
       <th>Trainer</th>
       <th>Foundation date</th>
       <th>Owner</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @teams.each do |team| %>
       <tr data-link="<%= team_path(team)%>">
@@ -24,9 +22,7 @@
         <td><%= team.trainer %></td>
         <td><%= team.foundation_date %></td>
         <td><%= team.user_id %></td>
-        <td><%= link_to 'Show', team %></td>
-        <td><%= link_to 'Edit', edit_team_path(team) %></td>
-        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!--<td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>
