@@ -17,14 +17,16 @@
 
 header {
     background-image: url('Fondo.jpg');
-}
+    border: 5px solid #FFD700;
+    border-bottom: 5px solid black;
+  }
+
 body, head{
     width: 80%;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
-
 
 #main-menu {
     text-align: center;
@@ -196,7 +198,7 @@ a.back, a.back:hover{
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: .3s ease;
+  transition: .2s ease;
   background-color: white;
 }
 
@@ -206,7 +208,6 @@ a.back, a.back:hover{
 
 .text a{
   color: #FFD700;
-  /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
   background-color: transparent;
   font-size: 15x;
   font-weight: bold;
@@ -219,7 +220,6 @@ a.back, a.back:hover{
 }
 
 /* Efectos de las tablas */
-
 .tabla {
   border-collapse: collapse;
   width: 90%;
