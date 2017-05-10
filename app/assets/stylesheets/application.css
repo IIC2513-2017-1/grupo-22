@@ -53,6 +53,13 @@ main {
     text-align: center;
 }
 
+/* Titulos */
+h1, h2 {
+  color: #FFD700;
+  font-weight: bolder;
+}
+
+/* Botones generales, textarea y logo*/
 .logo, .logo:hover, .logo:active{    
     text-decoration: none;
     border: none;
@@ -135,7 +142,7 @@ textarea:focus{
     box-shadow: 0 0 4px #FFD700;
 }
 
-
+/* Botones submit */
 input[type='submit'] {
   display: inline-block;
   border-radius: 4px;
@@ -167,11 +174,6 @@ input[type='submit']:hover {
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
    color:    gray;
-}
-
-h1, h2 {
-  color: #FFD700;
-  font-weight: bolder;
 }
 
 /* Efectos para botones edit, borrar y back */
@@ -292,6 +294,7 @@ a.back, a.back:hover{
 }
 
 /* Efectos para listas */
+
 .lista{
   width: 80%;
   margin: 0  auto;
@@ -345,7 +348,7 @@ a.back, a.back:hover{
     height: 2em;
     width: 2em;
     line-height: 2em;
-    border: .3em solid #fff;
+    border: .2em solid #FFD700;
     text-align: center;
     -moz-border-radius: 2em;
     -webkit-border-radius: 2em;
