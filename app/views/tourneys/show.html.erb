@@ -1,4 +1,14 @@
 <p>
+  <strong>Add team to tourney:</strong>
+  <br>
+  <%= form_for(@tourney, url: tourney_add_team_path(@tourney), method: "post") do %>
+    <%= select_tag(:team_id, options_from_collection_for_select(Team.all.collect, :id, :name)) %>
+    <br>
+    <%= submit_tag("Agregar") %>
+  <% end %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @tourney.name %>
 </p>
