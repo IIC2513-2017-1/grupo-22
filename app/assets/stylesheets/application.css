@@ -23,9 +23,15 @@ header {
 
 body, head{
     width: 80%;
-    width: 80%;
     margin-left: auto;
     margin-right: auto;
+    color: white;
+}
+
+main {
+  background-image: url('Fondo.jpg');
+  padding: 10px;
+  border: 5px solid #FFD700;
 }
 
 #main-menu {
@@ -115,13 +121,13 @@ body, head{
 }
 
 .buttont:hover {
-    color: black;
+    color: gray;
     background-color: transparent;
 }
 
 textarea {
-    width: 240px;
-    height: 180px;
+    width: 300px;
+    height: 60px;
     overflow: auto;
 }
 
@@ -181,6 +187,7 @@ h1, h2 {
 a.back, a.back:hover{
   text-decoration: none;
   background: none;
+  height: 100%;
 }
 
 .container {
@@ -189,7 +196,7 @@ a.back, a.back:hover{
   height: 100%;
 }
 
-.overlay {
+.overlay, .overlay2 {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -199,17 +206,22 @@ a.back, a.back:hover{
   width: 100%;
   opacity: 0;
   transition: .2s ease;
-  background-color: white;
+  border-radius: 30px;
+  background-color: #FFD700;
 }
 
-.container:hover .overlay {
+.overlay2 {
+  border-radius: 10px;
+}
+
+.container:hover .overlay, .container:hover .overlay2 {
   opacity: 1;
 }
 
 .text a{
-  color: #FFD700;
-  background-color: transparent;
-  font-size: 15x;
+  color: black;
+  background-color:transparent;
+  font-size: 10px;
   font-weight: bold;
   text-decoration: none;
   position: absolute;
@@ -224,6 +236,7 @@ a.back, a.back:hover{
   border-collapse: collapse;
   width: 90%;
   margin: 0 auto;  
+  color: black;
 }
 
 .tabla tbody tr{
@@ -254,6 +267,7 @@ a.back, a.back:hover{
   margin:0 auto;
   border-collapse: collapse; 
   border-top: none;
+  color: black;
 }
 
 .perfil td {
@@ -282,7 +296,7 @@ a.back, a.back:hover{
   width: 80%;
   margin: 0  auto;
   font-weight: bolder;
-  color:black;
+  color: white;
 }
 
 .lista ol{
@@ -304,21 +318,21 @@ a.back, a.back:hover{
     padding: .4em .4em .4em 2em;
     *padding: .4em;
     margin: .5em 0;
-    color: black;
     text-decoration: none;
     -moz-border-radius: .3em;
     -webkit-border-radius: .3em;
     border-radius: .3em;
 }
 
-.lista a:hover{
-    background: #FFD700;
-    text-decoration: none;
-}
-
 .lista a:visited{
     text-decoration: none;
-    color: black;
+    color: white;
+}
+
+.lista a:hover {
+    background: #FFD700;
+    text-decoration: none;
+    color:black;
 }
 .lista a:before{
     content: counter(li);
@@ -338,3 +352,36 @@ a.back, a.back:hover{
     border-radius: 2em;
     color: #FFD700;
 }
+
+/*Efectos para elemento de comentario movil*/
+.fixme {
+  position: absolute;
+  top: 475px;
+  right: 12%;
+}
+.container-flex{
+  display: flex;
+  align-items: stretch;
+}
+
+.left {
+  width: 65%;
+  float: left;
+  flex: 1
+}
+
+.right {
+  float: right;
+  display: flex;
+  width: 35%;
+  background: url('Fondo.jpg');
+  flex: 1
+  border: 5px solid #FFD700;
+}
+
+.fixer{
+  clear: both;
+}
+.comment, .topic {
+    border-bottom: 2px solid gray; 
+ }

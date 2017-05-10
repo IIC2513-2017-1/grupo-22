@@ -36,16 +36,17 @@
     <main>
       <% [:alert, :notice].each do |flash_type| %>
         <% if (flash_message = flash[flash_type]).present? %>
-          <div class="<%= flash_type %>" id=notice><%= flash_message %></div>
+          <div class="<%= flash_type %>" id=notice style="font-weight: bolder;"><%= flash_message %></div>
         <% end %>
       <% end %>
       <%= yield %>
     </main>
     <footer>
+      <br>
       <hr>
       <div id="project">© CreaTuLiga 2017</div>
     </footer>
-    <div class="bara-ayuda" style="position: fixed; left: 20px; top:200px; font-weight: bolder;">
+    <div class="bara-ayuda" style="position: fixed; left: 20px; top:200px; font-weight: bolder; color: black;">
       <table>
         <tr>
             <td><%= image_tag("Cruz.png", size: "45x45") %></td>

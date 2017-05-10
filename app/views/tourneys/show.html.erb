@@ -67,7 +67,16 @@
   <%= link_to 'Foro', foro_path(@foro) %>
 </p>
 
-<%= link_to 'Edit', edit_tourney_path(@tourney) %> |
+<% if current_user and current_user.id? %>
+  <% if current_user.id == @tourney.user.id %>
+  <div class="container" style="width: 45px; height: 45px; margin:0 auto;">
+    <%= link_to image_tag("Edit.png", size: "45x45"), edit_tourney_path(@tourney), class: 'cruzedit' %>
+    <div class="overlay2">
+        <div class="text"><%= link_to "EDIT", edit_tourney_path(@tourney)%></div>
+    </div>
+  </div>
+  <% end %>
+<% end %>
 <div class="container" style="width: 45px; height: 45px;">
   <%= link_to image_tag("Back2.png", size: "45x45"), tourneys_path, class: 'back' %>
   <div class="overlay">

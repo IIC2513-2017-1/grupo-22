@@ -1,73 +1,80 @@
-<h1> Foro </h1>
-<p>
-  <strong>Title:</strong>
-  <%= @foro.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @foro.description %>
-</p>
-<p>
-	<h1>Topics</h1>
-	<% @foro.topics.each do |t| %>
+<div class="container-flex">
+<div class="left">
+	<h1> Foro </h1>
 	<p>
-	<strong>Titulo:</strong>
-	<%= link_to t.title, [t.foro,t] %>
+	  <strong>Title:</strong>
+	  <%= @foro.title %>
 	</p>
-
 	<p>
-	<strong>Description:</strong>
-	<%= t.content %>
+	  <strong>Description:</strong>
+	  <%= @foro.description %>
 	</p>
-	<table>
-		<tr>
-			<td style="padding-right:100px;">
-				<i style="color: gray;">
-				Created by <%= t.user.username %>
-				</i>
-			</td>
-			<% if current_user%>
-				<% if current_user.id == t.user.id %>		
-					<td>
-					<div class="container">
-						<%= image_tag("Cruz.png", size: "45x45", class: 'cruzedit') %>
-  						<div class="overlay">
-    						<div class="text"><%= link_to "DELETE", topic_path(t), method: :delete, data: { confirm: 'Are you sure?' } %></div>
-  						</div>
-					</div>
+	<p>
+		<h1>Topics</h1>
+		<% @foro.topics.each do |t| %>
+		<div class="topic">
+			<p>
+			<strong>Titulo:</strong>
+			<%= link_to t.title, [t.foro,t] %>
+			</p>
+			<p>
+			<strong>Description:</strong>
+			<%= t.content %>
+			</p>
+			<table>
+				<tr>
+					<td style="padding-right:100px;">
+						<i style="color: gray;">
+						Created by <%= t.user.username %>
+						</i>
 					</td>
-					<td>
-					<div class="container">
-  						<%= image_tag("Edit.png", size: "45x45", class: 'cruzedit') %>
-  						<div class="overlay">
-    						<div class="text"><%= link_to "EDIT", edit_topic_path(t) %></div>
-  						</div>
-					</div>
-					</td>
-				<% end %>
-			<% end %>
-		</tr>
-	</table>
-	<hr>
+					<% if current_user and current_user.id? %>
+						<% if current_user.id == t.user.id %>		
+							<td>
+							<div class="container">
+								<%= image_tag("Cruz.png", size: "45x45", class: 'cruzedit') %>
+		  						<div class="overlay">
+		    						<div class="text"><%= link_to "DELETE", topic_path(t), method: :delete, data: { confirm: 'Are you sure?' } %></div>
+		  						</div>
+							</div>
+							</td>
+							<td>
+							<div class="container">
+		  						<%= image_tag("Edit.png", size: "45x45", class: 'cruzedit') %>
+		  						<div class="overlay2">
+		    						<div class="text"><%= link_to "EDIT", edit_topic_path(t) %></div>
+		  						</div>
+							</div>
+							</td>
+						<% end %>
+					<% end %>
+				</tr>
+			</table>
+		</div>
+		<% end %>
+	</p>
+</div>
+<div class="right"></div>
+<div class="fixer"></div>
+</div>
+<div class="fixme">
+	<p>
+	<% if current_user and current_user.id? %>
+		<h1 style="text-align: center">Create topic as  <%= current_user.username %></h1>
+		<%= form_for([@foro, @foro.topics.build]) do |f| %>
+		 <p style="text-align: center;">
+		    <%= f.text_field :title, placeholder:"Tittle", style:"width: 290px;" %>
+		  </p>
+		  <p style="text-align: center;">
+		    <%= f.text_area :content, placeholder:"Content" %>
+		  </p>
+		  <p style="text-align: center;">
+		    <%= f.submit "Create" , class: "submit", id: 'submit'%>
+		  </p>
+		<% end %>
 	<% end %>
-</p>
-<p>
-<% if current_user %>
-	<h1>Create topic as  <%= current_user.username %></h1>
-	<%= form_for([@foro, @foro.topics.build]) do |f| %>
-	 <p style="text-align: center;">
-	    <%= f.text_field :title, placeholder:"Tittle" %>
-	  </p>
-	  <p style="text-align: center;">
-	    <%= f.text_area :content, placeholder:"Content" %>
-	  </p>
-	  <p style="text-align: center;">
-	    <%= f.submit "Create" , class: "submit", id: 'submit'%>
-	  </p>
-	<% end %>
-<% end %>
-</p>
+	</p>
+	</div>
 <div class="container" style="width: 45px; height: 45px;">
 	<%= link_to image_tag("Back2.png", size: "45x45"), foros_path, class: 'back' %>
 	<div class="overlay">

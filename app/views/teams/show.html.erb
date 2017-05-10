@@ -27,7 +27,7 @@
   <% if current_user.id == @team.user.id %>
     <div class="container" style=" width: 45px; height: 45px; margin: 0 auto;">
       <%= image_tag("Edit.png", size: "45x45", class: 'cruzedit') %>
-     <div class="overlay">
+     <div class="overlay2">
         <div class="text"><%= link_to "EDIT", edit_team_path(@team) %>
         </div>
      </div>

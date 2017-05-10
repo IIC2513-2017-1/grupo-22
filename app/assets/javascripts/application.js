@@ -19,5 +19,25 @@ jQuery(function($) {
     $("tr[data-link]").click(function() {
         window.location = this.data.link
     });
+});
 
+
+$(window).load(function () {
+var fixmeTop = $('.fixme').offset().top;
+$(window).scroll(function() {
+    var currentScroll = $(window).scrollTop();
+    if (currentScroll + 100 >= fixmeTop) {
+        $('.fixme').css({
+            position: 'fixed',
+            top: '100px',
+            right: '12%'
+        });
+    } else {
+        $('.fixme').css({
+        	position: 'absolute',
+            top: '475px',
+            right: '12%'
+        });
+    }
+});
 });

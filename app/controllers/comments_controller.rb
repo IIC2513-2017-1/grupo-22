@@ -5,6 +5,8 @@ class CommentsController < ApplicationController
   end
 
   def new
+    @comment = Comment.new
+    @topic = Topic.find(params[:topic_id])
   end	
 
   def create

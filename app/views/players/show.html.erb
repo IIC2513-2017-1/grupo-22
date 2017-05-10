@@ -1,4 +1,5 @@
 <h1>Info</h1>
+<br>
 <table class="perfil">
   <tr>
     <td class="subject">Full Name:</td>
@@ -37,12 +38,22 @@
     <td class="value"><%= @player.leg %></td>
   </tr>
 </table>
+<br>
 
+<% if current_user and current_user.id? %>
+  <% if current_user.id == @player.team.user.id %>
+  <div class="container" style="width: 45px; height: 45px; margin:0 auto;">
+    <%= link_to image_tag("Edit.png", size: "45x45"), edit_team_player_path, class: 'cruzedit' %>
+    <div class="overlay2">
+        <div class="text"><%= link_to "EDIT", edit_team_player_path%></div>
+    </div>
+  </div>
+  <% end %>
+<% end %>
 <div class="container" style="width: 45px; height: 45px;">
   <%= link_to image_tag("Back2.png", size: "45x45"), team_path(@player.team), class: 'back' %>
   <div class="overlay">
     <div class="text"><%= link_to image_tag("Back.png", size: "45x45"), team_path(@player.team), class: 'back' %></div>
   </div>
 </div>
-<%= link_to 'Edit player', edit_team_player_path %>
 
