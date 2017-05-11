@@ -389,3 +389,35 @@ a.back, a.back:hover{
 .comment, .topic {
     border-bottom: 2px solid gray; 
  }
+
+ /* Fotos de perfil*/
+
+.fotoperfil {
+    border: 3px solid #FFD700;
+    border-radius: 500px;
+    -moz-border-radius: 500px;
+    -webkit-border-radius: 500px;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.fotonav {
+    border: 1px solid #FFD700;
+    border-radius: 500px;
+    -moz-border-radius: 500px;
+    -webkit-border-radius: 500px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+}
+.fotomedium {
+  height: 200px;
+  width: 200px;
+}
+
+.fotothumb {
+  height: 50px;
+  width: 50px;
+}
