@@ -52,11 +52,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :user_id %>
-    <%= f.select :user_id, User.all.collect { |user| [ user.email, user.id ] }, { include_blank: true }, { required: true } %>
-  </div>
-
-  <div class="field">
     <%= f.label :schedule  %>
     <%= f.time_select :schedule, :ignore_date => true %>
   </div>
@@ -79,6 +74,10 @@
   <div class="field">
     <%= f.label :phone %>
     <%= f.text_field :phone, required: true %>
+  </div>
+
+  <div class="field" style="visibility: hidden;">
+    <%= f.text_field :user_id, value:current_user.id %>
   </div>
   
   <div class="actions">

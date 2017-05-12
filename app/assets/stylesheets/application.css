@@ -9,11 +9,16 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+ *= require icons
  *= require_tree .
  *= require_self
  */
 
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
 
 header {
     background-image: url('Fondo.jpg');
@@ -420,4 +425,58 @@ a.back, a.back:hover{
 .fotothumb {
   height: 50px;
   width: 50px;
+}
+
+/* barra social */
+.social {
+  position: fixed;
+  left: 0px;
+  top: 150px;
+  z-index: 2000;
+}
+
+.social ul {
+  list-style:none;
+  margin:0;
+  padding: 0;
+}
+
+.social ul li a {
+  display: inline-block;
+  color: #fff;
+  padding:15px 20px;
+  text-decoration: none;
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.social ul li a.icon-facebook {
+  background-color: #3b5998;
+}
+
+.social ul li a.icon-twitter {
+  background-color: #00abf0; 
+}
+
+.social ul li a.icon-twitch {
+  background-color: #8b1f66;
+}
+
+
+.social ul li a.icon-spotify {
+  background-color: #00ae58;
+}
+
+.social ul li a.icon-soundcloud {
+  background-color: #ec6e06;
+}
+
+.social ul li a.icon-youtube {
+  background-color: #ee0606;
+}
+
+.social ul li a:hover {
+  padding:15px 35px;
+  background-color: #000;
 }

@@ -138,4 +138,5 @@ ActiveRecord::Schema.define(version: 20170511024438) do
   add_foreign_key "players", "teams"
   add_foreign_key "topics", "foros"
   add_foreign_key "topics", "users"
+  add_foreign_key "tourneys", "users"
 end

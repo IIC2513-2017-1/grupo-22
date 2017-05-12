@@ -1,7 +1,7 @@
 <h1>Profile</h1>
 <br>
 <div class="fotoperfil">
-  <%= image_tag(current_user.avatar.url(:medium), class:'fotomedium') %>
+  <%= image_tag(@user.avatar.url(:medium), class:'fotomedium') %>
 </div>
 <br><br>
 <table class="perfil">

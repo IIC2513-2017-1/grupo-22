@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'social';
+  src:  font-url('social.eot?hf7slw');
+  src:  font-url('social.eot?hf7slw#iefix') format('embedded-opentype'),
+    font-url('social.ttf?hf7slw') format('truetype'),
+    font-url('social.woff?hf7slw') format('woff'),
+    font-url('social.svg?hf7slw#social') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'social' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-youtube:before {
+  content: "\ec1e";
+}
+.icon-twitch:before {
+  content: "\ec20";
+}
+.icon-soundcloud:before {
+  content: "\ec44";
+}
+.icon-google-plus:before {
+  content: "\ec0c";
+}
+.icon-facebook:before {
+  content: "\ec11";
+}
+.icon-spotify:before {
+  content: "\ec15";
+}
+.icon-twitter:before {
+  content: "\ec17";
+}
+

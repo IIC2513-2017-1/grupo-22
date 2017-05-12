@@ -11,6 +11,7 @@ class User < ApplicationRecord
 	has_many :request_received, foreign_key: 'receiver_id', class_name: 'Request'
 	has_many :topics, dependent: :destroy
 	has_many :comments, dependent: :destroy
+	has_many :tourneys, dependent: :destroy
 
 	has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "50x50#" }, :default_url => "/default/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/

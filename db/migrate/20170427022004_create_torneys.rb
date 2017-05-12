@@ -8,8 +8,8 @@ class CreateTorneys < ActiveRecord::Migration[5.0]
       t.date :inscription_limit_date
       t.date :start_date
       t.date :end_date
-
-      t.belongs_to :user, index: true
+      
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
