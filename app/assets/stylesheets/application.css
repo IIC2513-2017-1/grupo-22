@@ -418,11 +418,11 @@ a.back, a.back:hover{
  }
 
 /* Para show torneos */
-.left#info {
+.left#info, .right#info {
   flex-basis:50%;
 }
 
-.right#tabla {
+.right#tabla, .left#tabla {
   flex-basis:50%;
 }
 
