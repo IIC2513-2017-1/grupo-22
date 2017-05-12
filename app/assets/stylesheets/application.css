@@ -20,6 +20,17 @@
      box-sizing: border-box; 
 }
 
+/* arreglar links */
+a, a:visited {
+  color:white;
+}
+
+/* Generales */
+a:hover {
+  color: #FFD700;
+  background-color: transparent;
+}
+
 header {
     background-image: url('Fondo.jpg');
     border: 5px solid #FFD700;
@@ -465,7 +476,7 @@ a.back, a.back:hover{
 .social {
   position: fixed;
   left: 0px;
-  top: 150px;
+  top: 100px;
   z-index: 2000;
 }
 
@@ -478,7 +489,7 @@ a.back, a.back:hover{
 .social ul li a {
   display: inline-block;
   color: #fff;
-  padding:15px 20px;
+  padding:25px 35px;
   text-decoration: none;
   -moz-transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
@@ -513,7 +524,7 @@ a.back, a.back:hover{
 }
 
 .social ul li a:hover {
-  padding:15px 35px;
+  padding:25px 50px;
   background-color: #000;
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
