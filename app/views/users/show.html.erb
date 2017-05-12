@@ -57,17 +57,19 @@
         </tbody>
       </table>
       <br>
-      <% if current_user and current_user.id? %>  
-        <div class="container" style="width: 45px; height: 45px; margin: 0 auto;">
-          <%= link_to image_tag("Add4.png", size: "45x45"), new_team_path, class: 'back' %>
-          <div class="overlay">
-            <div class="text"><%= link_to "ADD", new_team_path %></div>
+      <% if current_user and current_user.id? %> 
+        <% if current_user.id == @user.id %> 
+          <div class="container" style="width: 45px; height: 45px; margin: 0 auto;">
+            <%= link_to image_tag("Add4.png", size: "45x45"), new_team_path, class: 'back' %>
+            <div class="overlay">
+              <div class="text"><%= link_to "ADD", new_team_path %></div>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
   </div>
   <div class="right" id="tabla">        
-      <h1 style="margin-left: 30px;">Tourneys</h1>
+      <h1 style="margin-left: 30px;"">Tourneys</h1>
       <br>
       <table class="tabla">
         <thead>
@@ -89,12 +91,14 @@
       </table>
       <br>
         <% if current_user and current_user.id? %>  
-        <div class="container" style="width: 45px; height: 45px; margin: 0 auto;">
-            <%= link_to image_tag("Add4.png", size: "45x45"), new_tourney_path, class: 'back' %>
-            <div class="overlay">
-              <div class="text"><%= link_to "ADD", new_tourney_path %></div>
-            </div>
-          </div>
+          <% if current_user.id == @user.id %> 
+            <div class="container" style="width: 45px; height: 45px; margin: 0 auto;">
+                <%= link_to image_tag("Add4.png", size: "45x45"), new_tourney_path, class: 'back' %>
+                <div class="overlay">
+                  <div class="text"><%= link_to "ADD", new_tourney_path %></div>
+                </div>
+              </div>
+          <% end %>
         <% end %>
   </div>
 </div>
