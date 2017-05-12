@@ -17,10 +17,9 @@
 
 jQuery(function($) {
     $("tr[data-link]").click(function() {
-        window.location = this.data.link
+        window.location = $(this).data("link")
     });
 });
-
 
 $(window).load(function () {
 var fixmeTop = $('.fixme').offset().top;

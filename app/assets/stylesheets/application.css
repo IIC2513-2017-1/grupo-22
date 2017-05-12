@@ -23,7 +23,7 @@
 header {
     background-image: url('Fondo.jpg');
     border: 5px solid #FFD700;
-    border-bottom: 5px solid black;
+    border-bottom: none;
   }
 
 body, head{
@@ -38,11 +38,6 @@ main {
   padding: 10px;
   border: 5px solid #FFD700;
 }
-
-#main-menu {
-    text-align: center;
-}
-
 
 #titulo {
     text-align: center;
@@ -82,7 +77,6 @@ h1, h2 {
     padding: 15px 50px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     font-weight: bolder;
 }
@@ -98,6 +92,7 @@ h1, h2 {
     display: inline-block;
     font-size: 16px;
     font-weight: bolder;
+    margin: 0;
 }
 
 .buttonl, .buttonl:visited{
@@ -453,6 +448,7 @@ a.back, a.back:hover{
 
 .social ul li a.icon-facebook {
   background-color: #3b5998;
+  border-top-right-radius: 5px;
 }
 
 .social ul li a.icon-twitter {
@@ -474,9 +470,12 @@ a.back, a.back:hover{
 
 .social ul li a.icon-youtube {
   background-color: #ee0606;
+  border-bottom-right-radius: 5px;
 }
 
 .social ul li a:hover {
   padding:15px 35px;
   background-color: #000;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
 }

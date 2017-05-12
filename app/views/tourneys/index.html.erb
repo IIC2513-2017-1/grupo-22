@@ -11,12 +11,13 @@
       <th>Owner</th>
       <th>Phone</th>
       <th>email</th>
+      <th>show</th>
     </tr>
   </thead>
 
   <tbody>
     <% @tourneys.each do |tourney| %>
-      <tr data-link="<%= tourney_path(tourney)%>">
+      <tr data-link="<%= tourney_path(tourney) %>">
         <td><%= tourney.name %></td>
         <td><%= tourney.format %></td>
         <td><%= tourney.inscription_limit_date %></td>

@@ -33,7 +33,10 @@
         <%= link_to 'Users', users_path, class: 'button' %>
         <%= link_to 'Teams', teams_path, class: 'button' %>
         <%= link_to 'Tourneys', tourneys_path, class: 'button' %>
-        <%= link_to 'Foros', foros_path, class: 'button' %>
+        <%= link_to 'Forums', foros_path, class: 'button' %>
+        <%= link_to 'Matches', root_path, class: 'button' %>
+      </nav>
+      <div style="height: 5px; clear: left;"></div>
     </header>
     <main>
       <% [:alert, :notice].each do |flash_type| %>
