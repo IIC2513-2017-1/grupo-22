@@ -28,7 +28,8 @@ class TourneysController < ApplicationController
   # POST /tourneys
   # POST /tourneys.json
   def create
-    @tourney = Tourney.new(tourney_params)
+    user = User.find(current_user.id)
+    @tourney = user.tourneys.create(tourney_params)
 
     respond_to do |format|
       if @tourney.save
@@ -83,6 +84,6 @@ class TourneysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tourney_params
-      params.require(:tourney).permit(:name, :description, :format, :location, :inscription_limit_date, :start_date, :end_date, :user_id, :schedule, :prize, :price, :mail, :phone)
+      params.require(:tourney).permit(:name, :description, :format, :location, :inscription_limit_date, :start_date, :end_date, :schedule, :prize, :price, :mail, :phone)
     end
 end

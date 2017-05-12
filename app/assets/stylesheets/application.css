@@ -317,6 +317,7 @@ a.back, a.back:hover{
 }
 
 .lista a{
+    color: white;
     position: relative;
     display: block;
     padding: .4em .4em .4em 2em;
