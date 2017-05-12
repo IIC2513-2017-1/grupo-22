@@ -1,56 +1,52 @@
 <div class="container-flex">
-<div class="left">
-  <h1> Topic </h1>
-  	<p>
-  	  <strong>Title:</strong>
-  	  <%= @topic.title %>
-  	</p>
-  	<p>
-  	  <strong>Description:</strong>
-  	  <%= @topic.content %>
-  	</p>
-  	<h1>Comments</h1>
-  	<% @topic.comments.each do |c| %>
-  	<div class="comment">
-  	  <p>
-  	    <%= c.content %>
-  	  </p>
-  	  <table>
-  	  <tr>
-  		  <td style="padding-right:100px;">
-			  	<i style="color: gray;">
-	    	  	Published by <%= c.user.username %>
-	  			</i>
-					<% if current_user %>
-			  		<% if current_user.id == c.user.id %>
-						<td>
-						  <div class="container">
-								<%= image_tag("Cruz.png", size: "45x45", class: 'cruzedit') %>
-								<div class="overlay">
-					  			<div class="text"><%= link_to "DELETE", topic_comment_path(@topic,c), method: :delete, data: { confirm: 'Are you sure?' } %></div>
-								</div>
-				  		</div>
-						</td>
-						<td>
-						  <div class="container">
-						    <%= image_tag("Edit.png", size: "45x45", class: 'cruzedit') %>
-						   <div class="overlay2">
-						     <div class="text"><%= link_to "EDIT", edit_topic_comment_path(@topic,c) %></div>
-						   </div>
-						  </div>
-						</td>
-				  	<% end %>
-			    <% end %>
-				</td>
-	  	</tr>
-	  </table>
-	</div>	
-	<% end %>
-</div>
-<div class="right">
-</div>
-</div>
-<div class="fixer"></div>
+	<div class="left">
+	  <h1> Topic </h1>
+	  	<p>
+	  	  <strong>Title:</strong>
+	  	  <%= @topic.title %>
+	  	</p>
+	  	<p>
+	  	  <strong>Description:</strong>
+	  	  <%= @topic.content %>
+	  	</p>
+	  	<h1>Comments</h1>
+	  	<% @topic.comments.each do |c| %>
+	  	<div class="comment">
+	  	  <p>
+	  	    <%= c.content %>
+	  	  </p>
+	  	  <table>
+	  	  <tr>
+	  		  <td style="padding-right:100px;">
+				  	<i style="color: gray;">
+		    	  	Published by <%= c.user.username %>
+		  			</i>
+						<% if current_user %>
+				  		<% if current_user.id == c.user.id %>
+							<td>
+							  <div class="container">
+									<%= image_tag("Cruz.png", size: "45x45", class: 'cruzedit') %>
+									<div class="overlay">
+						  			<div class="text"><%= link_to "DELETE", topic_comment_path(@topic,c), method: :delete, data: { confirm: 'Are you sure?' } %></div>
+									</div>
+					  		</div>
+							</td>
+							<td>
+							  <div class="container">
+							    <%= image_tag("Edit.png", size: "45x45", class: 'cruzedit') %>
+							   <div class="overlay2">
+							     <div class="text"><%= link_to "EDIT", edit_topic_comment_path(@topic,c) %></div>
+							   </div>
+							  </div>
+							</td>
+					  	<% end %>
+				    <% end %>
+					</td>
+		  	</tr>
+		  </table>
+		</div>	
+		<% end %>
+	</div>
 </div>
 <div class="fixme">
   <p>

@@ -294,6 +294,37 @@ a.back, a.back:hover{
   border-bottom: 1px solid #ddd;
 }
 
+/* Efectos de las tablas perfil torneos */
+
+.perfil-torneo{
+  width: 90%;  
+  margin:0 auto;
+  border-collapse: collapse; 
+  border-top: none;
+  color: black;
+}
+
+.perfil-torneo td {
+  padding: 10px;
+  text-align: center;
+}
+.perfil-torneo .subject{
+  background-color: black;  
+  color: #FFD700;
+  font-weight: bolder;
+  font-size: 16px;
+  text-align: left;
+  width: 30%;
+  border-top: 1px solid #FFD700;
+  border-bottom: 1px solid #FFD700;
+}
+.perfil-torneo .value {
+  background-color: #f6f6f6;  
+  font-weight: bolder;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
 /* Efectos para listas */
 
 .lista{
@@ -358,7 +389,8 @@ a.back, a.back:hover{
     color: #FFD700;
 }
 
-/*Efectos para elemento de comentario movil*/
+/*Efectos para elemento de creacion comentarios y topics movil*/
+/* tambien para visualización de topics y comentarios */
 .fixme {
   position: absolute;
   top: 475px;
@@ -366,33 +398,39 @@ a.back, a.back:hover{
 }
 .container-flex{
   display: flex;
-  align-items: stretch;
+  flex-direction: row;
+  align-content: flex-start;
 }
 
 .left {
-  width: 65%;
-  float: left;
-  flex: 1
+  flex-basis:60%;
 }
-
 .right {
-  float: right;
-  display: flex;
-  width: 35%;
-  background: url('Fondo.jpg');
-  flex: 1
-  border: 5px solid #FFD700;
+  flex-basis: 40%;
 }
 
-.fixer{
-  clear: both;
+.info {
+  margin-left: 40px;
 }
+
 .comment, .topic {
     border-bottom: 2px solid gray; 
  }
 
- /* Fotos de perfil*/
+/* Para show torneos */
+.left#info {
+  flex-basis:50%;
+}
 
+.right#tabla {
+  flex-basis:50%;
+}
+
+#info {
+  margin-left: 40px;
+}
+
+ /* Fotos de perfil*/
 .fotoperfil {
     border: 3px solid #FFD700;
     border-radius: 500px;

@@ -1,82 +1,98 @@
-<p>
-  <strong>Add team to tourney:</strong>
-  <br>
-  <%= form_for(@tourney, url: tourney_add_team_path(@tourney), method: "post") do %>
-    <%= select_tag(:team_id, options_from_collection_for_select(Team.all.collect, :id, :name)) %>
+<div class="container-flex">
+  <div class="left" id="info">
+    <h1>Tourney</h1>
     <br>
-    <%= submit_tag("Agregar") %>
-  <% end %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @tourney.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @tourney.description %>
-</p>
-
-<p>
-  <strong>Format:</strong>
-  <%= @tourney.format %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @tourney.location %>
-</p>
-
-<p>
-  <strong>Inscription limit date:</strong>
-  <%= @tourney.inscription_limit_date %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @tourney.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @tourney.end_date %>
-</p>
-
-<p>
-  <strong>Owner</strong>
-  <%= @tourney.user_id %>
-</p>
-
-<p>
-  <strong>Schedule</strong>
-  <%= @tourney.schedule %>
-</p>
-
-<p>
-  <strong>Prize</strong>
-  <%= @tourney.prize%>
-</p>
-
-<p>
-  <strong>Price</strong>
-  <%= @tourney.price%>
-</p>
-
-<p>
-  <strong>Email</strong>
-  <%= @tourney.mail %>
-</p>
-
-<p>
-  <strong>Phone</strong>
-  <%= @tourney.phone%>
-</p>
-<p>
-  <strong>Foro</strong>
-  <%= link_to 'Foro', foro_path(@foro) %>
-</p>
-
+      <table class="perfil-torneo">
+        <tr>
+          <td class="subject">Name:</td>
+          <td class="value"><%=@tourney.name %></td>
+        </tr>
+        <tr>
+          <td class="subject">Description:</td>
+          <td class="value"><%=@tourney.description %></td>
+        </tr>
+        <tr>
+          <td class="subject">Format:</td>
+          <td class="value"><%=@tourney.format %></td>
+        </tr>
+        <tr>
+          <td class="subject">Location:</td>
+          <td class="value"><%=@tourney.location %></td>
+        </tr>
+        <tr>
+          <td class="subject">Inscription limit date:</td>
+          <td class="value"><%=@tourney.inscription_limit_date%></td>
+        </tr>
+        <tr>
+          <td class="subject">Start date:</td>
+          <td class="value"><%=@tourney.start_date %></td>
+        </tr>
+        <tr>
+          <td class="subject">End date:</td>
+          <td class="value"><%=@tourney.end_date %></td>
+        </tr>
+        <tr>
+          <td class="subject">Owner:</td>
+          <td class="value"><%=@tourney.user.username %></td>
+        </tr>
+        <tr>
+          <td class="subject">Schedule:</td>
+          <td class="value"><%=@tourney.schedule %></td>
+        </tr>
+        <tr>
+          <td class="subject">Prize:</td>
+          <td class="value"><%=@tourney.prize %></td>
+        </tr>
+        <tr>
+          <td class="subject">Price:</td>
+          <td class="value"><%=@tourney.price %></td>
+        </tr>
+        <tr>
+          <td class="subject">Email:</td>
+          <td class="value"><%=@tourney.mail %></td>
+        </tr>
+        <tr>
+          <td class="subject">Phone:</td>
+          <td class="value"><%=@tourney.phone %></td>
+        </tr>
+        <tr>
+          <td class="subject">Forum:</td>
+          <td class="value"><%= link_to 'Go', foro_path(@foro) %></td>
+        </tr>
+      </table>
+  </div>
+  <div class="right" id="tabla">        
+    <h1>Teams</h1>
+    <br>
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Trainer</th>
+          <th>Foundation Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tourney.teams.each do |team| %>
+          <tr data-link="<%= team_path(team) %>">
+            <td><%= team.name %></td>
+            <td><%= team.trainer %></td>
+            <td><%= team.foundation_date %></td>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    <h2>Add team to tourney:</h2>
+    <br>
+    <div style="text-align: center;">
+      <%= form_for(@tourney, url: tourney_add_team_path(@tourney), method: "post") do %>
+        <%= select_tag(:team_id, options_from_collection_for_select(Team.all.collect, :id, :name)) %>
+        <%= submit_tag("Add") %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>
 <% if current_user and current_user.id? %>
   <% if current_user.id == @tourney.user.id %>
   <div class="container" style="width: 45px; height: 45px; margin:0 auto;">
