@@ -6,19 +6,6 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <div id="user-bar">
-        <% if current_user %>
-          <div class="name" style="color: black;">
-            Welcome, <%= current_user.username %>
-          </div>
-          <%= link_to 'Logout', session_path, method: :delete, class: 'buttonl'%>
-          <%= link_to 'Profile', user_path(current_user.id), class: 'buttonl'%>
-        <% else %>
-          <%= link_to 'Login', new_session_path, class: 'buttonl' %>
-          <%= link_to 'Sign up', new_user_path, class: 'buttonl' %>
-        <% end %>
-	 </div>
   </head>
   <body>
      <header>
@@ -64,6 +51,29 @@
         <li><a href="http://www.youtube.com" class="icon-youtube" target="_blank"></a></li>
       </ul>
     </div>
+    <div class="user-bar">
+      <ul>
+        <% if current_user %>
+          <li><%= link_to(user_path(current_user.id)) do %>
+            <div class="user-button" id="profile"> <%= current_user.username %></div>
+            <% end %>
+          </li>
+          <li><%= link_to(session_path, method: :delete) do %>
+            <div class="user-button" id="log">Logout</div>
+            <% end %>
+          </li>
+        <% else %>
+          <li><%= link_to(new_user_path) do %>
+            <div class="user-button" id="sign-up">Sign up</div>
+            <% end %>
+          </li>
+          <li><%= link_to(new_session_path) do %>
+            <div class="user-button" id="log">Login</div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+   </div>
 </body>
 
 </html>
