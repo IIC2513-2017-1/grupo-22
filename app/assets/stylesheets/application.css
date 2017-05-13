@@ -21,13 +21,34 @@
 }
 
 /* Arreglar links */
-a:visited {
+a, a:visited {
   color: grey;
+  outline: none;
 }
 
 a:hover {
   color: white;
   background-color: transparent;
+}
+
+/* Notificaciones */
+#notice {
+  background-color: #fff;
+  font-weight: bolder;
+  padding: 0px 10px;
+  margin: 1px;
+  border-radius: 10px;
+  border-bottom: 2px solid #FFD700;
+  border-top: 2px solid #FFD700;
+  border-left: 2px solid #FFD700;
+  border-right: 2px solid #FFD700;
+  text-align:center;
+}
+
+#error_explanation {
+  color: #000;
+  font-weight: bolder;
+  border-radius: 5px;
 }
 
 /* Generales */
@@ -75,6 +96,7 @@ main {
 h1, h2 {
   color: #FFD700;
   font-weight: bolder;
+  clear: both;
 }
 
 /* Botones generales, textarea y logo*/
@@ -122,7 +144,7 @@ h1, h2 {
 }
 
 .buttont:hover {
-    color: gray;
+    color: #000;
     background-color: transparent;
 }
 
@@ -468,7 +490,7 @@ a.back, a.back:hover{
 .user-bar{
   position: fixed;
   right:0;
-  top: 200px;
+  top: 150px;
   z-index: 2000;
 }
 
@@ -481,6 +503,7 @@ a.back, a.back:hover{
 .social ul li a {
   display: inline-block;
   color: #fff;
+  font-weight: bolder;
   padding:25px 35px;
   text-decoration: none;
   -moz-transition: all 0.3s ease-out;
@@ -542,13 +565,20 @@ a.back, a.back:hover{
   overflow: hidden;
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
+  border-left: 2px solid #000;
+  text-align: left;
+  padding-left: 10px;
 }
+
+.user-bar ul li .user-button span{
+  padding-right: 5px;
+  font-weight: bolder;
+ }
 
 .user-bar ul li .user-button#log {
   border-bottom-left-radius: 5px;
   border-bottom: 2px solid #000;
   border-left: 2px solid #000;
-  border-top: 1px solid #000;
 }
 
 .user-bar ul li .user-button#sign-up,
@@ -556,7 +586,6 @@ a.back, a.back:hover{
   border-top-left-radius: 5px;
   border-top: 2px solid #000;
   border-left: 2px solid #000;
-  border-bottom: 1px solid #000;
 }
 
 .user-bar ul li .user-button:hover{
@@ -566,6 +595,7 @@ a.back, a.back:hover{
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
 }
+
 
 /* barra usuario */
 .buttonl, .buttonl:visited{
