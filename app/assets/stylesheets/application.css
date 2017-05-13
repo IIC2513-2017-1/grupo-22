@@ -14,45 +14,24 @@
  *= require_self
  */
 
-* { 
-    -moz-box-sizing: border-box; 
-    -webkit-box-sizing: border-box; 
-     box-sizing: border-box; 
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+     box-sizing: border-box;
 }
 
 /* Arreglar links */
-a, a:visited {
-  color: #fff;
-  outline:none;
+a:visited {
+  color: grey;
 }
 
 a:hover {
-  color: #FFD700;
+  color: white;
   background-color: transparent;
 }
 
-/* Notificaciones */
-#notice {
-  background-color: #fff;
-  font-weight: bolder;
-  padding: 0px 10px;
-  margin: 1px;
-  border-radius: 10px;
-  border-bottom: 2px solid #FFD700;
-  border-top: 2px solid #FFD700;
-  border-left: 2px solid #FFD700;
-  border-right: 2px solid #FFD700;
-  text-align:center;
-}
-
-#error_explanation {
-  color: #000;
-  font-weight: bolder;
-  border-radius: 5px;
-}
-
-
 /* Generales */
+
 header {
     background-image: url('Fondo.jpg');
     border: 5px solid #FFD700;
@@ -96,11 +75,10 @@ main {
 h1, h2 {
   color: #FFD700;
   font-weight: bolder;
-  clear:both;
 }
 
 /* Botones generales, textarea y logo*/
-.logo, .logo:hover, .logo:active{    
+.logo, .logo:hover, .logo:active{
     text-decoration: none;
     border: none;
     background: none;
@@ -110,7 +88,7 @@ h1, h2 {
 
 .button,.button:visited{
     display:inline-block;
-    background-color: #FFD700; 
+    background-color: #FFD700;
     border: none;
     color: black;
     padding: 15px 50px;
@@ -123,7 +101,7 @@ h1, h2 {
 
 .button:hover, .button:visited:hover{
     display:inline-block;
-    background-color: black; 
+    background-color: black;
     border: none;
     color: #FFD700;
     padding: 15px 50px;
@@ -144,7 +122,7 @@ h1, h2 {
 }
 
 .buttont:hover {
-    color: #000;
+    color: gray;
     background-color: transparent;
 }
 
@@ -193,7 +171,7 @@ input[type='submit']:hover {
 }
 
 /* Efectos para botones edit, borrar y back */
-.cruzedit {    
+.cruzedit {
     text-align: center;
     display: block;
 }
@@ -253,13 +231,13 @@ a.back, a.back:hover{
 .tabla {
   border-collapse: collapse;
   width: 90%;
-  margin: 0 auto;  
+  margin: 0 auto;
   color: black;
 }
 
 .tabla tbody tr{
   display: table-row;
-  background: #f6f6f6;  
+  background: #f6f6f6;
 }
 
 .tabla tbody tr:hover{
@@ -281,9 +259,9 @@ a.back, a.back:hover{
 
 /* Efectos de las tablas perfil */
 .perfil{
-  width: 60%;  
+  width: 60%;
   margin:0 auto;
-  border-collapse: collapse; 
+  border-collapse: collapse;
   border-top: none;
   color: black;
 }
@@ -293,7 +271,7 @@ a.back, a.back:hover{
   text-align: center;
 }
 .perfil .subject{
-  background-color: black;  
+  background-color: black;
   color: #FFD700;
   font-weight: bolder;
   font-size: 18px;
@@ -302,7 +280,8 @@ a.back, a.back:hover{
   border-top: 1px solid #FFD700;
   border-bottom: 1px solid #FFD700;
 }
-.perfil .value{
+
+.perfil .value {
   background-color: #f6f6f6;  
   font-weight: bolder;
   border-top: 1px solid #ddd;
@@ -312,9 +291,9 @@ a.back, a.back:hover{
 /* Efectos de las tablas perfil torneos */
 
 .perfil-torneo{
-  width: 90%;  
+  width: 90%;
   margin:0 auto;
-  border-collapse: collapse; 
+  border-collapse: collapse;
   border-top: none;
   color: black;
 }
@@ -324,7 +303,7 @@ a.back, a.back:hover{
   text-align: center;
 }
 .perfil-torneo .subject{
-  background-color: black;  
+  background-color: black;
   color: #FFD700;
   font-weight: bolder;
   font-size: 16px;
@@ -334,7 +313,7 @@ a.back, a.back:hover{
   border-bottom: 1px solid #FFD700;
 }
 .perfil-torneo .value {
-  background-color: #f6f6f6;  
+  background-color: #f6f6f6;
   font-weight: bolder;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -431,17 +410,16 @@ a.back, a.back:hover{
 .left {
   flex-basis:60%;
 }
-
 .right {
   flex-basis: 40%;
 }
 
 .info {
-  margin-l: 40px;
+  margin-left: 40px;
 }
 
 .comment, .topic {
-    border-bottom: 2px solid gray; 
+    border-bottom: 2px solid gray;
  }
 
 /* Para show torneos */
@@ -490,7 +468,7 @@ a.back, a.back:hover{
 .user-bar{
   position: fixed;
   right:0;
-  top: 150px;
+  top: 200px;
   z-index: 2000;
 }
 
@@ -505,7 +483,6 @@ a.back, a.back:hover{
   color: #fff;
   padding:25px 35px;
   text-decoration: none;
-  font-weight: bolder;
   -moz-transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -517,7 +494,7 @@ a.back, a.back:hover{
 }
 
 .social ul li a.icon-twitter {
-  background-color: #00abf0; 
+  background-color: #00abf0;
 }
 
 .social ul li a.icon-twitch {
@@ -565,26 +542,21 @@ a.back, a.back:hover{
   overflow: hidden;
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
-  border-left: 2px solid #000;
-  text-align: left;
-  padding-left: 10px;
-}
-
-.user-bar ul li .user-button span{
-  padding-right: 5px;
-  font-weight: bolder;
 }
 
 .user-bar ul li .user-button#log {
   border-bottom-left-radius: 5px;
   border-bottom: 2px solid #000;
   border-left: 2px solid #000;
+  border-top: 1px solid #000;
 }
 
 .user-bar ul li .user-button#sign-up,
 .user-bar ul li .user-button#profile {
   border-top-left-radius: 5px;
   border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  border-bottom: 1px solid #000;
 }
 
 .user-bar ul li .user-button:hover{
@@ -593,4 +565,29 @@ a.back, a.back:hover{
   width: 125px;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
+}
+
+/* barra usuario */
+.buttonl, .buttonl:visited{
+    background-color: #FFD700;
+    border: none;
+    color: black;
+    text-decoration: none;
+    padding: 5px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bolder;
+}
+
+.buttonl:hover, .buttonl:visited:hover{
+    background-color: black;
+    border: none;
+    color: #FFD700;
+    text-decoration: none;
+    padding: 5px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bolder;
 }

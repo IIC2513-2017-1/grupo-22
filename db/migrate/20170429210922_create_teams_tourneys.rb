@@ -5,4 +5,5 @@ class CreateTeamsTourneys < ActiveRecord::Migration[5.0]
       t.belongs_to :tourney, index: true
     end
   end
+  add_index :teams_tourneys, [:team_id, :tourney_id], unique: true
 end

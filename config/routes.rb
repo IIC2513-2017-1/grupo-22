@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :tourneys do
-    post "add_team"
+    #post "add_team"
     resources :matches
+    resources :participants, only: [:create, :destroy]
   end
 
   resources :teams do
