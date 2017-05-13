@@ -302,7 +302,7 @@ a.back, a.back:hover{
   border-top: 1px solid #FFD700;
   border-bottom: 1px solid #FFD700;
 }
-.perfil .value {
+.perfil .value{
   background-color: #f6f6f6;  
   font-weight: bolder;
   border-top: 1px solid #ddd;
@@ -338,6 +338,17 @@ a.back, a.back:hover{
   font-weight: bolder;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
+}
+
+.value#cell-link a{
+  color: black;
+  padding:0;
+  text-decoration: none;
+}
+
+.value#cell-link:hover {
+  background-color: #FFD700;
+  color: #000;
 }
 
 /* Efectos para listas */

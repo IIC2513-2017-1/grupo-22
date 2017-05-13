@@ -57,7 +57,11 @@
         </tr>
         <tr>
           <td class="subject">Forum:</td>
-          <td class="value"><%= link_to 'Go', foro_path(@foro), style:"color:#000;" %></td>
+          <td class="value" id="cell-link"> 
+            <%= link_to(foro_path(@foro)) do %>
+              <div style="width: 100%; height: 100%;">Go</div>
+            <% end %>
+          </td>
         </tr>
       </table>
   </div>

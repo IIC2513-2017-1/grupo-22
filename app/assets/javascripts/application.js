@@ -21,6 +21,8 @@ jQuery(function($) {
     });
 });
 
+
+
 $(window).load(function () {
 var fixmeTop = $('.fixme').offset().top;
 $(window).scroll(function() {
