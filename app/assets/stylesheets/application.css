@@ -20,12 +20,13 @@
      box-sizing: border-box;
 }
 
-a:visited {
-  color: grey;
+/* Arreglar links */
+a, a:visited {
+  color:white;
 }
 
 a:hover {
-  color: white;
+  color: #FFD700;
   background-color: transparent;
 }
 
@@ -68,10 +69,6 @@ main {
 #project{
     text-align: center;
     color: black;
-}
-
-.alert {
-  color: red;
 }
 
 /* Titulos */

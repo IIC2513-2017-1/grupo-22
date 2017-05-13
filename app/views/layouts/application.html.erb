@@ -15,23 +15,23 @@
 	  <div id=titulo>
 	  	   <%= link_to 'CreaTuLiga', root_path, class: 'buttont' %>
 	  </div>
-	  <p></p>
-      <nav id="main-menu">
-        <%= link_to 'Users', users_path, class: 'button' %>
-        <%= link_to 'Teams', teams_path, class: 'button' %>
-        <%= link_to 'Tourneys', tourneys_path, class: 'button' %>
-        <%= link_to 'Forums', foros_path, class: 'button' %>
-        <%= link_to 'Matches', root_path, class: 'button' %>
-      </nav>
-      <div style="height: 5px; clear: left;"></div>
+	  <br>
+    <nav id="main-menu">
+      <%= link_to 'Users', users_path, class: 'button' %>
+      <%= link_to 'Teams', teams_path, class: 'button' %>
+      <%= link_to 'Tourneys', tourneys_path, class: 'button' %>
+      <%= link_to 'Forums', foros_path, class: 'button' %>
+      <%= link_to 'Matches', root_path, class: 'button' %>
+    </nav>
+    <div style="height: 5px; clear: left;"></div>
     </header>
     <main>
-      <% [:alert, :notice].each do |flash_type| %>
-        <% if (flash_message = flash[flash_type]).present? %>
-          <div class="<%= flash_type %>" id=notice style="font-weight: bolder;"><%= flash_message %></div>
-        <% end %>
+    <% [:alert, :notice].each do |flash_type| %>
+      <% if (flash_message = flash[flash_type]).present? %>
+        <div class="<%= flash_type %>" id=notice><%= flash_message %></div>
       <% end %>
-      <%= yield %>
+    <% end %>
+    <%= yield %>
     </main>
     <footer>
       <br>
@@ -55,20 +55,28 @@
       <ul>
         <% if current_user %>
           <li><%= link_to(user_path(current_user.id)) do %>
-            <div class="user-button icon-user" id="profile"> <%= current_user.username %></div>
+            <div class="user-button" id="profile"><span class=icon-user></span> <%= current_user.username %></div>
+            <% end %>
+          </li>
+          <li><%= link_to(new_tourney_path) do %>
+            <div class="user-button"><span class=icon-plus></span>Tourney</div>
+            <% end %>
+          </li>
+          <li><%= link_to(new_team_path) do %>
+            <div class="user-button"><span class=icon-plus></span>Team</div>
             <% end %>
           </li>
           <li><%= link_to(session_path, method: :delete) do %>
-            <div class="user-button" id="log">Logout</div>
+            <div class="user-button" id="log"><span class=icon-logout></span>Logout</div>
             <% end %>
           </li>
         <% else %>
           <li><%= link_to(new_user_path) do %>
-            <div class="user-button" id="sign-up">Sign up</div>
+            <div class="user-button" id="sign-up"><span class=icon-sign-up></span>Sign up</div>
             <% end %>
           </li>
           <li><%= link_to(new_session_path) do %>
-            <div class="user-button" id="log">Login</div>
+            <div class="user-button" id="log"><span class=icon-login></span>Login</div>
             <% end %>
           </li>
         <% end %>
