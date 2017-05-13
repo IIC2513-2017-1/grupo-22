@@ -75,16 +75,26 @@
         <thead>
           <tr>
             <th>Name</th>
-            <th>Trainer</th>
+            <th>Format</th>
+            <th>Perfil</th>
             <th>Foro</th>
           </tr>
         </thead>
         <tbody>
           <% @user.tourneys.each do |tourney| %>
-            <tr data-link="<%= team_path(tourney) %>">
+            <tr id="no-link"  data-link="<%= tourney_path(tourney) %>">
               <td><%= tourney.name %></td>
               <td><%= tourney.format %></td>
-              <td><%= link_to 'Go', foro_path(tourney.foro) %></td>
+              <td class="value" id="cell-link">
+                <%= link_to(tourney_path(tourney)) do %>
+                  <span class="icon-go2" style="margin-right: 5px;"></span>Go
+                <% end %>                
+              </td>
+              <td class="value" id="cell-link">
+                <%= link_to(foro_path(tourney.foro)) do %>
+                  <span class="icon-go2" style="margin-right: 5px;"></span>Go
+                <% end %>
+              </td>
             </tr>
           <% end %>
         </tbody>

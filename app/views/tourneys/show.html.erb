@@ -59,7 +59,7 @@
           <td class="subject">Forum:</td>
           <td class="value" id="cell-link"> 
             <%= link_to(foro_path(@foro)) do %>
-              <div style="width: 100%; height: 100%;">Go</div>
+              <span class="icon-go2" style="margin-right: 5px;"></span>Go
             <% end %>
           </td>
         </tr>
@@ -73,7 +73,7 @@
         <tr>
           <th>Name</th>
           <th>Trainer</th>
-          <th>Foundation Date</th>
+          <th>Perfil</th>
           <% if current_user and current_user.id? %>
           <% if current_user.id == @tourney.user.id %>
             <th colspan="1"></th>
@@ -83,14 +83,22 @@
       </thead>
       <tbody>
         <% @tourney.teams.each do |team| %>
-          <tr>
+          <tr id="no-link">
             <td><%= team.name %></td>
             <td><%= team.trainer %></td>
-            <td><%= team.foundation_date %></td>
+            <td class="value" id="cell-link">
+              <%= link_to(team_path(team)) do %>
+                <span class="icon-go2" style="margin-right: 5px;"></span>Go
+              <% end %>
+            </td>
             <% if current_user and current_user.id? %>
             <% if current_user.id == @tourney.user.id %>
             <% team_id = team.id %>
-            <td><%= link_to 'Quitar', tourney_participant_path(@tourney, team_id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td class="value" id="cell-link"> 
+                <%= link_to(tourney_participant_path(@tourney, team_id),method: :delete, data: { confirm: 'Are you sure?' }) do %>
+                  <span class="icon-go2" style="margin-right: 5px;"></span>Remove
+                <% end %>
+            </td>
             <% end %>
             <% end %>
           </tr>

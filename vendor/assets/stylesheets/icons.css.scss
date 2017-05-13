@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'social';
-  src:  font-url('social.eot?acpk9');
-  src:  font-url('social.eot?acpk9#iefix') format('embedded-opentype'),
-    font-url('social.ttf?acpk9') format('truetype'),
-    font-url('social.woff?acpk9') format('woff'),
-    font-url('social.svg?acpk9#social') format('svg');
+  src:  font-url('social.eot?p5yr5c');
+  src:  font-url('social.eot?p5yr5c#iefix') format('embedded-opentype'),
+    font-url('social.ttf?p5yr5c') format('truetype'),
+    font-url('social.woff?p5yr5c') format('woff'),
+    font-url('social.svg?p5yr5c#social') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-go:before {
+  content: "\e922";
+}
 .icon-sign-up:before {
   content: "\e956";
 }
@@ -47,6 +50,9 @@
 }
 .icon-user:before {
   content: "\eaf2";
+}
+.icon-go2:before {
+  content: "\ebc3";
 }
 .icon-google-plus:before {
   content: "\ec0c";
