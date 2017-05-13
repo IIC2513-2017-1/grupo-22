@@ -22,7 +22,8 @@
 
 /* Arreglar links */
 a, a:visited {
-  color:white;
+  color: #fff;
+  outline:none;
 }
 
 a:hover {
@@ -30,8 +31,28 @@ a:hover {
   background-color: transparent;
 }
 
-/* Generales */
+/* Notificaciones */
+#notice {
+  background-color: #fff;
+  font-weight: bolder;
+  padding: 0px 10px;
+  margin: 1px;
+  border-radius: 10px;
+  border-bottom: 2px solid #FFD700;
+  border-top: 2px solid #FFD700;
+  border-left: 2px solid #FFD700;
+  border-right: 2px solid #FFD700;
+  text-align:center;
+}
 
+#error_explanation {
+  color: #000;
+  font-weight: bolder;
+  border-radius: 5px;
+}
+
+
+/* Generales */
 header {
     background-image: url('Fondo.jpg');
     border: 5px solid #FFD700;
@@ -75,6 +96,7 @@ main {
 h1, h2 {
   color: #FFD700;
   font-weight: bolder;
+  clear:both;
 }
 
 /* Botones generales, textarea y logo*/
@@ -122,7 +144,7 @@ h1, h2 {
 }
 
 .buttont:hover {
-    color: gray;
+    color: #000;
     background-color: transparent;
 }
 
@@ -398,12 +420,13 @@ a.back, a.back:hover{
 .left {
   flex-basis:60%;
 }
+
 .right {
   flex-basis: 40%;
 }
 
 .info {
-  margin-left: 40px;
+  margin-l: 40px;
 }
 
 .comment, .topic {
@@ -456,7 +479,7 @@ a.back, a.back:hover{
 .user-bar{
   position: fixed;
   right:0;
-  top: 200px;
+  top: 150px;
   z-index: 2000;
 }
 
@@ -471,6 +494,7 @@ a.back, a.back:hover{
   color: #fff;
   padding:25px 35px;
   text-decoration: none;
+  font-weight: bolder;
   -moz-transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -530,21 +554,26 @@ a.back, a.back:hover{
   overflow: hidden;
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
+  border-left: 2px solid #000;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.user-bar ul li .user-button span{
+  padding-right: 5px;
+  font-weight: bolder;
 }
 
 .user-bar ul li .user-button#log {
   border-bottom-left-radius: 5px;
   border-bottom: 2px solid #000;
   border-left: 2px solid #000;
-  border-top: 1px solid #000;
 }
 
 .user-bar ul li .user-button#sign-up,
 .user-bar ul li .user-button#profile {
   border-top-left-radius: 5px;
   border-top: 2px solid #000;
-  border-left: 2px solid #000;
-  border-bottom: 1px solid #000;
 }
 
 .user-bar ul li .user-button:hover{
@@ -553,29 +582,4 @@ a.back, a.back:hover{
   width: 125px;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
-}
-
-/* barra usuario */
-.buttonl, .buttonl:visited{
-    background-color: #FFD700;
-    border: none;
-    color: black;
-    text-decoration: none;
-    padding: 5px 15px;
-    text-align: center;
-    display: inline-block;
-    font-size: 10px;
-    font-weight: bolder;
-}
-
-.buttonl:hover, .buttonl:visited:hover{
-    background-color: black;
-    border: none;
-    color: #FFD700;
-    text-decoration: none;
-    padding: 5px 15px;
-    text-align: center;
-    display: inline-block;
-    font-size: 10px;
-    font-weight: bolder;
 }
