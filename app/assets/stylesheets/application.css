@@ -21,12 +21,12 @@
 }
 
 /* Arreglar links */
-a, a:visited {
-  color:white;
+a:visited {
+  color: grey;
 }
 
 a:hover {
-  color: #FFD700;
+  color: white;
   background-color: transparent;
 }
 
