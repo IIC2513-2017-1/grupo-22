@@ -14,19 +14,18 @@
  *= require_self
  */
 
-* { 
-    -moz-box-sizing: border-box; 
-    -webkit-box-sizing: border-box; 
-     box-sizing: border-box; 
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+     box-sizing: border-box;
 }
 
-/* Arreglar links */
-a, a:visited {
-  color:white;
+a:visited {
+  color: grey;
 }
 
 a:hover {
-  color: #FFD700;
+  color: white;
   background-color: transparent;
 }
 
@@ -71,6 +70,10 @@ main {
     color: black;
 }
 
+.alert {
+  color: red;
+}
+
 /* Titulos */
 h1, h2 {
   color: #FFD700;
@@ -78,7 +81,7 @@ h1, h2 {
 }
 
 /* Botones generales, textarea y logo*/
-.logo, .logo:hover, .logo:active{    
+.logo, .logo:hover, .logo:active{
     text-decoration: none;
     border: none;
     background: none;
@@ -88,7 +91,7 @@ h1, h2 {
 
 .button,.button:visited{
     display:inline-block;
-    background-color: #FFD700; 
+    background-color: #FFD700;
     border: none;
     color: black;
     padding: 15px 50px;
@@ -101,7 +104,7 @@ h1, h2 {
 
 .button:hover, .button:visited:hover{
     display:inline-block;
-    background-color: black; 
+    background-color: black;
     border: none;
     color: #FFD700;
     padding: 15px 50px;
@@ -171,7 +174,7 @@ input[type='submit']:hover {
 }
 
 /* Efectos para botones edit, borrar y back */
-.cruzedit {    
+.cruzedit {
     text-align: center;
     display: block;
 }
@@ -231,13 +234,13 @@ a.back, a.back:hover{
 .tabla {
   border-collapse: collapse;
   width: 90%;
-  margin: 0 auto;  
+  margin: 0 auto;
   color: black;
 }
 
 .tabla tbody tr{
   display: table-row;
-  background: #f6f6f6;  
+  background: #f6f6f6;
 }
 
 .tabla tbody tr:hover{
@@ -259,9 +262,9 @@ a.back, a.back:hover{
 
 /* Efectos de las tablas perfil */
 .perfil{
-  width: 60%;  
+  width: 60%;
   margin:0 auto;
-  border-collapse: collapse; 
+  border-collapse: collapse;
   border-top: none;
   color: black;
 }
@@ -271,7 +274,7 @@ a.back, a.back:hover{
   text-align: center;
 }
 .perfil .subject{
-  background-color: black;  
+  background-color: black;
   color: #FFD700;
   font-weight: bolder;
   font-size: 18px;
@@ -281,7 +284,7 @@ a.back, a.back:hover{
   border-bottom: 1px solid #FFD700;
 }
 .perfil .value {
-  background-color: #f6f6f6;  
+  background-color: #f6f6f6;
   font-weight: bolder;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -290,9 +293,9 @@ a.back, a.back:hover{
 /* Efectos de las tablas perfil torneos */
 
 .perfil-torneo{
-  width: 90%;  
+  width: 90%;
   margin:0 auto;
-  border-collapse: collapse; 
+  border-collapse: collapse;
   border-top: none;
   color: black;
 }
@@ -302,7 +305,7 @@ a.back, a.back:hover{
   text-align: center;
 }
 .perfil-torneo .subject{
-  background-color: black;  
+  background-color: black;
   color: #FFD700;
   font-weight: bolder;
   font-size: 16px;
@@ -312,7 +315,7 @@ a.back, a.back:hover{
   border-bottom: 1px solid #FFD700;
 }
 .perfil-torneo .value {
-  background-color: #f6f6f6;  
+  background-color: #f6f6f6;
   font-weight: bolder;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -407,7 +410,7 @@ a.back, a.back:hover{
 }
 
 .comment, .topic {
-    border-bottom: 2px solid gray; 
+    border-bottom: 2px solid gray;
  }
 
 /* Para show torneos */
@@ -482,7 +485,7 @@ a.back, a.back:hover{
 }
 
 .social ul li a.icon-twitter {
-  background-color: #00abf0; 
+  background-color: #00abf0;
 }
 
 .social ul li a.icon-twitch {

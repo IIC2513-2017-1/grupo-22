@@ -2,16 +2,16 @@ class Tourney < ApplicationRecord
   validates :mail, presence: true, allow_blank: false,format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates :name, presence: true, allow_blank: false
   validates :format, inclusion: { in: %w(Playoffs Torneo), message: "%{value} no es un formato válido" }
-  validates :description, presence: true, allow_blank: false 
-  validates :location, presence: true, allow_blank: false 
-  validates :price, presence: true, allow_blank: false 
-  validates :prize, presence: true, allow_blank: false 
-  validates :phone, presence: true, allow_blank: false 
+  validates :description, presence: true, allow_blank: false
+  validates :location, presence: true, allow_blank: false
+  validates :price, presence: true, allow_blank: false
+  validates :prize, presence: true, allow_blank: false
+  validates :phone, presence: true, allow_blank: false
   validates :schedule, presence: true, allow_blank: false
   validate  :validate_end_date_before_start_date
 
   belongs_to :user
-  has_and_belongs_to_many :teams
+  has_and_belongs_to_many :teams,  uniqueness: true
   has_many :requests
   has_many :matches
   has_one :foro, dependent: :destroy
