@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'social';
-  src:  font-url('social.eot?hf7slw');
-  src:  font-url('social.eot?hf7slw#iefix') format('embedded-opentype'),
-    font-url('social.ttf?hf7slw') format('truetype'),
-    font-url('social.woff?hf7slw') format('woff'),
-    font-url('social.svg?hf7slw#social') format('svg');
+  src:  font-url('social.eot?lme6a7');
+  src:  font-url('social.eot?lme6a7#iefix') format('embedded-opentype'),
+    font-url('social.ttf?lme6a7') format('truetype'),
+    font-url('social.woff?lme6a7') format('woff'),
+    font-url('social.svg?lme6a7#social') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -32,6 +32,9 @@
 }
 .icon-soundcloud:before {
   content: "\ec44";
+}
+.icon-user:before {
+  content: "\eaf2";
 }
 .icon-google-plus:before {
   content: "\ec0c";
