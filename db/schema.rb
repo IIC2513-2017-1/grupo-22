@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20170511024438) do
   create_table "teams_tourneys", id: false, force: :cascade do |t|
     t.integer "team_id"
     t.integer "tourney_id"
+    t.index ["team_id", "tourney_id"], name: "index_teams_tourneys_on_team_id_and_tourney_id", unique: true, using: :btree
     t.index ["team_id"], name: "index_teams_tourneys_on_team_id", using: :btree
     t.index ["tourney_id"], name: "index_teams_tourneys_on_tourney_id", using: :btree
   end

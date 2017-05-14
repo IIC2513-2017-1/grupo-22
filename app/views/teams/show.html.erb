@@ -42,9 +42,10 @@
     <tr>
       <th>ID</th>
       <th>Name</th>
+      <th colspan="1"></th>
       <% if current_user%>
         <% if current_user.id == @team.user.id %>
-            <th colspan="3"></th>
+            <th colspan="2"></th>
         <% end %>
       <% end %>
     </tr>
@@ -54,13 +55,13 @@
       <tr id="no-link">
         <td><%= player.id %></td>
         <td><%= player.full_name %></td>
+        <td class="value" id="cell-link">
+          <%= link_to(team_player_path(@team,player)) do %>
+            <span class="icon-go2" style="margin-right: 5px;"></span>Go
+          <% end %>
+        </td>
         <% if current_user%>
           <% if current_user.id == @team.user.id %>
-            <td class="value" id="cell-link">
-              <%= link_to(team_player_path(@team,player)) do %>
-                <span class="icon-go2" style="margin-right: 5px;"></span>Go
-              <% end %>
-            </td>
             <td class="value" id="cell-link">
               <%= link_to(edit_team_player_path(@team,player)) do %>
                 <span class="icon-go2" style="margin-right: 5px;"></span>Edit
