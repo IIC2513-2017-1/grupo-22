@@ -60,7 +60,7 @@
 <div class="fixme">
 	<p>
 	<% if current_user and current_user.id? %>
-		<h1 style="text-align: center">Create topic as  <%= current_user.username %></h1>
+		<h1 style="text-align: center">Create topic</h1>
 		<%= form_for([@foro, @foro.topics.build]) do |f| %>
 		 <p style="text-align: center;">
 		    <%= f.text_field :title, placeholder:"Tittle", style:"width: 300px;" %>

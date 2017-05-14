@@ -64,6 +64,17 @@
           </td>
         </tr>
       </table>
+      <br>
+      <% if current_user and current_user.id? %>
+        <% if current_user.id == @tourney.user.id %>
+        <div class="container" style="width: 45px; height: 45px; margin:0 auto;">
+          <%= link_to image_tag("Edit.png", size: "45x45"), edit_tourney_path(@tourney), class: 'cruzedit' %>
+          <div class="overlay2">
+              <div class="text"><%= link_to "EDIT", edit_tourney_path(@tourney)%></div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
   </div>
   <div class="right" id="tabla">
     <h1 style="margin-left: 30px;">Teams</h1>
@@ -122,59 +133,47 @@
       <% end %>
       <% end %>
     <% end %>
-
-    <!-- TABLA DE PARTIDOS -->
-    <div class="right" id="tabla">
-      <h1 style="margin-left: 30px;">Partidos</h1>
-      <br>
-      <table class="tabla">
-        <thead>
-          <tr>
-            <th>DATE</th>
-            <th>HOME</th>
-            <th>AWAY</th>
-            <th colspan="1"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @tourney.matches.each do |match| %>
-            <tr id="no-link">
-              <td><%= match.date %></td>
-              <td><%= match.home_team.name %></td>
-              <td><%= match.away_team.name %></td>
-              <td class="value" id="cell-link">
-                  <%= link_to(tourney_match_path(@tourney, match),
-                  method: :delete, data: { confirm: 'Are you sure?' }) do %>
-                    <span class="icon-go2" style="margin-right: 5px;"></span>Remove
-                  <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
     <br>
+    <!-- TABLA DE PARTIDOS -->
+    <h1 style="margin-left: 30px;">Partidos</h1>
+    <br>
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>DATE</th>
+          <th>HOME</th>
+          <th>AWAY</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tourney.matches.each do |match| %>
+          <tr id="no-link">
+            <td><%= match.date %></td>
+            <td><%= match.home_team.name %></td>
+            <td><%= match.away_team.name %></td>
+            <td class="value" id="cell-link">
+                <%= link_to(tourney_match_path(@tourney, match),
+                method: :delete, data: { confirm: 'Are you sure?' }) do %>
+                  <span class="icon-go2" style="margin-right: 5px;"></span>Remove
+                <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    <% if current_user and current_user.id? %>
+      <% if current_user.id == @tourney.user.id %>
+        <% if @tourney.teams.length > 1 %>
+        <%= render 'matches/form' %>
+        <% end %>
+      <% end %>
+    <% end %>
+
   </div>
 </div>
 <br>
-
-<% if current_user and current_user.id? %>
-  <% if current_user.id == @tourney.user.id %>
-  <div class="container" style="width: 45px; height: 45px; margin:0 auto;">
-    <%= link_to image_tag("Edit.png", size: "45x45"), edit_tourney_path(@tourney), class: 'cruzedit' %>
-    <div class="overlay2">
-        <div class="text"><%= link_to "EDIT", edit_tourney_path(@tourney)%></div>
-    </div>
-  </div>
-
-  <% if @tourney.teams.length > 1 %>
-  <%= render 'matches/form' %>
-  <% end %>
-  <div>
-
-  </div>
-  <% end %>
-<% end %>
 <div class="container" style="width: 45px; height: 45px;">
   <%= link_to image_tag("Back2.png", size: "45x45"), tourneys_path, class: 'back' %>
   <div class="overlay">
