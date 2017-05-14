@@ -18,7 +18,11 @@ class ParticipantsController < ApplicationController
   private
 
   def set_ids
-    @team = Team.find(params[:team_id])
+    if params.has_key?(:team_id)
+      @team = Team.find(params[:team_id])
+    else
+      @team = Team.find(params[:id])
+    end
     @tourney = Tourney.find(params[:tourney_id])
   end
 

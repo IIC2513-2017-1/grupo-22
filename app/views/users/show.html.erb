@@ -17,10 +17,6 @@
     <td class="subject">Username:</td>
     <td class="value"><%=@user.username%></td>
   </tr>
-  <tr>
-    <td class="subject">Password:</td>
-    <td class="value"><%=@user.password%></td>
-  </tr>
 </table>
 <br>
 <% if current_user %>
@@ -35,7 +31,7 @@
 <% end %>
 <br>
 <div class="container-flex">
-  <div class="left" id="tabla">        
+  <div class="left" id="tabla">
       <h1 style="margin-left: 30px;">Teams</h1>
       <br>
       <table class="tabla">
@@ -57,8 +53,8 @@
         </tbody>
       </table>
       <br>
-      <% if current_user and current_user.id? %> 
-        <% if current_user.id == @user.id %> 
+      <% if current_user and current_user.id? %>
+        <% if current_user.id == @user.id %>
           <div class="container" style="width: 45px; height: 45px; margin: 0 auto;">
             <%= link_to image_tag("Add4.png", size: "45x45"), new_team_path, class: 'back' %>
             <div class="overlay">
@@ -68,7 +64,7 @@
         <% end %>
       <% end %>
   </div>
-  <div class="right" id="tabla">        
+  <div class="right" id="tabla">
       <h1 style="margin-left: 30px;"">Tourneys</h1>
       <br>
       <table class="tabla">
@@ -88,7 +84,7 @@
               <td class="value" id="cell-link">
                 <%= link_to(tourney_path(tourney)) do %>
                   <span class="icon-go2" style="margin-right: 5px;"></span>Go
-                <% end %>                
+                <% end %>
               </td>
               <td class="value" id="cell-link">
                 <%= link_to(foro_path(tourney.foro)) do %>
@@ -100,8 +96,8 @@
         </tbody>
       </table>
       <br>
-        <% if current_user and current_user.id? %>  
-          <% if current_user.id == @user.id %> 
+        <% if current_user and current_user.id? %>
+          <% if current_user.id == @user.id %>
 
             <div class="container" style="width: 45px; height: 45px; margin: 0 auto;">
                 <%= link_to image_tag("Add4.png", size: "45x45"), new_tourney_path, class: 'back' %>
