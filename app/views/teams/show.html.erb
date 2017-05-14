@@ -42,17 +42,37 @@
     <tr>
       <th>ID</th>
       <th>Name</th>
-      <th colspan="3"></th>
+      <% if current_user%>
+        <% if current_user.id == @team.user.id %>
+            <th colspan="3"></th>
+        <% end %>
+      <% end %>
     </tr>
   </thead>
   <tbody>
     <% @team.players.each do |player| %>
-      <tr data-link="<%= team_player_path(@team, player)%>">
+      <tr id="no-link">
         <td><%= player.id %></td>
         <td><%= player.full_name %></td>
-        <td><%= link_to 'Show', [player.team, player] %></td>
-        <td><%= link_to 'Edit', [:edit, player.team, player] %></td>
-        <td><%= link_to 'Destroy', [player.team, player], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user%>
+          <% if current_user.id == @team.user.id %>
+            <td class="value" id="cell-link">
+              <%= link_to(team_player_path(@team,player)) do %>
+                <span class="icon-go2" style="margin-right: 5px;"></span>Go
+              <% end %>
+            </td>
+            <td class="value" id="cell-link">
+              <%= link_to(edit_team_player_path(@team,player)) do %>
+                <span class="icon-go2" style="margin-right: 5px;"></span>Edit
+              <% end %>
+            </td>
+            <td class="value" id="cell-link">
+              <%= link_to(team_player_path(@team,player), method: :delete, data: { confirm: 'Are you sure?' }) do %>
+                <span class="icon-go2" style="margin-right: 5px;"></span>Remove
+              <% end %>
+            </td>
+          <% end %>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

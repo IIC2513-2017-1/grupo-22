@@ -3,6 +3,7 @@
 <table class="tabla">
   <thead>
     <tr>
+      <th colspan="1"></th>
       <th>Name</th>
       <th>Format</th>
       <th>Inscription limit date</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @tourneys.each do |tourney| %>
       <tr data-link="<%= tourney_path(tourney) %>">
+        <td><span class="icon-go2"></span></td>
         <td><%= tourney.name %></td>
         <td><%= tourney.format %></td>
         <td><%= tourney.inscription_limit_date %></td>

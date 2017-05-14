@@ -15,7 +15,9 @@
 		<div class="topic">
 			<p>
 			<strong>Titulo:</strong>
-			<%= link_to t.title, [t.foro,t] %>
+			<%= link_to(topic_path(t)) do %>
+        <span class="icon-go2" style="margin-right: 5px;"></span><%= t.title %>
+      <% end %>
 			</p>
 			<p>
 			<strong>Description:</strong>
@@ -61,7 +63,7 @@
 		<h1 style="text-align: center">Create topic as  <%= current_user.username %></h1>
 		<%= form_for([@foro, @foro.topics.build]) do |f| %>
 		 <p style="text-align: center;">
-		    <%= f.text_field :title, placeholder:"Tittle", style:"width: 290px;" %>
+		    <%= f.text_field :title, placeholder:"Tittle", style:"width: 300px;" %>
 		  </p>
 		  <p style="text-align: center;">
 		    <%= f.text_area :content, placeholder:"Content" %>

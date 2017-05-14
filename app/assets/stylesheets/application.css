@@ -15,15 +15,17 @@
  */
 
 * {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-     box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 /* Arreglar links */
 a, a:visited {
-  color: grey;
+  color: #FFD700;
   outline: none;
+  text-decoration: none;
+  font-weight: bolder;
 }
 
 a:hover {
@@ -54,7 +56,7 @@ a:hover {
 /* Generales */
 
 header {
-    background-image: url('Fondo.jpg');
+    background-image: url('Fondo2.jpg');
     border: 5px solid #FFD700;
     border-bottom: none;
     border-top-right-radius: 15px;
@@ -69,7 +71,7 @@ body, head{
 }
 
 main {
-  background-image: url('Fondo.jpg');
+  background-image: url('Fondo2.jpg');
   padding: 10px;
   border: 5px solid #FFD700;
   border-bottom-right-radius: 15px;
@@ -144,7 +146,7 @@ h1, h2 {
 }
 
 .buttont:hover {
-    color: #000;
+    color: #fff;
     background-color: transparent;
 }
 
@@ -424,7 +426,7 @@ a.back, a.back:hover{
 /* tambien para visualización de topics y comentarios */
 .fixme {
   position: absolute;
-  top: 425px;
+  top: 400px;
   right: 12%;
 }
 .container-flex{

@@ -3,7 +3,7 @@
 <table class="tabla">
   <thead>
     <tr>
-      <th>ID</th>
+      <th colspan="1"></th>
       <th>Full name</th>
       <th>Email</th>
       <th>Username</th>
@@ -13,7 +13,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr data-link="<%= user_path(user)%>">
-        <td><%= user.id %></td>
+        <td><span class="icon-go2"></span></td>
         <td><%= user.full_name %></td>
         <td><%= user.email %></td>
         <td><%= user.username %></td>
