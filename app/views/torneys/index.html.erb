@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th colspan="1"></th>
       <th>Name</th>
       <th>Description</th>
       <th>Format</th>
@@ -15,10 +16,10 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @tourneys.each do |tourney| %>
       <tr>
+        <td><span class="icon-go2"></span></td>
         <td><%= tourney.name %></td>
         <td><%= tourney.description %></td>
         <td><%= tourney.format %></td>

@@ -3,6 +3,6 @@ class Foro < ApplicationRecord
   validates :description, presence: true
 
   belongs_to :tourney
-  has_many :topics
+  has_many :topics, dependent: :destroy
 
 end

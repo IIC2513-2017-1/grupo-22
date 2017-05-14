@@ -22,8 +22,10 @@
 
 /* Arreglar links */
 a, a:visited {
-  color: grey;
+  color: #FFD700;
   outline: none;
+  text-decoration: none;
+  font-weight: bolder;
 }
 
 a:hover {

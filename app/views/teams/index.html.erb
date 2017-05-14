@@ -3,7 +3,7 @@
 <table class="tabla">
   <thead>
     <tr>
-      <th>ID</th>
+      <th colspan="1"></th>
       <th>Name</th>
       <th>Description</th>
       <th>Logo</th>
@@ -15,7 +15,7 @@
   <tbody>
     <% @teams.each do |team| %>
       <tr data-link="<%= team_path(team)%>">
-        <td><%= team.id %></td>
+        <td><span class="icon-go2"></span></td>
         <td><%= team.name %></td>
         <td><%= team.description %></td>
         <td><%= team.logo %></td>
