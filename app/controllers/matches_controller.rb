@@ -1,6 +1,10 @@
 class MatchesController < ApplicationController
   before_action :set_tourney, only: [:new, :create, :destroy]
   before_action :set_match, only: [:show, :edit, :update, :destroy]
+  before_action :set_tourneys, only: [:index]
+
+  def index
+  end
 
   def create
     @match = @tourney.matches.create(match_params)
@@ -19,6 +23,10 @@ class MatchesController < ApplicationController
 
   def set_tourney
     @tourney = Tourney.find(params[:tourney_id])
+  end
+
+  def set_tourneys
+    @tourneys = Tourney.all 
   end
 
   def match_params

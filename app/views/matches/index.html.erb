@@ -1,0 +1,37 @@
+<h1> Partidos </h1>
+<br>
+<% @tourneys.each do |tourney|%>
+	<% if tourney.matches.length > 0 %>
+		<div style="width: 80%;margin: 0 auto;">
+			<%= link_to(tourney_path(tourney)) do %>
+				<h2><span class="icon-go2" style="margin-right: 5px;"></span>Liga <%= tourney.name %></h2>
+			<% end %>
+		<table class="tabla">
+		  <thead>
+		    <th>Home Team </th>
+		    <th>Away Team </th>
+		    <th>Date</th>
+		   </thead>
+			<tbody>
+			<% tourney.matches.each do |match|  %>
+				<tr id="no-link">
+				<td class="value" id="cell-link">
+					<%= link_to(team_path(match.home_team)) do %>
+						<span class="icon-go2" style="margin-right: 5px;"></span><%= match.home_team.name %>
+					<% end %>
+				</td>
+				<td class="value" id="cell-link">
+					<%= link_to(team_path(match.away_team)) do %>
+						<span class="icon-go2" style="margin-right: 5px;"></span><%= match.away_team.name %>
+					<% end %>
+				</td></td>
+				<td><%= match.date %></td>
+				</tr>
+			<% end %>			
+			</tbody>
+		</table>
+		<br>
+		<hr>
+	  </div>
+	<% end %>
+<% end %>
