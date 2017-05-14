@@ -1,7 +1,7 @@
 # README
 
 ## LINK A APLICACIÓN
-https://powerful-fortress-71202.herokuapp.com/
+https://arcane-fortress-16941.herokuapp.com/
 
 ## Notas
 * Solo se implementó las entidades básicas por cuestiones de tiempo
