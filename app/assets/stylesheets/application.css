@@ -602,28 +602,17 @@ a.back, a.back:hover{
   border-top-left-radius: 5px;
 }
 
-
-/* barra usuario */
-.buttonl, .buttonl:visited{
-    background-color: #FFD700;
-    border: none;
-    color: black;
-    text-decoration: none;
-    padding: 5px 15px;
-    text-align: center;
-    display: inline-block;
-    font-size: 10px;
-    font-weight: bolder;
-}
-
-.buttonl:hover, .buttonl:visited:hover{
-    background-color: black;
-    border: none;
-    color: #FFD700;
-    text-decoration: none;
-    padding: 5px 15px;
-    text-align: center;
-    display: inline-block;
-    font-size: 10px;
-    font-weight: bolder;
+/* boton de volver arriba */
+.go-up{
+  display: none;
+  padding: 20px;
+  background: #FFD700;
+  font-size: 25px;
+  font-weight: bold;
+  color: #000;
+  cursor:pointer;
+  position: fixed;
+  border-radius: 5px;
+  bottom:0;
+  right:0px;
 }

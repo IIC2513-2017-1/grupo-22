@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'social';
-  src:  font-url('social.eot?p5yr5c');
-  src:  font-url('social.eot?p5yr5c#iefix') format('embedded-opentype'),
-    font-url('social.ttf?p5yr5c') format('truetype'),
-    font-url('social.woff?p5yr5c') format('woff'),
-    font-url('social.svg?p5yr5c#social') format('svg');
+  src:  font-url('social.eot?kbgji2');
+  src:  font-url('social.eot?kbgji2#iefix') format('embedded-opentype'),
+    font-url('social.ttf?kbgji2') format('truetype'),
+    font-url('social.woff?kbgji2') format('woff'),
+    font-url('social.svg?kbgji2#social') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,6 +26,9 @@
 
 .icon-go:before {
   content: "\e922";
+}
+.icon-up:before {
+  content: "\e92a";
 }
 .icon-sign-up:before {
   content: "\e956";

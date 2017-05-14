@@ -15,6 +15,7 @@
 // require turbolinks
 //= require_tree .
 
+/* funciones para creacion de topics y comentarios movil*/
 jQuery(function($) {
 
     $("tr[data-link]").click(function() {
@@ -22,7 +23,6 @@ jQuery(function($) {
     });
 
 });
-
 
 $(window).load(function () {
 var fixmeTop = $('.fixme').offset().top;
@@ -42,4 +42,23 @@ $(window).scroll(function() {
         });
     }
 });
+});
+
+/* Animacion boton subir */
+$(document).ready(function(){
+
+    $('.go-up').click(function(){
+        $('body, html').animate({
+            scrollTop: '0px'
+        }, 300);
+    });
+
+    $(window).scroll(function(){
+        if($(this).scrollTop() > 0){
+            $('.go-up').slideDown(300);
+        } else{
+            $('.go-up').slideUp(300);
+        }
+    });
+
 });
