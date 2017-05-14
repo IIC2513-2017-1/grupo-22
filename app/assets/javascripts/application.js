@@ -37,7 +37,7 @@ $(window).scroll(function() {
     } else {
         $('.fixme').css({
         	position: 'absolute',
-            top: '425px',
+            top: '400px',
             right: '12%'
         });
     }
