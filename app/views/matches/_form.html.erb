@@ -1,4 +1,5 @@
 <%= form_for([@tourney, @tourney.matches.build]) do |f| %>
+
   <p>
     <%= f.label :home_team_id %>
     <%= f.select :home_team_id,

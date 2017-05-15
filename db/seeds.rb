@@ -5,9 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Eliminemos todo lo que había antes
 User.destroy_all
 Team.destroy_all
 Tourney.destroy_all
+Match.destroy_all
 Foro.destroy_all
 Player.destroy_all
 
@@ -36,7 +39,7 @@ email: "bibubop@uc.com", password: "123")
 Tourney.create(name: "Test", description: 'Description', format: 'Torneo',
 location: Faker::Address.street_address,
 inscription_limit_date: Faker::Date.between(25.days.ago, 20.days.ago),
-start_date: Faker::Date.between(20.days.ago, 15.days.ago), end_date: Faker::Date.backward(7),
+start_date: Faker::Date.between(20.days.ago, 15.days.ago), end_date: Date.new(2017, 5, 14),
 user_id: User.find_by(username: "ROBerto").id,
 mail: Faker::Internet.email, price: '0', prize: 'Happiness (?)',phone: '7777777-0',
 schedule: Faker::Time.between(DateTime.now - 1, DateTime.now))
@@ -64,6 +67,7 @@ email: "CaptainTsubasa@shonenjump.jp",
 ocupation: "Student",
 team_id: Team.find_by(name: "Supercampeones").id)
 
-4.times do
-  Tourney.first.teams << Team.all.sample
-end
+Tourney.first.teams << Team.all[0..3]
+
+Match.create(date: Date.new(2017, 5, 14), home_team_id: Tourney.first.teams.first.id,
+away_team_id: Tourney.first.teams.second.id, tourney_id: Tourney.first.id)

@@ -8,12 +8,16 @@ class MatchesController < ApplicationController
 
   def create
     @match = @tourney.matches.create(match_params)
-    redirect_to tourney_path(@tourney)
+    if @match.save
+      redirect_to tourney_path(@tourney), notice: "¡Partido agregado al torneo!"
+    else
+      redirect_to tourney_path(@tourney), alert: "No se puede realizar ese partido"
+    end
   end
 
   def destroy
     @match.delete
-    redirect_to tourney_path(@tourney), notice: "Partido borrado del torneo"
+    redirect_to tourney_path(@tourney), notice: "Partido eliminado del torneo"
   end
 
   private
@@ -26,7 +30,7 @@ class MatchesController < ApplicationController
   end
 
   def set_tourneys
-    @tourneys = Tourney.all 
+    @tourneys = Tourney.all
   end
 
   def match_params
