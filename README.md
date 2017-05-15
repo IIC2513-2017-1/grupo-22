@@ -28,7 +28,7 @@ https://arcane-fortress-16941.herokuapp.com/
 * Implementar las funcionalidades de los request
   * Funcionalidad de correos
 * Mejorar vistas de perfiles de usuario
-* Agregar también posibilidad de subit fotos de jugadores y logos en equipos y torneos
+* Agregar también posibilidad de subir fotos de jugadores y logos en equipos y torneos
 * Pulir y optimizar los HTML y consultas a base de datos
 * Agregar tablas de posiciones y brackets
 * Definir modo de implementar resultados, actualización de tablas y brackets y clausura de torneos terminados.
