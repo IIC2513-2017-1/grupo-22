@@ -15,7 +15,7 @@ https://arcane-fortress-16941.herokuapp.com/
 * Login, Log-out, Sign up, perfil de usuario y barra de de usuarios.
   * Encriptación de contraseñas
 * Diferenciación de funcionalidades por tipo de usuario.
-* Se agregó la posibilidad de subir imagen de perfil a usuarios registrados, caso contrario se muestra foto generíca.
+* Se agregó la posibilidad de subir imagen de perfil a usuarios registrados, caso contrario se muestra foto genérica.
 
 ## Notas
 * Se cambió el link de la aplicación, al que está indicado al principio de este archivo.
