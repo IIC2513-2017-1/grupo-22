@@ -56,7 +56,7 @@ a:hover {
 /* Generales */
 
 header {
-    background-image: url('Fondo2.jpg');
+    background-image: url('Fondo.jpg');
     border: 5px solid #FFD700;
     border-bottom: none;
     border-top-right-radius: 15px;
@@ -71,7 +71,7 @@ body, head{
 }
 
 main {
-  background-image: url('Fondo2.jpg');
+  background-image: url('Fondo.jpg');
   padding: 10px;
   border: 5px solid #FFD700;
   border-bottom-right-radius: 15px;
@@ -615,4 +615,25 @@ a.back, a.back:hover{
   border-radius: 5px;
   bottom:0;
   right:0px;
+}
+
+/* Edit match container*/
+
+.container-edit-match {
+  width: 600px; 
+  margin: 0 auto; 
+  padding:10px;
+  border-radius: 5px;
+  border: 5px solid #FFD700;
+  background: #000;
+}
+
+.container-edit-match .attr {
+  border-radius: 5px;
+  border: 5px solid #FFD700;
+  background: #FFD700;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
 }

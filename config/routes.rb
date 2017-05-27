@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :tourneys do
-    resources :matches, only: [:create, :destroy]
+    resources :matches, only: [:create, :destroy, :edit]
     resources :participants, only: [:create, :destroy]
   end
 
@@ -28,9 +28,11 @@ Rails.application.routes.draw do
 
   resources :requests
 
+
+  resources :matches
+
   resource :session, only: [:new, :create, :destroy]
 
-  resources :matches, only: [:index]
 
   match '*path' => redirect('/'), via: :get
 end

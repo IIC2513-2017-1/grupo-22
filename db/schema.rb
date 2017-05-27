@@ -35,11 +35,15 @@ ActiveRecord::Schema.define(version: 20170511024438) do
   end
 
   create_table "matches", force: :cascade do |t|
-    t.integer  "home_team_id", null: false
-    t.integer  "away_team_id", null: false
+    t.integer  "home_team_id",                 null: false
+    t.integer  "away_team_id",                 null: false
     t.date     "date"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.boolean  "played",       default: false
+    t.integer  "home_goals",   default: 0
+    t.integer  "away_goals",   default: 0
+    t.string   "winner"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.integer  "tourney_id"
     t.index ["away_team_id"], name: "index_matches_on_away_team_id", using: :btree
     t.index ["home_team_id", "away_team_id"], name: "index_matches_on_home_team_id_and_away_team_id", using: :btree

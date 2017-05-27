@@ -15,6 +15,17 @@ class MatchesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @match.update(match_params)
+    if @match.played
+      set_winner()
+    end
+    redirect_to tourney_path(@match.tourney), notice: "¡Updated result!"
+  end
+
   def destroy
     @match.delete
     redirect_to tourney_path(@tourney), notice: "Partido eliminado del torneo"
@@ -34,6 +45,16 @@ class MatchesController < ApplicationController
   end
 
   def match_params
-    params.require(:match).permit(:home_team_id, :away_team_id, :date)
+    params.require(:match).permit(:home_team_id, :away_team_id, :date, :played,:home_goals, :away_goals, :winner)
+  end
+
+  def set_winner
+    if @match.home_goals > @match.away_goals
+      @match.update(winner: @match.home_team.name)
+    elsif @match.home_goals < @match.away_goals
+      @match.update(winner: @match.away_team.name)
+    else
+      @match.update(winner: "draw")
+    end
   end
 end

@@ -4,6 +4,10 @@ class CreateMatches < ActiveRecord::Migration[5.0]
       t.integer 'home_team_id', null: false
       t.integer 'away_team_id', null: false
       t.date :date
+      t.boolean :played, :default => false
+      t.integer :home_goals, :default => 0
+      t.integer :away_goals, :default => 0
+      t.string :winner
 
       t.timestamps
 
