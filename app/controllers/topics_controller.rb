@@ -7,12 +7,15 @@ class TopicsController < ApplicationController
 
   def new
     @topic = Topic.new
-  end	
+  end
 
   def create
     @foro = Foro.find(params[:foro_id])
     @topic = @foro.topics.create(topic_params)
     @topic.update(user_id: current_user.id)
+    if @topic.save
+      TopicMailer.new_topic_email(@topic).deliver_later
+    end
     redirect_to foro_path(@foro)
   end
 
@@ -28,7 +31,7 @@ class TopicsController < ApplicationController
     @topic.destroy
     redirect_to(:back)
   end
- 
+
   private
     def set_topic
       @topic = Topic.find(params[:id])

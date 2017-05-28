@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3><%= @owner.username %></h3>
+    <p>
+      Te informamos que el usuario <%= @user.username %> ha creado el topico
+      <%= @topic.title %> en el foro de tu torneo <%= @tourney.name %>
+    </p>
+    <p>
+      Para chequearlo, haz click en siguiente link: <%= @url %>.
+    </p>
+    <p>Saludos,</p>
+    <p>CreaTuLiga<p>
+  </body>
+</html>
