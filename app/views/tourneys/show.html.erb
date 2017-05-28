@@ -1,4 +1,4 @@
-  <div class="container-flex">
+<div class="container-flex">
   <div class="left" id="info">
     <h1>Tourney</h1>
     <br>
@@ -193,164 +193,15 @@
 
 <!-- TABLA POSICIONES -->
 <% if @tourney.format == 'Torneo' %>
-  <% positions = Hash.new %>
-  <% @tourney.teams.each do |team| %>
-    <% positions[team.name] = 0 %>
-  <% end %>
-  <% @tourney.matches.each do |match| %>
-    <% if match.played == true %>
-      <% if match.winner == 'draw' %>
-        <% positions[match.home_team.name] += 1 %>
-        <% positions[match.away_team.name] += 1 %>
-      <% else %>
-        <% positions[match.winner] += 3 %>
-      <% end %>
-    <% end %>
-  <% end %>
-  <% positions = positions.sort_by {|_key, value| -value} %>
-  <h1 style="margin-left: 30px;">Posiciones</h1>
-  <br>
-  <table class="tabla">
-    <thead>
-      <tr>
-        <th>Position</th>
-        <th>Team</th>
-        <th>Points</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% i = 0 %>
-      <% pos = 1 %>
-      <% positions.each do |position| %>
-        <tr id="no-link">
-          <td><%= pos %></td>
-          <td><%= position[0]%></td>
-          <td><%= position[1]%></td>
-        </tr>
-        <% if i+1 < positions.length%>
-          <% if positions[i][1] > positions[i+1][1] %>
-            <% pos += 1 %>
-          <% end %>
-        <% end %>
-      <% i += 1%>
-      <% end %>
-    </tbody>
-  </table>
+  <%= render 'position_table' %>
 <% end %>
 
 <!-- TABLA RESULTADOS -->
-<h1 style="margin-left: 30px;">Resultados</h1>
-<br>
-<table class="tabla">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Home</th>
-      <th>Score</th>
-      <th>AWAY</th>
-      <th>Winner</th>
-      <% if current_user and current_user.id? %>
-      <% if current_user.id == @tourney.user.id %>
-      <th colspan="1"></th>
-      <% end %>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody>
-    <% @tourney.matches.each do |match| %>
-      <tr id="no-link">
-      <% if match.home_team.present? and match.played %>
-        <td><%= match.date %></td>
-        <td><%= match.home_team.name %></td>
-        <td><%= '%s : %s' % [match.home_goals, match.away_goals]  %></td>
-        <td><%= match.away_team.name %></td>
-        <td><%= match.winner %></td>
-        <% if current_user and current_user.id? %>
-        <% if current_user.id == @tourney.user.id %>
-          <td class="value" id="cell-link">
-            <%= link_to(edit_tourney_match_path(@tourney, match)) do %>
-              <span class="icon-go2" style="margin-right: 5px;"></span>Edit
-            <% end %>
-          </td>
-        <% end %>
-        <% end %>
-      <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
+<%= render 'results' %>
 
+<!-- Brackets -->
 <% if @tourney.format == 'Playoffs' %>
-  <!-- Brackets -->
-  <h1 style="margin-left: 30px;">Brackets</h1>
-
-  <div id="tournament">
-    <ul class="round round-1">
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">A1 <span>0</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">A2 <span>0</span></li>
-
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">A3 <span>0</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">A4 <span>0</span></li>
-
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top ">A5 <span>0</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom winner">A6 <span>0</span></li>
-
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">A7 <span>0</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">A8 <span>0</span></li>
-
-      <li class="spacer">&nbsp;</li>
-
-    </ul>
-    <ul class="round round-2">
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">B1 <span>0</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">B2 <span>0</span></li>
-
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">B3 <span>0</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">B4 <span>0</span></li>
-
-      <li class="spacer">&nbsp;</li>
-
-    </ul>
-    <ul class="round round-3">
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">C1 <span>0</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">C2 <span>0</span></li>
-
-      <li class="spacer">&nbsp;</li>
-
-    </ul>
-    <ul class="round round-">
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">D1 </li>
-
-      <li class="spacer">&nbsp;</li>
-
-    </ul>
-
-
-  </div>
+  <%= render 'brackets' %>
 <% end %>
 
 <div class="container" style="width: 45px; height: 45px;">

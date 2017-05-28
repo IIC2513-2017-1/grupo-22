@@ -4,6 +4,9 @@ class ParticipantsController < ApplicationController
   def create
     unless @tourney.teams.exists?(@team.id)
       @tourney.teams << @team
+      #if @tourney.format == 'Torneo'
+      #  @tourney.ranking.create_association(atributes = {team_id: @team.id, points: 0})
+      #end
       redirect_to tourney_path(@tourney), notice: "Equipo agregado al torneo"
     else
       redirect_to tourney_path(@tourney), alert: "Equipo ya en el torneo"

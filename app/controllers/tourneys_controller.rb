@@ -35,6 +35,7 @@ class TourneysController < ApplicationController
       if @tourney.save
         foro = Foro.create({:title => "Foro de " + @tourney.name, :description => "Descripcion del foro de " + @tourney.name})
         @tourney.foro = foro
+        #@tourney.ranking = Ranking.create()
         format.html { redirect_to @tourney, notice: 'Tourney was successfully created.' }
         format.json { render :show, status: :created, location: @tourney }
       else
@@ -67,7 +68,7 @@ class TourneysController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

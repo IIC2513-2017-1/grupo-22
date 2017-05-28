@@ -49,12 +49,17 @@ class MatchesController < ApplicationController
   end
 
   def set_winner
+    #@ranking = @match.tourney.ranking
     if @match.home_goals > @match.away_goals
       @match.update(winner: @match.home_team.name)
+      #@ranking.find(@match.home_team) += 3
     elsif @match.home_goals < @match.away_goals
       @match.update(winner: @match.away_team.name)
+      #@ranking.find(@match.away_team) += 3
     else
       @match.update(winner: "draw")
+      #@ranking.find(@match.home_team) += 1
+      #@ranking.find(@match.away_team) += 1
     end
   end
 end

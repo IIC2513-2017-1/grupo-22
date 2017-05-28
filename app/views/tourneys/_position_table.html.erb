@@ -1,0 +1,43 @@
+<% positions = Hash.new %>
+<% @tourney.teams.each do |team| %>
+  <% positions[team.name] = 0 %>
+<% end %>
+<% @tourney.matches.each do |match| %>
+  <% if match.played == true %>
+    <% if match.winner == 'draw' %>
+      <% positions[match.home_team.name] += 1 %>
+      <% positions[match.away_team.name] += 1 %>
+    <% else %>
+      <% positions[match.winner] += 3 %>
+    <% end %>
+  <% end %>
+<% end %>
+<% positions = positions.sort_by {|_key, value| -value} %>
+<h1 style="margin-left: 30px;">Posiciones</h1>
+<br>
+<table class="tabla">
+  <thead>
+    <tr>
+      <th>Position</th>
+      <th>Team</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% i = 0 %>
+    <% pos = 1 %>
+    <% positions.each do |position| %>
+      <tr id="no-link">
+        <td><%= pos %></td>
+        <td><%= position[0]%></td>
+        <td><%= position[1]%></td>
+      </tr>
+      <% if i+1 < positions.length%>
+        <% if positions[i][1] > positions[i+1][1] %>
+          <% pos += 1 %>
+        <% end %>
+      <% end %>
+    <% i += 1%>
+    <% end %>
+  </tbody>
+</table>
