@@ -1,5 +1,5 @@
 class MatchesController < ApplicationController
-  before_action :set_tourney, only: [:new, :create, :destroy]
+  before_action :set_tourney, only: [:new, :create, :destroy, :edit]
   before_action :set_match, only: [:show, :edit, :update, :destroy]
   before_action :set_tourneys, only: [:index]
 
@@ -22,6 +22,8 @@ class MatchesController < ApplicationController
     @match.update(match_params)
     if @match.played
       set_winner()
+    else
+      @match.update(winner: nil, home_goals:0, away_goals:0)
     end
     redirect_to tourney_path(@match.tourney), notice: "¡Updated result!"
   end
@@ -45,7 +47,7 @@ class MatchesController < ApplicationController
   end
 
   def match_params
-    params.require(:match).permit(:home_team_id, :away_team_id, :date, :played,:home_goals, :away_goals, :winner)
+    params.require(:match).permit(:home_team_id, :away_team_id, :date, :played,:home_goals, :away_goals, :winner, :bracket_code)
   end
 
   def set_winner
@@ -57,9 +59,9 @@ class MatchesController < ApplicationController
       @match.update(winner: @match.away_team.name)
       #@ranking.find(@match.away_team) += 3
     else
-      @match.update(winner: "draw")
-      #@ranking.find(@match.home_team) += 1
-      #@ranking.find(@match.away_team) += 1
-    end
+      if not @match.tourney.format == "Playoffs"
+        @match.update(winner: "draw")
+      end
+    end  
   end
 end

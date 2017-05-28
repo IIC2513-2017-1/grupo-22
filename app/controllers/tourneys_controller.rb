@@ -1,5 +1,6 @@
 class TourneysController < ApplicationController
   before_action :set_tourney, only: [:show, :edit, :update, :destroy]
+  before_action :set_brackets, only: [:show]
 
   def create_email
      Email.create!(:account => email)
@@ -75,6 +76,18 @@ class TourneysController < ApplicationController
     def set_tourney
       @tourney = Tourney.find(params[:id])
       @foro = @tourney.foro
+    end
+
+    def set_brackets
+      if @tourney.format == 'Playoffs'
+        brackets = Hash.new('no_match')
+        @tourney.matches.each do |m|
+          if m.bracket_code.present?
+            brackets[m.bracket_code] = m
+          end
+        end
+        @brackets = brackets
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

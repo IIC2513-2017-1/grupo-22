@@ -1,0 +1,113 @@
+<%= form_for match do |m| %>
+<div class="container-edit-match"">
+	<br>
+	<div class="attr">
+			Played: 
+	</div>
+	<br>
+	<div style="text-align: center;">
+		<%= m.select(:played, [true, false]) %>
+	</div>
+	<br>
+	<br>
+	<div class="attr">
+			Score: 
+	</div>
+	<br>
+	<div style="text-align: center;">
+		<%= match.home_team.name %>
+		<%= m.select :home_goals, ((0..100).map {|i| [i,i] } << ["No limit",nil]) %>
+		<%= m.select :away_goals, ((0..100).map {|i| [i,i] } << ["No limit",nil]) %>
+		<%= match.away_team.name %>
+	</div>
+	<br>
+	<br>
+	<div class="attr">
+			Winner of penalties (in case of tie): 
+	</div>
+	<br>
+	<div style="text-align: center;">
+		<%= m.select( :winner, [nil, match.home_team.name, match.away_team.name], :selected => nil) %>
+	</div>
+	<br>
+	<br>
+	<div class="attr">
+			Bracket code: 
+	</div>
+	<br>
+	<div style="text-align: center;">
+		<%= m.select(:bracket_code,  ['A1', 'A2', 'A3', 'A4', 'B1', 'B2', 'C1']) %>
+	</div>
+	<br>
+	<p>
+  	<div class="actions" style="text-align: center;">
+      <%= m.submit "Edit" , style:"border: 2px solid #FFD700;"%>
+    </div>
+  </p>
+</div>
+<% end %>
+<br>
+<h1>Brackets codes</h1>
+
+<div class="muestra" id="tournament">
+  <ul class="round round-1"><i>Quarter Finals</i>
+
+    <li class="spacer">&nbsp;</li>
+
+    <li class="game game-top winner">A1</li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom "></li>
+
+    <li class="spacer">&nbsp;</li>
+
+    <li class="game game-top winner">A2</li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom "><span></span></li>
+
+    <li class="spacer">&nbsp;</li>
+
+    <li class="game game-top winner">A3</li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom "></li>
+
+    <li class="spacer">&nbsp;</li>
+
+    <li class="game game-top winner">A4</li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom "></li>
+
+    <li class="spacer">&nbsp;</li>
+
+  </ul>
+  <ul class="round round-2"><i>Semi Finals</i>
+    <li class="spacer">&nbsp;</li>
+
+    <li class="game game-top winner">B1</li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom "></li>
+
+    <li class="spacer">&nbsp;</li>
+
+    <li class="game game-top winner">B3</li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom "></li>
+
+    <li class="spacer">&nbsp;</li>
+
+  </ul>
+  <ul class="round round-3"><i>Final</i>
+    <li class="spacer">&nbsp;</li>
+
+    <li class="game game-top winner">C1</li>
+    <li class="game game-spacer">&nbsp;</li>
+    <li class="game game-bottom "></li>
+
+    <li class="spacer">&nbsp;</li>
+
+  </ul>
+  <ul class="round round-"><i>Winner</i>
+    <li class="spacer">&nbsp;</li>
+    <li class="game game-top winner"></li>
+    <li class="spacer">&nbsp;</li>
+  </ul>
+</div>

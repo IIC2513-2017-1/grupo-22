@@ -1,14 +1,16 @@
 <%= form_for([@tourney, @tourney.matches.build]) do |f| %>
 
-  <p>
-    <%= f.label :home_team_id %>
-    <%= f.select :home_team_id,
-    @tourney.teams.collect { |team| [ team.name, team.id ] }, { include_blank: true }, { required: true } %>
-  </p>
-  <p>
-    <%= f.label :away_team_id %>
-    <%= f.select :away_team_id,
-    @tourney.teams.collect { |team| [ team.name, team.id ] }, { include_blank: true }, { required: true } %>
+  <div style="text-align: center;">
+    <div style="display:inline-block;">
+      <%= f.label :home_team_id %>
+      <%= f.select :home_team_id,
+      @tourney.teams.collect { |team| [ team.name, team.id ] }, { include_blank: true }, { required: true } %>
+    </div>
+    <div style="display:inline-block;">
+      <%= f.label :away_team_id %>
+      <%= f.select :away_team_id,
+      @tourney.teams.collect { |team| [ team.name, team.id ] }, { include_blank: true }, { required: true } %>
+      </div>
   </p>
   <p>
     <%= f.label :date %>
@@ -16,5 +18,5 @@
   </p>
   <p>
     <%= f.submit %>
-  </p>
+  </div>
 <% end %>

@@ -6,8 +6,11 @@
       <th>Date</th>
       <th>Home</th>
       <th>Score</th>
-      <th>AWAY</th>
+      <th>Away</th>
       <th>Winner</th>
+      <% if @tourney.format == 'Playoffs' %>
+      <th>Bracket Code</th>
+      <% end %>
       <% if current_user and current_user.id? %>
       <% if current_user.id == @tourney.user.id %>
       <th colspan="1"></th>
@@ -24,6 +27,9 @@
         <td><%= '%s : %s' % [match.home_goals, match.away_goals]  %></td>
         <td><%= match.away_team.name %></td>
         <td><%= match.winner %></td>
+        <% if @tourney.format == 'Playoffs' %>
+        <td><%= match.bracket_code %></td>
+        <% end %>
         <% if current_user and current_user.id? %>
         <% if current_user.id == @tourney.user.id %>
           <td class="value" id="cell-link">

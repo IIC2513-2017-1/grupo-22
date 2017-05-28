@@ -644,6 +644,12 @@ a.back, a.back:hover{
   display:flex;
   flex-direction:row;
 }
+
+.muestra#tournament{
+  display:flex;
+  flex-direction:row;
+  width: 1000px;
+}
 .round{
   display:flex;
   flex-direction:column;
