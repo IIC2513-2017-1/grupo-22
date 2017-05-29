@@ -6,7 +6,7 @@ class TopicMailer < ApplicationMailer
     @owner = @tourney.user
     @url = topics_url(@topic)
     if @owner.username != @user.username
-      mail(to: @owner.email, subject: 'Nuevo topic en torneo #{tourney.name}')
+      mail(to: @owner.email, subject: 'Nuevo topic en torneo #{@tourney.name}')
     end
   end
 end
