@@ -19,12 +19,13 @@ https://arcane-fortress-16941.herokuapp.com/
   * Los cambios son reversibles en caso necesario (setear partido con played: false).
   * Se deben crear también los partidos al avanzar de ronda para que se vean visualmente, no es automático.
   * El campeón se detecta automáticamente.
-* Envio de correo
+* Envío de correo
   * Al crear una cuenta (Sign Up)
   * Al momento de creación de un topic en un foro (se envía al dueño del torneo-foro)
+    * No se envia si el usuario que creó el topic es el dueño del torneo-foro.
 * Mayor diferenciación de funcionalidades por tipo de usuario.
 * Se agregó la posibilidad de subir imagen de perfil a usuarios registrados, caso contrario se muestra foto genérica.
-* Se extendieron las seeds según algunas de las funcionalidades agregadas.
+* Más instancias en las seeds para probar funcionalidades nuevas en playoffs y torneos.
 
 ## Notas
 * Al crear un partido en un torneo, solo se muestra un error genérico. No se logró trasladar los errores producidos en el controlador de matches para que se mostraran en el show del tourney.
