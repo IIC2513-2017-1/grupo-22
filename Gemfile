@@ -40,6 +40,8 @@ gem 'paperclip', '~> 5.1'
 
 gem 'seed_dump'
 
+gem 'figaro'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
