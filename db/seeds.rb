@@ -19,13 +19,13 @@ Player.destroy_all
   email: Faker::Internet.email, password: Faker::Internet.password)
 end
 
-8.times do
+12.times do
   Team.create(name: Faker::Team.name, description: 'Description',
   logo: 'logo.png', trainer: Faker::Name.name,
   foundation_date: Faker::Date.backward(30), user_id: User.all.pluck(:id).sample)
 end
 
-30.times do
+40.times do
   Player.create(full_name: Faker::Name.name,
   position: ['Arquero', 'Central', 'Lateral', 'Mediocampista', 'Delantero'].sample,
   email: Faker::Internet.email,
@@ -36,7 +36,7 @@ end
 User.create(full_name: "11100111", username: "ROBerto",
 email: "bibubop@uc.com", password: "123")
 
-Tourney.create(name: "Test", description: 'Description', format: 'Torneo',
+Tourney.create(name: "Liga con puntos", description: 'Description', format: 'Torneo',
 location: Faker::Address.street_address,
 inscription_limit_date: Faker::Date.between(25.days.ago, 20.days.ago),
 start_date: Faker::Date.between(20.days.ago, 15.days.ago), end_date: Date.new(2017, 5, 14),
@@ -44,13 +44,23 @@ user_id: User.find_by(username: "ROBerto").id,
 mail: Faker::Internet.email, price: '0', prize: 'Happiness (?)',phone: '7777777-0',
 schedule: Faker::Time.between(DateTime.now - 1, DateTime.now))
 
-Foro.create({:title => "Foro de Test", :description => "Descripcion del foro de Test", :tourney_id => Tourney.first.id})
+Tourney.create(name: "Torneo/brackets", description: 'Description', format: 'Playoffs',
+location: Faker::Address.street_address,
+inscription_limit_date: Faker::Date.between(25.days.ago, 20.days.ago),
+start_date: Faker::Date.between(20.days.ago, 15.days.ago), end_date: Date.new(2017, 5, 14),
+user_id: User.find_by(username: "ROBerto").id,
+mail: Faker::Internet.email, price: 'Your soul (?)', prize: 'Sorrow (?)', phone: '666666-0',
+schedule: Faker::Time.between(DateTime.now - 1, DateTime.now))
+
+Foro.create({:title => "Foro de Liga con puntos", :description => "Descripcion del foro de Liga con puntos", :tourney_id => Tourney.first.id})
+Foro.create({:title => "Foro de Torneo/brackets", :description => "Descripcion del foro de Torneo/brackets", :tourney_id => Tourney.second.id})
+
 
 Topic.create(title: "1 2 3 Probando...", content: "Tema de prueba",
 foro_id: Foro.first.id, user_id: User.find_by(username: "ROBerto").id)
 
-5.times do
-  Comment.create(user_id: User.all.pluck(:id).sample, topic_id: Topic.first.id,
+15.times do
+  Comment.create(user_id: User.all.pluck(:id).sample, topic_id: Topic.all.pluck(:id).sample,
   content: Faker::Lorem.sentence)
 end
 
@@ -68,6 +78,7 @@ ocupation: "Student",
 team_id: Team.find_by(name: "Supercampeones").id)
 
 Tourney.first.teams << Team.all[0..3]
+Tourney.second.teams << Team.all[4..11]
 
 Match.create(date: Date.new(2017, 5, 14), home_team_id: Tourney.first.teams.first.id,
 away_team_id: Tourney.first.teams.second.id, tourney_id: Tourney.first.id)
