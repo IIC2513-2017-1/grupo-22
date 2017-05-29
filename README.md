@@ -4,31 +4,37 @@
 https://arcane-fortress-16941.herokuapp.com/
 
 ## Cambios y mejoras en esta entrega
-* Diseño web implementado.
-* CRUD de foros, topics y comments
-  * Un foro asociado es creado automáticamente al crear un torneo.
-  * Cualquier usuario logeado puede crear topics/comentarios en un foro.
-* Create y destroy de participants (equipos en un torneo).
-  * Funcionalidad de agregar equipos a torneo exclusiva del creador del torneo, puede agregar los equipos que quiera.
-* Create, destroy e index de matches en un torneo, más las validaciones pertinentes.
-  * Errores génericos, ver notas.
-* Login, Log-out, Sign up, perfil de usuario y barra de de usuarios.
-  * Encriptación de contraseñas
-* Diferenciación de funcionalidades por tipo de usuario.
+* Diseño web con CSS más trabajado y pulido.
+* Mayor uso de partials en las vistas.
+* Funciones JS para algunos efectos.
+  * Creación topic y comentario móvil (permanece en pantalla)
+  * Botón inferior derecho para subir.
+* Implementación de resultados para partidos tanto en formato Torneo y Playoffs.
+  * Se crea partido, luego se le asigna un resultado.
+* Usuario adminitrador de torneo puede armar un calendario de partidos.
+* Para formato Torneo se implementó una tabla de posiciones.
+* Para formato Playoffs se crearon brackets (no dinámicos, para 8 equipos).
+  * Se debe crear un partido, luego editarlo para ubicarlo en los brackets con un código (explicados en la vista de edición),
+    y se setea como no jugado. Cuando se haya jugado se edita nuevamente cambiando el atributo played a true y completando la               información solicitada.
+  * Los cambios son reversibles en caso necesario (setear partido con played: false).
+  * Se deben crear también los partidos al avanzar de ronda para que se vean visualmente, no es automático.
+  * El campeón se detecta automáticamente.
+* Envio de correo
+  * Al crear una cuenta (Sign Up)
+  * Al momento de creación de un topic en un foro (se envía al dueño del torneo-foro)
+* Mayor diferenciación de funcionalidades por tipo de usuario.
 * Se agregó la posibilidad de subir imagen de perfil a usuarios registrados, caso contrario se muestra foto genérica.
+* Se extendieron las seeds según algunas de las funcionalidades agregadas.
 
 ## Notas
-* Se cambió el link de la aplicación, al que está indicado al principio de este archivo.
-* Seed.rb contiene varias instancias de usuarios (5 al azar + 1 especial), equipos (8 al azar +1 especial), jugadores (30 asignados al azar), un torneo, un partido, un foro, un topico (creados particularmente) y varios comentarios (al azar).
 * Al crear un partido en un torneo, solo se muestra un error genérico. No se logró trasladar los errores producidos en el controlador de matches para que se mostraran en el show del tourney.
 * La mayoría de las funciones están diferenciadas por el tipo de usuario (logeado y anónimo) y en general solo puede realziar cambios a las entidades que el usuario logeado en particular creó (es decir, un usuario logeado no puede hacer cambios a algo que pertenece a otro).
   * Es posible se haya pasado alguno por alto
   
-## TO-DO list
+## TO-DO/WISH list
 * Implementar las funcionalidades de los request
-  * Funcionalidad de correos
-* Mejorar vistas de perfiles de usuario
-* Agregar también posibilidad de subir fotos de jugadores y logos en equipos y torneos
-* Pulir y optimizar los HTML y consultas a base de datos
-* Agregar tablas de posiciones y brackets
-* Definir modo de implementar resultados, actualización de tablas y brackets y clausura de torneos terminados.
+* Seguir mejorando distintas vistas.
+* Ver posibilidad de brackets dinámicos.
+* Agregar también posibilidad de subir fotos de jugadores y logos en equipos y torneos (no sólo para usuarios)
+* Seguir Puliendo y optimizando los HTML y consultas a base de datos
+* Definir bien como será la clausura de torneos terminados.
