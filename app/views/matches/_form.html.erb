@@ -11,12 +11,12 @@
       <%= f.select :away_team_id,
       @tourney.teams.collect { |team| [ team.name, team.id ] }, { include_blank: true }, { required: true } %>
       </div>
-  </p>
-  <p>
-    <%= f.label :date %>
-    <%= f.date_select :date, required: true %>
-  </p>
-  <p>
-    <%= f.submit %>
+    <p>
+      <%= f.label :date %>
+      <%= f.date_select :date, required: true %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
   </div>
 <% end %>

@@ -21,12 +21,9 @@
 <br>
 <% if current_user %>
   <% if current_user.id == @user.id %>
-  <div class="container" style="width: 45px; height: 45px; margin:0 auto;">
-    <%= link_to image_tag("Edit.png", size: "45x45"), edit_user_path(@user), class: 'cruzedit' %>
-    <div class="overlay2">
-        <div class="text"><%= link_to "EDIT", edit_user_path(@user) %></div>
-    </div>
-  </div>
+    <%= link_to(edit_user_path(@user)) do %>
+      <div class="button-current edit centered"><span class=icon-pencil2></span></div>
+    <% end %>
   <% end %>
 <% end %>
 <br>

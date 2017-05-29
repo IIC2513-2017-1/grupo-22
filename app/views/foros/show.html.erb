@@ -14,44 +14,28 @@
 		<% @foro.topics.each do |t| %>
 		<div class="topic">
 			<p>
-			<strong>Titulo:</strong>
-			<%= link_to(topic_path(t)) do %>
-        <span class="icon-go2" style="margin-right: 5px;"></span><%= t.title %>
-      <% end %>
+				<strong>Titulo:</strong>
+				<%= link_to(topic_path(t)) do %>
+	        <span class="icon-go2" style="margin-right: 5px;"></span><%= t.title %>
+	      <% end %>
 			</p>
 			<p>
-			<strong>Description:</strong>
-			<%= t.content %>
+				<strong>Description:</strong>
+				<%= t.content %>
 			</p>
-			<table>
-				<tr>
-					<td style="padding-right:100px;">
-						<i style="color: gray;">
-						Created by <%= t.user.username %>
-						</i>
-					</td>
-					<% if current_user and current_user.id? %>
-						<% if current_user.id == t.user.id %>		
-							<td>
-							<div class="container">
-								<%= image_tag("Cruz.png", size: "45x45", class: 'cruzedit') %>
-		  						<div class="overlay">
-		    						<div class="text"><%= link_to "DELETE", topic_path(t), method: :delete, data: { confirm: 'Are you sure?' } %></div>
-		  						</div>
-							</div>
-							</td>
-							<td>
-							<div class="container">
-		  						<%= image_tag("Edit.png", size: "45x45", class: 'cruzedit') %>
-		  						<div class="overlay2">
-		    						<div class="text"><%= link_to "EDIT", edit_topic_path(t) %></div>
-		  						</div>
-							</div>
-							</td>
-						<% end %>
-					<% end %>
-				</tr>
-			</table>
+			<div class="creator">
+					Created by <%= t.user.username %>
+			</div>
+		  <% if current_user %>
+		  	<% if current_user.id == t.user.id %>
+		  		<%= link_to(edit_topic_path(t)) do %>
+          	<div class="button-current edit"><span class=icon-pencil2></span></div>
+          <% end %>
+          <%= link_to(edit_topic_path(t), method: :delete, data: { confirm: 'Are you sure?' }) do %>
+          	<div class="button-current delete"><span class=icon-trash></span></div>
+          <% end %>
+			<% end %>
+		<% end %>
 		</div>
 		<% end %>
 	</p>

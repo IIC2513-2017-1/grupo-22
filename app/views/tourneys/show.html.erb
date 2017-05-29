@@ -65,18 +65,14 @@
         </tr>
       </table>
       <br>
-      <!-- EDIT -->
-      <% if current_user and current_user.id? %>
-        <% if current_user.id == @tourney.user.id %>
-        <div class="container" style="width: 45px; height: 45px; margin:0 auto;">
-          <%= link_to image_tag("Edit.png", size: "45x45"), edit_tourney_path(@tourney), class: 'cruzedit' %>
-          <div class="overlay2">
-              <div class="text"><%= link_to "EDIT", edit_tourney_path(@tourney)%></div>
-          </div>
-        </div>
+    <!-- EDIT -->
+    <% if current_user %>
+      <% if current_user.id == @tourney.user.id %>
+        <%= link_to(edit_tourney_path(@tourney)) do %>
+          <div class="button-current edit centered"><span class=icon-pencil2></span></div>
         <% end %>
       <% end %>
-
+    <% end %>
   </div>
   <!-- EQUIPOS -->
   <div class="right" id="tabla">

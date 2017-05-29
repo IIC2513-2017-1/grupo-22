@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'social';
-  src:  font-url('social.eot?kbgji2');
-  src:  font-url('social.eot?kbgji2#iefix') format('embedded-opentype'),
-    font-url('social.ttf?kbgji2') format('truetype'),
-    font-url('social.woff?kbgji2') format('woff'),
-    font-url('social.svg?kbgji2#social') format('svg');
+  src:  font-url('social.eot?1xb0mk');
+  src:  font-url('social.eot?1xb0mk#iefix') format('embedded-opentype'),
+    font-url('social.ttf?1xb0mk') format('truetype'),
+    font-url('social.woff?1xb0mk') format('woff'),
+    font-url('social.svg?1xb0mk#social') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -30,6 +30,9 @@
 .icon-up:before {
   content: "\e92a";
 }
+.icon-trash:before {
+  content: "\e94e";
+}
 .icon-sign-up:before {
   content: "\e956";
 }
@@ -38,6 +41,9 @@
 }
 .icon-login:before {
   content: "\e9d5";
+}
+.icon-pencil:before {
+  content: "\e9f2";
 }
 .icon-plus:before {
   content: "\e9f6";
@@ -51,8 +57,20 @@
 .icon-soundcloud:before {
   content: "\ec44";
 }
+.icon-pencil2:before {
+  content: "\ea87";
+}
 .icon-user:before {
   content: "\eaf2";
+}
+.icon-trash2:before {
+  content: "\eb2e";
+}
+.icon-delete:before {
+  content: "\eb8e";
+}
+.icon-delete2:before {
+  content: "\eb90";
 }
 .icon-go2:before {
   content: "\ebc3";
@@ -69,4 +87,3 @@
 .icon-twitter:before {
   content: "\ec17";
 }
-
