@@ -1,44 +1,27 @@
 <div class="container-flex">
 	<div class="left">
 	  <h1> Topic </h1>
-	  	<p>
-	  	  <strong>Title:</strong>
-	  	  <%= @topic.title %>
-	  	</p>
-	  	<p>
-	  	  <strong>Description:</strong>
-	  	  <%= @topic.content %>
-	  	</p>
-	  	<h1>Comments</h1>
-	  	<% @topic.comments.each do |c| %>
-	  	<div class="comment">
-	  	  <p>
-	  	    <%= c.content %>
-	  	  </p>
-	  	  <div class="creator">
-    	  	Published by <%= c.user.username %>
-  			</div>
-  			<% if current_user %>
-			  	<% if current_user.id == c.user.id %>
-			  		<%= link_to(edit_topic_comment_path(@topic,c)) do %>
-	          	<div class="button-current edit"><span class=icon-pencil2></span></div>
-	          <% end %>
-	          <%= link_to(topic_comment_path(@topic,c), method: :delete, data: { confirm: 'Are you sure?' }) do %>
-	          	<div class="button-current delete"><span class=icon-trash></span></div>
-	          <% end %>
-					<% end %>
-				<% end %>
-		</div>	
-		<% end %>
+  	<p>
+  	  <strong>Title:</strong>
+  	  <%= @topic.title %>
+  	</p>
+  	<p>
+  	  <strong>Description:</strong>
+  	  <%= @topic.content %>
+  	</p>
+  	<h1>Comments</h1>
+  	<div class="container-comments">
+  		<%= render @comments %>
+  	</div>
 	</div>
 </div>
 <div class="fixme">
   <p>
 	<% if current_user %>
 		<h1 style="text-align: center;">Make a comment </h1>
-		<%= form_for([@topic, @topic.comments.build]) do |c| %>
+		<%= form_for([@topic, @comments.build], remote:true) do |c| %>
 		  <p style="text-align: center;">
-		    <%= c.text_area :content, placeholder:"Content" %>
+		    <%= c.text_area :content,placeholder:"Content", required: true, class:"form-content" %>
 		  </p>
 		  <p style="text-align: center;">
 		    <%= c.submit "Comment"%>

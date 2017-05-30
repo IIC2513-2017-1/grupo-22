@@ -45,12 +45,22 @@ a:hover {
   border-left: 2px solid #FFD700;
   border-right: 2px solid #FFD700;
   text-align:center;
+  display:inline-block;
 }
 
-#error_explanation {
-  color: #000;
+#alert{
+  color: red;
+  background-color: #fff;
   font-weight: bolder;
-  border-radius: 5px;
+  padding: 0px 10px;
+  margin: 1px;
+  border-radius: 10px;
+  border-bottom: 2px solid #FFD700;
+  border-top: 2px solid #FFD700;
+  border-left: 2px solid #FFD700;
+  border-right: 2px solid #FFD700;
+  text-align:center;
+  display:inline-block;
 }
 
 /* Generales */

@@ -3,6 +3,7 @@ class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
 
   def show
+    @comments = @topic.comments.order(created_at: :asc)
   end
 
   def new
