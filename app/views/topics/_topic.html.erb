@@ -1,0 +1,25 @@
+<div class="topic" id="topic_<%= topic.id %>">
+	<p>
+		<strong>Titulo:</strong>
+		<%= link_to(topic_path(topic)) do %>
+      <span class="icon-go2" style="margin-right: 5px;"></span><%= topic.title %>
+    <% end %>
+	</p>
+	<p>
+		<strong>Description:</strong>
+		<%= topic.content %>
+	</p>
+	<div class="creator">
+			Created by <%= topic.user.username %>
+	</div>
+  <% if current_user %>
+  	<% if current_user.id == topic.user.id %>
+  		<%= link_to(edit_topic_path(topic)) do %>
+      	<div class="button-current edit"><span class=icon-pencil2></span></div>
+      <% end %>
+      <%= link_to(topic_path(topic), method: :delete, data: { confirm: 'Are you sure?' }, remote: true) do %>
+      	<div class="button-current delete"><span class=icon-trash></span></div>
+      <% end %>
+	<% end %>
+<% end %>
+</div>

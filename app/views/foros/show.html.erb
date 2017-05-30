@@ -1,56 +1,30 @@
 <div class="container-flex">
-<div class="left">
-	<h1> Forum </h1>
-	<p>
-	  <strong>Title:</strong>
-	  <%= @foro.title %>
-	</p>
-	<p>
-	  <strong>Description:</strong>
-	  <%= @foro.description %>
-	</p>
-	<p>
-		<h1>Topics</h1>
-		<% @foro.topics.each do |t| %>
-		<div class="topic">
-			<p>
-				<strong>Titulo:</strong>
-				<%= link_to(topic_path(t)) do %>
-	        <span class="icon-go2" style="margin-right: 5px;"></span><%= t.title %>
-	      <% end %>
-			</p>
-			<p>
-				<strong>Description:</strong>
-				<%= t.content %>
-			</p>
-			<div class="creator">
-					Created by <%= t.user.username %>
-			</div>
-		  <% if current_user %>
-		  	<% if current_user.id == t.user.id %>
-		  		<%= link_to(edit_topic_path(t)) do %>
-          	<div class="button-current edit"><span class=icon-pencil2></span></div>
-          <% end %>
-          <%= link_to(edit_topic_path(t), method: :delete, data: { confirm: 'Are you sure?' }) do %>
-          	<div class="button-current delete"><span class=icon-trash></span></div>
-          <% end %>
-			<% end %>
-		<% end %>
-		</div>
-		<% end %>
-	</p>
-</div>
+	<div class="left">
+		<h1> Forum </h1>
+		<p>
+		  <strong>Title:</strong>
+		  <%= @foro.title %>
+		</p>
+		<p>
+		  <strong>Description:</strong>
+		  <%= @foro.description %>
+		</p>
+			<h1>Topics</h1>
+			<div class="container-topics">
+  		<%= render @topics %>
+  	</div>
+	</div>
 </div>
 <div class="fixme">
 	<p>
 	<% if current_user and current_user.id? %>
 		<h1 style="text-align: center">Create topic</h1>
-		<%= form_for([@foro, @foro.topics.build]) do |f| %>
+		<%= form_for([@foro, @topics.build], remote: true) do |f| %>
 		 <p style="text-align: center;">
-		    <%= f.text_field :title, placeholder:"Tittle", style:"width: 300px;" %>
+		    <%= f.text_field :title, placeholder:"Tittle", style:"width: 300px;",  required: true, class:"form-tittle" %>
 		  </p>
 		  <p style="text-align: center;">
-		    <%= f.text_area :content, placeholder:"Content" %>
+		    <%= f.text_area :content, placeholder:"Content", required: true, class:"form-content" %>
 		  </p>
 		  <p style="text-align: center;">
 		    <%= f.submit "Create" , class: "submit", id: 'submit'%>
@@ -59,6 +33,7 @@
 	<% end %>
 	</p>
 </div>
+<br>
 <div class="container" style="width: 45px; height: 45px;">
 	<%= link_to image_tag("Back2.png", size: "45x45"), foros_path, class: 'back' %>
 	<div class="overlay">

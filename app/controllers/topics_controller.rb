@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
 
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  before_action :set_foro, only: [:destroy]
 
   def show
     @comments = @topic.comments.order(created_at: :asc)
@@ -14,10 +15,18 @@ class TopicsController < ApplicationController
     @foro = Foro.find(params[:foro_id])
     @topic = @foro.topics.create(topic_params)
     @topic.update(user_id: current_user.id)
-    if @topic.save
-      TopicMailer.new_topic_email(@topic).deliver_later
+
+    respond_to do |format|
+      if @topic.save
+        TopicMailer.new_topic_email(@topic).deliver_later
+        format.html { redirect_to foro_path(@foro), notice: 'Topic was successfully created.' }
+        format.json { render :show, status: :created, location: @topic}
+        format.js
+      else
+        format.html { redirect_to foro_path(@foro)}
+        format.json { render json: @topic.errors, status: :unprocessable_entity }
+      end
     end
-    redirect_to foro_path(@foro)
   end
 
   def edit
@@ -29,13 +38,25 @@ class TopicsController < ApplicationController
   end
 
   def destroy
-    @topic.destroy
-    redirect_to(:back)
+    respond_to do |format|
+      if @topic.destroy
+        format.html { redirect_to foro_path(@foro), notice: 'Topic was successfully deleted.' }
+        format.json { render :show, status: :created, location: @topic}
+        format.js
+      else
+        format.html { redirect_to foro_path(@foro)}
+        format.json { render json: @topic.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   private
     def set_topic
       @topic = Topic.find(params[:id])
+    end
+
+    def set_foro
+      @foro = @topic.foro
     end
 
     def topic_params

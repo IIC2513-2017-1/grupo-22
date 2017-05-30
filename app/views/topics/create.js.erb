@@ -1,0 +1,4 @@
+$(".form-tittle").val('');
+$(".form-content").val('');
+$(".container-topics").append('<%= j render @topic %>');
+$("#topic_<%= @topic.id %>").hide().fadeIn(800);
