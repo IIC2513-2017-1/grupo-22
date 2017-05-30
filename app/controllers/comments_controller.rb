@@ -38,6 +38,7 @@ class CommentsController < ApplicationController
       if @comment.destroy
         format.html { redirect_to topic_path(@topic), notice: 'Comment was successfully deleted.' }
         format.json { render :show, status: :created, location: @comment}
+        format.js
       else
         format.html 
         format.json { render json: @comment.errors, status: :unprocessable_entity }
