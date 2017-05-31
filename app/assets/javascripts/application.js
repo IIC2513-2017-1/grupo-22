@@ -20,6 +20,7 @@ jQuery(function($) {
 
     $("tr[data-link]").click(function() {
         window.location = $(this).data("link")
+
     });
 
 });
@@ -61,4 +62,9 @@ $(document).ready(function(){
         }
     });
 
+});
+
+/* para utilizar AJAX en links de paginacion */
+$(function(){
+   $('.pagination a').attr('data-remote', 'true')
 });

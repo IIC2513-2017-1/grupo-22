@@ -5,7 +5,7 @@ class ForosController < ApplicationController
 
 	def index
     	@foros = Foro.all
-  	end
+  end
 
 	def show
 	end
@@ -30,6 +30,6 @@ class ForosController < ApplicationController
     end
 
     def set_topics
-    	@topics = @foro.topics
+    	@topics = @foro.topics.order(created_at: :asc)
     end
 end

@@ -42,6 +42,7 @@ gem 'seed_dump'
 
 gem 'figaro'
 
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

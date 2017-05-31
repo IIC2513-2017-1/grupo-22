@@ -741,3 +741,37 @@ li.game-spacer{
 li.game-bottom{ 
   border-top:1px solid #aaa;
 }
+
+/* Estilos paginación */
+.pagination {
+  cursor: default;
+  margin-left: 50px;
+}
+
+.pagination a, .pagination span, .pagination em {
+  padding: 0.5em 0.5em;
+  display: block;
+  float: left;
+  font-weight: bold;
+  text-decoration: none; 
+  background: #000;
+}
+
+.pagination a.next_page,
+.pagination .next_page.disabled {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px; 
+}
+
+.pagination a.previous_page,
+.pagination .previous_page.disabled
+ {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px; 
+}
+
+.pagination .current {
+  font-style: normal;
+  background: #FFD700;
+  color: #000;
+}
