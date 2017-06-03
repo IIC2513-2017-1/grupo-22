@@ -52,16 +52,6 @@ ActiveRecord::Schema.define(version: 20170528161003) do
     t.index ["tourney_id"], name: "index_matches_on_tourney_id", using: :btree
   end
 
-  create_table "participants", force: :cascade do |t|
-    t.integer  "tourney_id"
-    t.integer  "team_id"
-    t.integer  "points"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["team_id"], name: "index_participants_on_team_id", using: :btree
-    t.index ["tourney_id"], name: "index_participants_on_tourney_id", using: :btree
-  end
-
   create_table "players", force: :cascade do |t|
     t.string   "full_name"
     t.string   "position"
@@ -76,16 +66,6 @@ ActiveRecord::Schema.define(version: 20170528161003) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["team_id"], name: "index_players_on_team_id", using: :btree
-  end
-
-  create_table "rankings", force: :cascade do |t|
-    t.integer  "tourney_id"
-    t.integer  "points"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "team_id"
-    t.index ["team_id"], name: "index_rankings_on_team_id", using: :btree
-    t.index ["tourney_id"], name: "index_rankings_on_tourney_id", unique: true, using: :btree
   end
 
   create_table "requests", force: :cascade do |t|
@@ -162,7 +142,6 @@ ActiveRecord::Schema.define(version: 20170528161003) do
   add_foreign_key "comments", "topics"
   add_foreign_key "comments", "users"
   add_foreign_key "players", "teams"
-  add_foreign_key "rankings", "teams"
   add_foreign_key "topics", "foros"
   add_foreign_key "topics", "users"
   add_foreign_key "tourneys", "users"
