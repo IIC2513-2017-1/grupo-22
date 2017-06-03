@@ -39,10 +39,16 @@
   </td>
   <td>
   <% if current_user and current_user.id? %>  
-  <div class="container" style="width: 45px; height: 45px;">
+  <!--<div class="container" style="width: 45px; height: 45px;">
     <%= link_to image_tag("Add4.png", size: "45x45"), new_team_path, class: 'back' %>
     <div class="overlay">
         <div class="text"><%= link_to "ADD", new_team_path %></div>
+    </div>
+  </div>-->
+  <div class="container add-team" style="width: 45px; height: 45px;">
+    <%= image_tag("Add4.png", size: "45x45") %>
+    <div class="overlay">
+      <div class="text">ADD</div>
     </div>
   </div>
   <% end %>

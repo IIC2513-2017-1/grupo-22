@@ -46,6 +46,18 @@
         <%= image_tag("Pelota.png", size:"35x35") %>
       </div>
     </footer>
+    <!-- Sign up -->
+    <div class="modal-background sign-up">
+      <div class="container-sign-up">
+        <div class="close">
+          <span class=icon-delete></span>
+        </div>
+        <h1>Sign up</h1>
+        <br>
+        <%= render '/users/form', user: User.new %>
+      </div>
+    </div>
+
     <!-- Login -->
     <div class="modal-background login">
       <div class="container-login">
@@ -62,7 +74,22 @@
         <div class="close">
           <span class=icon-delete></span>
          </div>
+          <h1>New Tourney</h1>
+          <br>
           <%= render '/tourneys/form', tourney: Tourney.new %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add team-->
+    <div class="modal-background team">
+      <div class="container-teamform">
+        <div class="close">
+          <span class=icon-delete></span>
+         </div>
+          <h1>New Team</h1>
+          <br>
+          <%= render '/teams/form', team: Team.new %>
         </div>
       </div>
     </div>
@@ -90,7 +117,7 @@
             <% end %>
           </li>
           <li><%= link_to(new_team_path) do %>
-            <div class="user-button"><span class=icon-plus></span>Team</div>
+            <div class="user-button add-team"><span class=icon-plus></span>Team</div>
             <% end %>
           </li>
           <li><%= link_to(session_path, method: :delete) do %>

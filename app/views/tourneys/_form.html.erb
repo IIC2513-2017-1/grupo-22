@@ -1,5 +1,3 @@
-<h1>New Tourney</h1>
-<br>
 <%= form_for(tourney) do |f| %>
   <% if tourney.errors.any? %>
     <div id="error_explanation">
@@ -75,11 +73,11 @@
     </div>
     <br>
     <br>
-    <div class="actions" style="text-align:center; margin: auto;">
+    <div class="actions" style="text-align:center;">
       <%= f.submit %>
     </div>
   </div>
 </div>
-<br>
-<br>
 <% end %>
+<br>
+<br>
