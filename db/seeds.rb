@@ -58,7 +58,7 @@ schedule: Faker::Time.between(DateTime.now - 1, DateTime.now))
 
 Foro.create({title: "Foro de Torneo/brackets",
   description: "Descripcion del foro de Torneo/brackets", tourney_id: Tourney.first.id,
-  user_id: Tourney.second.user_id}
+  user_id: Tourney.second.user_id})
 
 Topic.create(title: "1 2 3 Probando...", content: "Tema de prueba",
 foro_id: Foro.first.id, user_id: User.find_by(username: "ROBerto").id)
