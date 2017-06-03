@@ -46,6 +46,24 @@
         <%= image_tag("Pelota.png", size:"35x35") %>
       </div>
     </footer>
+    <!-- Login -->
+    <div class="modal-background login">
+      <div class="container-login">
+        <div class="close">
+          <span class=icon-delete></span>
+        </div>
+        <%= render 'sessions/login' %>
+      </div>
+    </div>
+
+    <!-- Add touney-->
+    <div class="modal-background tourney">
+      <div class="container-tourneyform">
+        <div class="close">
+          <span class=icon-delete></span>
+        </div>
+      </div>
+    </div>
 
     <!-- Barras de usuario y social, accesorios -->
     <div class="social">
@@ -74,7 +92,7 @@
             <% end %>
           </li>
           <li><%= link_to(session_path, method: :delete) do %>
-            <div class="user-button" id="log"><span class=icon-logout></span>Logout</div>
+            <div class="user-button" id="logout"><span class=icon-logout></span>Logout</div>
             <% end %>
           </li>
         <% else %>
@@ -82,9 +100,8 @@
             <div class="user-button" id="sign-up"><span class=icon-sign-up></span>Sign up</div>
             <% end %>
           </li>
-          <li><%= link_to(new_session_path) do %>
-            <div class="user-button" id="log"><span class=icon-login></span>Login</div>
-            <% end %>
+          <li>
+            <div class="user-button" id="login"><span class=icon-login></span>Login</div>
           </li>
         <% end %>
       </ul>

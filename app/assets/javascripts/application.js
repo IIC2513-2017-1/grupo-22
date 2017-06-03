@@ -16,55 +16,59 @@
 //= require_tree .
 
 /* funciones para creacion de topics y comentarios movil*/
-jQuery(function($) {
 
-    $("tr[data-link]").click(function() {
-        window.location = $(this).data("link")
-
-    });
-
-});
-
-$(window).load(function () {
-var fixmeTop = $('.fixme').offset().top;
-$(window).scroll(function() {
-    var currentScroll = $(window).scrollTop();
-    if (currentScroll + 100 >= fixmeTop) {
-        $('.fixme').css({
-            position: 'fixed',
-            top: '100px',
-            right: '12%'
-        });
-    } else {
-        $('.fixme').css({
-        	position: 'absolute',
-            top: '400px',
-            right: '12%'
-        });
-    }
-});
-});
-
-/* Animacion boton subir */
-$(document).ready(function(){
-
-    $('.go-up').click(function(){
-        $('body, html').animate({
-            scrollTop: '0px'
-        }, 300);
-    });
-
-    $(window).scroll(function(){
-        if($(this).scrollTop() > 0){
-            $('.go-up').slideDown(300);
-        } else{
-            $('.go-up').slideUp(300);
-        }
-    });
-
-});
-
-/* para utilizar AJAX en links de paginacion */
 $(function(){
-   $('.pagination a').attr('data-remote', 'true')
+
+
+    $(function() {
+        $("tr[data-link]").click(function() {
+            window.location = $(this).data("link")
+
+        });
+
+    });
+
+    $(window).load(function () {
+        var fixmeTop = $('.fixme').offset().top;
+        $(window).scroll(function() {
+            var currentScroll = $(window).scrollTop();
+            if (currentScroll + 100 >= fixmeTop) {
+                $('.fixme').css({
+                    position: 'fixed',
+                    top: '100px',
+                    right: '12%'
+                });
+            } else {
+                $('.fixme').css({
+                	position: 'absolute',
+                    top: '400px',
+                    right: '12%'
+                });
+            }
+        });
+    });
+
+    /* Animacion boton subir */
+    $(document).ready(function(){
+
+        $('.go-up').click(function(){
+            $('body, html').animate({
+                scrollTop: '0px'
+            }, 300);
+        });
+
+        $(window).scroll(function(){
+            if($(this).scrollTop() > 0){
+                $('.go-up').slideDown(300);
+            } else{
+                $('.go-up').slideUp(300);
+            }
+        });
+
+    });
+
+    /* para utilizar AJAX en links de paginacion */
+    $(function(){
+       $('.pagination a').attr('data-remote', 'true')
+    });
 });

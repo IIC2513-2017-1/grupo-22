@@ -259,6 +259,7 @@ a.back, a.back:hover{
   position: relative;
   width: 100%;
   height: 100%;
+  cursor:pointer;
 }
 
 .overlay, .overlay2 {
@@ -283,7 +284,7 @@ a.back, a.back:hover{
   opacity: 1;
 }
 
-.text a{
+.text, .text a {
   color: black;
   background-color:transparent;
   font-size: 10px;
@@ -633,7 +634,8 @@ a.back, a.back:hover{
   font-weight: bolder;
  }
 
-.user-bar ul li .user-button#log {
+.user-bar ul li .user-button#login,
+.user-bar ul li .user-button#logout {
   border-bottom-left-radius: 5px;
   border-bottom: 2px solid #000;
   border-left: 2px solid #000;
