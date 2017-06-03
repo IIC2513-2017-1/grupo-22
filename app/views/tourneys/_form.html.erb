@@ -1,3 +1,5 @@
+<h1>New Tourney</h1>
+<br>
 <%= form_for(tourney) do |f| %>
   <% if tourney.errors.any? %>
     <div id="error_explanation">
@@ -10,74 +12,74 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, required: true %>
+<div class="container-flex">
+  <div class="left form">
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, required: true %>
+    </div>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description, required: true %>
+    </div>
+    <div class="field">
+      <%= label :format, 'Formato' %>
+      <table>
+        <tr>
+          <td><%= f.radio_button :format, 'Playoffs', :checked => true %><%= label :format, 'Playoffs' %></td>
+          <td><%= f.radio_button :format, 'Torneo' %><%= label :format, 'Torneo' %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="field">
+      <%= f.label :location %>
+      <%= f.text_field :location, required: true %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description, required: true %>
+  <div class="middle form">
+    <div class="field">
+      <%= f.label :mail %>
+      <%= f.email_field :mail, required: true %>
+    </div>
+    <div class="field">
+      <%= f.label :inscription_limit_date %>
+      <%= f.date_select :inscription_limit_date, required: true %>
+    </div>
+    <div class="field">
+      <%= f.label :start_date %>
+      <%= f.date_select :start_date, required: true %>
+    </div>
+    <div class="field">
+      <%= f.label :end_date %>
+      <%= f.date_select :end_date, required: true %>
+    </div>
+    <div class="field">
+      <%= f.label :schedule  %>
+      <%= f.time_select :schedule, :ignore_date => true %>
+    </div>
   </div>
+  <div class="right form">
+    <div class="field">
+      <%= f.label :prize%>
+      <%= f.text_area :prize, required: true %>
+    </div>
 
-  <div class="field">
-    <%= label :format, 'Formato' %>
-    <table>
-      <tr>
-        <td><%= f.radio_button :format, 'Playoffs', :checked => true %><%= label :format, 'Playoffs' %></td>
-        <td><%= f.radio_button :format, 'Torneo' %><%= label :format, 'Torneo' %></td>
-      </tr>
-  </table>
-  </div>
+    <div class="field">
+      <%= f.label :price %>
+      <%= f.text_field :price, required: true %>
+    </div>
 
-  <div class="field">
-    <%= f.label :location %>
-    <%= f.text_field :location, required: true %>
+    <div class="field">
+      <%= f.label :phone %>
+      <%= f.text_field :phone, required: true %>
+    </div>
+    <br>
+    <br>
+    <div class="actions" style="text-align:center; margin: auto;">
+      <%= f.submit %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :inscription_limit_date %>
-    <%= f.date_select :inscription_limit_date, required: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :start_date %>
-    <%= f.date_select :start_date, required: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :end_date %>
-    <%= f.date_select :end_date, required: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :schedule  %>
-    <%= f.time_select :schedule, :ignore_date => true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :prize%>
-    <%= f.text_area :prize, required: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :mail %>
-    <%= f.email_field :mail, required: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price, required: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :phone %>
-    <%= f.text_field :phone, required: true %>
-  </div>
-  
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
+</div>
+<br>
+<br>
 <% end %>

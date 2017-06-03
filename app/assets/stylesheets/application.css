@@ -89,6 +89,12 @@ main {
 
 }
 
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 300px;
+}
+
 .titulo {
     text-align: center;
     font-weight: bolder;
@@ -486,6 +492,23 @@ a.back, a.back:hover{
 }
 .right {
   flex-basis: 40%;
+}
+
+.left.form {
+  flex-basis:30%;
+  margin-right: 15px; 
+}
+
+.middle.form {
+  flex-basis:30%;
+  padding: 0px 15px; 
+  border-right: 2px solid #FFD700;
+  border-left: 2px solid #FFD700;
+}
+
+.right.form{
+  flex-basis: 30%;
+  margin-left: 15px; 
 }
 
 .info {

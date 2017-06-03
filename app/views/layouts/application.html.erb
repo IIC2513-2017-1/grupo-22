@@ -61,6 +61,8 @@
       <div class="container-tourneyform">
         <div class="close">
           <span class=icon-delete></span>
+         </div>
+          <%= render '/tourneys/form', tourney: Tourney.new %>
         </div>
       </div>
     </div>
@@ -84,7 +86,7 @@
             <% end %>
           </li>
           <li><%= link_to(new_tourney_path) do %>
-            <div class="user-button"><span class=icon-plus></span>Tourney</div>
+            <div class="user-button add-tourney"><span class=icon-plus></span>Tourney</div>
             <% end %>
           </li>
           <li><%= link_to(new_team_path) do %>

@@ -97,13 +97,18 @@
       <br>
         <% if current_user and current_user.id? %>
           <% if current_user.id == @user.id %>
-
-            <div class="container" style="width: 45px; height: 45px; margin: 0 auto;">
-                <%= link_to image_tag("Add4.png", size: "45x45"), new_tourney_path, class: 'back' %>
-                <div class="overlay">
-                  <div class="text"><%= link_to "ADD", new_tourney_path %></div>
-                </div>
+            <!--<div class="container" style="width: 45px; height: 45px; margin: 0 auto;">
+              <%= link_to image_tag("Add4.png", size: "45x45"), new_tourney_path, class: 'back' %>
+              <div class="overlay">
+                <div class="text"><%= link_to "ADD", new_tourney_path %></div>
               </div>
+            </div>-->
+            <div class="container add-tourney" style="width: 45px; height: 45px; margin:auto;">
+              <%= image_tag("Add4.png", size: "45x45") %>
+              <div class="overlay">
+                <div class="text">ADD</div>
+              </div>
+            </div>
           <% end %>
         <% end %>
   </div>
