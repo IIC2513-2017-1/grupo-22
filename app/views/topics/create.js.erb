@@ -2,3 +2,4 @@ $(".form-tittle").val('');
 $(".form-content").val('');
 $(".container-topics").append('<%= j render @topic %>');
 $("#topic_<%= @topic.id %>").hide().fadeIn(800);
+$("#scroll").scrollTop($("#scroll")[0].scrollHeight);

@@ -9,17 +9,21 @@
 		<strong>Description:</strong>
 		<%= topic.content %>
 	</p>
-	<div class="creator">
-			Created by <%= topic.user.username %>
-	</div>
-  <% if current_user %>
-  	<% if current_user.id == topic.user.id %>
-  		<%= link_to(edit_topic_path(topic)) do %>
-      	<div class="button-current edit"><span class=icon-pencil2></span></div>
-      <% end %>
-      <%= link_to(topic_path(topic), method: :delete, data: { confirm: 'Are you sure?' }, remote: true) do %>
-      	<div class="button-current delete"><span class=icon-trash></span></div>
-      <% end %>
+	<div class="container-flex" style="line-height: 45px">
+		<div class="creator left-big">
+			Created by <%= topic.user.username %><span> </span><%= time_ago_in_words(topic.created_at) %> <span> ago</span>
+		</div>
+	  <% if current_user %>
+	  	<% if current_user.id == topic.user.id %>
+	  		<div class="right-small">
+	  		<%= link_to(edit_topic_path(topic)) do %>
+	      	<div class="button-current edit"><span class=icon-pencil2></span></div>
+	      <% end %>
+	      <%= link_to(topic_path(topic), method: :delete, data: { confirm: 'Are you sure?' }, remote: true) do %>
+	      	<div class="button-current delete forum"><span class=icon-trash></span></div>
+	      <% end %>
+	      </div>
+			<% end %>
 		<% end %>
-	<% end %>
+	</div>
 </div>

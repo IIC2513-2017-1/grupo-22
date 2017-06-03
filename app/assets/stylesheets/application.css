@@ -89,6 +89,12 @@ main {
 
 }
 
+.scroll {
+  max-height:1000px;
+  overflow-y:scroll;
+}
+
+
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -222,6 +228,7 @@ input[type='submit']:hover {
   margin-bottom: 5px;
   display:inline-block;
 }
+
 
 .delete {
   background: red;
@@ -509,8 +516,17 @@ a.back, a.back:hover{
 .left {
   flex-basis:60%;
 }
+
+.left-big {
+  flex-basis:80%;
+}
+
 .right {
   flex-basis: 40%;
+}
+
+.right-small {
+  flex-basis: 20%;
 }
 
 .left.form {
@@ -540,9 +556,9 @@ a.back, a.back:hover{
 
  .creator {
   font-style: italic;
-    color: gray; 
-    margin-right: 80px;
-    display: inline-block;
+  color: gray; 
+  margin-right: 80px;
+  display: inline-block;
  }
 
 /* Para show torneos */
