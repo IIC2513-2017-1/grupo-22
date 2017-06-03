@@ -77,10 +77,16 @@
 <br>
 <% if current_user %>
   <% if current_user.id == @team.user.id %>
-  <div class="container" style="width: 45px; height: 45px; margin:0 auto;">
+  <!--<div class="container" style="width: 45px; height: 45px; margin:0 auto;">
     <%= link_to image_tag("Add4.png", size: "45x45"), new_team_player_path(@team), class: 'back' %>
     <div class="overlay">
         <div class="text"><%= link_to "ADD", new_team_player_path(@team) %></div>
+    </div>
+  </div>-->
+  <div class="container add-player" style="width: 45px; height: 45px; margin:auto;">
+    <%= image_tag("Add4.png", size: "45x45") %>
+    <div class="overlay">
+      <div class="text">ADD</div>
     </div>
   </div>
   </td>
@@ -90,5 +96,17 @@
   <%= link_to image_tag("Back2.png", size: "45x45"), teams_path, class: 'back' %>
   <div class="overlay">
     <div class="text"><%= link_to image_tag("Back.png", size: "45x45"), teams_path, class: 'back' %></div>
+  </div>
+</div>
+
+<!-- Add Player -->
+<div class="modal-background player">
+  <div class="container-playerform">
+    <div class="close">
+      <span class=icon-delete></span>
+    </div>
+    <h1>Add Player</h1>
+    <br>
+    <%= render '/players/form', team: @team,player: Player.new %>
   </div>
 </div>

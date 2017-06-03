@@ -1,54 +1,51 @@
-<% @team = Team.find(params[:team_id]) %>
-
-<%= form_for ([@team, @team.players.build]) do |f| %>
-
-  <p>
-    <%= f.label :full_name %><br>
-    <%= f.text_field :full_name, required: true %>
-  </p>
-
-  <p>
-    <%= f.label :position %><br>
-    <%= f.select(:position, ['Arquero', 'Central', 'Lateral', 'Mediocampista', 'Delantero']) %>
-  </p>
-
-  <p>
-    <%= f.label :email %><br>
-    <%= f.email_field :email, required: true %>
-  </p>
-
-  <p>
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </p>
-
-  <p>
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </p>
-
-  <p>
-    <%= f.label :birth_date %><br>
-    <%= f.date_select :birth_date %>
-  </p>
-
-  <p>
-    <%= f.label :ocupation %><br>
-    <%= f.text_field :ocupation, required: true %>
-  </p>
-
-  <p>
-    <%= f.label :phote %><br>
-    <%= f.text_field :phote %>
-  </p>
-
-  <p>
-    <%= f.label :leg %><br>
-    <%= f.select(:leg, ['Izquierdo', 'Derecho']) %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-
+<%= form_for ([team, team.players.build]) do |f| %>
+<div class="container-flex">
+  <div class="left form">  
+    <div class="field">
+      <%= f.label :full_name %>
+      <%= f.text_field :full_name, required: true %>
+    </div>
+    <div class="container-flex field">
+      <div class="left">
+      <%= f.label :position %>
+      <%= f.select(:position, ['Arquero', 'Central', 'Lateral', 'Mediocampista', 'Delantero']) %>
+      </div>
+      <div class="right">
+        <%= f.label :leg %>
+        <%= f.select(:leg, ['Izquierdo', 'Derecho']) %>
+      </div>
+    </div>
+    <div class="field" style="display:inline;">
+      <%= f.label :email %>
+      <%= f.email_field :email, required: true %>
+    </div>
+  </div>
+  <div class="middle form">
+    <div class="field">
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+    </div>
+    <div class="field">
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+    </div>
+    <div class="field">
+      <%= f.label :birth_date %>
+      <%= f.date_select :birth_date %>
+    </div>
+  </div>
+  <div class="right form">
+    <div class="field">
+      <%= f.label :ocupation %>
+      <%= f.text_field :ocupation, required: true %>
+    </div>
+    <div class="field">
+      <%= f.label :phote %>
+      <%= f.text_field :phote %>
+    </div>
+    <br>
+    <div style="text-align: center;">
+      <%= f.submit %>
+    </div>
+  </div>
 <% end %>
