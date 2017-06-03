@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-// require turbolinks
+//= require turbolinks
 //= require_tree .
 
 /* funciones para creacion de topics y comentarios movil*/
@@ -20,7 +20,7 @@
 $(function(){
 
 
-    $(function() {
+    $(document).on('turbolinks:load', function () {
         $("tr[data-link]").click(function() {
             window.location = $(this).data("link")
 

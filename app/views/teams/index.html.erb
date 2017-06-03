@@ -30,12 +30,11 @@
 <br>
 <table style="width: 100%;">
   <td>
-  <div class="container" style="width: 45px; height: 45px;">
-    <%= link_to image_tag("Back2.png", size: "45x45"), :back, class: 'back' %>
-    <div class="overlay">
-      <div class="text"><%= link_to image_tag("Back.png", size: "45x45"), root_path, class: 'back' %></div>
-  </div>
-</div>
+  <%= link_to :back do %>
+    <div class="button-back">
+      <span class="icon-back"></span>
+    </div>
+  <% end %>
   </td>
   <td>
   <% if current_user and current_user.id? %>  

@@ -3,11 +3,13 @@
 
 $(function(){
 
-	$(document).ready(function(){
+	$(document).on('turbolinks:load', function () {
 
 		var buttonLogin = $(".user-button#login");
 
 		var modalBackground = $(".modal-background.login");
+
+		var containerModal = modalBackground.find(">:first-child");
 
 		var buttonClose = $(".close");
 
@@ -16,12 +18,14 @@ $(function(){
 		});
 
 		buttonLogin.on("click", function(e){		
-			modalBackground.fadeIn("slow");
+			modalBackground.fadeIn(300);
+			containerModal.css("transform", "scale(1)");
 			e.preventDefault();	
 		});
 
 		buttonClose.on("click", function(){
-			modalBackground.fadeOut("slow");
+			modalBackground.fadeOut(300);
+			containerModal.css("transform", "scale(0.7)");
 			$(".field #session_username").val('');
 			$(".field #session_password").val('');
 		});

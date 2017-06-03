@@ -3,21 +3,25 @@
 
 $(function(){
 
-	$(document).ready(function(){
+	$(document).on('turbolinks:load', function () {
 
 		var buttonAddPlayer = $(".add-player");
 
 		var modalBackground = $(".modal-background.player");
 
+		var containerModal = modalBackground.find(">:first-child");
+
 		var buttonClose = $(".close");
 
 		buttonAddPlayer.on("click", function(e){		
-			modalBackground.fadeIn("slow");
+			modalBackground.fadeIn(300);
+			containerModal.css("transform", "scale(1)");
 			e.preventDefault();	
 		});
 
 		buttonClose.on("click", function(){
-			modalBackground.fadeOut("slow");
+			modalBackground.fadeOut(300);
+			containerModal.css("transform", "scale(0.7)");
 		});
 	});
 });

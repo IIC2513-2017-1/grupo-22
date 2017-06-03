@@ -25,9 +25,8 @@
   </tbody>
 </table>
 <br><br>
-<div class="container" style="width: 45px; height: 45px;">
-  <%= link_to image_tag("Back2.png", size: "45x45"), root_path, class: 'back' %>
-  <div class="overlay">
-    <div class="text"><%= link_to image_tag("Back.png", size: "45x45"), root_path, class: 'back' %></div>
+<%= link_to root_path do %>
+  <div class="button-back">
+    <span class="icon-back"></span>
   </div>
-</div>
+<% end %>

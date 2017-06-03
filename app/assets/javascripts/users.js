@@ -3,21 +3,25 @@
 
 $(function(){
 
-	$(document).ready(function(){
+	$(document).on('turbolinks:load', function () {
 
 		var buttonSignUp= $("#sign-up");
 
 		var modalBackground = $(".modal-background.sign-up");
 
+		var containerModal = modalBackground.find(">:first-child");
+
 		var buttonClose = $(".close");
 
 		buttonSignUp.on("click", function(e){		
-			modalBackground.fadeIn("slow");
+			modalBackground.fadeIn(300);
+			containerModal.css("transform", "scale(1)");
 			e.preventDefault();	
 		});
 
 		buttonClose.on("click", function(){
-			modalBackground.fadeOut("slow");
+			modalBackground.fadeOut(300);
+			containerModal.css("transform", "scale(0.7)");
 		});
 	});
 });

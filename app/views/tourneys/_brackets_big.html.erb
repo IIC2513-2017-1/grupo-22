@@ -1,0 +1,391 @@
+<h1 style="margin-left: 30px;">Brackets</h1>
+<div id="tournament">
+    <ul class="round round-1"><i>Quarter Finals</i>
+    <li class="spacer">&nbsp;</li>
+
+    <% if  @brackets['A1'] == 'no_match'%>
+        <li class="game game-top"><span></span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><span></span></li>
+    <% elsif not @brackets['A1'].played%>
+        <li class="game game-top"><%= @brackets['A1'].home_team.name-%><span>-</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><%= @brackets['A1'].away_team.name-%><span>-</span></li>
+    <% else%>
+        <% if  @brackets['A1'].winner == @brackets['A1'].home_team.name %>
+            <li class="game game-top winner"><%= @brackets['A1'].home_team.name-%> <span><%= @brackets['A1'].home_goals -%></span></li>
+        <% else %>
+            <li class="game game-top"><%= @brackets['A1'].home_team.name-%> <span><%= @brackets['A1'].home_goals -%></span></li>
+        <% end %>
+            <li class="game game-spacer">&nbsp;</li>
+        <% if  @brackets['A1'].winner == @brackets['A1'].away_team.name %>
+            <li class="game game-bottom winner"><%= @brackets['A1'].away_team.name -%><span><%= @brackets['A1'].away_goals -%></span></li>
+        <% else %>
+            <li class="game game-bottom"><%= @brackets['A1'].away_team.name -%><span><%= @brackets['A1'].away_goals -%></span></li>
+        <% end %>
+    <% end %>
+
+    <li class="spacer">&nbsp;</li>
+
+    <% if  @brackets['A2'] == 'no_match'%>
+        <li class="game game-top"><span></span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><span></span></li>
+     <% elsif not @brackets['A2'].played%>
+        <li class="game game-top"><%= @brackets['A2'].home_team.name-%><span>-</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><%= @brackets['A2'].away_team.name-%><span>-</span></li>
+    <% else%>
+        <% if  @brackets['A2'].winner == @brackets['A2'].home_team.name %>
+            <li class="game game-top winner"><%= @brackets['A2'].home_team.name-%> <span><%= @brackets['A2'].home_goals -%></span></li>
+        <% else %>
+            <li class="game game-top"><%= @brackets['A2'].home_team.name-%> <span><%= @brackets['A2'].home_goals -%></span></li>
+        <% end %>
+            <li class="game game-spacer">&nbsp;</li>
+        <% if  @brackets['A2'].winner == @brackets['A2'].away_team.name %>
+            <li class="game game-bottom winner"><%= @brackets['A2'].away_team.name -%><span><%= @brackets['A2'].away_goals -%></span></li>
+        <% else %>
+            <li class="game game-bottom"><%= @brackets['A2'].away_team.name -%><span><%= @brackets['A2'].away_goals -%></span></li>
+        <% end %>
+    <% end %>
+
+    <li class="spacer">&nbsp;</li>
+
+    <% if  @brackets['A3'] == 'no_match'%>
+        <li class="game game-top"><span></span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><span></span></li>
+     <% elsif not @brackets['A3'].played%>
+        <li class="game game-top"><%= @brackets['A3'].home_team.name-%><span>-</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><%= @brackets['A3'].away_team.name-%><span>-</span></li>
+    <% else%>
+        <% if  @brackets['A3'].winner == @brackets['A3'].home_team.name %>
+            <li class="game game-top winner"><%= @brackets['A3'].home_team.name-%> <span><%= @brackets['A3'].home_goals -%></span></li>
+        <% else %>
+            <li class="game game-top"><%= @brackets['A3'].home_team.name-%> <span><%= @brackets['A3'].home_goals -%></span></li>
+        <% end %>
+            <li class="game game-spacer">&nbsp;</li>
+        <% if  @brackets['A3'].winner == @brackets['A3'].away_team.name %>
+            <li class="game game-bottom winner"><%= @brackets['A3'].away_team.name -%><span><%= @brackets['A3'].away_goals -%></span></li>
+        <% else %>
+            <li class="game game-bottom"><%= @brackets['A3'].away_team.name -%><span><%= @brackets['A3'].away_goals -%></span></li>
+        <% end %>
+    <% end %>
+
+    <li class="spacer">&nbsp;</li>
+
+    <% if  @brackets['A4'] == 'no_match'%>
+        <li class="game game-top"><span></span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><span></span></li>
+     <% elsif not @brackets['A4'].played%>
+        <li class="game game-top"><%= @brackets['A4'].home_team.name-%><span>-</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><%= @brackets['A4'].away_team.name-%><span>-</span></li>
+    <% else%>
+        <% if  @brackets['A4'].winner == @brackets['A4'].home_team.name %>
+            <li class="game game-top winner"><%= @brackets['A4'].home_team.name-%> <span><%= @brackets['A4'].home_goals -%></span></li>
+        <% else %>
+            <li class="game game-top"><%= @brackets['A4'].home_team.name-%> <span><%= @brackets['A4'].home_goals -%></span></li>
+        <% end %>
+            <li class="game game-spacer">&nbsp;</li>
+        <% if  @brackets['A4'].winner == @brackets['A4'].away_team.name %>
+            <li class="game game-bottom winner"><%= @brackets['A4'].away_team.name -%><span><%= @brackets['A4'].away_goals -%></span></li>
+        <% else %>
+            <li class="game game-bottom"><%= @brackets['A4'].away_team.name -%><span><%= @brackets['A4'].away_goals -%></span></li>
+        <% end %>
+    <% end %>
+
+    <li class="spacer">&nbsp;</li>
+
+    <% if  @brackets['A5'] == 'no_match'%>
+        <li class="game game-top"><span></span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><span></span></li>
+    <% elsif not @brackets['A5'].played%>
+        <li class="game game-top"><%= @brackets['A5'].home_team.name-%><span>-</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><%= @brackets['A5'].away_team.name-%><span>-</span></li>
+    <% else%>
+        <% if  @brackets['A5'].winner == @brackets['A5'].home_team.name %>
+            <li class="game game-top winner"><%= @brackets['A5'].home_team.name-%> <span><%= @brackets['A5'].home_goals -%></span></li>
+        <% else %>
+            <li class="game game-top"><%= @brackets['A5'].home_team.name-%> <span><%= @brackets['A5'].home_goals -%></span></li>
+        <% end %>
+            <li class="game game-spacer">&nbsp;</li>
+        <% if  @brackets['A5'].winner == @brackets['A5'].away_team.name %>
+            <li class="game game-bottom winner"><%= @brackets['A5'].away_team.name -%><span><%= @brackets['A5'].away_goals -%></span></li>
+        <% else %>
+            <li class="game game-bottom"><%= @brackets['A5'].away_team.name -%><span><%= @brackets['A5'].away_goals -%></span></li>
+        <% end %>
+    <% end %>
+
+    <li class="spacer">&nbsp;</li>
+
+    <% if  @brackets['A6'] == 'no_match'%>
+        <li class="game game-top"><span></span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><span></span></li>
+     <% elsif not @brackets['A6'].played%>
+        <li class="game game-top"><%= @brackets['A6'].home_team.name-%><span>-</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><%= @brackets['A6'].away_team.name-%><span>-</span></li>
+    <% else%>
+        <% if  @brackets['A6'].winner == @brackets['A6'].home_team.name %>
+            <li class="game game-top winner"><%= @brackets['A6'].home_team.name-%> <span><%= @brackets['A6'].home_goals -%></span></li>
+        <% else %>
+            <li class="game game-top"><%= @brackets['A6'].home_team.name-%> <span><%= @brackets['A6'].home_goals -%></span></li>
+        <% end %>
+            <li class="game game-spacer">&nbsp;</li>
+        <% if  @brackets['A6'].winner == @brackets['A6'].away_team.name %>
+            <li class="game game-bottom winner"><%= @brackets['A6'].away_team.name -%><span><%= @brackets['A6'].away_goals -%></span></li>
+        <% else %>
+            <li class="game game-bottom"><%= @brackets['A6'].away_team.name -%><span><%= @brackets['A6'].away_goals -%></span></li>
+        <% end %>
+    <% end %>
+
+    <li class="spacer">&nbsp;</li>
+
+    <% if  @brackets['A7'] == 'no_match'%>
+        <li class="game game-top"><span></span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><span></span></li>
+     <% elsif not @brackets['A7'].played%>
+        <li class="game game-top"><%= @brackets['A7'].home_team.name-%><span>-</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><%= @brackets['A7'].away_team.name-%><span>-</span></li>
+    <% else%>
+        <% if  @brackets['A7'].winner == @brackets['A7'].home_team.name %>
+            <li class="game game-top winner"><%= @brackets['A7'].home_team.name-%> <span><%= @brackets['A7'].home_goals -%></span></li>
+        <% else %>
+            <li class="game game-top"><%= @brackets['A7'].home_team.name-%> <span><%= @brackets['A7'].home_goals -%></span></li>
+        <% end %>
+            <li class="game game-spacer">&nbsp;</li>
+        <% if  @brackets['A7'].winner == @brackets['A7'].away_team.name %>
+            <li class="game game-bottom winner"><%= @brackets['A7'].away_team.name -%><span><%= @brackets['A7'].away_goals -%></span></li>
+        <% else %>
+            <li class="game game-bottom"><%= @brackets['A7'].away_team.name -%><span><%= @brackets['A7'].away_goals -%></span></li>
+        <% end %>
+    <% end %>
+
+    <li class="spacer">&nbsp;</li>
+
+    <% if  @brackets['A8'] == 'no_match'%>
+        <li class="game game-top"><span></span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><span></span></li>
+     <% elsif not @brackets['A8'].played%>
+        <li class="game game-top"><%= @brackets['A8'].home_team.name-%><span>-</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><%= @brackets['A8'].away_team.name-%><span>-</span></li>
+    <% else%>
+        <% if  @brackets['A8'].winner == @brackets['A8'].home_team.name %>
+            <li class="game game-top winner"><%= @brackets['A8'].home_team.name-%> <span><%= @brackets['A8'].home_goals -%></span></li>
+        <% else %>
+            <li class="game game-top"><%= @brackets['A8'].home_team.name-%> <span><%= @brackets['A8'].home_goals -%></span></li>
+        <% end %>
+            <li class="game game-spacer">&nbsp;</li>
+        <% if  @brackets['A8'].winner == @brackets['A8'].away_team.name %>
+            <li class="game game-bottom winner"><%= @brackets['A8'].away_team.name -%><span><%= @brackets['A8'].away_goals -%></span></li>
+        <% else %>
+            <li class="game game-bottom"><%= @brackets['A8'].away_team.name -%><span><%= @brackets['A8'].away_goals -%></span></li>
+        <% end %>
+    <% end %>
+
+    <li class="spacer">&nbsp;</li>
+
+  </ul>
+    
+  <ul class="round round-1"><i>Quarter Finals</i>
+    <li class="spacer">&nbsp;</li>
+
+    <% if  @brackets['B1'] == 'no_match'%>
+        <li class="game game-top"><span></span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><span></span></li>
+    <% elsif not @brackets['B1'].played%>
+        <li class="game game-top"><%= @brackets['B1'].home_team.name-%><span>-</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><%= @brackets['B1'].away_team.name-%><span>-</span></li>
+    <% else%>
+        <% if  @brackets['B1'].winner == @brackets['B1'].home_team.name %>
+            <li class="game game-top winner"><%= @brackets['B1'].home_team.name-%> <span><%= @brackets['B1'].home_goals -%></span></li>
+        <% else %>
+            <li class="game game-top"><%= @brackets['B1'].home_team.name-%> <span><%= @brackets['B1'].home_goals -%></span></li>
+        <% end %>
+            <li class="game game-spacer">&nbsp;</li>
+        <% if  @brackets['B1'].winner == @brackets['B1'].away_team.name %>
+            <li class="game game-bottom winner"><%= @brackets['B1'].away_team.name -%><span><%= @brackets['B1'].away_goals -%></span></li>
+        <% else %>
+            <li class="game game-bottom"><%= @brackets['B1'].away_team.name -%><span><%= @brackets['B1'].away_goals -%></span></li>
+        <% end %>
+    <% end %>
+
+    <li class="spacer">&nbsp;</li>
+
+    <% if  @brackets['B2'] == 'no_match'%>
+        <li class="game game-top"><span></span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><span></span></li>
+     <% elsif not @brackets['B2'].played%>
+        <li class="game game-top"><%= @brackets['B2'].home_team.name-%><span>-</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><%= @brackets['B2'].away_team.name-%><span>-</span></li>
+    <% else%>
+        <% if  @brackets['B2'].winner == @brackets['B2'].home_team.name %>
+            <li class="game game-top winner"><%= @brackets['B2'].home_team.name-%> <span><%= @brackets['B2'].home_goals -%></span></li>
+        <% else %>
+            <li class="game game-top"><%= @brackets['B2'].home_team.name-%> <span><%= @brackets['B2'].home_goals -%></span></li>
+        <% end %>
+            <li class="game game-spacer">&nbsp;</li>
+        <% if  @brackets['B2'].winner == @brackets['B2'].away_team.name %>
+            <li class="game game-bottom winner"><%= @brackets['B2'].away_team.name -%><span><%= @brackets['B2'].away_goals -%></span></li>
+        <% else %>
+            <li class="game game-bottom"><%= @brackets['B2'].away_team.name -%><span><%= @brackets['B2'].away_goals -%></span></li>
+        <% end %>
+    <% end %>
+
+    <li class="spacer">&nbsp;</li>
+
+    <% if  @brackets['B3'] == 'no_match'%>
+        <li class="game game-top"><span></span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><span></span></li>
+     <% elsif not @brackets['B3'].played%>
+        <li class="game game-top"><%= @brackets['B3'].home_team.name-%><span>-</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><%= @brackets['B3'].away_team.name-%><span>-</span></li>
+    <% else%>
+        <% if  @brackets['B3'].winner == @brackets['B3'].home_team.name %>
+            <li class="game game-top winner"><%= @brackets['B3'].home_team.name-%> <span><%= @brackets['B3'].home_goals -%></span></li>
+        <% else %>
+            <li class="game game-top"><%= @brackets['B3'].home_team.name-%> <span><%= @brackets['B3'].home_goals -%></span></li>
+        <% end %>
+            <li class="game game-spacer">&nbsp;</li>
+        <% if  @brackets['B3'].winner == @brackets['B3'].away_team.name %>
+            <li class="game game-bottom winner"><%= @brackets['B3'].away_team.name -%><span><%= @brackets['B3'].away_goals -%></span></li>
+        <% else %>
+            <li class="game game-bottom"><%= @brackets['B3'].away_team.name -%><span><%= @brackets['B3'].away_goals -%></span></li>
+        <% end %>
+    <% end %>
+
+    <li class="spacer">&nbsp;</li>
+
+    <% if  @brackets['B4'] == 'no_match'%>
+        <li class="game game-top"><span></span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><span></span></li>
+     <% elsif not @brackets['B4'].played%>
+        <li class="game game-top"><%= @brackets['B4'].home_team.name-%><span>-</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><%= @brackets['B4'].away_team.name-%><span>-</span></li>
+    <% else%>
+        <% if  @brackets['B4'].winner == @brackets['B4'].home_team.name %>
+            <li class="game game-top winner"><%= @brackets['B4'].home_team.name-%> <span><%= @brackets['B4'].home_goals -%></span></li>
+        <% else %>
+            <li class="game game-top"><%= @brackets['B4'].home_team.name-%> <span><%= @brackets['B4'].home_goals -%></span></li>
+        <% end %>
+            <li class="game game-spacer">&nbsp;</li>
+        <% if  @brackets['B4'].winner == @brackets['B4'].away_team.name %>
+            <li class="game game-bottom winner"><%= @brackets['B4'].away_team.name -%><span><%= @brackets['B4'].away_goals -%></span></li>
+        <% else %>
+            <li class="game game-bottom"><%= @brackets['B4'].away_team.name -%><span><%= @brackets['B4'].away_goals -%></span></li>
+        <% end %>
+    <% end %>
+
+    <li class="spacer">&nbsp;</li>
+
+  </ul>
+  <ul class="round round-2"><i>Semi Finals</i>
+    <li class="spacer">&nbsp;</li>
+
+    <% if  @brackets['C1'] == 'no_match'%>
+        <li class="game game-top"><span></span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><span></span></li>
+     <% elsif not @brackets['C1'].played%>
+        <li class="game game-top"><%= @brackets['C1'].home_team.name-%><span>-</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><%= @brackets['C1'].away_team.name-%><span>-</span></li>
+    <% else%>
+        <% if  @brackets['C1'].winner == @brackets['C1'].home_team.name %>
+            <li class="game game-top winner"><%= @brackets['C1'].home_team.name-%> <span><%= @brackets['C1'].home_goals -%></span></li>
+        <% else %>
+            <li class="game game-top"><%= @brackets['C1'].home_team.name-%> <span><%= @brackets['C1'].home_goals -%></span></li>
+        <% end %>
+            <li class="game game-spacer">&nbsp;</li>
+        <% if  @brackets['C1'].winner == @brackets['C1'].away_team.name %>
+            <li class="game game-bottom winner"><%= @brackets['C1'].away_team.name -%><span><%= @brackets['C1'].away_goals -%></span></li>
+        <% else %>
+            <li class="game game-bottom"><%= @brackets['C1'].away_team.name -%><span><%= @brackets['C1'].away_goals -%></span></li>
+        <% end %>
+    <% end %> 
+
+    <li class="spacer">&nbsp;</li>
+
+    <% if  @brackets['C2'] == 'no_match'%>
+        <li class="game game-top"><span></span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><span></span></li>
+     <% elsif not @brackets['C2'].played%>
+        <li class="game game-top"><%= @brackets['C2'].home_team.name-%><span>-</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><%= @brackets['C2'].away_team.name-%><span>-</span></li>
+    <% else%>
+        <% if  @brackets['C2'].winner == @brackets['C2'].home_team.name %>
+            <li class="game game-top winner"><%= @brackets['C2'].home_team.name-%> <span><%= @brackets['C2'].home_goals -%></span></li>
+        <% else %>
+            <li class="game game-top"><%= @brackets['C2'].home_team.name-%> <span><%= @brackets['C2'].home_goals -%></span></li>
+        <% end %>
+            <li class="game game-spacer">&nbsp;</li>
+        <% if  @brackets['C2'].winner == @brackets['C2'].away_team.name %>
+            <li class="game game-bottom winner"><%= @brackets['C2'].away_team.name -%><span><%= @brackets['C2'].away_goals -%></span></li>
+        <% else %>
+            <li class="game game-bottom"><%= @brackets['C2'].away_team.name -%><span><%= @brackets['C2'].away_goals -%></span></li>
+        <% end %>
+    <% end %>
+
+    <li class="spacer">&nbsp;</li>
+
+  </ul>
+  <ul class="round round-3"><i>Final</i>
+<li class="spacer">&nbsp;</li>
+
+    <% if  @brackets['D1'] == 'no_match'%>
+        <li class="game game-top"><span></span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><span></span></li>
+     <% elsif not @brackets['D1'].played%>
+        <li class="game game-top"><%= @brackets['D1'].home_team.name-%><span>-</span></li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom "><%= @brackets['D1'].away_team.name-%><span>-</span></li>
+    <% else%>
+        <% if  @brackets['D1'].winner == @brackets['D1'].home_team.name %>
+            <li class="game game-top winner"><%= @brackets['D1'].home_team.name-%> <span><%= @brackets['D1'].home_goals -%></span></li>
+        <% else %>
+            <li class="game game-top"><%= @brackets['D1'].home_team.name-%> <span><%= @brackets['D1'].home_goals -%></span></li>
+        <% end %>
+            <li class="game game-spacer">&nbsp;</li>
+        <% if  @brackets['D1'].winner == @brackets['D1'].away_team.name %>
+            <li class="game game-bottom winner"><%= @brackets['D1'].away_team.name -%><span><%= @brackets['D1'].away_goals -%></span></li>
+        <% else %>
+            <li class="game game-bottom"><%= @brackets['D1'].away_team.name -%><span><%= @brackets['D1'].away_goals -%></span></li>
+        <% end %>
+    <% end %>
+
+    <li class="spacer">&nbsp;</li>
+
+  </ul>
+  <ul class="round round-"><i>Winner</i>
+    <% if  @brackets['D1'] == 'no_match' or not @brackets['D1'].played %>
+        <li class="spacer">&nbsp;</li>
+        <li class="game game-top"></li>
+        <li class="spacer">&nbsp;</li>
+    <% else%>
+        <li class="spacer">&nbsp;</li>
+        <li class="game game-top winner"><%= @brackets['D1'].winner -%> </li>
+        <li class="spacer">&nbsp;</li>
+    <% end %>
+  </ul>
+</div>
