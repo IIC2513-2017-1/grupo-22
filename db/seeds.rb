@@ -44,6 +44,8 @@ user_id: User.find_by(username: "ROBerto").id,
 mail: Faker::Internet.email, price: '0', prize: 'Happiness (?)',phone: '7777777-0',
 schedule: Faker::Time.between(DateTime.now - 1, DateTime.now))
 
+Foro.create({:title => "Foro de Liga con puntos", :description => "Descripcion del foro de Liga con puntos", :tourney_id => Tourney.first.id})
+
 Tourney.create(name: "Torneo/brackets", description: 'Description', format: 'Playoffs',
 location: Faker::Address.street_address,
 inscription_limit_date: Faker::Date.between(25.days.ago, 20.days.ago),
@@ -52,7 +54,6 @@ user_id: User.find_by(username: "ROBerto").id,
 mail: Faker::Internet.email, price: 'Your soul (?)', prize: 'Sorrow (?)', phone: '666666-0',
 schedule: Faker::Time.between(DateTime.now - 1, DateTime.now))
 
-Foro.create({:title => "Foro de Liga con puntos", :description => "Descripcion del foro de Liga con puntos", :tourney_id => Tourney.first.id})
 Foro.create({:title => "Foro de Torneo/brackets", :description => "Descripcion del foro de Torneo/brackets", :tourney_id => Tourney.second.id})
 
 
