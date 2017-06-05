@@ -93,7 +93,7 @@
       </thead>
       <tbody>
         <% @tourney.teams.each do |team| %>
-          <tr id="no-link">
+          <tr class="no-link">
             <td><%= team.name %></td>
             <td><%= team.trainer %></td>
             <td class="value" id="cell-link">
@@ -149,7 +149,7 @@
 <!-- TABLA DE PARTIDOS -->
 <h1 style="margin-left: 30px;">Calendario</h1>
 <br>
-<table class="tabla">
+<table class="tabla container-matches">
   <thead>
     <tr>
       <th>Date</th>
@@ -168,29 +168,7 @@
   <tbody>
     <% @tourney.matches.each do |match| %>
       <% if match.home_team.present? %>
-      <tr id="no-link">
-        <td><%= match.date %></td>
-        <td><%= match.home_team.name %></td>
-        <td><%= match.away_team.name %></td>
-        <% if @tourney.format == 'Playoffs' %>
-        <td><%= match.bracket_code %></td>
-        <% end %>
-        <% if current_user and current_user.id? %>
-        <% if current_user.id == @tourney.user.id %>
-        <td class="value" id="cell-link">
-            <%= link_to(tourney_match_path(@tourney, match),
-            method: :delete, data: { confirm: 'Are you sure?' }) do %>
-              <span class="icon-go2" style="margin-right: 5px;"></span>Remove
-            <% end %>
-        </td>
-        <td class="value" id="cell-link">
-          <%= link_to(edit_tourney_match_path(@tourney, match)) do %>
-            <span class="icon-go2" style="margin-right: 5px;"></span>Edit
-          <% end %>
-        </td>
-        <% end %>
-        <% end %>
-      </tr>
+         <%= render "matches/match_tourney_display", match: match %>
       <% end %>
     <% end %>
   </tbody>

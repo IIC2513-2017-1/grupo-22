@@ -26,16 +26,18 @@
     <div style="height: 5px; clear: left;"></div>
     </header>
     <main>
-    <% [:notice].each do |flash_type| %>
-      <% if (flash_message = flash[flash_type]).present? %>
-        <div class="<%= flash_type %>" id=notice><%= flash_message %></div>
+    <div class="notificaciones">
+      <% [:notice].each do |flash_type| %>
+        <% if (flash_message = flash[flash_type]).present? %>
+          <div class="<%= flash_type %>" id=notice><%= flash_message %></div>
+        <% end %>
       <% end %>
-    <% end %>
-    <% [:alert].each do |flash_type| %>
-      <% if (flash_message = flash[flash_type]).present? %>
-        <div class="<%= flash_type %>" id=alert><%= flash_message %></div>
+      <% [:alert].each do |flash_type| %>
+        <% if (flash_message = flash[flash_type]).present? %>
+          <div class="<%= flash_type %>" id=alert><%= flash_message %></div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
     <%= yield %>
     </main>
     <footer>

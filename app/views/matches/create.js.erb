@@ -1,0 +1,14 @@
+<% if @result %>
+	$(".tabla.container-matches").append("<%= j render '/matches/match_tourney_display', match: @match %>");
+	$("#match_<%= @match.id %>").hide();
+	$("#match_<%= @match.id %>").css("background-color", "#FFD700");
+	$(".notificaciones").html("");
+	$(".notificaciones").append("<div id=notice><%= flash[:notice] %></div>");
+	$("#match_<%= @match.id %>").fadeIn(800, function(){
+		$("#match_<%= @match.id %>").css("background", "#f6f6f6");
+	});	
+
+<% else %>
+	$(".notificaciones").html("");
+	$(".notificaciones").append("<div id=alert><%= flash[:alert] %></div>");	
+<% end %>

@@ -9,4 +9,5 @@ class ApplicationController < ActionController::Base
 		return @current_user if defined?(@current_user)
 		@current_user = session.key?(:user_id) && User.find(session[:user_id])
 	end
+
 end

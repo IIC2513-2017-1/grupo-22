@@ -14,7 +14,7 @@
 		   </thead>
 			<tbody>
 			<% tourney.matches.each do |match|  %>
-				<tr id="no-link">
+				<tr class="no-link">
 				<td class="value" id="cell-link">
 					<%= link_to(team_path(match.home_team)) do %>
 						<span class="icon-go2" style="margin-right: 5px;"></span><%= match.home_team.name %>

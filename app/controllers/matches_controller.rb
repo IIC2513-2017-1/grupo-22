@@ -8,10 +8,15 @@ class MatchesController < ApplicationController
 
   def create
     @match = @tourney.matches.create(match_params)
-    if @match.save
-      redirect_to tourney_path(@tourney), notice: "¡Partido agregado al torneo!"
-    else
-      redirect_to tourney_path(@tourney), alert: "No se puede realizar ese partido"
+
+    respond_to do |format|
+      if @result = @match.save
+        format.html {redirect_to tourney_path(@tourney), notice: "¡Partido agregado al torneo!"}
+        format.js {flash.now[:notice] = "¡Partido agregado al torneo!"}
+      else
+        format.html {redirect_to tourney_path(@tourney), alert: "No se puede realizar ese partido"}
+        format.js {flash.now[:alert] = "No se puede realizar ese partido"}
+      end
     end
   end
 
@@ -30,7 +35,11 @@ class MatchesController < ApplicationController
 
   def destroy
     @match.delete
-    redirect_to tourney_path(@tourney), notice: "Partido eliminado del torneo"
+    respond_to do |format|
+      format.html {redirect_to tourney_path(@tourney), notice: "Partido eliminado del torneo"}
+      format.js {flash.now[:notice] = "¡Partido eliminado del torneo!"}
+    end
+
   end
 
   private

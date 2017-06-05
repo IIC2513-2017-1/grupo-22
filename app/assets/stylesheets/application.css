@@ -347,7 +347,7 @@ a.back, a.back:hover{
   cursor: pointer;
 }
 
-.tabla tbody tr#no-link:hover {
+.tabla tbody tr.no-link:hover {
   background-color: #f6f6f6;
   cursor: default;
 }
