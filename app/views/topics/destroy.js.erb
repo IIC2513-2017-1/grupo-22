@@ -1,3 +1,6 @@
-$("#topic_<%= @topic.id %>").fadeOut(500, function(){
+$("#topic_<%= @topic.id %>").css({"border-color": "#FFD700"});
+$("#topic_<%= @topic.id %> p").css({"color": "#FFD700"});
+$("#topic_<%= @topic.id %> .creator.left-big").css({"color": "#FFD700"});
+$("#topic_<%= @topic.id %> ").fadeOut(500, function(){
 	$this.remove();
 });

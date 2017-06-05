@@ -10,13 +10,10 @@
   	  <%= @topic.content %>
   	</p>
   	<h1>Comments</h1>
-  	<div class="container-comments">
+  	<div class="container-comments scroll" id="scroll">
   		<%= render @comments %>
   	</div>
   	<br>
-  	<div class="container-pagination">
-  		<%= will_paginate @comments %>
-  	</div>
 	</div>
 </div>
 <div class="fixme">

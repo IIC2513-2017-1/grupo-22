@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
   before_action :set_foro, only: [:destroy]
 
   def show
-    @comments = @topic.comments.order(created_at: :asc).paginate(page: params[:page], per_page:5)
+    @comments = @topic.comments.order(created_at: :asc)
     
     respond_to do |format|
       format.html 

@@ -90,7 +90,7 @@ main {
 }
 
 .scroll {
-  max-height:1000px;
+  max-height:750px;
   overflow-y:scroll;
 }
 
@@ -551,7 +551,8 @@ a.back, a.back:hover{
 }
 
 .comment, .topic {
-    border-bottom: 2px solid gray;
+    border-bottom: 1px solid gray;
+    margin-right: 10px;
  }
 
  .creator {

@@ -1,4 +1,12 @@
 $(".form-content").val('');
 $(".container-comments").append('<%= j render @comment %>');
-$("#comment_<%= @comment.id %>").hide().fadeIn(800);
-$('.pagination a').attr('data-remote', 'true');
+$("#comment_<%= @comment.id %>").css({"border-color": "#FFD700"});
+$("#comment_<%= @comment.id %> p").css({"color": "#FFD700"});
+$("#comment_<%= @comment.id %> .creator.left-big").css({"color": "#FFD700"});
+$("#comment_<%= @comment.id %>").hide().fadeIn(800, function(){
+	$("#comment_<%= @comment.id %>").css("border-color", "gray");
+	$("#comment_<%= @comment.id %> p").css({"color": "white"});
+  $("#comment_<%= @comment.id %> .creator.left-big").css({"color": "gray"});
+});
+$("#scroll").scrollTop($("#scroll")[0].scrollHeight);
+/*$('.pagination a').attr('data-remote', 'true');*/

@@ -1,5 +1,13 @@
 $(".form-tittle").val('');
 $(".form-content").val('');
 $(".container-topics").append('<%= j render @topic %>');
-$("#topic_<%= @topic.id %>").hide().fadeIn(800);
+$("#topic_<%= @topic.id %>").css({"border-color": "#FFD700"});
+$("#topic_<%= @topic.id %> p").css({"color": "#FFD700"});
+$("#topic_<%= @topic.id %> .creator.left-big").css({"color": "#FFD700"});
+$("#topic_<%= @topic.id %>").hide().fadeIn(800, function(){
+	$("#topic_<%= @topic.id %>").css("border-color", "gray");
+	$("#topic_<%= @topic.id %> .creator.left-big").css("color", "gray");
+	$("#topic_<%= @topic.id %> p").css({"color": "white"});
+
+});
 $("#scroll").scrollTop($("#scroll")[0].scrollHeight);
