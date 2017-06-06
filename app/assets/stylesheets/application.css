@@ -743,12 +743,32 @@ a.back, a.back:hover{
 
 .container-edit-match .attr {
   border-radius: 5px;
-  border: 5px solid #FFD700;
-  background: #FFD700;
+  background: #000;
   text-align: center;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
-  color: #000;
+  color: #FFD700;
+  width: 99%;
+  padding:5px;
+}
+
+.container-edit-match .attr-half {
+  border-radius: 5px;
+  background: #000;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFD700;
+  width: 49%;
+  display: inline-block;
+  overflow: hidden;
+  padding:5px;
+}
+
+.container-edit-match .attr-value {
+  text-align: center;
+  display: inline-block;
+  width: 49%;
 }
 
 /* Brackets*/
