@@ -36,6 +36,10 @@ class TopicsController < ApplicationController
   end
 
   def edit
+    respond_to do |format|
+      format.html {redirect_to edit_topic_path(@topic)}
+      format.js
+    end
   end
 
   def update

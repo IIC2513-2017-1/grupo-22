@@ -26,7 +26,12 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    respond_to do |format|
+      format.html {redirect_to edit_comment_path(@comment)}
+      format.js
+    end
   end
+
 
   def update
     @comment.update(comment_params)

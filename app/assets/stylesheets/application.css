@@ -791,6 +791,11 @@ a.back, a.back:hover{
   list-style:none;
   padding:0;
 }
+
+.round.ocho{
+  width:25%;
+}
+
 .round .spacer{ flex-grow:1; }
 .round .spacer:first-child,
 .round .spacer:last-child{ flex-grow:.5; }
@@ -890,7 +895,9 @@ li.game-bottom{
 .container-tourneyform,
 .container-login,
 .container-sign-up,
-.container-edit-match {
+.container-edit-match,
+.container-edit-topic,
+.container-edit-comment {
   text-align: left;
   background-image: url('Fondo.jpg');
   background-size: cover; 

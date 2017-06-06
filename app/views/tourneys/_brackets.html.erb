@@ -1,6 +1,6 @@
 <h1 style="margin-left: 30px;">Brackets</h1>
-<div id="tournament">
-  <ul class="round round-1"><i>Quarter Finals</i>
+<div id="tournament" style="width: 100%";>
+  <ul class="round round-1 ocho"><i>Quarter Finals</i>
     <li class="spacer">&nbsp;</li>
 
     <% if  @brackets['A1'] == 'no_match'%>
@@ -100,7 +100,7 @@
     <li class="spacer">&nbsp;</li>
 
   </ul>
-  <ul class="round round-2"><i>Semi Finals</i>
+  <ul class="round round-2 ocho"><i>Semi Finals</i>
     <li class="spacer">&nbsp;</li>
 
     <% if  @brackets['B1'] == 'no_match'%>
@@ -152,7 +152,7 @@
     <li class="spacer">&nbsp;</li>
 
   </ul>
-  <ul class="round round-3"><i>Final</i>
+  <ul class="round round-3 ocho"><i>Final</i>
 <li class="spacer">&nbsp;</li>
 
     <% if  @brackets['C1'] == 'no_match'%>
@@ -180,7 +180,7 @@
     <li class="spacer">&nbsp;</li>
 
   </ul>
-  <ul class="round round-"><i>Winner</i>
+  <ul class="round ocho"><i>Winner</i>
     <% if  @brackets['C1'] == 'no_match' or not @brackets['C1'].played %>
         <li class="spacer">&nbsp;</li>
         <li class="game game-top"></li>
