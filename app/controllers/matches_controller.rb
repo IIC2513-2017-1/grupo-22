@@ -11,8 +11,8 @@ class MatchesController < ApplicationController
 
     respond_to do |format|
       if @result = @match.save
-        format.html {redirect_to tourney_path(@tourney), notice: "¡Partido agregado al torneo!"}
-        format.js {flash.now[:notice] = "¡Partido agregado al torneo!"}
+        format.html {redirect_to tourney_path(@tourney), notice: "Partido agregado al torneo"}
+        format.js {flash.now[:notice] = "Partido agregado al torneo"}
       else
         format.html {redirect_to tourney_path(@tourney), alert: "No se puede realizar ese partido"}
         format.js {flash.now[:alert] = "No se puede realizar ese partido"}
@@ -21,6 +21,11 @@ class MatchesController < ApplicationController
   end
 
   def edit
+    respond_to do |format|
+      format.html {redirect_to edit_tourney_match_path(@tourney, @match)  } 
+      format.js
+    end
+    
   end
 
   def update
@@ -34,10 +39,15 @@ class MatchesController < ApplicationController
   end
 
   def destroy
-    @match.delete
     respond_to do |format|
-      format.html {redirect_to tourney_path(@tourney), notice: "Partido eliminado del torneo"}
-      format.js {flash.now[:notice] = "¡Partido eliminado del torneo!"}
+      if @result = !@match.played 
+        @match.delete
+        format.html {redirect_to tourney_path(@tourney), notice: "Partido eliminado del torneo"}
+        format.js {flash.now[:notice] = "¡Partido eliminado del torneo!"}
+      else
+        format.html {redirect_to tourney_path(@tourney), alert: "No puedes eliminar el partido"}
+        format.js {flash.now[:alert] = "No puedes eliminar el partido"}
+      end
     end
 
   end

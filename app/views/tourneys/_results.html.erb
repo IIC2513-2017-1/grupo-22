@@ -33,7 +33,7 @@
         <% if current_user and current_user.id? %>
         <% if current_user.id == @tourney.user.id %>
           <td class="value" id="cell-link">
-            <%= link_to(edit_tourney_match_path(@tourney, match)) do %>
+            <%= link_to(edit_tourney_match_path(@tourney, match), remote:true) do %>
               <span class="icon-go2" style="margin-right: 5px;"></span>Edit
             <% end %>
           </td>

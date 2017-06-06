@@ -13,8 +13,9 @@
           <% end %>
         </td>
         <td class="value" id="cell-link">
-          <%= link_to(edit_tourney_match_path(@tourney, match)) do %>
-            <span class="icon-go2" style="margin-right: 5px;"></span>Edit
+          <!--<a href="" data-remote=true id="<%= match.id %>" tourney="<%= @tourney.id %>" data-url="<%= edit_tourney_match_path(@tourney, match) %>" class="edit-match-form"><span class="icon-go2" style="margin-right: 5px;"></span>Edit</a>-->
+          <%= link_to(edit_tourney_match_path(@tourney, match), remote: true) do %>
+            <span class="icon-go2" style="margin-right: 5px;"></span>Edit 
           <% end %>
         </td>
       <% end %>

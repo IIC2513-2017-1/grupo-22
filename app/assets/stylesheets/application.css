@@ -870,7 +870,7 @@ li.game-bottom{
 .container-tourneyform,
 .container-login,
 .container-sign-up,
-.container-inner {
+.container-edit-match {
   text-align: left;
   background-image: url('Fondo.jpg');
   background-size: cover; 

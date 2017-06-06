@@ -71,4 +71,29 @@ $(function(){
     $(function(){
        $('.pagination a').attr('data-remote', 'true')
     });
+
+    /* Open edit forms 
+    
+    $(document).on('turbolinks:load', function () {     
+
+        var buttonEdit = $(".edit-match-form");
+
+        buttonEdit.on("click", function(e){
+           var id = $(this).attr('id');
+           var tourney_id = $(this).attr('tourney');
+
+           $.ajax( {
+            type: 'GET',
+            url: $(this).attr('data-url'), 
+            dataType: 'script',
+            data: { 
+            "id": id, 
+            "tourney_id": tourney_id, 
+            }
+           });
+
+        });
+
+    });*/
+
 });
