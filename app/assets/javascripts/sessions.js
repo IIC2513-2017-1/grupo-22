@@ -25,7 +25,7 @@ $(function(){
 
 		buttonClose.on("click", function(){
 			modalBackground.fadeOut(300);
-			containerModal.css("transform", "scale(0.7)");
+			containerModal.css("transform", "scale(0.1)");
 			$(".field #session_username").val('');
 			$(".field #session_password").val('');
 		});
