@@ -10,4 +10,6 @@ $("#topic_<%= @topic.id %>").hide().fadeIn(800, function(){
 	$("#topic_<%= @topic.id %> p").css({"color": "white"});
 
 });
+$("#noticia .notification").html("<%= flash[:notice] %>");
+$("#alerta .notification").html("");
 $("#scroll").scrollTop($("#scroll")[0].scrollHeight);
