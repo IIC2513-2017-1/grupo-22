@@ -16,7 +16,7 @@ Player.destroy_all
 
 5.times do
   User.create(full_name: Faker::Name.name, username: Faker::Internet.user_name,
-  email: Faker::Internet.email, password: Faker::Internet.password)
+  email: Faker::Internet.email, password: Faker::Internet.password(6))
 end
 
 12.times do
@@ -34,7 +34,7 @@ end
 end
 
 User.create(full_name: "11100111", username: "ROBerto",
-email: "bibubop@uc.com", password: "123")
+email: "bibubop@uc.com", password: "123456")
 
 Tourney.create(name: "Liga con puntos", description: 'Description', format: 'Torneo',
 location: Faker::Address.street_address,
