@@ -19,6 +19,7 @@
 
 $(function(){
 
+    window.setInterval(notificaciones, 50);
 
     $(document).on('turbolinks:load', function () {
         $("tr[data-link]").click(function() {
@@ -66,6 +67,53 @@ $(function(){
         });
 
     });
+
+    $(document).ready(function(){
+
+        var noticia =$("#noticia");
+        var alerta =$("#alerta");
+        var closeNoticia = $("#noticia .close");
+        var closeAlerta = $("#alerta .close");
+        var notificationNoticia = $("#noticia .notification");
+        var notificationAlerta = $("#alerta .notification");
+
+        closeNoticia.on("click", function(){
+            noticia.fadeOut(400); 
+            notificationNoticia.html('');     
+        });
+    
+        closeAlerta.on("click", function(){
+            alerta.fadeOut(400);
+            notificationAlerta.html('');
+        });
+    });
+
+    function notificaciones(){
+
+       var noticia = $("#noticia");
+       var alerta = $("#alerta");
+
+       var notificationNoticia = $("#noticia .notification");
+       var notificationAlerta = $("#alerta .notification");
+
+       if($.trim(notificationNoticia.html())=='') {
+        noticia.css("visibility", "hidden");
+       }
+       else{
+        noticia.css("visibility", "visible");
+        alerta.css("visibility", "hidden");
+        noticia.fadeIn(400);
+       }
+
+       if($.trim(notificationAlerta.html())=='') {
+        alerta.css("visibility", "hidden");
+       }
+       else{
+        alerta.css("visibility", "visible");
+        noticia.css("visibility", "hidden")
+        alerta.fadeIn(400);
+       }
+    };
 
     /* para utilizar AJAX en links de paginacion */
     $(function(){

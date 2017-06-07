@@ -26,18 +26,6 @@
     <div style="height: 5px; clear: left;"></div>
     </header>
     <main>
-    <div class="notificaciones">
-      <% [:notice].each do |flash_type| %>
-        <% if (flash_message = flash[flash_type]).present? %>
-          <div class="<%= flash_type %>" id=notice><%= flash_message %></div>
-        <% end %>
-      <% end %>
-      <% [:alert].each do |flash_type| %>
-        <% if (flash_message = flash[flash_type]).present? %>
-          <div class="<%= flash_type %>" id=alert><%= flash_message %></div>
-        <% end %>
-      <% end %>
-    </div>
     <%= yield %>
     </main>
     <footer>
@@ -64,7 +52,7 @@
     <!-- Login -->
     <div class="modal-background login">
       <div class="container-login">
-        <div class="close">
+        <div class="close login">
           <span class=icon-delete></span>
         </div>
         <%= render 'sessions/login' %>
@@ -94,6 +82,32 @@
           <br>
           <%= render '/teams/form', team: Team.new %>
         </div>
+      </div>
+    </div>
+
+    <!-- Notificaciones -->
+    <div id="noticia">
+      <div class="close">
+        <span class="icon-delete small"></span>
+      </div>
+      <div class="notification">
+      <% [:notice].each do |flash_type| %>
+        <% if (flash_message = flash[flash_type]).present? %>
+          <%= flash_message %>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+    <div id="alerta">
+      <div class="close">
+        <span class="icon-delete small"></span>
+      </div>
+      <div class="notification">
+      <% [:alert].each do |flash_type| %>
+        <% if (flash_message = flash[flash_type]).present? %>
+          <%= flash_message %>
+        <% end %>
+      <% end %> 
       </div>
     </div>
 

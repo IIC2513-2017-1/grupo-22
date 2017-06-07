@@ -11,11 +11,11 @@ class MatchesController < ApplicationController
 
     respond_to do |format|
       if @result = @match.save
-        format.html {redirect_to tourney_path(@tourney), notice: "Partido agregado al torneo"}
-        format.js {flash.now[:notice] = "Partido agregado al torneo"}
+        format.html {redirect_to tourney_path(@tourney), notice: "Match was added"}
+        format.js {flash.now[:notice] = "Match was added"}
       else
-        format.html {redirect_to tourney_path(@tourney), alert: "No se puede realizar ese partido"}
-        format.js {flash.now[:alert] = "No se puede realizar ese partido"}
+        format.html {redirect_to tourney_path(@tourney), alert: "Could not add match"}
+        format.js {flash.now[:alert] = "Could not add match"}
       end
     end
   end
@@ -35,18 +35,18 @@ class MatchesController < ApplicationController
     else
       @match.update(winner: nil, home_goals:0, away_goals:0)
     end
-    redirect_to tourney_path(@match.tourney), notice: "¡Updated result!"
+    redirect_to tourney_path(@match.tourney), notice: "Match updated"
   end
 
   def destroy
     respond_to do |format|
       if @result = !@match.played 
         @match.delete
-        format.html {redirect_to tourney_path(@tourney), notice: "Partido eliminado del torneo"}
-        format.js {flash.now[:notice] = "¡Partido eliminado del torneo!"}
+        format.html {redirect_to tourney_path(@tourney), notice: "Match deleted from tourney"}
+        format.js {flash.now[:notice] = "Match deleted from tourney"}
       else
-        format.html {redirect_to tourney_path(@tourney), alert: "No puedes eliminar el partido"}
-        format.js {flash.now[:alert] = "No puedes eliminar el partido"}
+        format.html {redirect_to tourney_path(@tourney), alert: "Could not delete match"}
+        format.js {flash.now[:alert] = "Could not delete match"}
       end
     end
 

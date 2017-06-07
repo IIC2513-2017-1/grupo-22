@@ -2,6 +2,8 @@
 	$(".notificaciones").html("");
 	$(".notificaciones").append("<div id=notice><%= flash[:notice] %></div>");
 	$("#match_<%= @match.id %>").css("background-color", "#FFD700");
+	$("#noticia .notification").html("<%= flash[:notice] %>");
+	$("#alerta .notification").html("");
 	$("#match_<%= @match.id %>").fadeOut(800, function(){
 		$("#match_<%= @match.id %>").remove();
 	});
@@ -10,6 +12,8 @@
 	$("#match_<%= @match.id %> td.value#cell-link a").css({"color": "red" });
 	$(".notificaciones").html("");
 	$(".notificaciones").append("<div id=alert><%= flash[:alert] %></div>");
+	$("#alerta .notification").html("<%= flash[:alert] %>");
+	$("#noticia .notification").html("");
 	setTimeout(
   function() 
   {

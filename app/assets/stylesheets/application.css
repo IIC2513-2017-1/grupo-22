@@ -63,6 +63,38 @@ a:hover {
   display:inline-block;
 }
 
+#noticia {
+  position:fixed;
+  top:10px;
+  left:0;
+  min-width: 200px;
+  min-height: 50px;
+  background-color: rgba(0,200,0,.8);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  line-height: 45px;
+  visibility:hidden;
+}
+
+#alerta {
+  position:fixed;
+  top:10px;
+  left:0;
+  min-width: 200px;
+  min-height: 50px;
+  background-color: rgba(200,0,0,.8);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  line-height: 45px;
+  visibility:hidden;
+}
+
+#alerta .notification, 
+#noticia .notification {
+  margin: 10px;
+  padding:5px;
+}
+
 /* Generales */
 
 header {
@@ -883,6 +915,18 @@ li.game-bottom{
 .close .icon-delete {
   color: red;
   font-size: 30px;
+}
+
+.close .icon-delete.small {
+  font-size: 15px;
+  color: #FFF;
+  display: block;
+  float: right;
+  padding: 2px;
+}
+
+.close .icon-delete.small:hover{
+   color: #000;
 }
 
 .close .icon-delete:hover{

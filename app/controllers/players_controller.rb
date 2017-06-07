@@ -21,7 +21,7 @@ class PlayersController < ApplicationController
   end
 
   def create
-    #@team = Team.find(params[:team_id])
+
     @player = @team.players.create(player_params)
     redirect_to team_path(@team)
   end

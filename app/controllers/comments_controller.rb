@@ -15,9 +15,9 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to topic_path(@topic), notice: 'Comment was successfully created.' }
+        format.html { redirect_to topic_path(@topic), notice: 'Comment was created.' }
         format.json { render :show, status: :created, location: @comment}
-        format.js
+        format.js {flash.now[:notice] = "Comment was added"}
       else
         format.html { redirect_to topic_path(@topic)}
         format.json { render json: @comment.errors, status: :unprocessable_entity }
@@ -35,18 +35,22 @@ class CommentsController < ApplicationController
 
   def update
     @comment.update(comment_params)
-    redirect_to topic_path(@comment.topic)
+
+    respond_to do |format|
+      format.html {redirect_to topic_path(@comment.topic), notice: "Comment updated"}
+    end
+
   end
 
   def destroy
     respond_to do |format|
       if @comment.destroy
-        format.html { redirect_to topic_path(@topic), notice: 'Comment was successfully deleted.' }
+        format.html { redirect_to topic_path(@topic), notice: 'Comment was deleted.' }
         format.json { render :show, status: :created, location: @comment}
-        format.js
+        format.js {flash.now[:notice] = "Comment deleted"}
       else
         format.html 
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.json { render json: @comment.errors, alert: 'Couldn\'t delete comment' }
       end
     end
   end

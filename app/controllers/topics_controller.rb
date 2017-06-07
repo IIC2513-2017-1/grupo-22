@@ -25,9 +25,9 @@ class TopicsController < ApplicationController
     respond_to do |format|
       if @topic.save
         TopicMailer.new_topic_email(@topic).deliver_later
-        format.html { redirect_to foro_path(@foro), notice: 'Topic was successfully created.' }
+        format.html { redirect_to foro_path(@foro), notice: 'Topic was created.' }
         format.json { render :show, status: :created, location: @topic}
-        format.js
+        format.js {flash.now[:notice] = "Topic was created"}
       else
         format.html { redirect_to foro_path(@foro)}
         format.json { render json: @topic.errors, status: :unprocessable_entity }
@@ -44,7 +44,10 @@ class TopicsController < ApplicationController
 
   def update
     @topic.update(topic_params)
-    redirect_to foro_path(@topic.foro)
+
+    respond_to do |format|
+      format.html {redirect_to foro_path(@topic.foro), notice: "Topic updated"}
+    end
   end
 
   def destroy
@@ -52,7 +55,7 @@ class TopicsController < ApplicationController
       if @topic.destroy
         format.html { redirect_to foro_path(@foro), notice: 'Topic was successfully deleted.' }
         format.json { render :show, status: :created, location: @topic}
-        format.js
+        format.js {flash.now[:notice] = "Topic deleted"}
       else
         format.html { redirect_to foro_path(@foro)}
         format.json { render json: @topic.errors, status: :unprocessable_entity }

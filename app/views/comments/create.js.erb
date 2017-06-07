@@ -8,5 +8,7 @@ $("#comment_<%= @comment.id %>").hide().fadeIn(800, function(){
 	$("#comment_<%= @comment.id %> p").css({"color": "white"});
   $("#comment_<%= @comment.id %> .creator.left-big").css({"color": "gray"});
 });
+$("#noticia .notification").html("<%= flash[:notice] %>");
+$("#alerta .notification").html("");
 $("#scroll").scrollTop($("#scroll")[0].scrollHeight);
-/*$('.pagination a').attr('data-remote', 'true');*/
+
