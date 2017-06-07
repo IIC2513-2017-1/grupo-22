@@ -88,6 +88,7 @@ $(function(){
         });
     });
 
+
     function notificaciones(){
 
        var noticia = $("#noticia");
@@ -119,6 +120,21 @@ $(function(){
     $(function(){
        $('.pagination a').attr('data-remote', 'true')
     });
+
+     /*$(document).on('turbolinks:load', function () {
+        $("#new_user").on('ajax:success', function (e, data) {
+            var parsed = JSON.parse(data);
+
+            alert(parsed.status);
+
+        }).on('ajax:error', function (e, data) {
+            var parsed = JSON.parse(data);
+
+            alert(parsed.status);
+        });
+
+     });*/
+
 
     /* Open edit forms 
     

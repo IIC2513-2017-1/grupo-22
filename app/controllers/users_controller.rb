@@ -30,13 +30,15 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     respond_to do |format|
-      if @user.save
+      if @result = @user.save
         UserMailer.welcome_email(@user).deliver_later
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
+        format.js { flash.now[:notice] = 'User created. Check your email.' }
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.js { flash.now[:notice] = 'Could not create user' }
       end
     end
   end

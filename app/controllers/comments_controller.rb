@@ -16,7 +16,6 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to topic_path(@topic), notice: 'Comment was created.' }
-        format.json { render :show, status: :created, location: @comment}
         format.js {flash.now[:notice] = "Comment was added"}
       else
         format.html { redirect_to topic_path(@topic)}

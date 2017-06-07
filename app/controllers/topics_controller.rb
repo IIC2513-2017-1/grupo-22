@@ -26,8 +26,7 @@ class TopicsController < ApplicationController
       if @topic.save
         TopicMailer.new_topic_email(@topic).deliver_later
         format.html { redirect_to foro_path(@foro), notice: 'Topic was created.' }
-        format.json { render :show, status: :created, location: @topic}
-        format.js {flash.now[:notice] = "Topic was created"}
+        format.js {flash.now[:notice] = "Topic was created" }
       else
         format.html { redirect_to foro_path(@foro)}
         format.json { render json: @topic.errors, status: :unprocessable_entity }
