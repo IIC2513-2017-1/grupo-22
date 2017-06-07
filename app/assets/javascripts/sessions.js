@@ -11,7 +11,7 @@ $(function(){
 
 		var containerModal = modalBackground.find(">:first-child");
 
-		var buttonClose = $(".close");
+		var buttonClose = $(".close.login");
 
 		buttonLogin.on("mouseover", function(){
 			buttonLogin.css("cursor","pointer");
