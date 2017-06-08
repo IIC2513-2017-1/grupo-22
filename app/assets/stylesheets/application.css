@@ -207,9 +207,11 @@ h1, h2 {
 }
 
 textarea {
-    width: 300px;
-    height: 60px;
-    overflow: auto;
+  width: 300px;
+  height: 60px;
+  overflow: auto;
+  border-radius: 6px;
+
 }
 
 textarea:focus{
@@ -392,9 +394,17 @@ a.back, a.back:hover{
 }
 
 .tabla td {
-  padding: 8px;
+  padding: 4px;
   text-align: center;
   border-bottom: 1px solid #ddd;
+  max-width: 40px;
+}
+
+.tabla tbody td {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
 }
 
 /* Efectos de las tablas perfil */

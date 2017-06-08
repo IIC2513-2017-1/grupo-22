@@ -53,11 +53,13 @@ div {
   color: green;
 }
 
+
 .field_with_errors {
   border: 2px solid red;
   border-radius:10px;
   display: table;
   margin: auto;
+  color:red;
 }
 
 #error_explanation {
@@ -87,5 +89,5 @@ div {
 }
 
 label {
-  display: block;
+  display:block;
 }

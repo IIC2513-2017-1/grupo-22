@@ -1,27 +1,16 @@
-<%= form_for(tourney) do |f| %>
-  <% if tourney.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(tourney.errors.count, "error") %> prohibited this tourney from being saved:</h2>
-
-      <ul>
-      <% tourney.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for([tourney], remote:true) do |f| %>
 <div class="container-flex">
   <div class="left form">
+    <span style="display:block">Name</span>
     <div class="field">
-      <%= f.label :name %>
       <%= f.text_field :name, required: true %>
     </div>
+    <span style="display:block">Description</span>
     <div class="field">
-      <%= f.label :description %>
       <%= f.text_area :description, required: true %>
     </div>
+    <span style="display:block">Format</span>
     <div class="field">
-      <%= label :format, 'Formato' %>
       <table>
         <tr>
           <td><%= f.radio_button :format, 'Playoffs', :checked => true %><%= label :format, 'Playoffs' %></td>
@@ -29,46 +18,44 @@
         </tr>
       </table>
     </div>
+    <span style="display:block">Location</span>
     <div class="field">
-      <%= f.label :location %>
       <%= f.text_field :location, required: true %>
     </div>
   </div>
   <div class="middle form">
+    <span>Mail</span>
     <div class="field">
-      <%= f.label :mail %>
       <%= f.email_field :mail, required: true %>
     </div>
+    <span style="display:block">Inscription Limit Date</span>
     <div class="field">
-      <%= f.label :inscription_limit_date %>
       <%= f.date_select :inscription_limit_date, required: true %>
     </div>
+    <span style="display:block">Start Date</span>
     <div class="field">
-      <%= f.label :start_date %>
       <%= f.date_select :start_date, required: true %>
     </div>
+    <span style="display:block">End Date</span>
     <div class="field">
-      <%= f.label :end_date %>
       <%= f.date_select :end_date, required: true %>
     </div>
+    <span style="display:block">Schedule</span>
     <div class="field">
-      <%= f.label :schedule  %>
       <%= f.time_select :schedule, :ignore_date => true %>
     </div>
   </div>
   <div class="right form">
+    <span style="display:block">Prize</span>
     <div class="field">
-      <%= f.label :prize%>
       <%= f.text_area :prize, required: true %>
     </div>
-
+    <span style="display:block">Price</span>
     <div class="field">
-      <%= f.label :price %>
       <%= f.text_field :price, required: true %>
     </div>
-
+    <span style="display:block">Phone</span>
     <div class="field">
-      <%= f.label :phone %>
       <%= f.text_field :phone, required: true %>
     </div>
     <br>

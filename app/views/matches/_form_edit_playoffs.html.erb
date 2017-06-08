@@ -1,6 +1,6 @@
 <div class="container-flex">
   <div style="width: 45%">
-  <%= form_for match do |m| %>
+  <%= form_for([match], remote: true) do |m| %>
     <h1>Edit Match</h1>
     <br>
     <div>

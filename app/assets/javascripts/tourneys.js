@@ -11,7 +11,7 @@ $(function(){
 
 		var containerModal = modalBackground.find(">:first-child");
 
-		var buttonClose = $(".close");
+		var buttonClose = $(".container-tourneyform .close");
 
 		buttonAddTourney.on("click", function(e){		
 			modalBackground.fadeIn(300);

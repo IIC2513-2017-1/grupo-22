@@ -1,9 +1,8 @@
-<%= form_for ([team, team.players.build]) do |f| %>
+<%= form_for([team, team.players.build], remote: true ) do |f| %>
 <div class="container-flex">
   <div class="left form">  
     <div class="field">
-      <%= f.label :full_name %>
-      <%= f.text_field :full_name, required: true %>
+      <%= f.text_field :full_name, required: true, placeholder: "Full Name" %>
     </div>
     <div class="container-flex field">
       <div class="left">
@@ -16,32 +15,26 @@
       </div>
     </div>
     <div class="field" style="display:inline;">
-      <%= f.label :email %>
-      <%= f.email_field :email, required: true %>
+      <%= f.email_field :email, required: true, placeholder: "Mail" %>
     </div>
   </div>
   <div class="middle form">
     <div class="field">
-      <%= f.label :address %>
-      <%= f.text_field :address %>
+      <%= f.text_field :address, placeholder: "Address" %>
     </div>
     <div class="field">
-      <%= f.label :phone %>
-      <%= f.text_field :phone %>
+      <%= f.text_field :phone, placeholder: "Phone" %>
     </div>
     <div class="field">
-      <%= f.label :birth_date %>
-      <%= f.date_select :birth_date %>
+      <%= f.date_select :birth_date, placeholder: "Birth Date" %>
     </div>
   </div>
   <div class="right form">
     <div class="field">
-      <%= f.label :ocupation %>
-      <%= f.text_field :ocupation, required: true %>
+      <%= f.text_field :ocupation, placeholder: "Ocupation" %>
     </div>
     <div class="field">
-      <%= f.label :phote %>
-      <%= f.text_field :phote %>
+      <%= f.text_field :phote, placeholder: "Picture" %>
     </div>
     <br>
     <div style="text-align: center;">

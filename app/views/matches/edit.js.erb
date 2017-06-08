@@ -13,9 +13,6 @@ var b = "Playoffs";
 modalBackground.fadeIn(300);
 containerModal.css("transform", "scale(1)");
 
-$("#snackbar").html("hola culiao");
-$("#snackbar").css({"visibility": "visible"});
-
 if(a == b){
 	containerInfo.html("<%= j render '/matches/form_edit_playoffs', match: @match %>");
 }

@@ -23,7 +23,15 @@ class PlayersController < ApplicationController
   def create
 
     @player = @team.players.create(player_params)
-    redirect_to team_path(@team)
+
+    respond_to do |format|
+      if @player.save
+        format.html {redirect_to team_path(@team), notice: "Player added to team"}
+      else
+        format.html {redirect_to team_path(@team), alert: "Could not create player"}
+        format.js {flash.now[:alert] = "Could not create player"}
+      end
+    end
   end
 
   def destroy

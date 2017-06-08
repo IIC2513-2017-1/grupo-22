@@ -1,0 +1,3 @@
+$("#new_tourney").html( "<%= j render '/tourneys/form', tourney: @tourney %>")
+$("#alerta .notification").html("<% @tourney.errors.full_messages.each do |message| %><li><%= message %></li><% end %>");
+$("#noticia .notification").html("");

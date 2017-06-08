@@ -1,0 +1,3 @@
+$("#new_player").html( "<%= j render '/players/form', team: @team %>")
+$("#alerta .notification").html("<% @player.errors.full_messages.each do |message| %><li><%= message %></li><% end %>");
+$("#noticia .notification").html("");

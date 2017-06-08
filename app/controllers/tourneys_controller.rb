@@ -36,12 +36,12 @@ class TourneysController < ApplicationController
       if @tourney.save
         foro = Foro.create({:title => "Foro de " + @tourney.name, :description => "Descripcion del foro de " + @tourney.name})
         @tourney.foro = foro
-        #@tourney.ranking = Ranking.create()
         format.html { redirect_to @tourney, notice: 'Tourney was successfully created.' }
         format.json { render :show, status: :created, location: @tourney }
       else
         format.html { render :new }
         format.json { render json: @tourney.errors, status: :unprocessable_entity }
+        format.js 
       end
     end
   end

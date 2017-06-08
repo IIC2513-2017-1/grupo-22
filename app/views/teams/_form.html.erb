@@ -1,37 +1,18 @@
-<%= form_for(team) do |f| %>
-  <% if team.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
-      <ul>
-      <% team.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for([team], remote: true) do |f| %>
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, required: true %>
+    <%= f.text_field :name, required: true,placeholder: "Name" %>
   </div>
-
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description, required: true %>
+    <%= f.text_area :description, required: true, placeholder: "Description" %>
   </div>
-
   <div class="field">
-    <%= f.label :logo %>
-    <%= f.text_field :logo %>
+    <%= f.text_field :logo, placeholder: "Logo" %>
   </div>
-
   <div class="field">
-    <%= f.label :trainer %>
-    <%= f.text_field :trainer %>
+    <%= f.text_field :trainer, placeholder: "Trainer name" %>
   </div>
-
   <div class="field">
-    <%= f.label :foundation_date %>
-    <%= f.date_select :foundation_date %>
+    <%= f.date_select :foundation_date, placeholder: "Foundation Date"  %>
   </div>
   <br>
   <div class="actions" style="text-align:center;">

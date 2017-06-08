@@ -68,7 +68,7 @@ $(function(){
 
     });
 
-    $(document).ready(function(){
+    $(document).on('turbolinks:load', function () {
 
         var noticia =$("#noticia");
         var alerta =$("#alerta");
