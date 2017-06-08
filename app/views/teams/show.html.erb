@@ -1,31 +1,12 @@
 <h1> Info </h1>
 <br>
-<table class="perfil">
-  <tr>
-    <td class="subject">Name:</td>
-    <td class="value"><%=@team.name%></td>
-  </tr>
-  <tr>
-    <td class="subject">Description:</td>
-    <td class="value"><%=@team.description%></td>
-  </tr>
-  <tr>
-    <td class="subject">Trainer:</td>
-    <td class="value"><%=@team.trainer%></td>
-  </tr>
-  <tr>
-    <td class="subject">Foundation date:</td>
-    <td class="value"><%=@team.foundation_date%></td>
-  </tr>
-  <tr>
-    <td class="subject">Owner:</td>
-    <td class="value"><%=@team.user.username%></td>
-  </tr>
-</table>
+<div class="info-team">
+  <%= render 'info_team' %>
+</div>
 <br>
 <% if current_user %>
   <% if current_user.id == @team.user.id %>
-    <%= link_to(edit_team_path(@team)) do %>
+    <%= link_to(edit_team_path(@team),remote:true) do %>
       <div class="button-current edit centered"><span class=icon-pencil2></span></div>
     <% end %>
   <% end %>
@@ -77,12 +58,6 @@
 <br>
 <% if current_user %>
   <% if current_user.id == @team.user.id %>
-  <!--<div class="container" style="width: 45px; height: 45px; margin:0 auto;">
-    <%= link_to image_tag("Add4.png", size: "45x45"), new_team_player_path(@team), class: 'back' %>
-    <div class="overlay">
-        <div class="text"><%= link_to "ADD", new_team_player_path(@team) %></div>
-    </div>
-  </div>-->
   <div class="container add-player" style="width: 45px; height: 45px; margin:auto;">
     <%= image_tag("Add4.png", size: "45x45") %>
     <div class="overlay">
@@ -107,5 +82,18 @@
     <h1>Add Player</h1>
     <br>
     <%= render '/players/form', team: @team,player: Player.new %>
+  </div>
+</div>
+
+<!-- Edit Team -->
+<div class="modal-background edit-team">
+  <div class="container-edit-team">
+    <div class="close">
+      <span class=icon-delete></span>
+    </div>
+    <h1>Edit Team</h1>
+    <div class="edit-info-team">
+    </div>
+    <br>
   </div>
 </div>

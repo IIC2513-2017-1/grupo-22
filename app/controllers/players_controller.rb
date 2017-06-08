@@ -1,18 +1,27 @@
 class PlayersController < ApplicationController
-  before_action :set_team, only: [:new, :create, :destroy]
+  before_action :set_team, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_player, only: [:edit, :update, :show]
 
   def show
   end
 
   def edit
+    respond_to do |format|
+      format.html 
+      format.js
+    end
   end
 
   def update
-    if @player.update(player_params)
-      redirect_to team_player_path(@player.team, @player)
+
+    respond_to do |format|
+    if @result = @player.update(player_params)
+      format.html {redirect_to team_player_path(@player.team, @player), notice: "Player updated"}
+      format.js {flash.now[:notice] = "Player updated"}
     else
-      render 'edit'
+      format.html {render :edit , alert: "Problem updating player"}
+      format.js
+    end
     end
   end
 

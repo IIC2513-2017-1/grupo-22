@@ -1,0 +1,22 @@
+var modalBackground = $(".modal-background.edit-match");
+
+var containerModal = modalBackground.find(">:first-child");
+
+var containerResultados = $(".container-resultados");
+
+
+<% if @tourney.format == "Playoffs" %>
+
+	var containerBrackets = $(".container-brackets");
+	containerBrackets.html("<%= j render '/tourneys/brackets' %>");
+<% else %>
+	var containerPositionTable = $(".container-position-table");
+	containerPositionTable.html("<%= j render '/tourneys/position_table' %>");
+<% end %>
+
+containerResultados.html("<%= j render '/tourneys/results' %>");
+modalBackground.fadeOut(300);
+containerModal.css("transform", "scale(0.1)");
+
+$("#noticia .notification").html("<%= flash[:notice] %>");
+$("#alerta .notification").html("");

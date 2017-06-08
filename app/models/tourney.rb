@@ -30,4 +30,15 @@ class Tourney < ApplicationRecord
     end
   end
 
+  def set_brackets
+    if format == 'Playoffs'
+      brackets = Hash.new('no_match')
+      matches.each do |m|
+        if m.bracket_code.present?
+          brackets[m.bracket_code] = m
+        end
+      end
+      return brackets
+    end
+  end
 end

@@ -1,5 +1,4 @@
-<%= form_for match do |m| %>
-<div class="container-edit-match"">
+<%= form_for match, remote: true do |m| %>
 	<br>
 	<div class="attr">
 			Played: 
@@ -21,9 +20,8 @@
 		<%= match.away_team.name %>
 		<p>
 	  	<div class="actions" style="text-align: center;">
-	      <%= m.submit "Edit" , style:"border: 2px solid #FFD700;"%>
+	      <%= m.submit "Edit" %>
 	    </div>
 	  </p>
 	</div>
-</div>
 <% end %>

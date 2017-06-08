@@ -1,4 +1,4 @@
-<%= form_for([team, team.players.build], remote: true ) do |f| %>
+<%= form_for([@player.team, @player], remote: true ) do |f| %>
 <div class="container-flex">
   <div class="left form">  
     <div class="field">

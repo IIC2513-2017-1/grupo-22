@@ -4,18 +4,11 @@ var containerModal = modalBackground.find(">:first-child");
 
 var containerInfo = containerModal.find("div.edit-info-tourney");
 
-var buttonClose = $("container-edit-tourney .close");
-
-var	a = "<%= @tourney.format %>";
-
-var b = "Playoffs";
-
 modalBackground.fadeIn(300);
 containerModal.css("transform", "scale(1)");
 
-if(a == b){
+<% if @tourney.format = "Playoffs" %>
 	containerInfo.html("<%= j render '/tourneys/form_edit', tourney: @tourney %>");
-}
-else {
+<% else %>
 	containerInfo.html("<%= j render '/tourneys/form_edit', tourney: @tourney %>");
-}
+<% end %>

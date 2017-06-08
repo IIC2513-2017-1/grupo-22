@@ -13,3 +13,4 @@ def search_home_team
     errors.add(:id_found, "No existe")
   end
  end
+end

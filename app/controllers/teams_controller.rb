@@ -19,6 +19,10 @@ class TeamsController < ApplicationController
 
   # GET /teams/1/edit
   def edit
+    respond_to do |format|
+      format.html 
+      format.js
+    end
   end
 
   # POST /teams
@@ -43,12 +47,14 @@ class TeamsController < ApplicationController
   # PATCH/PUT /teams/1.json
   def update
     respond_to do |format|
-      if @team.update(team_params)
+      if @result = @team.update(team_params)
         format.html { redirect_to @team, notice: 'Team was successfully updated.' }
         format.json { render :show, status: :ok, location: @team }
+        format.js { flash.now[:notice] = 'Team was successfully updated.'}
       else
         format.html { render :edit }
         format.json { render json: @team.errors, status: :unprocessable_entity }
+        format.js 
       end
     end
   end

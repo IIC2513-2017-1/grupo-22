@@ -1,0 +1,26 @@
+<%= form_for([team], remote: true) do |f| %>
+  <span style="display:block">Name</span>
+  <div class="field">
+    <%= f.text_field :name, required: true %>
+  </div>
+  <span style="display:block">Description</span>
+  <div class="field">
+    <%= f.text_area :description, required: true %>
+  </div>
+  <span style="display:block">Logo</span>
+  <div class="field">
+    <%= f.text_field :logo %>
+  </div>
+  <span style="display:block">Trainer Name</span>
+  <div class="field">
+    <%= f.text_field :trainer %>
+  </div>
+  <span style="display:block">Foundation</span>
+  <div class="field">
+    <%= f.date_select :foundation_date  %>
+  </div>
+  <br>
+  <div class="actions" style="text-align:center;">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -118,16 +118,22 @@
 
 <!-- TABLA POSICIONES -->
 <% if @tourney.format == 'Torneo' %>
-  <%= render 'position_table' %>
+  <div class="container-position-table">
+    <%= render 'position_table' %>
+  </div>
 <% end %>
 
 <!-- TABLA RESULTADOS -->
-<%= render 'results' %>
+<div class="container-resultados">
+  <%= render 'results' %>
+</div>
 
 <!-- Brackets -->
-<% if @tourney.format == 'Playoffs' %>
-  <%= render 'brackets' %>
-<% end %>
+  <div class="container-brackets">
+  <% if @tourney.format == 'Playoffs' %>
+    <%= render 'brackets' %>
+  <% end %>
+  </div>
 
 <%= link_to tourneys_path do %>
   <div class="button-back">

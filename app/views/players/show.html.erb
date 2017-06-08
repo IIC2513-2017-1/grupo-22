@@ -6,7 +6,7 @@
 <br>
 <% if current_user %>
   <% if current_user.id == @player.team.user.id %>
-    <%= link_to(edit_team_player_path) do %>
+    <%= link_to(edit_team_player_path, remote: true) do %>
       <div class="button-current edit centered"><span class=icon-pencil2></span></div>
     <% end %>
   <% end %>
@@ -16,3 +16,17 @@
     <span class="icon-back"></span>
   </div>
 <% end %>
+
+<!-- Edit player-->
+<div class="modal-background edit-player">
+  <div class="container-edit-player">
+    <div class="close">
+      <span class=icon-delete></span>
+    </div>
+    <h1>Edit Player</h1>
+    <br>
+    <div class="edit-info-player">
+    </div>
+    <br>
+  </div>
+</div>

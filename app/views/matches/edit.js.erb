@@ -4,27 +4,15 @@ var containerModal = modalBackground.find(">:first-child");
 
 var containerInfo = containerModal.find("div.edit-info-match");
 
-var buttonClose = $(".close");
 
-var	a = "<%= @tourney.format %>";
+<% if @tourney.format == "Playoffs" %>
+	containerInfo.html("<%= j render '/matches/form_edit_playoffs', match: @match %>");
+<% else %>
+	containerModal.removeAttr("style");
+	containerInfo.html("<%= j render '/matches/form_edit', match: @match %>");
+<% end %>
 
-var b = "Playoffs";
 
 modalBackground.fadeIn(300);
 containerModal.css("transform", "scale(1)");
-
-if(a == b){
-	containerInfo.html("<%= j render '/matches/form_edit_playoffs', match: @match %>");
-}
-else {
-	containerInfo.html("<%= j render '/matches/form_edit', match: @match %>");
-}
-
-buttonClose.on("click", function(){
-	modalBackground.fadeOut(300);
-	containerModal.css("transform", "scale(0.1)");
-});
-
-
-
 

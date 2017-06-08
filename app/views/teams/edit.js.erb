@@ -1,0 +1,11 @@
+var modalBackground = $(".modal-background.edit-team");
+
+var containerModal = modalBackground.find(">:first-child");
+
+var containerInfo = containerModal.find("div.edit-info-team");
+
+
+modalBackground.fadeIn(300);
+containerModal.css("transform", "scale(1)");
+
+containerInfo.html("<%= j render 'form_edit', team: @team %>");

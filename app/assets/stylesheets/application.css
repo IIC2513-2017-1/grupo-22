@@ -960,7 +960,9 @@ li.game-bottom{
 .container-edit-tourney,
 .container-edit-topic,
 .container-edit-user,
-.container-edit-comment {
+.container-edit-team,
+.container-edit-comment, 
+.container-edit-player {
   text-align: left;
   background-image: url('Fondo.jpg');
   background-size: cover; 
