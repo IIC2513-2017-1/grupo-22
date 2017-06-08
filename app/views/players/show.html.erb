@@ -1,43 +1,8 @@
 <h1>Info</h1>
 <br>
-<table class="perfil">
-  <tr>
-    <td class="subject">Full Name:</td>
-    <td class="value"><%= @player.full_name %></td>
-  </tr>
-  <tr>
-    <td class="subject">Position:</td>
-    <td class="value"><%= @player.position %></td>
-  </tr>
-  <tr>
-    <td class="subject">Email:</td>
-    <td class="value"><%= @player.email %></td>
-  </tr>
-  <tr>
-    <td class="subject">Address:</td>
-    <td class="value"><%= @player.address %></td>
-  </tr>
-  <tr>
-    <td class="subject">Phone:</td>
-    <td class="value"><%= @player.phone %></td>
-  </tr>
-  <tr>
-    <td class="subject">Position:</td>
-    <td class="value"><%= @player.position %></td>
-  </tr>
-  <tr>
-    <td class="subject">Birth Date:</td>
-    <td class="value"><%= @player.birth_date %></td>
-  </tr>
-  <tr>
-    <td class="subject">Ocupation:</td>
-    <td class="value"><%= @player.ocupation %></td>
-  </tr>
-  <tr>
-    <td class="subject">Leg:</td>
-    <td class="value"><%= @player.leg %></td>
-  </tr>
-</table>
+<div class="info-player">
+  <%= render "info_player" %>
+</div>
 <br>
 <% if current_user %>
   <% if current_user.id == @player.team.user.id %>

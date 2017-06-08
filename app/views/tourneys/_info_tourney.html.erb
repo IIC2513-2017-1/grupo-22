@@ -1,0 +1,62 @@
+<table class="perfil-torneo">
+  <tr>
+    <td class="subject">Name:</td>
+    <td class="value"><%=@tourney.name %></td>
+  </tr>
+  <tr>
+    <td class="subject">Description:</td>
+    <td class="value"><%=@tourney.description %></td>
+  </tr>
+  <tr>
+    <td class="subject">Format:</td>
+    <td class="value"><%=@tourney.format %></td>
+  </tr>
+  <tr>
+    <td class="subject">Location:</td>
+    <td class="value"><%=@tourney.location %></td>
+  </tr>
+  <tr>
+    <td class="subject">Inscription limit date:</td>
+    <td class="value"><%=@tourney.inscription_limit_date%></td>
+  </tr>
+  <tr>
+    <td class="subject">Start date:</td>
+    <td class="value"><%=@tourney.start_date %></td>
+  </tr>
+  <tr>
+    <td class="subject">End date:</td>
+    <td class="value"><%=@tourney.end_date %></td>
+  </tr>
+  <tr>
+    <td class="subject">Owner:</td>
+    <td class="value"><%=@tourney.user.username %></td>
+  </tr>
+  <tr>
+    <td class="subject">Schedule:</td>
+    <td class="value"><%=@tourney.schedule.strftime("%I:%M %p") %></td>
+  </tr>
+  <tr>
+    <td class="subject">Prize:</td>
+    <td class="value"><%=@tourney.prize %></td>
+  </tr>
+  <tr>
+    <td class="subject">Price:</td>
+    <td class="value"><%=@tourney.price %></td>
+  </tr>
+  <tr>
+    <td class="subject">Email:</td>
+    <td class="value"><%=@tourney.mail %></td>
+  </tr>
+  <tr>
+    <td class="subject">Phone:</td>
+    <td class="value"><%=@tourney.phone %></td>
+  </tr>
+  <tr>
+    <td class="subject">Forum:</td>
+    <td class="value" id="cell-link">
+      <%= link_to(foro_path(@foro)) do %>
+        <span class="icon-go2" style="margin-right: 5px;"></span>Go
+      <% end %>
+    </td>
+  </tr>
+</table>

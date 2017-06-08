@@ -24,6 +24,10 @@ class TourneysController < ApplicationController
 
   # GET /tourneys/1/edit
   def edit
+    respond_to do |format|
+      format.html {redirect_to @tourney  } 
+      format.js
+    end
   end
 
   # POST /tourneys
@@ -38,6 +42,7 @@ class TourneysController < ApplicationController
         @tourney.foro = foro
         format.html { redirect_to @tourney, notice: 'Tourney was successfully created.' }
         format.json { render :show, status: :created, location: @tourney }
+        
       else
         format.html { render :new }
         format.json { render json: @tourney.errors, status: :unprocessable_entity }
@@ -50,12 +55,14 @@ class TourneysController < ApplicationController
   # PATCH/PUT /tourneys/1.json
   def update
     respond_to do |format|
-      if @tourney.update(tourney_params)
+      if @result=@tourney.update(tourney_params)
         format.html { redirect_to @tourney, notice: 'Tourney was successfully updated.' }
         format.json { render :show, status: :ok, location: @tourney }
+        format.js {flash.now[:notice]= "Tourney was successfully updated."}
       else
         format.html { render :edit }
         format.json { render json: @tourney.errors, status: :unprocessable_entity }
+        format.js 
       end
     end
   end

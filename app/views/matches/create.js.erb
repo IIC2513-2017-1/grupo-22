@@ -9,6 +9,6 @@
 	});	
 
 <% else %>
-	$("#alerta .notification").html("<%= flash[:alert] %>");
+	$("#alerta .notification").html("<% @match.errors.full_messages.each do |message| %><li><%= message %></li><% end %>");
 	$("#noticia .notification").html("");
 <% end %>

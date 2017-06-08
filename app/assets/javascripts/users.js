@@ -24,4 +24,15 @@ $(function(){
 			containerModal.css("transform", "scale(0.1)");
 		});
 	});
+
+	$(document).on('turbolinks:load', function () {
+		var modalBackground = $(".modal-background.edit-user");
+		var buttonClose = $(".container-edit-user .close");
+
+		buttonClose.on("click", function(){
+			modalBackground.fadeOut(300);
+			containerModal.css("transform", "scale(0.1)");
+		});
+
+	});
 });

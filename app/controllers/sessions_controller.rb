@@ -4,15 +4,17 @@ class SessionsController < ApplicationController
 	 end
 
 	 def create
-	     user = User.find_by(username: params[:session][:username])
+	    user = User.find_by(username: params[:session][:username])
+
+	    respond_to do |format|
 	     if user&.authenticate(params[:session][:password])
 	     	session[:user_id] = user.id
-	    	redirect_to :back, notice: 'Login successful.'
+	     	format.html {redirect_to :back, notice: 'Login successful.'}
 	     else
-	     	redirect_to(:back, alert: 'Wrong email or password.')
+	     	format.js {flash.now[:alert] = 'Wrong email or password.'}
 	     end
   	 end
-
+  	end
 	 def destroy
 	    reset_session
 	    redirect_to :back, notice: 'Logout successful.'

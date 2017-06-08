@@ -7,7 +7,7 @@ class ParticipantsController < ApplicationController
       #if @tourney.format == 'Torneo'
       #  @tourney.ranking.create_association(atributes = {team_id: @team.id, points: 0})
       #end
-      redirect_to tourney_path(@tourney), notice: "Team added to Tourney"
+      redirect_to tourney_path(@tourney), notice: "#{@team.name} added to Tourney"
     else
       redirect_to tourney_path(@tourney), alert: "Team added to Tourney"
     end
@@ -17,9 +17,9 @@ class ParticipantsController < ApplicationController
     teams = get_teams_on_matches(@tourney)
     if teams.exclude?(@team)
       @tourney.teams.delete(@team)
-      redirect_to tourney_path(@tourney), notice: "Team deleted from Tourney"
+      redirect_to tourney_path(@tourney), notice: "#{@team.name} deleted from Tourney"
     else
-      redirect_to tourney_path(@tourney), alert: "Can not delete team"
+      redirect_to tourney_path(@tourney), alert: "Can not delete #{@team.name} from tourney"
     end
   end
 

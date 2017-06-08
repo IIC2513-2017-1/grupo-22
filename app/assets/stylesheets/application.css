@@ -774,6 +774,11 @@ a.back, a.back:hover{
   right:0px;
 }
 
+.go-up:hover{
+  color:#FFD700;
+  background-color: #000;
+}
+
 /* Edit match container*/
 
 .container-edit-match {
@@ -952,7 +957,9 @@ li.game-bottom{
 .container-login,
 .container-sign-up,
 .container-edit-match,
+.container-edit-tourney,
 .container-edit-topic,
+.container-edit-user,
 .container-edit-comment {
   text-align: left;
   background-image: url('Fondo.jpg');

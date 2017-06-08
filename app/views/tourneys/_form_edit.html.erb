@@ -1,0 +1,60 @@
+<%= form_for([tourney], remote:true) do |f| %>
+<div class="container-flex">
+  <div class="left form">
+    <span style="display:block">Name</span>
+    <div class="field">
+      <%= f.text_field :name, required: true %>
+    </div>
+    <span style="display:block">Description</span>
+    <div class="field">
+      <%= f.text_area :description, required: true %>
+    </div>
+    <span style="display:block">Location</span>
+    <div class="field">
+      <%= f.text_field :location, required: true %>
+    </div>
+    <span>Mail</span>
+    <div class="field">
+      <%= f.email_field :mail, required: true %>
+    </div>
+  </div>
+  <div class="middle form">
+    <span style="display:block">Price</span>
+    <div class="field">
+      <%= f.text_field :price, required: true %>
+    </div>
+    <span style="display:block">Inscription Limit Date</span>
+    <div class="field">
+      <%= f.date_select :inscription_limit_date, required: true %>
+    </div>
+    <span style="display:block">Start Date</span>
+    <div class="field">
+      <%= f.date_select :start_date, required: true %>
+    </div>
+    <span style="display:block">End Date</span>
+    <div class="field">
+      <%= f.date_select :end_date, required: true %>
+    </div>
+  </div>
+  <div class="right form">
+    <span style="display:block">Prize</span>
+    <div class="field">
+      <%= f.text_area :prize, required: true %>
+    </div>
+    <span style="display:block">Phone</span>
+    <div class="field">
+      <%= f.text_field :phone, required: true %>
+    </div>
+    <span style="display:block">Schedule</span>
+    <div class="field">
+      <%= f.time_select :schedule, :ignore_date => true %>
+    </div>
+    <br>
+    <div class="actions" style="text-align:center;">
+      <%= f.submit %>
+    </div>
+  </div>
+</div>
+<% end %>
+<br>
+<br>

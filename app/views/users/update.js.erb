@@ -1,0 +1,16 @@
+<% if @result %>
+	$("#noticia .notification").html("<%= flash[:notice] %>");
+	$("#alerta .notification").html("");
+	$(".info-user").html( "<%= j render 'info_user' %>")
+
+	var modalBackground = $(".modal-background.edit-user");
+	var containerModal = modalBackground.find(">:first-child");
+	var containerInfo = containerModal.find("div.edit-info-user");
+	modalBackground.fadeOut(300);
+	containerModal.css("transform", "scale(0.1)");
+
+<% else %>
+	containerInfo.html( "<%= j render '/users/form', user: @user %>")
+	$("#alerta .notification").html("<% @user.errors.full_messages.each do |message| %><li><%= message %></li><% end %>");
+	$("#noticia .notification").html("");
+<% end %>

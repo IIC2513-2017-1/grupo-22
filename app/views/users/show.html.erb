@@ -4,24 +4,13 @@
   <%= image_tag(@user.avatar.url(:medium), class:'fotomedium') %>
 </div>
 <br><br>
-<table class="perfil">
-  <tr>
-    <td class="subject">Full Name:</td>
-    <td class="value"><%=@user.full_name %></td>
-  </tr>
-  <tr>
-    <td class="subject">Email:</td>
-    <td class="value"><%=@user.email%></td>
-  </tr>
-  <tr>
-    <td class="subject">Username:</td>
-    <td class="value"><%=@user.username%></td>
-  </tr>
-</table>
+<div class="info-user">
+  <%= render 'info_user' %>
+</div>
 <br>
 <% if current_user %>
   <% if current_user.id == @user.id %>
-    <%= link_to(edit_user_path(@user)) do %>
+    <%= link_to(edit_user_path(@user), remote: true) do %>
       <div class="button-current edit centered"><span class=icon-pencil2></span></div>
     <% end %>
   <% end %>
@@ -125,3 +114,17 @@
     <span class="icon-back"></span>
   </div>
 <% end %>
+
+<!-- Edit Tourney -->
+<div class="modal-background edit-user">
+  <div class="container-edit-user">
+    <div class="close">
+      <span class=icon-delete></span>
+    </div>
+    <h1>Edit User</h1>
+    <br>
+    <div class="edit-info-user">
+    </div>
+    <br>
+  </div>
+</div>
