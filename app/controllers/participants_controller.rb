@@ -7,9 +7,13 @@ class ParticipantsController < ApplicationController
       #if @tourney.format == 'Torneo'
       #  @tourney.ranking.create_association(atributes = {team_id: @team.id, points: 0})
       #end
-      redirect_to tourney_path(@tourney), notice: "#{@team.name} added to Tourney"
+      respond_to do |format|
+        format.html {redirect_to tourney_path(@tourney), notice: "#{@team.name} added to Tourney"}
+        format.json
+        format.js {flash.now[:notice]= "#{@team.name} added to Tourney"}
+      end
     else
-      redirect_to tourney_path(@tourney), alert: "Team added to Tourney"
+      redirect_to tourney_path(@tourney), alert: "Team already on Tourney"
     end
   end
 

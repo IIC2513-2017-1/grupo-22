@@ -16,47 +16,10 @@
     <% end %>
   </div>
   <!-- EQUIPOS -->
-  <div class="right" id="tabla">
-    <h1 style="margin-left: 30px;">Teams</h1>
-    <br>
-    <table class="tabla">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Trainer</th>
-          <th>Perfil</th>
-          <% if current_user and current_user.id? %>
-          <% if current_user.id == @tourney.user.id %>
-            <th colspan="1"></th>
-          <% end %>
-          <% end %>
-        </tr>
-      </thead>
-      <tbody>
-        <% @tourney.teams.each do |team| %>
-          <tr class="no-link">
-            <td><%= team.name %></td>
-            <td><%= team.trainer %></td>
-            <td class="value" id="cell-link">
-              <%= link_to(team_path(team)) do %>
-                <span class="icon-go2" style="margin-right: 5px;"></span>Go
-              <% end %>
-            </td>
-            <% if current_user and current_user.id? %>
-            <% if current_user.id == @tourney.user.id %>
-            <% team_id = team.id %>
-            <td class="value" id="cell-link">
-                <%= link_to(tourney_participant_path(@tourney, team_id),
-                method: :delete, data: { confirm: 'Are you sure?' }) do %>
-                  <span class="icon-go2" style="margin-right: 5px;"></span>Remove
-                <% end %>
-            </td>
-            <% end %>
-            <% end %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <div id="participants">
+  <%= render 'participants_on_tourney' %>
+  </div>
+
     <br>
     <!-- AGREGAR EQUIPOS AL TORNEO -->
     <% if current_user and current_user.id? %>
@@ -66,7 +29,7 @@
         <h2 style="margin-left: 30px;">Add team to tourney:</h2>
         <br>
         <div style="text-align: center;">
-          <%= form_for @tourney, url: tourney_participants_path(@tourney, :team_id), method: "post" do %>
+          <%= form_for @tourney, url: tourney_participants_path(@tourney, :team_id), method: "post", remote: true do %>
             <%= select_tag(:team_id, options_from_collection_for_select(teams_select.collect, :id, :name), include_blank: true, required: true) %>
             <%= submit_tag("Add") %>
         </div>
