@@ -1,3 +1,21 @@
-$("#new_player").html( "<%= j render '/players/form', team: @team %>")
-$("#alerta .notification").html("<% @player.errors.full_messages.each do |message| %><li><%= message %></li><% end %>");
-$("#noticia .notification").html("");
+<% if @result %>
+	$(".tabla.container-players").append("<%= j render @player %>");
+	$("#player_<%= @player.id %>").hide();
+	$("#player_<%= @player.id %>").css("background-color", "#FFD700");
+	$("#noticia .notification").html("<%= flash[:notice] %>");
+	$("#alerta .notification").html("");
+	$("#player_<%= @player.id %>").fadeIn(800, function(){
+		$("#player_<%= @player.id %>").css("background", "#f6f6f6");
+	});
+
+	var modalBackground = $(".modal-background.player");
+	var containerModal = modalBackground.find(">:first-child");
+
+	modalBackground.fadeOut(300);
+	containerModal.css("transform", "scale(0.1)");
+	$("#new_player").html( "<%= j render 'form', team: @team, player: Player.new %>")
+<% else %>
+	$("#new_player").html( "<%= j render '/players/form', team:@team, player: @player %>")
+	$("#alerta .notification").html("<% @player.errors.full_messages.each do |message| %><li><%= message %></li><% end %>");
+	$("#noticia .notification").html("");
+<% end %>

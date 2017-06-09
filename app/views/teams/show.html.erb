@@ -14,44 +14,23 @@
 <br>
 <h2>Players</h2>
 <br>
-<table class="tabla">
+<table class="tabla container-players">
   <thead>
     <tr>
       <th>ID</th>
       <th>Name</th>
+      <th>mail</th>
       <th colspan="1"></th>
       <% if current_user%>
         <% if current_user.id == @team.user.id %>
-            <th colspan="2"></th>
+            <th colspan="1"></th>
         <% end %>
       <% end %>
     </tr>
   </thead>
   <tbody>
-    <% @team.players.each do |player| %>
-      <tr class="no-link">
-        <td><%= player.id %></td>
-        <td><%= player.full_name %></td>
-        <td class="value" id="cell-link">
-          <%= link_to(team_player_path(@team,player)) do %>
-            <span class="icon-go2" style="margin-right: 5px;"></span>Go
-          <% end %>
-        </td>
-        <% if current_user%>
-          <% if current_user.id == @team.user.id %>
-            <td class="value" id="cell-link">
-              <%= link_to(edit_team_player_path(@team,player)) do %>
-                <span class="icon-go2" style="margin-right: 5px;"></span>Edit
-              <% end %>
-            </td>
-            <td class="value" id="cell-link">
-              <%= link_to(team_player_path(@team,player), method: :delete, data: { confirm: 'Are you sure?' }) do %>
-                <span class="icon-go2" style="margin-right: 5px;"></span>Remove
-              <% end %>
-            </td>
-          <% end %>
-        <% end %>
-      </tr>
+    <% @team.players.each do |player| %>      
+      <%= render player %>
     <% end %>
   </tbody>
 </table>
@@ -81,7 +60,9 @@
     </div>
     <h1>Add Player</h1>
     <br>
-    <%= render '/players/form', team: @team,player: Player.new %>
+    <div class="add-playerform">
+      <%= render '/players/form', team: @team, player: Player.new %>
+    </div>
   </div>
 </div>
 

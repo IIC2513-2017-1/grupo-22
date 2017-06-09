@@ -1,6 +1,6 @@
 class PlayersController < ApplicationController
   before_action :set_team, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_player, only: [:edit, :update, :show]
+  before_action :set_player, only: [:edit, :update, :show, :destroy]
 
   def show
   end
@@ -34,8 +34,9 @@ class PlayersController < ApplicationController
     @player = @team.players.create(player_params)
 
     respond_to do |format|
-      if @player.save
+      if @result = @player.save
         format.html {redirect_to team_path(@team), notice: "Player added to team"}
+        format.js {flash.now[:notice] = "Player added to team"}
       else
         format.html {redirect_to team_path(@team), alert: "Could not create player"}
         format.js {flash.now[:alert] = "Could not create player"}
@@ -44,9 +45,15 @@ class PlayersController < ApplicationController
   end
 
   def destroy
-    @player = @team.players.find(params[:id])
-    @player.destroy
-    redirect_to team_path(@team)
+    respond_to do |format|
+      if @result = @player.destroy
+        format.html {redirect_to team_path(@team), notice: "Player deleted from team"}
+        format.js {flash.now[:notice] = "Player deleted from team"}
+      else
+        format.html {redirect_to team_path(@team), alert: "Could not delete player from team"}
+        format.js {flash.now[:alert] = "Could not create player"}
+      end
+    end
   end
 
   private
