@@ -4,6 +4,7 @@
 	$("#match_<%= @match.id %>").css("background-color", "#FFD700");
 	$("#noticia .notification").html("<%= flash[:notice] %>");
 	$("#alerta .notification").html("");
+	$("#mensaje .notification").html("");
 	$("#match_<%= @match.id %>").fadeIn(800, function(){
 		$("#match_<%= @match.id %>").css("background", "#f6f6f6");
 	});	
@@ -11,4 +12,5 @@
 <% else %>
 	$("#alerta .notification").html("<% @match.errors.full_messages.each do |message| %><li><%= message %></li><% end %>");
 	$("#noticia .notification").html("");
+	$("#mensaje .notification").html("");
 <% end %>

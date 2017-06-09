@@ -16,25 +16,17 @@
     <% end %>
   </div>
   <!-- EQUIPOS -->
-  <div id="participants">
+  <div class="right" style="padding-left: 40px;">
   <%= render 'participants_on_tourney' %>
-  </div>
-
     <br>
     <!-- AGREGAR EQUIPOS AL TORNEO -->
     <% if current_user and current_user.id? %>
       <% if current_user.id == @tourney.user.id %>
-      <% teams_select = Team.all - @tourney.teams %>
-      <% if teams_select.length != 0 %>
-        <h2 style="margin-left: 30px;">Add team to tourney:</h2>
-        <br>
         <div style="text-align: center;">
-          <%= form_for @tourney, url: tourney_participants_path(@tourney, :team_id), method: "post", remote: true do %>
-            <%= select_tag(:team_id, options_from_collection_for_select(teams_select.collect, :id, :name), include_blank: true, required: true) %>
-            <%= submit_tag("Add") %>
+          <div class="container-participants-form">         
+            <%= render 'participants/form' %>
+          </div>
         </div>
-      <% end %>
-      <% end %>
       <% end %>
     <% end %>
     <br>

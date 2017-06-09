@@ -10,5 +10,6 @@ $("#comment_<%= @comment.id %>").hide().fadeIn(800, function(){
 });
 $("#noticia .notification").html("<%= flash[:notice] %>");
 $("#alerta .notification").html("");
+$("#mensaje .notification").html("");
 $("#scroll").scrollTop($("#scroll")[0].scrollHeight);
 

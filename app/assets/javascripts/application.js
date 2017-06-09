@@ -19,7 +19,7 @@
 
 $(function(){
 
-    window.setInterval(notificaciones, 50);
+    window.setInterval(notificaciones, 20);
 
     $(document).on('turbolinks:load', function () {
         $("tr[data-link]").click(function() {
@@ -72,19 +72,27 @@ $(function(){
 
         var noticia =$("#noticia");
         var alerta =$("#alerta");
+        var mensaje =$("#mensaje");
         var closeNoticia = $("#noticia .close");
         var closeAlerta = $("#alerta .close");
+        var closeMensaje = $("#mensaje .close");
         var notificationNoticia = $("#noticia .notification");
         var notificationAlerta = $("#alerta .notification");
+        var notificationMensaje = $("#mensaje .notification");
 
         closeNoticia.on("click", function(){
-            noticia.fadeOut(400); 
-            notificationNoticia.html('');     
+            notificationNoticia.html('');
+            noticia.fadeOut(400);      
         });
     
         closeAlerta.on("click", function(){
-            alerta.fadeOut(400);
             notificationAlerta.html('');
+            alerta.fadeOut(400);
+        });
+
+        closeMensaje.on("click", function(){
+            mensaje.fadeOut(400);
+            notificationMensaje.html('');
         });
     });
 
@@ -93,33 +101,32 @@ $(function(){
 
        var noticia = $("#noticia");
        var alerta = $("#alerta");
+       var mensaje =$("#mensaje");
 
        var notificationNoticia = $("#noticia .notification");
        var notificationAlerta = $("#alerta .notification");
+       var notificationMensaje = $("#mensaje .notification");
 
-       if($.trim(notificationNoticia.html())=='') {
-        noticia.css("visibility", "hidden");
-       }
-       else{
+       if($.trim(notificationNoticia.html())!='') {
         noticia.css("visibility", "visible");
         alerta.css("visibility", "hidden");
+        mensaje.css("visibility", "hidden");
         noticia.fadeIn(400);
        }
-
-       if($.trim(notificationAlerta.html())=='') {
-        alerta.css("visibility", "hidden");
-       }
-       else{
+       else if($.trim(notificationAlerta.html())!=''){
         alerta.css("visibility", "visible");
-        noticia.css("visibility", "hidden")
+        noticia.css("visibility", "hidden");
+        mensaje.css("visibility", "hidden");
         alerta.fadeIn(400);
+       }
+       else if($.trim(notificationMensaje.html())!=''){
+        alerta.css("visibility", "hidden");
+        noticia.css("visibility", "hidden");
+        mensaje.css("visibility", "visible");
+        mensaje.fadeIn(400);
        }
     };
 
-    /* para utilizar AJAX en links de paginacion */
-    $(function(){
-       $('.pagination a').attr('data-remote', 'true')
-    });
 
      /*$(document).on('turbolinks:load', function () {
         $("#new_user").on('ajax:success', function (e, data) {

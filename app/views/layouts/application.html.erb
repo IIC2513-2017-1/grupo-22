@@ -112,6 +112,18 @@
       <% end %> 
       </div>
     </div>
+    <div id="mensaje">
+      <div class="close">
+        <span class="icon-delete small"></span>
+      </div>
+      <div class="notification">
+      <% [:message].each do |flash_type| %>
+        <% if (flash_message = flash[flash_type]).present? %>
+          <%= flash_message %>
+        <% end %>
+      <% end %> 
+      </div>
+    </div>
 
     <!-- Barras de usuario y social, accesorios -->
     <div class="social">

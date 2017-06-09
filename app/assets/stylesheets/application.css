@@ -91,16 +91,38 @@ a:hover {
   z-index:5000;
 }
 
+#mensaje {
+  position:fixed;
+  top:10px;
+  left:0;
+  min-width: 200px;
+  min-height: 50px;
+  background-color: rgba(77,182,172,.8);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  line-height: 45px;
+  visibility:hidden;
+  z-index:5000;
+}
+
 #alerta .notification, 
-#noticia .notification {
+#noticia .notification,
+#mensaje .notification {
   margin: 10px;
   padding:5px;
 }
 
 /* Generales */
 
+html {
+  background-color: #DFE2DB;
+
+}
+
 header {
     background-image: url('Fondo.jpg');
+    /*background-color: #3B3738;*/
+    background-size: cover; 
     border: 5px solid #FFD700;
     border-bottom: none;
     border-top-right-radius: 15px;
@@ -116,6 +138,8 @@ body, head{
 
 main {
   background-image: url('Fondo.jpg');
+  /*background-color: #3B3738;*/
+  background-size: cover; 
   padding: 10px;
   border: 5px solid #FFD700;
   border-bottom-right-radius: 15px;
@@ -763,10 +787,10 @@ a.back, a.back:hover{
 .go-up{
   display: none;
   padding: 20px;
-  background: #FFD700;
+  background: #000;
   font-size: 25px;
   font-weight: bold;
-  color: #000;
+  color: #FFD700;
   cursor:pointer;
   position: fixed;
   border-radius: 5px;
@@ -775,8 +799,8 @@ a.back, a.back:hover{
 }
 
 .go-up:hover{
-  color:#FFD700;
-  background-color: #000;
+  color:#000;
+  background-color: #FFD700;
 }
 
 /* Edit match container*/

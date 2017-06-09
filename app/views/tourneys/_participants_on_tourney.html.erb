@@ -1,7 +1,6 @@
-<div class="right" id="tabla">
   <h1 style="margin-left: 30px;">Teams</h1>
   <br>
-  <table class="tabla">
+  <table class="tabla participants" style="margin: auto;">
     <thead>
       <tr>
         <th>Name</th>
@@ -16,26 +15,7 @@
     </thead>
     <tbody>
       <% @tourney.teams.each do |team| %>
-        <tr class="no-link">
-          <td><%= team.name %></td>
-          <td><%= team.trainer %></td>
-          <td class="value" id="cell-link">
-            <%= link_to(team_path(team)) do %>
-              <span class="icon-go2" style="margin-right: 5px;"></span>Go
-            <% end %>
-          </td>
-          <% if current_user and current_user.id? %>
-          <% if current_user.id == @tourney.user.id %>
-          <% team_id = team.id %>
-          <td class="value" id="cell-link">
-              <%= link_to(tourney_participant_path(@tourney, team_id),
-              method: :delete, data: { confirm: 'Are you sure?' }) do %>
-                <span class="icon-go2" style="margin-right: 5px;"></span>Remove
-              <% end %>
-          </td>
-          <% end %>
-          <% end %>
-        </tr>
+        <%= render 'participants/participant', team: team %> 
       <% end %>
     </tbody>
   </table>

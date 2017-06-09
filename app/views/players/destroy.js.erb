@@ -2,6 +2,7 @@
 	$("#player_<%= @player.id %>").css("background-color", "#FFD700");
 	$("#noticia .notification").html("<%= flash[:notice] %>");
 	$("#alerta .notification").html("");
+	$("#mensaje .notification").html("");
 	$("#player_<%= @player.id %>").fadeOut(800, function(){
 		$("#player_<%= @player.id %>").remove();
 	});
@@ -10,6 +11,7 @@
 	$("#player_<%= @player.id %> td.value#cell-link a").css({"color": "red" });
 	$("#alerta .notification").html("<%= flash[:alert] %>");
 	$("#noticia .notification").html("");
+	$("#mensaje .notification").html("");
 	setTimeout(
   function() 
   {
