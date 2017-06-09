@@ -1,6 +1,6 @@
 class MatchesController < ApplicationController
   before_action :set_match, only: [:show, :edit, :update, :destroy]
-  before_action :set_tourney, only: [:new, :create, :destroy, :edit]
+  before_action :set_tourney, only: [:new, :create, :destroy, :edit, :destroy]
   before_action :set_tourneys, only: [:index]
 
   def index
@@ -53,6 +53,11 @@ class MatchesController < ApplicationController
     respond_to do |format|
       if @result = !@match.played 
         @match.delete
+
+        if @tourney.format == "Playoffs"
+          @brackets = @tourney.set_brackets
+        end
+
         format.html {redirect_to tourney_path(@tourney), notice: "Match deleted from tourney"}
         format.js {flash.now[:notice] = "Match deleted from tourney"}
       else
