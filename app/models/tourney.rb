@@ -12,7 +12,11 @@ class Tourney < ApplicationRecord
   validate  :validate_ins_date_before_start_date
 
   belongs_to :user
-  has_and_belongs_to_many :teams,  uniqueness: true
+
+  #has_and_belongs_to_many :teams,  uniqueness: true
+  has_many :participants
+  has_many :teams, through: :participants
+
   has_many :requests
   has_many :matches, dependent: :destroy
   has_one :foro, dependent: :destroy
