@@ -4,6 +4,6 @@ $("#topic_<%= @topic.id %> .creator.left-big").css({"color": "#FFD700"});
 $("#topic_<%= @topic.id %> ").fadeOut(500, function(){
 	$this.remove();
 });
-$("#noticia .notification").html("<%= flash[:notice] %>");
+$("#noticia .notification").html("");
 $("#alerta .notification").html("");
-$("#mensaje .notification").html("");
+$("#mensaje .notification").html("<%= flash[:message] %>");

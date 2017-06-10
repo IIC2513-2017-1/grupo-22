@@ -190,6 +190,11 @@ h1, h2 {
     clear: both;
 }
 
+#logo {
+  width:600px; 
+  height: auto;
+}
+
 .button,.button:visited{
     display:inline-block;
     background-color: #FFD700;

@@ -1,8 +1,8 @@
 <% if @result %>
 	$("#player_<%= @player.id %>").css("background-color", "#FFD700");
-	$("#noticia .notification").html("<%= flash[:notice] %>");
+	$("#noticia .notification").html("");
 	$("#alerta .notification").html("");
-	$("#mensaje .notification").html("");
+	$("#mensaje .notification").html("<%= flash[:message] %>");
 	$("#player_<%= @player.id %>").fadeOut(800, function(){
 		$("#player_<%= @player.id %>").remove();
 	});

@@ -15,8 +15,8 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to topic_path(@topic), notice: 'Comment was created.' }
-        format.js {flash.now[:notice] = "Comment was added"}
+        format.html { redirect_to topic_path(@topic), notice: 'Comment created.' }
+        format.js {flash.now[:notice] = "Comment added"}
       else
         format.html { redirect_to topic_path(@topic)}
         format.json { render json: @comment.errors, status: :unprocessable_entity }
@@ -44,9 +44,9 @@ class CommentsController < ApplicationController
   def destroy
     respond_to do |format|
       if @comment.destroy
-        format.html { redirect_to topic_path(@topic), notice: 'Comment was deleted.' }
+        format.html { redirect_to topic_path(@topic), message: 'Comment was deleted.' }
         format.json { render :show, status: :created, location: @comment}
-        format.js {flash.now[:notice] = "Comment deleted"}
+        format.js {flash.now[:message] = "Comment deleted"}
       else
         format.html 
         format.json { render json: @comment.errors, alert: 'Couldn\'t delete comment' }

@@ -52,9 +52,9 @@ class TopicsController < ApplicationController
   def destroy
     respond_to do |format|
       if @topic.destroy
-        format.html { redirect_to foro_path(@foro), notice: 'Topic was successfully deleted.' }
+        format.html { redirect_to foro_path(@foro), message: 'Topic was successfully deleted.' }
         format.json { render :show, status: :created, location: @topic}
-        format.js {flash.now[:notice] = "Topic deleted"}
+        format.js {flash.now[:message] = "Topic deleted"}
       else
         format.html { redirect_to foro_path(@foro)}
         format.json { render json: @topic.errors, status: :unprocessable_entity }

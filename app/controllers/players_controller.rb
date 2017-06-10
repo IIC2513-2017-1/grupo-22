@@ -47,8 +47,8 @@ class PlayersController < ApplicationController
   def destroy
     respond_to do |format|
       if @result = @player.destroy
-        format.html {redirect_to team_path(@team), notice: "Player deleted from team"}
-        format.js {flash.now[:notice] = "Player deleted from team"}
+        format.html {redirect_to team_path(@team), message: "Player deleted from team"}
+        format.js {flash.now[:message] = "Player deleted from team"}
       else
         format.html {redirect_to team_path(@team), alert: "Could not delete player from team"}
         format.js {flash.now[:alert] = "Could not create player"}

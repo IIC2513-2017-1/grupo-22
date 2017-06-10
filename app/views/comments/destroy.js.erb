@@ -1,9 +1,9 @@
 $("#comment_<%= @comment.id %>").css({"border-color": "#FFD700"});
 $("#comment_<%= @comment.id %> p").css({"color": "#FFD700"});
 $("#comment_<%= @comment.id %> .creator.left-big").css({"color": "#FFD700"});
-$("#noticia .notification").html("<%= flash[:notice] %>");
+$("#noticia .notification").html("");
 $("#alerta .notification").html("");
-$("#mensaje .notification").html("");
+$("#mensaje .notification").html("<%= flash[:message] %>");
 $("#comment_<%= @comment.id %>").fadeOut(800, function(){
 	$this.remove();
 });
