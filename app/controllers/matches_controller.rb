@@ -88,31 +88,30 @@ class MatchesController < ApplicationController
   def set_winner
     @ranking = @match.tourney.participants
     @tourney = @match.tourney
-    @home_team = @ranking.find_by(team_id: @match.home_team.id)
-    @away_team = @ranking.find_by(team_id: @match.away_team.id)
-    @home_team.increment!(:matches_played)
-    @away_team.increment!(:matches_played)
+    #@home_team = @ranking.find_by(team_id: @match.home_team.id)
+    #@away_team = @ranking.find_by(team_id: @match.away_team.id)
+    #@home_team.increment!(:matches_played)
+    #@away_team.increment!(:matches_played)
     if @match.home_goals > @match.away_goals
       @match.update(winner: @match.home_team.name)
-      if @tourney.format == 'Torneo'
-        @home_team.increment!(:points, 3)
-        @home_team.increment!(:victories)
-        @away_team.increment!(:defeats)
+      #if @tourney.format == 'Torneo'
+        #@home_team.increment!(:points, 3)
+        #@home_team.increment!(:victories)
+        #@away_team.increment!(:defeats)
       end
     elsif @match.home_goals < @match.away_goals
       @match.update(winner: @match.away_team.name)
-      if @tourney.format == 'Torneo'
-        @away_team.increment!(:points, 3)
-        @away_team.increment!(:victories)
-        @home_team.increment!(:defeats)
+      #if @tourney.format == 'Torneo'
+        #@away_team.increment!(:points, 3)
+        #@away_team.increment!(:victories)
+        #@home_team.increment!(:defeats)
       end
     else
       if not @match.tourney.format == "Playoffs"
         @match.update(winner: "draw")
-        @home_team.increment!(:points)
-        @away_team.increment!(:points)
-        @home_team.increment!(:draws)
-        @away_team.increment!(:draws)
+        #@home_team.increment!(:points)
+        #@away_team.increment!(:points)
+        #@away_team.increment!(:draws)
 
 
       end
