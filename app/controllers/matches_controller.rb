@@ -98,14 +98,14 @@ class MatchesController < ApplicationController
         #@home_team.increment!(:points, 3)
         #@home_team.increment!(:victories)
         #@away_team.increment!(:defeats)
-      end
+      #end
     elsif @match.home_goals < @match.away_goals
       @match.update(winner: @match.away_team.name)
       #if @tourney.format == 'Torneo'
         #@away_team.increment!(:points, 3)
         #@away_team.increment!(:victories)
         #@home_team.increment!(:defeats)
-      end
+      #end
     else
       if not @match.tourney.format == "Playoffs"
         @match.update(winner: "draw")
