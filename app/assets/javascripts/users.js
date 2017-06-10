@@ -13,10 +13,10 @@ $(function(){
 
 		var buttonClose = $(".container-sign-up .close");
 
-		buttonSignUp.on("click", function(e){		
+		buttonSignUp.on("click", function(e){
 			modalBackground.fadeIn(300);
 			containerModal.css("transform", "scale(1)");
-			e.preventDefault();	
+			e.preventDefault();
 		});
 
 		buttonClose.on("click", function(){
@@ -35,4 +35,5 @@ $(function(){
 		});
 
 	});
+
 });

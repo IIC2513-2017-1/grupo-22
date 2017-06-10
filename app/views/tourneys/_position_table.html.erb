@@ -1,18 +1,8 @@
-<% positions = Hash.new %>
-<% @tourney.teams.each do |team| %>
-  <% positions[team.name] = 0 %>
+<% participants = Hash.new %>
+<% @tourney.teams.each do |participant| %>
+  <% participants[participant] = Match.won_by(participant).count*3+Match.draws(participant).count%>
 <% end %>
-<% @tourney.matches.each do |match| %>
-  <% if match.played == true %>
-    <% if match.winner == 'draw' %>
-      <% positions[match.home_team.name] += 1 %>
-      <% positions[match.away_team.name] += 1 %>
-    <% else %>
-      <% positions[match.winner] += 3 %>
-    <% end %>
-  <% end %>
-<% end %>
-<% positions = positions.sort_by {|_key, value| -value} %>
+<% participants = participants.sort_by {|_key, value| -value} %>
 <h1 style="margin-left: 30px;">Posiciones</h1>
 <br>
 <table class="tabla">
@@ -21,19 +11,27 @@
       <th>Position</th>
       <th>Team</th>
       <th>Points</th>
+      <th>Matches played</th>
+      <th>Victories</th>
+      <th>Defeats</th>
+      <th>Draws</th>
     </tr>
   </thead>
   <tbody>
     <% i = 0 %>
     <% pos = 1 %>
-    <% positions.each do |position| %>
+    <% participants.each do |participant| %>
       <tr class="no-link">
         <td><%= pos %></td>
-        <td><%= position[0]%></td>
-        <td><%= position[1]%></td>
+        <td><%= participant[0].name%></td>
+        <td><%= participant[1]%></td>
+        <td><%= Match.played_by(participant[0]).count %></td>
+        <td><%= Match.won_by(participant[0]).count %></td>
+        <td><%= Match.lost_by(participant[0]).count %></td>
+        <td><%= Match.draws(participant[0]).count %></td>
       </tr>
-      <% if i+1 < positions.length%>
-        <% if positions[i][1] > positions[i+1][1] %>
+      <% if i+1 < participants.length%>
+        <% if participants[i][1] > participants[i+1][1] %>
           <% pos += 1 %>
         <% end %>
       <% end %>

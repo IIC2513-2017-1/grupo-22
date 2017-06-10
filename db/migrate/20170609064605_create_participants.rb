@@ -5,7 +5,11 @@ class CreateParticipants < ActiveRecord::Migration[5.0]
       #t.integer :tourney_id
       t.belongs_to :team, :null => false, :index => true
       t.belongs_to :tourney, :null => false, :index => true
-      t.integer :points
+      t.integer :points, :default => 0
+      #t.integer :matches_played, :default => 0
+      #t.integer :victories, :default => 0
+      #t.integer :defeats, :default => 0
+      #t.integer :draws, :default => 0
 
       t.timestamps
     end

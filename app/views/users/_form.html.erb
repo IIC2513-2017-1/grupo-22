@@ -1,27 +1,27 @@
 <%= form_for([user], remote: true) do |f| %>
   <div class="form-group" style=" margin: 0 auto; text-align: center;">
     <div class="field" style="text-align: center;">
-      <%= f.text_field :full_name, required: true, placeholder:"Full name", autofocus: true %>
+      <%= f.text_field :full_name, required: true, placeholder:"Full name", autofocus: true, title: "Nombre y apellido (requerido)" %>
     </div>
 
     <div class="field" style="text-align: center;">
-      <%= f.email_field :email, required: true, placeholder:"Email" %>
+      <%= f.email_field :email, required: true, placeholder:"Email", title: "Dirección de correo válida (requerido)" %>
     </div>
 
     <div class="field" style="text-align: center;">
-      <%= f.text_field :username, required: true, placeholder:"Username" %>
+      <%= f.text_field :username, required: true, placeholder:"Username", title: "Nombre de usuario (requerido)" %>
     </div>
 
     <div class="field" style="text-align: center;">
-      <%= f.password_field :password, required: true, minlength: 6,placeholder:"Password" %>
+      <%= f.password_field :password, required: true, minlength: 6, placeholder:"Password", title: "Contraseña (requerido, mínimo 6 carácteres)" %>
     </div>
 
     <div class="field" style="text-align: center;">
-      <%= f.password_field :password_confirmation, required: true, minlength: 6, placeholder:"Password confirmation" %>
+      <%= f.password_field :password_confirmation, required: true, minlength: 6, placeholder:"Password Confirmation", title: "Confirma contraseña (requerido)" %>
     </div>
 
-    <div class="field" style="text-align: center;"">
-      <%= f.file_field :avatar, style:"width: 240px;" %>
+    <div class="field" style="text-align: center;">
+      <%= f.file_field :avatar, style:"width: 240px;", title: "Subí una imagen para tu perfil (opcional)" %>
     </div>
     <br>
     <div class="actions" style="text-align: center;">

@@ -105,7 +105,7 @@ a:hover {
   z-index:5000;
 }
 
-#alerta .notification, 
+#alerta .notification,
 #noticia .notification,
 #mensaje .notification {
   margin: 10px;
@@ -122,7 +122,7 @@ html {
 header {
     background-image: url('Fondo.jpg');
     /*background-color: #3B3738;*/
-    background-size: cover; 
+    background-size: cover;
     border: 5px solid #FFD700;
     border-bottom: none;
     border-top-right-radius: 15px;
@@ -139,7 +139,7 @@ body, head{
 main {
   background-image: url('Fondo.jpg');
   /*background-color: #3B3738;*/
-  background-size: cover; 
+  background-size: cover;
   padding: 10px;
   border: 5px solid #FFD700;
   border-bottom-right-radius: 15px;
@@ -191,7 +191,7 @@ h1, h2 {
 }
 
 #logo {
-  width:600px; 
+  width:600px;
   height: auto;
 }
 
@@ -338,7 +338,7 @@ a.back, a.back:hover{
   height: 45px;
   font-size: 25px;
   background-color: #000;
-  color:#FFD700; 
+  color:#FFD700;
   border-radius:25px;
   border: 2px solid #FFD700;
   text-align: center;
@@ -347,7 +347,7 @@ a.back, a.back:hover{
 
 .button-back:hover {
   background-color: #FFD700;
-  color:#000; 
+  color:#000;
   cursor: pointer;
   border-color: black;
 }
@@ -433,7 +433,7 @@ a.back, a.back:hover{
   max-width: 100px;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
 /* Efectos de las tablas perfil */
@@ -461,7 +461,7 @@ a.back, a.back:hover{
 }
 
 .perfil .value {
-  background-color: #f6f6f6;  
+  background-color: #f6f6f6;
   font-weight: bolder;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -604,19 +604,19 @@ a.back, a.back:hover{
 
 .left.form {
   flex-basis:30%;
-  margin-right: 15px; 
+  margin-right: 15px;
 }
 
 .middle.form {
   flex-basis:30%;
-  padding: 0px 15px; 
+  padding: 0px 15px;
   border-right: 2px solid #FFD700;
   border-left: 2px solid #FFD700;
 }
 
 .right.form{
   flex-basis: 30%;
-  margin-left: 15px; 
+  margin-left: 15px;
 }
 
 .info {
@@ -630,7 +630,7 @@ a.back, a.back:hover{
 
  .creator {
   font-style: italic;
-  color: gray; 
+  color: gray;
   margin-right: 80px;
   display: inline-block;
  }
@@ -811,8 +811,8 @@ a.back, a.back:hover{
 /* Edit match container*/
 
 .container-edit-match {
-  width: 600px; 
-  margin: 0 auto; 
+  width: 600px;
+  margin: 0 auto;
   padding:10px;
   border-radius: 5px;
   border: 5px solid #FFD700;
@@ -897,12 +897,12 @@ li.game span{
 
 li.game-top{ border-bottom:1px solid #aaa; }
 
-li.game-spacer{ 
+li.game-spacer{
   border-right:1px solid #aaa;
   min-height:40px;
 }
 
-li.game-bottom{ 
+li.game-bottom{
   border-top:1px solid #aaa;
 }
 
@@ -917,21 +917,21 @@ li.game-bottom{
   display: block;
   float: left;
   font-weight: bold;
-  text-decoration: none; 
+  text-decoration: none;
   background: #000;
 }
 
 .pagination a.next_page,
 .pagination .next_page.disabled {
   border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px; 
+  border-bottom-right-radius: 15px;
 }
 
 .pagination a.previous_page,
 .pagination .previous_page.disabled
  {
   border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px; 
+  border-bottom-left-radius: 15px;
 }
 
 .pagination .current {
@@ -952,7 +952,7 @@ li.game-bottom{
   z-index: 3000;
   text-align:center;
 }
-.close{ 
+.close{
   position:absolute;
   top: 10px;
   right: 10px;
@@ -990,11 +990,11 @@ li.game-bottom{
 .container-edit-topic,
 .container-edit-user,
 .container-edit-team,
-.container-edit-comment, 
+.container-edit-comment,
 .container-edit-player {
   text-align: left;
   background-image: url('Fondo.jpg');
-  background-size: cover; 
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   position: relative;

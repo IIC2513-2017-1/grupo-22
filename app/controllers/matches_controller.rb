@@ -22,10 +22,10 @@ class MatchesController < ApplicationController
 
   def edit
     respond_to do |format|
-      format.html {redirect_to edit_tourney_match_path(@tourney, @match)  } 
+      format.html {redirect_to edit_tourney_match_path(@tourney, @match)  }
       format.js
     end
-    
+
   end
 
   def update
@@ -46,12 +46,12 @@ class MatchesController < ApplicationController
       format.html {redirect_to tourney_path(@match.tourney), notice: "Match updated"}
       format.js {flash.now[:notice] ="Match updated"}
     end
-    
+
   end
 
   def destroy
     respond_to do |format|
-      if @result = !@match.played 
+      if @result = !@match.played
         @match.delete
 
         if @tourney.format == "Playoffs"
@@ -86,17 +86,36 @@ class MatchesController < ApplicationController
   end
 
   def set_winner
-    #@ranking = @match.tourney.ranking
+    @ranking = @match.tourney.participants
+    @tourney = @match.tourney
+    @home_team = @ranking.find_by(team_id: @match.home_team.id)
+    @away_team = @ranking.find_by(team_id: @match.away_team.id)
+    @home_team.increment!(:matches_played)
+    @away_team.increment!(:matches_played)
     if @match.home_goals > @match.away_goals
       @match.update(winner: @match.home_team.name)
-      #@ranking.find(@match.home_team) += 3
+      if @tourney.format == 'Torneo'
+        @home_team.increment!(:points, 3)
+        @home_team.increment!(:victories)
+        @away_team.increment!(:defeats)
+      end
     elsif @match.home_goals < @match.away_goals
       @match.update(winner: @match.away_team.name)
-      #@ranking.find(@match.away_team) += 3
+      if @tourney.format == 'Torneo'
+        @away_team.increment!(:points, 3)
+        @away_team.increment!(:victories)
+        @home_team.increment!(:defeats)
+      end
     else
       if not @match.tourney.format == "Playoffs"
         @match.update(winner: "draw")
+        @home_team.increment!(:points)
+        @away_team.increment!(:points)
+        @home_team.increment!(:draws)
+        @away_team.increment!(:draws)
+
+
       end
-    end  
+    end
   end
 end

@@ -20,7 +20,7 @@ class TeamsController < ApplicationController
   # GET /teams/1/edit
   def edit
     respond_to do |format|
-      format.html 
+      format.html
       format.js
     end
   end
@@ -54,7 +54,7 @@ class TeamsController < ApplicationController
       else
         format.html { render :edit }
         format.json { render json: @team.errors, status: :unprocessable_entity }
-        format.js 
+        format.js
       end
     end
   end
