@@ -139,7 +139,8 @@ body, head{
 main {
   background-image: url('Fondo.jpg');
   /*background-color: #3B3738;*/
-  background-size: cover;
+  background-size: 100%;
+  background-repeat: repeat-y;
   padding: 10px;
   border: 5px solid #FFD700;
   border-bottom-right-radius: 15px;
@@ -191,7 +192,7 @@ h1, h2 {
 }
 
 #logo {
-  width:600px;
+  width: 500px;
   height: auto;
 }
 

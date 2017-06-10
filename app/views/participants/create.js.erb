@@ -6,6 +6,13 @@
 			$("#participant_<%= @team.id %>").css({"background-color": "#f6f6f6"});
 		});
 		$(".container-participants-form").html("<%= j render 'form' %>" );
+		<% if @tourney.teams.length > 1 %>
+			$(".container-add-match-tourney").html("<h2 style='margin-left: 30px;'>Create match:</h2><%= j render 'matches/form' %>" );
+		<% end  %>
+		<% if @tourney.format != "Playoffs" %>
+			var containerPositionTable = $(".container-position-table");
+			containerPositionTable.html("<%= j render '/tourneys/position_table' %>");
+		<% end %>
 		$("#noticia .notification").html("<%= flash[:notice] %>");
 		$("#alerta .notification").html("");
 		$("#mensaje .notification").html("");

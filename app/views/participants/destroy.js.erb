@@ -4,6 +4,13 @@
 		$("#participant_<%= @team.id %>").remove();
 	});
 	$(".container-participants-form").html("<%= j render 'form' %>" );
+	<% if @tourney.teams.length < 2 %>
+			$(".container-add-match-tourney").html("" );
+	<% end  %>	
+	<% if @tourney.format != "Playoffs" %>
+		var containerPositionTable = $(".container-position-table");
+		containerPositionTable.html("<%= j render '/tourneys/position_table' %>");
+	<% end %>
 	$("#noticia .notification").html("");
 	$("#alerta .notification").html("");
 	$("#mensaje .notification").html("<%= flash[:message] %>");
@@ -13,9 +20,7 @@
 	$("#alerta .notification").html("<%= flash[:alert] %>");
 	$("#participant_<%= @team.id %>").css({"color": "red" });
 	$("#participant_<%= @team.id %> td.value#cell-link a").css({"color": "red" });
-	setTimeout(
-  function() 
-  {
+	setTimeout(function(){
     $("#participant_<%= @team.id %>").css({"color": "black"});
     $("#participant_<%= @team.id %> td.value#cell-link a").css({"color": "black" });
   }, 800);

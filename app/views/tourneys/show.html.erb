@@ -34,8 +34,10 @@
     <% if current_user and current_user.id? %>
       <% if current_user.id == @tourney.user.id %>
         <% if @tourney.teams.length > 1 %>
-        <h2 style="margin-left: 30px;">Create match:</h2>
-        <%= render 'matches/form' %>
+        <div class="container-add-match-tourney">
+          <h2 style="margin-left: 30px;">Create match:</h2>
+          <%= render 'matches/form' %>
+        </div>
         <% end %>
       <% end %>
     <% end %>
@@ -79,6 +81,7 @@
 <% end %>
 
 <!-- TABLA RESULTADOS -->
+<br>
 <div class="container-resultados">
   <%= render 'results' %>
 </div>
