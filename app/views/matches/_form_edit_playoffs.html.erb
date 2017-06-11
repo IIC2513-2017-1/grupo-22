@@ -17,7 +17,7 @@
       <%= m.select(:played, [true, false]) %>
       </div>
       <div class="attr-value">
-      <%= m.select(:bracket_code,  ['A1', 'A2', 'A3', 'A4', 'B1', 'B2', 'C1']) %>
+      <%= m.select(:bracket_code, @tourney.get_brackets_codes(match)) %>
       </div>
     </div>
   	<br>

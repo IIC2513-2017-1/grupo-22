@@ -7,7 +7,7 @@
 		});
 		$(".container-participants-form").html("<%= j render 'form' %>" );
 		<% if @tourney.teams.length > 1 %>
-			$(".container-add-match-tourney").html("<h2 style='margin-left: 30px;'>Create match:</h2><%= j render 'matches/form' %>" );
+			$(".container-add-match-tourney").html("<%= j render 'matches/form' %>" );
 		<% end  %>
 		<% if @tourney.format != "Playoffs" %>
 			var containerPositionTable = $(".container-position-table");

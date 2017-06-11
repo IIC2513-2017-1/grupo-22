@@ -1,4 +1,4 @@
-$(".form-content").val('');
+$(".ventana-movil").html("<%= j render 'form' %>",);
 $(".container-comments").append('<%= j render @comment %>');
 $("#comment_<%= @comment.id %>").css({"border-color": "#FFD700"});
 $("#comment_<%= @comment.id %> p").css({"color": "#FFD700"});

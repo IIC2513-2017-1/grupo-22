@@ -1,14 +1,14 @@
-<h1>Edit topic</h1>
-<%= form_for topic do |t| %>
- <p style="text-align: center;">
-    <%= t.text_field :title, placeholder:"Tittle", style:"width: 290px;", required: true  %>
-  </p>
-  <p style="text-align: center;">
-    <%= t.text_area :content, placeholder:"Content", required: true %>
-  </p>
-  <p>
-  	<div class="actions" style="text-align: center;">
-      <%= t.submit "Edit" %>
-    </div>
-  </p>
+<h1 style="text-align: center">Create topic</h1>
+<%= form_for([@foro, @topics.build], remote: true) do |f| %>
+  <div style="text-align: center;">
+    <%= f.text_field :title, placeholder:"Tittle", style:"width: 300px;",  required: true, class:"form-tittle" %>
+  </div>
+  <br>
+  <div style="text-align: center;">
+    <%= f.text_area :content, placeholder:"Content", required: true, class:"form-content" %>
+  </div>
+  <br>
+  <div style="text-align: center;">
+    <%= f.submit "Create" , class: "submit", id: 'submit'%>
+  </div>
 <% end %>

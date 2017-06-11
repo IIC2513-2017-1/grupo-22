@@ -45,4 +45,12 @@ class Tourney < ApplicationRecord
       return brackets
     end
   end
+
+  def get_brackets_codes(match)
+    brackets_codes = ['A1', 'A2', 'A3', 'A4', 'B1', 'B2', 'C1']-set_brackets().keys()
+    if (match.bracket_code !="")
+      brackets_codes.insert(0,match.bracket_code)
+    end
+    return brackets_codes
+  end
 end

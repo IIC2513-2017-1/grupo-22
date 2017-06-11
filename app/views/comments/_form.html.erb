@@ -1,11 +1,11 @@
-<h1>Edit Comment</h1>
-<%= form_for comment do |c| %>
-  <p style="text-align: center;">
-    <%= c.text_area :content, placeholder:"Content", required: true %>
-  </p>
-  <p>
-  	<div class="actions" style="text-align: center;">
-      <%= c.submit "Edit" %>
-    </div>
-  </p>
+<h1 style="text-align: center;">Make a comment </h1>
+<%= form_for([@topic, @comments.build], remote:true) do |c| %>
+  <div style="text-align: center;">
+    <%= c.text_area :content,placeholder:"Content", required: true, class:"form-content" %>
+  </div>
+  <br>
+  <div style="text-align: center;">
+    <%= c.submit "Comment"%>
+  </div>
 <% end %>
+

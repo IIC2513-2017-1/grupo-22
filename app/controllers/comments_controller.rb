@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+        @comments = @topic.comments
         format.html { redirect_to topic_path(@topic), notice: 'Comment created.' }
         format.js {flash.now[:notice] = "Comment added"}
       else

@@ -1,10 +1,10 @@
 <div class="container-flex">
 	<div class="left">
 		<h1> Forum </h1>
-		<p>
+		<div>
 		  <strong>Title:</strong>
 		  <%= @foro.title %>
-		</p>
+		</div>
 		<p>
 		  <strong>Description:</strong>
 		  <%= @foro.description %>
@@ -15,23 +15,10 @@
   	</div>
 	</div>
 </div>
-<div class="fixme">
-	<p>
+<div class="ventana-movil">
 	<% if current_user and current_user.id? %>
-		<h1 style="text-align: center">Create topic</h1>
-		<%= form_for([@foro, @topics.build], remote: true) do |f| %>
-		 <p style="text-align: center;">
-		    <%= f.text_field :title, placeholder:"Tittle", style:"width: 300px;",  required: true, class:"form-tittle" %>
-		  </p>
-		  <p style="text-align: center;">
-		    <%= f.text_area :content, placeholder:"Content", required: true, class:"form-content" %>
-		  </p>
-		  <p style="text-align: center;">
-		    <%= f.submit "Create" , class: "submit", id: 'submit'%>
-		  </p>
-		<% end %>
+		<%= render '/topics/form' %>
 	<% end %>
-	</p>
 </div>
 <br>
 <%= link_to foros_path do %>

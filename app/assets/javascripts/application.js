@@ -29,21 +29,19 @@ $(function(){
 
     });
 
-    $(window).load(function () {
-        var fixmeTop = $('.fixme').offset().top;
+    $(document).ready(function(){
+        var fixmeTop = $('.ventana-movil').offset().top;
         $(window).scroll(function() {
             var currentScroll = $(window).scrollTop();
             if (currentScroll + 100 >= fixmeTop) {
-                $('.fixme').css({
+                $('.ventana-movil').css({
                     position: 'fixed',
                     top: '100px',
-                    right: '12%'
                 });
             } else {
-                $('.fixme').css({
+                $('.ventana-movil').css({
                 	position: 'absolute',
-                    top: '400px',
-                    right: '12%'
+                    top: '415px',
                 });
             }
         });

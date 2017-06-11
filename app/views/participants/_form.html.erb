@@ -1,9 +1,11 @@
 <% teams_select = Team.all - @tourney.teams %>
    <% if teams_select.length != 0 %>
-      <h2>Add team to tourney:</h2>
+      <h2 >Add team to tourney:</h2>
       <br>
-			<%= form_for @tourney, url: tourney_participants_path(@tourney), method: "post", remote: true do %>
-  		<%= select_tag(:team_id, options_from_collection_for_select(teams_select.collect, :id, :name), include_blank: true) %>
-			<%= submit_tag("Add") %>
+      <div style="text-align: center;">
+				<%= form_for @tourney, url: tourney_participants_path(@tourney), method: "post", remote: true do %>
+	  		<%= select_tag(:team_id, options_from_collection_for_select(teams_select.collect, :id, :name), include_blank: true) %>
+				<%= submit_tag("Add") %>
+			</div>
 	<% end %>
 <% end %>

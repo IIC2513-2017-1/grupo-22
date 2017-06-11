@@ -24,6 +24,7 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       if @topic.save
+        @topics = @foro.topics
         TopicMailer.new_topic_email(@topic).deliver_later
         format.html { redirect_to foro_path(@foro), notice: 'Topic was created.' }
         format.js {flash.now[:notice] = "Topic was created" }

@@ -1,5 +1,4 @@
-$(".form-tittle").val('');
-$(".form-content").val('');
+$(".ventana-movil").html("<%= j render 'form' %>",);
 $(".container-topics").append('<%= j render @topic %>');
 $("#topic_<%= @topic.id %>").css({"border-color": "#FFD700"});
 $("#topic_<%= @topic.id %> p").css({"color": "#FFD700"});

@@ -16,20 +16,10 @@
   	<br>
 	</div>
 </div>
-<div class="fixme">
-  <p>
+<div class="ventana-movil">
 	<% if current_user %>
-		<h1 style="text-align: center;">Make a comment </h1>
-		<%= form_for([@topic, @comments.build], remote:true) do |c| %>
-		  <p style="text-align: center;">
-		    <%= c.text_area :content,placeholder:"Content", required: true, class:"form-content" %>
-		  </p>
-		  <p style="text-align: center;">
-		    <%= c.submit "Comment"%>
-		  </p>
-		<% end %>
+    <%= render '/comments/form' %>
 	<% end %>
-  </p>
 </div>
 <br>
 <%= link_to foro_path(@topic.foro) do %>

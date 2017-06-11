@@ -4,6 +4,11 @@ var containerModal = modalBackground.find(">:first-child");
 
 var containerResultados = $(".container-resultados");
 
+$("#match_<%= @match.id %>").replaceWith("<%= j render 'match_tourney_display', match:@match %>")
+$("#match_<%= @match.id %>").css("background-color", "#FFD700");
+setTimeout(function(){
+    $("#match_<%= @match.id %>").css("background-color", "#f6f6f6");
+  }, 800);
 
 <% if @tourney.format == "Playoffs" %>
 
