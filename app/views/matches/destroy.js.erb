@@ -1,8 +1,8 @@
 <% if @result %>
 	$("#match_<%= @match.id %>").css("background-color", "#FFD700");
-	$("#noticia .notification").html("<%= flash[:notice] %>");
+	$("#noticia .notification").html("");
 	$("#alerta .notification").html("");
-	$("#mensaje .notification").html("");
+	$("#mensaje .notification").html("<%= flash[:message] %>");
 	$("#match_<%= @match.id %>").fadeOut(800, function(){
 		$("#match_<%= @match.id %>").remove();
 	});

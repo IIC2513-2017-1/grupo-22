@@ -598,12 +598,20 @@ a.back, a.back:hover{
   flex-basis:60%;
 }
 
+.left-half {
+  flex-basis:50%;
+}
+
 .left-big {
   flex-basis:80%;
 }
 
 .right {
   flex-basis: 40%;
+}
+
+.right-half {
+  flex-basis:50%;
 }
 
 .right-small {

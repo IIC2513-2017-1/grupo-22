@@ -58,8 +58,8 @@ class MatchesController < ApplicationController
           @brackets = @tourney.set_brackets
         end
 
-        format.html {redirect_to tourney_path(@tourney), notice: "Match deleted from tourney"}
-        format.js {flash.now[:notice] = "Match deleted from tourney"}
+        format.html {redirect_to tourney_path(@tourney), message: "Match deleted from tourney"}
+        format.js {flash.now[:message] = "Match deleted from tourney"}
       else
         format.html {redirect_to tourney_path(@tourney), alert: "Could not delete match"}
         format.js {flash.now[:alert] = "Could not delete match"}
