@@ -66,8 +66,7 @@ $(function(){
 
     });
 
-    $(document).on('turbolinks:load', function () {
-
+    var closeNotification = function (){
         var noticia =$("#noticia");
         var alerta =$("#alerta");
         var mensaje =$("#mensaje");
@@ -92,7 +91,10 @@ $(function(){
             mensaje.fadeOut(400);
             notificationMensaje.html('');
         });
-    });
+    };
+
+    $(document).on('turbolinks:load', closeNotification);
+    $(document).ready(closeNotification);
 
 
     function notificaciones(){
