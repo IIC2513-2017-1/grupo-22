@@ -1,5 +1,9 @@
 <h1> Info </h1>
 <br>
+<div class="fotoperfil">
+  <%= image_tag(@team.logo.url(:medium), class:'fotomedium') %>
+</div>
+<br>
 <div class="info-team">
   <%= render 'info_team' %>
 </div>
@@ -29,7 +33,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @team.players.each do |player| %>      
+    <% @team.players.each do |player| %>
       <%= render player %>
     <% end %>
   </tbody>

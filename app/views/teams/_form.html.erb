@@ -1,4 +1,4 @@
-<%= form_for([team], remote: true) do |f| %>
+<%= form_for([team], remote: true, authenticity_token: true) do |f| %>
   <div class="field">
     <%= f.text_field :name, required: true,placeholder: "Name" %>
   </div>
@@ -6,14 +6,14 @@
     <%= f.text_area :description, required: true, placeholder: "Description" %>
   </div>
   <div class="field">
-    <%= f.text_field :logo, placeholder: "Logo" %>
-  </div>
-  <div class="field">
     <%= f.text_field :trainer, placeholder: "Trainer name" %>
   </div>
   <span style="display:block">Foundation Date</span>
   <div class="field">
     <%= f.date_select :foundation_date  %>
+  </div>
+  <div class="field">
+    <%= f.file_field :logo, style:"width: 240px;", title: "Sube una imagen para tu perfil (opcional)" %>
   </div>
   <br>
   <div class="actions" style="text-align:center;">

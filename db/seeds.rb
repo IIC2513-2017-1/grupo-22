@@ -20,8 +20,7 @@ Player.destroy_all
 end
 
 12.times do
-  Team.create(name: Faker::Team.name, description: 'Description',
-  logo: 'logo.png', trainer: Faker::Name.name,
+  Team.create(name: Faker::Team.name, description: 'Description', trainer: Faker::Name.name,
   foundation_date: Faker::Date.backward(30), user_id: User.all.pluck(:id).sample)
 end
 
