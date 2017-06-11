@@ -29,7 +29,7 @@ $(function(){
 
     });
 
-    $(document).ready(function(){
+    $(document).on('turbolinks:load', function (){
         var fixmeTop = $('.ventana-movil').offset().top;
         $(window).scroll(function() {
             var currentScroll = $(window).scrollTop();
