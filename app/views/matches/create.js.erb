@@ -8,6 +8,7 @@
 	$("#match_<%= @match.id %>").fadeIn(800, function(){
 		$("#match_<%= @match.id %>").css("background", "#f6f6f6");
 	});	
+	$(".container-add-match-tourney").html("<%= j render 'matches/form' %>" );
 
 <% else %>
 	$("#alerta .notification").html("<% @match.errors.full_messages.each do |message| %><li><%= message %></li><% end %>");

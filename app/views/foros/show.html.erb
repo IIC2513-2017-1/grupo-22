@@ -15,11 +15,11 @@
   	</div>
 	</div>
 </div>
-<div class="ventana-movil">
-	<% if current_user and current_user.id? %>
+<% if current_user and current_user.id? %>
+	<div class="ventana-movil">
 		<%= render '/topics/form' %>
-	<% end %>
-</div>
+	</div>
+<% end %>
 <br>
 <%= link_to foros_path do %>
 	<div class="button-back">
