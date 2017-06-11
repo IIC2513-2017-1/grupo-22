@@ -1,6 +1,6 @@
 <% participants = Hash.new %>
 <% @tourney.teams.each do |participant| %>
-  <% participants[participant] = Match.won_by(participant).count*3+Match.draws(participant).count%>
+  <% participants[participant] = @tourney.matches.won_by(participant).count*3+@tourney.matches.draws(participant).count%>
 <% end %>
 <% participants = participants.sort_by {|_key, value| -value} %>
 <h1 style="margin-left: 30px;">Posiciones</h1>
@@ -25,10 +25,10 @@
         <td><%= pos %></td>
         <td><%= participant[0].name%></td>
         <td><%= participant[1]%></td>
-        <td><%= Match.played_by(participant[0]).count %></td>
-        <td><%= Match.won_by(participant[0]).count %></td>
-        <td><%= Match.lost_by(participant[0]).count %></td>
-        <td><%= Match.draws(participant[0]).count %></td>
+        <td><%= @tourney.matches.played_by(participant[0]).count %></td>
+        <td><%= @tourney.matches.won_by(participant[0]).count %></td>
+        <td><%= @tourney.matches.lost_by(participant[0]).count %></td>
+        <td><%= @tourney.matches.draws(participant[0]).count %></td>
       </tr>
       <% if i+1 < participants.length%>
         <% if participants[i][1] > participants[i+1][1] %>

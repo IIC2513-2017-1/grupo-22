@@ -3,34 +3,34 @@
   <div class="left form">
     <span style="display:block">Name</span>
     <div class="field">
-      <%= f.text_field :name, required: true %>
+      <%= f.text_field :name, required: true, title: "Nombre del torneo (requerido)" %>
     </div>
     <span style="display:block">Description</span>
     <div class="field">
-      <%= f.text_area :description, required: true %>
+      <%= f.text_area :description, required: true, title: "Breve descripción del torneo (requerido)" %>
     </div>
     <span style="display:block">Format</span>
     <div class="field">
       <table>
         <tr>
-          <td><%= f.radio_button :format, 'Playoffs', :checked => true %><%= label :format, 'Playoffs' %></td>
-          <td><%= f.radio_button :format, 'Torneo' %><%= label :format, 'Torneo' %></td>
+          <td><%= f.radio_button :format, 'Playoffs', :checked => true, :title => "Modalidad de eliminación" %><%= label :format, 'Playoffs' %></td>
+          <td><%= f.radio_button :format, 'Torneo', :title => 'Modalidad por puntos' %><%= label :format, 'Torneo' %></td>
         </tr>
       </table>
     </div>
     <span style="display:block">Location</span>
     <div class="field">
-      <%= f.text_field :location, required: true %>
+      <%= f.text_field :location, required: true, title: "Ubicación en que se realizará el torneo (requerido)" %>
     </div>
   </div>
   <div class="middle form">
     <span>Mail</span>
     <div class="field">
-      <%= f.email_field :mail, required: true %>
+      <%= f.email_field :mail, required: true, title: "Correo de contacto (requerido)" %>
     </div>
     <span style="display:block">Inscription Limit Date</span>
     <div class="field">
-      <%= f.date_select :inscription_limit_date, required: true %>
+      <%= f.date_select :inscription_limit_date, required: true, title: "Fecha límite de inscripción" %>
     </div>
     <span style="display:block">Start Date</span>
     <div class="field">
@@ -46,17 +46,17 @@
     </div>
   </div>
   <div class="right form">
-    <span style="display:block">Prize</span>
+    <span style="display:block">Winner Prize</span>
     <div class="field">
-      <%= f.text_area :prize, required: true %>
+      <%= f.text_area :prize, required: true, title: "Premio para el ganador (requerido)" %>
     </div>
-    <span style="display:block">Price</span>
+    <span style="display:block">Inscription Price</span>
     <div class="field">
-      <%= f.text_field :price, required: true %>
+      <%= f.text_field :price, required: true, title: "Precio de inscripción (requerido)" %>
     </div>
     <span style="display:block">Phone</span>
     <div class="field">
-      <%= f.text_field :phone, required: true %>
+      <%= f.text_field :phone, required: true, title: "Teléfono de contacto (requerido)" %>
     </div>
     <br>
     <br>
