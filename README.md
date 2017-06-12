@@ -8,9 +8,12 @@ https://arcane-fortress-16941.herokuapp.com/
 * Uso generalizado partials en las vistas.
 * Gran mayoría de las interacciones del usuario con la aplicación se realizan mediante AJAX:
   * Creación, edición y/o eliminación en jugadores, equipos, torneos, partidos, etc.
+  * Creación y eliminación de comentarios y topics en los foros.
+  * (70% 80& de la funcionalidades estan con AJAX)
 * Alta interacción con el DOM, complementario a las interacciones con AJAX.
   * Además, notifaciones customizadas.
   * Al momento de modificar algo en el torneo (equipos, partidos), se actualiza automáticamente lo que se muestra (resultados, posiciones, puntajes, etc).
+  * Modals para todos los formularios de creación y edición.
   * Varios tooltips, aunque solo integrados a nivel de navegador (i.e. solo usando el "title")
 * Se agregó la posibilidad de subir logos a los equipos, caso contrario se muestra foto genérica
   * Solo dueño de equipo puede realizarlo
