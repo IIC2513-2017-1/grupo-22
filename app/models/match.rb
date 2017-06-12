@@ -2,7 +2,7 @@ class Match < ApplicationRecord
 
   scope :played_by, -> (team){ where('(home_team_id = :team_id OR away_team_id = :team_id) AND played = true' , team_id: team.id) }
   scope :won_by, -> (team){ where('winner = ?' , team.name) }
-  scope :lost_by, -> (team){ where('(home_team_id = :team_id AND winner != :team_name) OR (away_team_id = :team_id AND winner != :team_name)' , team_id: team.id, team_name: team.name) }
+  scope :lost_by, -> (team){ where("((home_team_id = :team_id AND winner != :team_name) OR (away_team_id = :team_id AND winner != :team_name)) AND winner != 'draw'" , team_id: team.id, team_name: team.name) }
   scope :draws, -> (team){ where("(winner = 'draw') AND (home_team_id = :team_id OR away_team_id = :team_id)", team_id: team.id) }
 
 
