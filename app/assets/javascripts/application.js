@@ -66,7 +66,7 @@ $(function(){
 
     });
 
-    var closeNotification = function (){
+    $(document).on('turbolinks:load',function (){
         var noticia =$("#noticia");
         var alerta =$("#alerta");
         var mensaje =$("#mensaje");
@@ -91,10 +91,35 @@ $(function(){
             mensaje.fadeOut(400);
             notificationMensaje.html('');
         });
-    };
+    });
 
-    $(document).on('turbolinks:load', closeNotification);
-    $(document).ready(closeNotification);
+
+    $(document).ready(function(){
+        var noticia =$("#noticia");
+        var alerta =$("#alerta");
+        var mensaje =$("#mensaje");
+        var closeNoticia = $("#noticia .close");
+        var closeAlerta = $("#alerta .close");
+        var closeMensaje = $("#mensaje .close");
+        var notificationNoticia = $("#noticia .notification");
+        var notificationAlerta = $("#alerta .notification");
+        var notificationMensaje = $("#mensaje .notification");
+
+        closeNoticia.on("click", function(){
+            notificationNoticia.html('');
+            noticia.fadeOut(400);      
+        });
+    
+        closeAlerta.on("click", function(){
+            notificationAlerta.html('');
+            alerta.fadeOut(400);
+        });
+
+        closeMensaje.on("click", function(){
+            mensaje.fadeOut(400);
+            notificationMensaje.html('');
+        });
+    });
 
 
     function notificaciones(){

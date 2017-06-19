@@ -1,6 +1,5 @@
-<h1 style="text-align: center;">Make a comment </h1>
-<br>
-<%= form_for([@topic, @comments.build], remote:true) do |c| %>
+<h1 style="text-align: center;">Edit comment </h1>
+<%= form_for([@topic, @comment], remote:true) do |c| %>
   <div style="text-align: center;">
     <%= c.text_area :content,placeholder:"Content", required: true, class:"form-content" %>
   </div>

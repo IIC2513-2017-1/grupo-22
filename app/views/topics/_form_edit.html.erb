@@ -1,0 +1,15 @@
+<h1 style="text-align: center">Edit topic</h1>
+<br>
+<%= form_for([@foro, @topic], remote: true) do |f| %>
+  <div style="text-align: center;">
+    <%= f.text_field :title, placeholder:"Tittle", style:"width: 300px;",  required: true, class:"form-tittle" %>
+  </div>
+  <br>
+  <div style="text-align: center;">
+    <%= f.text_area :content, placeholder:"Content", required: true, class:"form-content" %>
+  </div>
+  <br>
+  <div style="text-align: center;">
+    <%= f.submit "Create" , class: "submit", id: 'submit'%>
+  </div>
+<% end %>

@@ -9,7 +9,7 @@ var buttonClose = $(".close");
 modalBackground.fadeIn(300);
 containerModal.css("transform", "scale(1)");
 
-containerInfo.html("<%= j render '/comments/form', comment: @comment %>");
+containerInfo.html("<%= j render '/comments/form_edit', comment: @comment %>");
 
 buttonClose.on("click", function(){
 	modalBackground.fadeOut(300);
