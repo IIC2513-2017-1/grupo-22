@@ -47,6 +47,7 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       format.html {redirect_to foro_path(@topic.foro), notice: "Topic updated"}
+      format.js {flash.now[:notice] = "Topic updated"}
     end
   end
 

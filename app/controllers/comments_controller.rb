@@ -38,6 +38,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.html {redirect_to topic_path(@comment.topic), notice: "Comment updated"}
+      format.js {flash.now[:notice] = "Comment updated"}
     end
 
   end

@@ -1,0 +1,21 @@
+var modalBackground = $(".modal-background.edit-topic");
+
+var containerModal = modalBackground.find(">:first-child");
+
+modalBackground.fadeOut(300);
+containerModal.css("transform", "scale(0.1)");
+
+$("#topic_<%= @topic.id %>").replaceWith("<%= j render 'topic', topic:@topic %>")
+$("#topic_<%= @topic.id %>").css({"border-color": "#FFD700"});
+$("#topic_<%= @topic.id %> p").css({"color": "#FFD700"});
+$("#topic_<%= @topic.id %> .creator.left-big").css({"color": "#FFD700"});
+
+setTimeout(function(){
+  $("#topic_<%= @topic.id %>").css({"border-color": "gray"});
+	$("#topic_<%= @topic.id %> p").css({"color": "#FFF"});
+	$("#topic_<%= @topic.id %> .creator.left-big").css({"color": "gray"});
+}, 800);
+
+$("#noticia .notification").html("<%= flash[:notice] %>");
+$("#alerta .notification").html("");
+$("#aviso .notification").html("");
