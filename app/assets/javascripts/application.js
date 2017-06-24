@@ -19,7 +19,9 @@
 
 $(function(){
 
-    window.setInterval(notificaciones, 20);
+
+    var inotification = window.setInterval(notificaciones, 20);
+    jQuery.exists = function(selector) {return ($(selector).length > 0);}
 
     $(document).on('turbolinks:load', function () {
         $("tr[data-link]").click(function() {
@@ -30,22 +32,25 @@ $(function(){
     });
 
     $(document).on('turbolinks:load', function (){
-        var fixmeTop = $('.ventana-movil').offset().top;
-        $(window).scroll(function() {
-            var currentScroll = $(window).scrollTop();
-            if (currentScroll + 100 >= fixmeTop) {
-                $('.ventana-movil').css({
-                    position: 'fixed',
-                    top: '100px',
-                });
-            } else {
-                $('.ventana-movil').css({
-                	position: 'absolute',
-                    top: '415px',
-                });
-            }
-        });
+        if ($.exists($('.ventana-movil'))) {
+            var fixmeTop = $('.ventana-movil').offset().top;
+            $(window).scroll(function() {
+                var currentScroll = $(window).scrollTop();
+                if (currentScroll + 100 >= fixmeTop) {
+                    $('.ventana-movil').css({
+                        position: 'fixed',
+                        top: '100px',
+                    });
+                } else {
+                    $('.ventana-movil').css({
+                        position: 'absolute',
+                        top: '415px',
+                    });
+                }
+            });
+        };
     });
+    
 
     /* Animacion boton subir */
     $(document).ready(function(){
@@ -66,7 +71,7 @@ $(function(){
 
     });
 
-    $(document).on('turbolinks:load',function (){
+    var ready = function(){
         var noticia =$("#noticia");
         var alerta =$("#alerta");
         var mensaje =$("#mensaje");
@@ -78,49 +83,23 @@ $(function(){
         var notificationMensaje = $("#mensaje .notification");
 
         closeNoticia.on("click", function(){
-            notificationNoticia.html('');
-            noticia.fadeOut(400);      
+            noticia.css("display", "none");
+            notificationNoticia.html('');                 
         });
     
         closeAlerta.on("click", function(){
+            alerta.css("display", "none");
             notificationAlerta.html('');
-            alerta.fadeOut(400);
         });
 
         closeMensaje.on("click", function(){
-            mensaje.fadeOut(400);
             notificationMensaje.html('');
+            mensaje.css("display", "none");
         });
-    });
+    };
 
-
-    $(document).ready(function(){
-        var noticia =$("#noticia");
-        var alerta =$("#alerta");
-        var mensaje =$("#mensaje");
-        var closeNoticia = $("#noticia .close");
-        var closeAlerta = $("#alerta .close");
-        var closeMensaje = $("#mensaje .close");
-        var notificationNoticia = $("#noticia .notification");
-        var notificationAlerta = $("#alerta .notification");
-        var notificationMensaje = $("#mensaje .notification");
-
-        closeNoticia.on("click", function(){
-            notificationNoticia.html('');
-            noticia.fadeOut(400);      
-        });
-    
-        closeAlerta.on("click", function(){
-            notificationAlerta.html('');
-            alerta.fadeOut(400);
-        });
-
-        closeMensaje.on("click", function(){
-            mensaje.fadeOut(400);
-            notificationMensaje.html('');
-        });
-    });
-
+    $(document).ready(ready);
+    $(document).on('turbolinks:load', ready);
 
     function notificaciones(){
 
@@ -133,22 +112,19 @@ $(function(){
        var notificationMensaje = $("#mensaje .notification");
 
        if($.trim(notificationNoticia.html())!='') {
-        noticia.css("visibility", "visible");
-        alerta.css("visibility", "hidden");
-        mensaje.css("visibility", "hidden");
-        noticia.fadeIn(400);
+        alerta.css("display", "none");
+        mensaje.css("display", "none");
+        noticia.fadeIn(500);
        }
        else if($.trim(notificationAlerta.html())!=''){
-        alerta.css("visibility", "visible");
-        noticia.css("visibility", "hidden");
-        mensaje.css("visibility", "hidden");
-        alerta.fadeIn(400);
+        noticia.css("display", "none");
+        mensaje.css("display", "none");
+        alerta.fadeIn(500);
        }
        else if($.trim(notificationMensaje.html())!=''){
-        alerta.css("visibility", "hidden");
-        noticia.css("visibility", "hidden");
-        mensaje.css("visibility", "visible");
-        mensaje.fadeIn(400);
+        alerta.css("display", "none");
+        noticia.css("display", "none");
+        mensaje.fadeIn(500);
        }
     };
 

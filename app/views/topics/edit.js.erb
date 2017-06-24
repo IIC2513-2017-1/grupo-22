@@ -4,14 +4,7 @@ var containerModal = modalBackground.find(">:first-child");
 
 var containerInfo = containerModal.find("div.edit-info-topic");
 
-var buttonClose = $(".close");
-
 modalBackground.fadeIn(300);
 containerModal.css("transform", "scale(1)");
 
 containerInfo.html("<%= j render '/topics/form_edit', topic: @topic %>");
-
-buttonClose.on("click", function(){
-	modalBackground.fadeOut(300);
-	containerModal.css("transform", "scale(0.1)");
-});

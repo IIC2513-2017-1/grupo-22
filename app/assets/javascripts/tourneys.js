@@ -34,7 +34,6 @@ $(function(){
 			modalBackground.fadeOut(300);
 			containerModal.css("transform", "scale(0.1)");
 		});
-
 	});
 });
 

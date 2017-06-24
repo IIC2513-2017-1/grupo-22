@@ -73,7 +73,7 @@ a:hover {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   line-height: 45px;
-  visibility:hidden;
+  display:none;
   z-index:5000;
 }
 
@@ -87,7 +87,7 @@ a:hover {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   line-height: 45px;
-  visibility:hidden;
+  display:none;
   z-index:5000;
 }
 
@@ -101,7 +101,7 @@ a:hover {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   line-height: 45px;
-  visibility:hidden;
+  display:none;
   z-index:5000;
 }
 
