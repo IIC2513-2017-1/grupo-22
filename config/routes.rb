@@ -33,4 +33,12 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
 
   match '*path' => redirect('/'), via: :get
+
+  namespace :api do
+    namespace :v1 do
+      resources :teams, only: [:index, :show, :create]
+      resources :users, only: [:show]
+    end
+  end
+
 end
