@@ -68,8 +68,7 @@ end
 Comment.create(user_id: User.find_by(username: "ROBerto").id,
 topic_id: Topic.first.id, content: "LOL XDDD")
 
-Team.create(name: "Supercampeones", description: 'Animu team',
-logo: 'logo.png', trainer: "Roberto Zedinho",
+Team.create(name: "Supercampeones", description: 'Animu team', trainer: "Roberto Zedinho",
 foundation_date: Faker::Date.backward(30), user_id: User.find_by(username: "ROBerto").id)
 
 Player.create(full_name: "Oliver Atom",

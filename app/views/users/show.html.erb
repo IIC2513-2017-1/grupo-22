@@ -1,5 +1,11 @@
 <h1>Profile</h1>
 <br>
+<% if current_user %>
+  <% if current_user.id == @user.id %>
+      <div>Token: <%=@user.token%></div>
+  <% end %>
+<% end %>
+<br>
 <div class="fotoperfil">
   <%= image_tag(@user.avatar.url(:medium), class:'fotomedium') %>
 </div>

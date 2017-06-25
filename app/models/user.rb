@@ -2,6 +2,8 @@ class User < ApplicationRecord
 
 	has_secure_password
 
+	before_save :generate_token_and_save
+
  	validates :email, presence: true, uniqueness: true, allow_blank: false,format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
  	validates :password, presence: true, confirmation: true, allow_blank: false, length: { minimum: 6 }
  	validates :full_name, presence: true, allow_blank: false
@@ -19,13 +21,10 @@ class User < ApplicationRecord
 	has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "50x50#" }, :default_url => "/default/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
-	#before_create :generate_token_and_save
+
 
 	def generate_token_and_save
-		loop do
-			self.token = SecureRandom.hex(64)
-			break if save
-		end
+		self.token = SecureRandom.hex(64)
 	end
 
 end
