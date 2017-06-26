@@ -188,11 +188,7 @@ DEPENDENCIES
   byebug
   faker
   figaro
-<<<<<<< HEAD
   httparty (~> 0.13.7)
-=======
-  httparty
->>>>>>> 148ebe27440a2c7c14c30102c3db49cf559ce49a
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
