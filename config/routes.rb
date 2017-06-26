@@ -9,7 +9,6 @@ Rails.application.routes.draw do
     resources :participants, only: [:create, :destroy]
   end
 
-
   resources :teams do
     resources :players
   end
@@ -32,13 +31,15 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
 
-  match '*path' => redirect('/'), via: :get
-
   namespace :api do
     namespace :v1 do
       resources :teams, only: [:index, :show, :create]
       resources :users, only: [:show]
+      resources :tourneys, only: [:index, :show, :create]
+      resources :matches, only: [:index]
     end
   end
+
+  match '*path' => redirect('/'), via: :get
 
 end
