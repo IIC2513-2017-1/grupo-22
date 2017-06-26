@@ -1,6 +1,6 @@
 module Api::V1
   class TeamsController < ApiController
-    before_action :authenticate
+    #before_action :authenticate
 
     def index
       @teams = Team.all
@@ -8,6 +8,7 @@ module Api::V1
 
     def create
       @team = @current_user.teams.build(team_params)
+      #@team = User.last.teams.build(team_params)
       return if @team.save
       render json: {errors: @team.errors}, status: :unprocessable_entity
     end
