@@ -4,7 +4,7 @@ json.array! @tourneys do |tourney|
   json.id tourney.id
   json.name tourney.name
   json.description tourney.description
-  json.format torney.format
+  json.format tourney.format
   json.location tourney.location
   json.inscription_limit_date tourney.inscription_limit_date
   json.schedule tourney.schedule

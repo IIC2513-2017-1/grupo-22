@@ -2,7 +2,7 @@ json.tourney do
   json.id @tourney.id
   json.name @tourney.name
   json.description @tourney.description
-  json.format @torney.format
+  json.format @tourney.format
   json.location @tourney.location
   json.inscription_limit_date @tourney.inscription_limit_date
   json.start_date @tourney.start_date

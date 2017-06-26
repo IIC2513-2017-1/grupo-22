@@ -1,6 +1,6 @@
 module Api::V1
   class MatchesController < ApiController
-    #before_action :authenticate
+    before_action :authenticate
 
     def index
       @matches = Match.all

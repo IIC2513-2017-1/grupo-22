@@ -6,7 +6,7 @@ module Api::V1
     protected
 
     def authenticate
-      authenticte_or_request_with_http_token do |token, _options|
+      authenticate_or_request_with_http_token do |token, _options|
         @current_user = User.find_by(token: token)
       end
     end

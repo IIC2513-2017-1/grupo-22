@@ -1,12 +1,13 @@
 module Api::V1
   class TeamsController < ApiController
-    #before_action :authenticate
+    before_action :authenticate
 
     def index
       @teams = Team.all
     end
 
     def create
+      puts(@current_user)
       @team = @current_user.teams.build(team_params)
       #@team = User.last.teams.build(team_params)
       return if @team.save

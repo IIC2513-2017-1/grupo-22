@@ -1,6 +1,6 @@
 module Api::V1
   class TourneysController < ApiController
-    #before_action :authenticate
+    before_action :authenticate
 
     def index
       @tourneys = Tourney.all

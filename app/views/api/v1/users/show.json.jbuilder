@@ -12,4 +12,11 @@ json.user do
       json.team_name team.name
     end
   end
+  json.tourneys do
+    json.array! @user.tourneys do |tourney|
+      json.tourney_id tourney.id
+      json.tourney_name tourney.name
+      json.format tourney.format
+    end
+  end
 end

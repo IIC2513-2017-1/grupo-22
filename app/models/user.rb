@@ -24,7 +24,10 @@ class User < ApplicationRecord
 
 
 	def generate_token_and_save
-		self.token = SecureRandom.hex(64)
+		loop do
+			self.token = SecureRandom.hex(64)
+			break unless User.find_by(token: self.token)
+		end
 	end
 
 end
