@@ -1,3 +1,9 @@
+<!-- Weather -->
+<div style="text-align: center; border-bottom: 1px solid #FFD700">
+  <%= render 'weather' %>
+  <br>
+</div>
+<!-- cONTENT-->
 <div class="container-flex">
   <div class="left-half" id="info">
     <h1>Tourney</h1>
@@ -44,15 +50,7 @@
 <!-- TABLA DE PARTIDOS -->
 <h1 style="margin-left: 30px;">Calendario</h1>
 <br>
-  <%= render 'matches_on_tourney' %>
-<br>
-
-<!-- TABLA POSICIONES -->
-<% if @tourney.format == 'Torneo' %>
-  <div class="container-position-table">
-    <%= render 'position_table' %>
-  </div>
-<% end %>
+<%= render 'matches_on_tourney' %>
 
 <!-- TABLA RESULTADOS -->
 <br>
@@ -60,12 +58,20 @@
   <%= render 'results' %>
 </div>
 
-<!-- Brackets -->
-  <div class="container-brackets">
-  <% if @tourney.format == 'Playoffs' %>
-    <%= render 'brackets' %>
-  <% end %>
+<!-- TABLA POSICIONES -->
+<br>
+<% if @tourney.format == 'Torneo' %>
+  <div class="container-position-table">
+    <%= render 'position_table' %>
   </div>
+<% end %>
+
+<!-- Brackets -->
+<div class="container-brackets">
+<% if @tourney.format == 'Playoffs' %>
+  <%= render 'brackets' %>
+<% end %>
+</div>
 
 <%= link_to tourneys_path do %>
   <div class="button-back">

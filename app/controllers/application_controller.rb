@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
 	add_flash_types :message
 
 	protect_from_forgery with: :exception

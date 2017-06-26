@@ -1,3 +1,5 @@
+require 'Wunderground'
+
 class TourneysController < ApplicationController
   before_action :set_tourney, only: [:show, :edit, :update, :destroy]
   before_action :set_brackets, only: [:show]
@@ -15,6 +17,7 @@ class TourneysController < ApplicationController
   # GET /tourneys/1
   # GET /tourneys/1.json
   def show
+    @weather = Wunderground.get_weather
   end
 
   # GET /tourneys/new

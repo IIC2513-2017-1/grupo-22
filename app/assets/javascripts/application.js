@@ -14,11 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
 /* funciones para creacion de topics y comentarios movil*/
 
 $(function(){
-
 
     var inotification = window.setInterval(notificaciones, 20);
     jQuery.exists = function(selector) {return ($(selector).length > 0);}
@@ -53,9 +51,9 @@ $(function(){
     
 
     /* Animacion boton subir */
-    $(document).ready(function(){
+   var up = function(){
 
-        $('.go-up').click(function(){
+        $('.go-up').on("click",function(){
             $('body, html').animate({
                 scrollTop: '0px'
             }, 300);
@@ -69,7 +67,10 @@ $(function(){
             }
         });
 
-    });
+    };
+
+    $(document).ready(up);
+    $(document).on('turbolinks:load', up);
 
     var ready = function(){
         var noticia =$("#noticia");

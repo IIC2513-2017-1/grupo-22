@@ -1,4 +1,5 @@
 <h1 style="text-align: center">Create topic</h1>
+<br>
 <%= form_for([@foro, @topics.build], remote: true) do |f| %>
   <div style="text-align: center;">
     <%= f.text_field :title, placeholder:"Tittle", style:"width: 300px;",  required: true, class:"form-tittle" %>

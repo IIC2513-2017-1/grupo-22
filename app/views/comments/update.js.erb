@@ -6,16 +6,12 @@ modalBackground.fadeOut(300);
 containerModal.css("transform", "scale(0.1)");
 
 $("#comment_<%= @comment.id %>").replaceWith("<%= j render 'comment', comment:@comment %>")
-$("#comment_<%= @comment.id %>").css({"border-color": "#FFD700"});
 $("#comment_<%= @comment.id %> p").css({"color": "#FFD700"});
-$("#comment_<%= @comment.id %> .creator.left-big").css({"color": "#FFD700"});
 
 setTimeout(function(){
-  $("#comment_<%= @comment.id %>").css({"border-color": "gray"});
 	$("#comment_<%= @comment.id %> p").css({"color": "#FFF"});
-	$("#comment_<%= @comment.id %> .creator.left-big").css({"color": "gray"});
 }, 800);
 
 $("#noticia .notification").html("<%= flash[:notice] %>");
 $("#alerta .notification").html("");
-$("#aviso .notification").html("");
+$("#mensaje .notification").html("");

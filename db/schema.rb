@@ -53,11 +53,11 @@ ActiveRecord::Schema.define(version: 20170625010730) do
   end
 
   create_table "participants", force: :cascade do |t|
-    t.integer  "team_id",                null: false
-    t.integer  "tourney_id",             null: false
-    t.integer  "points",     default: 0
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "team_id",    null: false
+    t.integer  "tourney_id", null: false
+    t.integer  "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["team_id"], name: "index_participants_on_team_id", using: :btree
     t.index ["tourney_id"], name: "index_participants_on_tourney_id", using: :btree
   end
