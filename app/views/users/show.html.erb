@@ -2,7 +2,8 @@
 <br>
 <% if current_user %>
   <% if current_user.id == @user.id %>
-      <div>Token: <%=@user.token%></div>
+      <div class="button-token">Show Token</div>
+      <div id="token"><%=@user.token%></div>
   <% end %>
 <% end %>
 <br>

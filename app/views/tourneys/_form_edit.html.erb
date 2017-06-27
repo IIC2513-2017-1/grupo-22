@@ -9,13 +9,12 @@
     <div class="field">
       <%= f.text_area :description, required: true %>
     </div>
+    <span>City</span><br>
+    <%= f.select(:city, ['Santiago', 'Arica', 'Antofagasta','La_Serena', 'Coquimbo','Rancagua', 'Osorno', 'Puerto_Montt']) %>
+    <br><br>
     <span style="display:block">Location</span>
     <div class="field">
       <%= f.text_field :location, required: true %>
-    </div>
-    <span>Mail</span>
-    <div class="field">
-      <%= f.email_field :mail, required: true %>
     </div>
   </div>
   <div class="middle form">
@@ -48,6 +47,10 @@
     <span style="display:block">Schedule</span>
     <div class="field">
       <%= f.time_select :schedule, :ignore_date => true %>
+    </div>
+    <span>Mail</span>
+    <div class="field">
+      <%= f.email_field :mail, required: true %>
     </div>
     <br>
     <div class="actions" style="text-align:center;">

@@ -5,8 +5,9 @@
     <tr>
       <th colspan="1"></th>
       <th>Name</th>
+      <th>City</th>
       <th>Format</th>
-      <th>Inscription limit date</th>
+      <th>Ins. limit date</th>
       <th>Start date</th>
       <th>End date</th>
       <th>Owner</th>
@@ -20,6 +21,7 @@
       <tr data-link="<%= tourney_path(tourney) %>">
         <td><span class="icon-go2"></span></td>
         <td><%= tourney.name %></td>
+        <td><%= tourney.city %></td>
         <td><%= tourney.format %></td>
         <td><%= tourney.inscription_limit_date %></td>
         <td><%= tourney.start_date %></td>

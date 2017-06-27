@@ -14,8 +14,8 @@ class Wunderground
     @temp = response['current_observation']['temp_c']
   end
 
-  def self.get_weather
-    response = get("/api/70f7130c809bd382/conditions/q/Chile/Angol.json")
+  def self.get_weather(city)
+    response = get("/api/70f7130c809bd382/conditions/q/Chile/#{city}.json")
     if response.success?
       new(response)
     else

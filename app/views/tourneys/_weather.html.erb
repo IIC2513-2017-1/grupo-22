@@ -1,14 +1,14 @@
 <div style="display: inline-block; margin-bottom: 10px;">
-  <div style="display:flex; flex-direction: row; align-content: flex-start; align-items: center; width: auto;">
-		<div style="flex-basis: auto; display: block;">
+  <div class="container-flex-weather" style="width: auto">
+		<div class="child-flex-weather">
 			<div>
 				<%= image_tag 'Wunderground-icon.png', style: "width: 100px; height:auto;"  %>
 			</div>
 		</div>
-		<div style="flex-basis: auto; display: block; padding-left: 20px;">
-			<div style="display:flex; flex-direction: row; align-content: flex-start; align-items: center;">
+		<div class="child-flex-weather" style="padding-left: 20px;">
+			<div class="container-flex-weather">
 				<i class="wu wu-white wu-64 wu-<%= @weather.icon %>"></i>
-				<div style="font-size: 30px; flex-basis: auto;">
+				<div class="child-flex-weather-temp">
 				<%= @weather.temp %>°C
 				</div>
 			</div>

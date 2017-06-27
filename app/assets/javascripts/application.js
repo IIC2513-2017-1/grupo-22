@@ -129,6 +129,22 @@ $(function(){
        }
     };
 
+    $(document).on('turbolinks:load', function (){
+        var buttontoken = $(".button-token");
+        var token = $("#token");
+
+        buttontoken.on('click', function(){
+            if($.trim(buttontoken.html())=='Show Token'){
+                token.slideDown("normal");
+                buttontoken.html("Hide Token")
+            } 
+            else {
+                token.slideUp("normal");
+                buttontoken.html("Show Token")
+            }
+        });
+    });
+
 
      /*$(document).on('turbolinks:load', function () {
         $("#new_user").on('ajax:success', function (e, data) {

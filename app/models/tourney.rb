@@ -7,6 +7,7 @@ class Tourney < ApplicationRecord
   validates :price, presence: true, allow_blank: false
   validates :prize, presence: true, allow_blank: false
   validates :phone, presence: true, allow_blank: false
+  validates :city, presence: true, allow_blank: false
   validates :schedule, presence: true, allow_blank: false
   validate  :validate_end_date_before_start_date
   validate  :validate_ins_date_before_start_date

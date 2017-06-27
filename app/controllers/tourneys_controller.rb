@@ -17,7 +17,7 @@ class TourneysController < ApplicationController
   # GET /tourneys/1
   # GET /tourneys/1.json
   def show
-    @weather = Wunderground.get_weather
+    @weather = Wunderground.get_weather(@tourney.city)
   end
 
   # GET /tourneys/new
@@ -102,6 +102,6 @@ class TourneysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tourney_params
-      params.require(:tourney).permit(:name, :description, :format, :location, :inscription_limit_date, :start_date, :end_date, :schedule, :prize, :price, :mail, :phone)
+      params.require(:tourney).permit(:name, :description, :format, :location, :inscription_limit_date, :start_date, :end_date, :schedule, :prize, :price, :mail, :phone, :city)
     end
 end

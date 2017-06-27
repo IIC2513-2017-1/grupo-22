@@ -18,15 +18,13 @@
         </tr>
       </table>
     </div>
+    <span>City</span><br>
+    <%= f.select(:city, ['Santiago', 'Arica', 'Antofagasta','La_Serena', 'Coquimbo','Rancagua', 'Osorno', 'Puerto_Montt']) %>
+  </div>
+  <div class="middle form">
     <span style="display:block">Location</span>
     <div class="field">
       <%= f.text_field :location, required: true, title: "Ubicación en que se realizará el torneo (requerido)" %>
-    </div>
-  </div>
-  <div class="middle form">
-    <span>Mail</span>
-    <div class="field">
-      <%= f.email_field :mail, required: true, title: "Correo de contacto (requerido)" %>
     </div>
     <span style="display:block">Inscription Limit Date</span>
     <div class="field">
@@ -57,6 +55,10 @@
     <span style="display:block">Phone</span>
     <div class="field">
       <%= f.text_field :phone, required: true, title: "Teléfono de contacto (requerido)" %>
+    </div>
+    <span>Mail</span>
+    <div class="field">
+      <%= f.email_field :mail, required: true, title: "Correo de contacto (requerido)" %>
     </div>
     <br>
     <br>
