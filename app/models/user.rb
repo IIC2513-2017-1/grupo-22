@@ -9,7 +9,7 @@ class User < ApplicationRecord
  	validates :full_name, presence: true, allow_blank: false
  	validates :username, presence: true, allow_blank: false, uniqueness: true
 
-	#validates :token, uniqueness: true
+	validates :token, uniqueness: true
 
  	has_many :requests_send, foreign_key: 'sender_id', class_name: 'Request'
 	has_many :request_received, foreign_key: 'receiver_id', class_name: 'Request'

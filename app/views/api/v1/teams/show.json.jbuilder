@@ -9,6 +9,7 @@ json.team do
   json.logo @team.logo_file_name
   json.players do
     json.array! @team.players do |player|
+      json.id player.id
       json.name player.full_name
       json.position player.position
       json.email player.email

@@ -2,6 +2,7 @@
 
 json.array! @matches do |match|
   json.id match.id
+  json.href api_v1_match_url(match)
   json.date match.date
   json.tourney match.tourney.name
   json.home_team match.home_team.name

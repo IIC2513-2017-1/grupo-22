@@ -2,6 +2,7 @@
 
 json.array! @tourneys do |tourney|
   json.id tourney.id
+  json.href api_v1_tourney_url(tourney)
   json.name tourney.name
   json.description tourney.description
   json.format tourney.format
