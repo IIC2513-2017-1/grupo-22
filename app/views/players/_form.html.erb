@@ -1,6 +1,6 @@
-<%= form_for([team, player], remote: true ) do |f| %>
+<%= form_for([team, player], remote: true, authenticity_token: true) do |f| %>
 <div class="container-flex">
-  <div class="left form">  
+  <div class="left form">
     <div class="field">
       <%= f.text_field :full_name, required: true, placeholder: "Full Name" %>
     </div>
@@ -34,7 +34,7 @@
       <%= f.text_field :ocupation, placeholder: "Ocupation" %>
     </div>
     <div class="field">
-      <%= f.text_field :phote, placeholder: "Picture" %>
+      <%= f.file_field :photo, style:"width: 240px;", title: "Sube una foto del jugador (opcional)" %>
     </div>
     <br>
     <div style="text-align: center;">

@@ -17,7 +17,7 @@ json.team do
       json.phone player.phone
       json.birth_date player.birth_date
       json.occupation player.ocupation
-      json.phote player.phote
+      json.photo player.photo_file_name
       json.leg player.leg
     end
   end

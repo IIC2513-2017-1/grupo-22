@@ -7,7 +7,7 @@ class PlayersController < ApplicationController
 
   def edit
     respond_to do |format|
-      format.html 
+      format.html
       format.js
     end
   end
@@ -68,6 +68,6 @@ class PlayersController < ApplicationController
 
     def player_params
       params.require(:player).permit(:full_name, :position, :email, :address,
-      :phone, :birth_date, :ocupation, :phote, :leg)
+      :phone, :birth_date, :ocupation, :photo, :leg)
     end
 end

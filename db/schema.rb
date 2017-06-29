@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170626223458) do
+ActiveRecord::Schema.define(version: 20170629093039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,11 +70,14 @@ ActiveRecord::Schema.define(version: 20170626223458) do
     t.string   "phone"
     t.date     "birth_date"
     t.string   "ocupation"
-    t.string   "phote"
     t.string   "leg"
     t.integer  "team_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
     t.index ["team_id"], name: "index_players_on_team_id", using: :btree
   end
 

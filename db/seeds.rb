@@ -21,14 +21,18 @@ end
 
 12.times do
   Team.create(name: Faker::Team.name, description: 'Description', trainer: Faker::Name.name,
-  foundation_date: Faker::Date.backward(30), user_id: User.all.pluck(:id).sample)
+  foundation_date: Faker::Date.between(7.years.ago, 2.years.ago), user_id: User.all.pluck(:id).sample)
 end
 
 40.times do
   Player.create(full_name: Faker::Name.name,
   position: ['Arquero', 'Central', 'Lateral', 'Mediocampista', 'Delantero'].sample,
+  address: Faker::Address.street_address,
+  phone: Faker::PhoneNumber.cell_phone,
   email: Faker::Internet.email,
   ocupation: Faker::Job.title,
+  leg: ['Izquierdo', 'Derecho'].sample,
+  birth_date: Faker::Date.between(40.years.ago, 20.years.ago),
   team_id: Team.all.pluck(:id).sample)
 end
 
@@ -72,9 +76,13 @@ Team.create(name: "Supercampeones", description: 'Animu team', trainer: "Roberto
 foundation_date: Faker::Date.backward(30), user_id: User.find_by(username: "ROBerto").id)
 
 Player.create(full_name: "Oliver Atom",
+birth_date: "1983-10-10",
 position: "Delantero",
 email: "CaptainTsubasa@shonenjump.jp",
 ocupation: "Student",
+leg: "Derecho",
+address: "Somewhere in Japan",
+phone: "(XX)XXX-XXX-XX",
 team_id: Team.find_by(name: "Supercampeones").id)
 
 Tourney.first.teams << Team.all[0..3]
