@@ -1,0 +1,19 @@
+<h1>Players</h1>
+<br>
+<table class="tabla container-players">
+  <thead>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>ID</th>
+      <th>mail</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @players.each do |player| %>
+      <%= render player %>
+    <% end %>
+  </tbody>
+</table>
+<br>

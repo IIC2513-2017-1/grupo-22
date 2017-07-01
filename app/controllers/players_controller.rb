@@ -5,6 +5,10 @@ class PlayersController < ApplicationController
   def show
   end
 
+  def index
+    @players = Player.all
+  end
+
   def edit
     respond_to do |format|
       format.html

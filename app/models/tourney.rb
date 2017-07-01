@@ -23,6 +23,10 @@ class Tourney < ApplicationRecord
   has_one :foro, dependent: :destroy
   #has_one :ranking, dependent: :destroy
 
+  def self.search(search)
+    where("name LIKE ?", "%#{search}%")
+  end
+
   def validate_end_date_before_start_date
     if end_date && start_date
       errors.add(:end_date, "invalid") if end_date < start_date

@@ -7,15 +7,15 @@
   <% end %>
   </td>
   <td><%= player.full_name %></td>
-  <td><%= player.id %></td>  
+  <td><%= player.id %></td>
   <td><%= player.email %></td>
   <td class="value" id="cell-link">
-    <%= link_to(team_player_path(@team,player)) do %>
+    <%= link_to(team_player_path(player.team, player)) do %>
       <span class="icon-go2" style="margin-right: 5px;"></span>Go
     <% end %>
   </td>
   <% if current_user%>
-    <% if current_user.id == @team.user.id %>
+    <% if @team && current_user.id == @team.user.id %>
       <td class="value" id="cell-link">
         <%= link_to(team_player_path(@team,player), remote: true, method: :delete, data: { confirm: 'Are you sure?' }) do %>
           <span class="icon-go2" style="margin-right: 5px;"></span>Remove

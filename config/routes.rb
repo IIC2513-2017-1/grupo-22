@@ -10,16 +10,18 @@ Rails.application.routes.draw do
   end
 
   resources :teams do
-    resources :players
+    resources :players, except: [:index]
   end
 
   resources :foros do
-    resources :topics
+    resources :topics, except: [:index]
   end
 
   resources :topics do
-    resources :comments
+    resources :comments, except: [:index]
   end
+
+  resources :players, except: [:create, :destroy]
 
   resources :comments
 
@@ -28,6 +30,8 @@ Rails.application.routes.draw do
   resources :requests
 
   resources :matches
+
+  resources :search, only: [:index]
 
   resource :session, only: [:new, :create, :destroy]
 
