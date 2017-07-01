@@ -1,7 +1,11 @@
 <h1> Info </h1>
 <br>
 <div class="fotoperfil">
-  <%= image_tag(@team.logo.url(:medium), class:'fotomedium') %>
+  <% if @team.logo.present? %>
+    <%= cl_image_tag(@team.logo.url(:medium)) %>
+  <% else %>
+    <%= image_tag("/default/medium/missing.png", class:'fotomedium') %>
+  <% end %>
 </div>
 <br>
 <div class="info-team">
@@ -21,8 +25,9 @@
 <table class="tabla container-players">
   <thead>
     <tr>
-      <th>ID</th>
+      <th>Picture</th>
       <th>Name</th>
+      <th>ID</th>
       <th>mail</th>
       <th colspan="1"></th>
       <% if current_user%>

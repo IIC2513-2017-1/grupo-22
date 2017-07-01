@@ -1,0 +1,14 @@
+<tr data-link="<%= user_path(user)%>" id="user_<%= user.id %>">
+  <td><span class="icon-go2"></span></td>
+	<td>
+	<% if user.avatar.present? %>
+  	<%= cl_image_tag(user.avatar.url(:thumb)) %>
+	<% else %>
+  	<%= image_tag("/default/thumb/missing.png", class:'fotothumb') %>
+  <% end %>
+  </td>
+  <td><%= user.full_name %></td>
+  <td><%= user.full_name %></td>
+  <td><%= user.email %></td>
+  <td><%= user.username %></td>
+</tr>

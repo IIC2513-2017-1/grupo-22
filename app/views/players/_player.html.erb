@@ -1,6 +1,13 @@
 <tr class="no-link" id="player_<%= player.id  %>">
-  <td><%= player.id %></td>
+  <td>
+  <% if player.photo.present? %>
+    <%= cl_image_tag(player.photo.url(:thumb)) %>
+  <% else %>
+    <%= image_tag("/default/thumb/missing.png", class:'fotothumb') %>
+  <% end %>
+  </td>
   <td><%= player.full_name %></td>
+  <td><%= player.id %></td>  
   <td><%= player.email %></td>
   <td class="value" id="cell-link">
     <%= link_to(team_player_path(@team,player)) do %>

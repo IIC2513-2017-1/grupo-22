@@ -50,6 +50,8 @@ gem 'rest-client'
 
 gem 'httparty', '~> 0.13.7'
 
+gem 'paperclip-cloudinary'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

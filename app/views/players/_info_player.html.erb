@@ -1,5 +1,9 @@
 <div class="fotoperfil">
-  <%= image_tag(@player.photo.url(:medium), class:'fotomedium') %>
+  <% if @player.photo.present? %>
+    <%= cl_image_tag(@player.photo.url(:medium)) %>
+  <% else %>
+    <%= image_tag("/default/medium/missing.png", class:'fotomedium') %>
+  <% end %>
 </div>
 <br><br>
 <table class="perfil">

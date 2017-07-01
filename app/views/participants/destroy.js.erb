@@ -4,6 +4,8 @@
 		$("#participant_<%= @team.id %>").remove();
 	});
 	$(".container-participants-form").html("<%= j render 'form' %>" );
+	$(".container-add-match-tourney").html("<%= j render 'matches/form' %>" );
+
 	<% if @tourney.teams.length < 2 %>
 			$(".container-add-match-tourney").html("" );
 	<% end  %>	

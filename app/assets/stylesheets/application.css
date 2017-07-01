@@ -1078,10 +1078,15 @@ li.game-bottom{
 
 #token {
   display:none;
-  font-color: black;
+  color: black;
   margin-top: 10px;
   border-top: 1px solid #FDD700;
   border-bottom: 1px solid #FDD700;
   text-align: center;
 
+}
+
+/* video youtube */
+.video {
+  text-align: center;
 }

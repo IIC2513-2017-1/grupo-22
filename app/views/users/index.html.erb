@@ -1,32 +1,3 @@
 <h1>Users</h1>
 <br>
-<table class="tabla">
-  <thead>
-    <tr>
-      <th colspan="1"></th>
-      <th>Full name</th>
-      <th>Email</th>
-      <th>Username</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr data-link="<%= user_path(user)%>">
-        <td><span class="icon-go2"></span></td>
-        <td><%= user.full_name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.username %></td>
-        <!--
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        -->
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br><br>
-<%= link_to root_path do %>
-  <div class="button-back">
-    <span class="icon-back"></span>
-  </div>
-<% end %>
+<%= render 'user_table' %>

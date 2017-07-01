@@ -16,18 +16,18 @@
 //= require_tree .
 /* funciones para creacion de topics y comentarios movil*/
 
+$(document).on('turbolinks:load', function () {
+    $("tr[data-link]").click(function() {
+        window.location = $(this).data("link")
+
+    });
+
+});
+
 $(function(){
 
     var inotification = window.setInterval(notificaciones, 20);
     jQuery.exists = function(selector) {return ($(selector).length > 0);}
-
-    $(document).on('turbolinks:load', function () {
-        $("tr[data-link]").click(function() {
-            window.location = $(this).data("link")
-
-        });
-
-    });
 
     $(document).on('turbolinks:load', function (){
         if ($.exists($('.ventana-movil'))) {

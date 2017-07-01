@@ -16,13 +16,18 @@
     <% @teams.each do |team| %>
       <tr data-link="<%= team_path(team)%>">
         <td><span class="icon-go2"></span></td>
-        <td><%= image_tag(team.logo.url(:thumb), class:'fotothumb') %></td>
+        <td>
+        <% if team.logo.present? %>
+          <%= cl_image_tag(team.logo.url(:thumb)) %>
+        <% else %>
+          <%= image_tag("/default/thumb/missing.png", class:'fotothumb') %>
+        <% end %>
+        </td>
         <td><%= team.name %></td>
         <td><%= team.description %></td>
         <td><%= team.trainer %></td>
         <td><%= team.foundation_date %></td>
         <td><%= team.user.username %></td>
-        <!--<td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>
@@ -38,12 +43,6 @@
   </td>
   <td>
   <% if current_user and current_user.id? %>
-  <!--<div class="container" style="width: 45px; height: 45px;">
-    <%= link_to image_tag("Add4.png", size: "45x45"), new_team_path, class: 'back' %>
-    <div class="overlay">
-        <div class="text"><%= link_to "ADD", new_team_path %></div>
-    </div>
-  </div>-->
   <div class="container add-team" style="width: 45px; height: 45px;">
     <%= image_tag("Add4.png", size: "45x45") %>
     <div class="overlay">

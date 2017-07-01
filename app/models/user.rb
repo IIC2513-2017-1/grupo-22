@@ -9,7 +9,7 @@ class User < ApplicationRecord
  	validates :full_name, presence: true, allow_blank: false
  	validates :username, presence: true, allow_blank: false, uniqueness: true
 
-	validates :token, uniqueness: true
+	#validates :token, uniqueness: true
 
  	has_many :requests_send, foreign_key: 'sender_id', class_name: 'Request'
 	has_many :request_received, foreign_key: 'receiver_id', class_name: 'Request'
@@ -18,7 +18,7 @@ class User < ApplicationRecord
 	has_many :tourneys, dependent: :destroy
 	has_many :teams, dependent: :destroy
 
-	has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "50x50#" }, :default_url => "/default/:style/missing.png"
+	has_attached_file :avatar, :storage => :cloudinary,:styles => { :medium => "200x200>", :thumb => "50x50#" }, :default_public_id => ':style/missing',:default_url => "/default/:style/missing.png", :path => ':id/:style/:filename'
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 
