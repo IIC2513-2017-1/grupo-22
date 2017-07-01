@@ -1,4 +1,8 @@
 <h1>Search</h1>
+<% if @teams.length == 0 and @tourneys.length == 0 and @players.length == 0%>
+  <p>No se encontraron resultados con ese nombre </p>
+<% end %>
+
 <% if @teams.length > 0 %>
 <h2>Teams</h2>
 <br>
@@ -68,3 +72,26 @@
   </tbody>
 </table>
 <br>
+<% end %>
+
+<% if @players.length > 0 %>
+<h2>Players</h2>
+<br>
+<table class="tabla container-players">
+  <thead>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>ID</th>
+      <th>mail</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @players.each do |player| %>
+      <%= render player %>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<% end %>
