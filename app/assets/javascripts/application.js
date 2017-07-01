@@ -21,7 +21,6 @@ $(document).on('turbolinks:load', function () {
         window.location = $(this).data("link")
 
     });
-
 });
 
 $(function(){
@@ -42,7 +41,7 @@ $(function(){
                 } else {
                     $('.ventana-movil').css({
                         position: 'absolute',
-                        top: '415px',
+                        top: '470px',
                     });
                 }
             });

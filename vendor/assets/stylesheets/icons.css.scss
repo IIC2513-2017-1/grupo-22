@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'social';
-  src:  font-url('social.eot?qwx4an');
-  src:  font-url('social.eot?qwx4an#iefix') format('embedded-opentype'),
-    font-url('social.ttf?qwx4an') format('truetype'),
-    font-url('social.woff?qwx4an') format('woff'),
-    font-url('social.svg?qwx4an#social') format('svg');
+  src:  font-url('social.eot?aqe9wz');
+  src:  font-url('social.eot?aqe9wz#iefix') format('embedded-opentype'),
+    font-url('social.ttf?aqe9wz') format('truetype'),
+    font-url('social.woff?aqe9wz') format('woff'),
+    font-url('social.svg?aqe9wz#social') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-youtube:before {
+  content: "\e900";
+}
 .icon-back-bold:before {
   content: "\e90f";
 }
@@ -57,9 +60,6 @@
 .icon-plus:before {
   content: "\e9f6";
 }
-.icon-youtube:before {
-  content: "\ec1e";
-}
 .icon-twitch:before {
   content: "\ec20";
 }
@@ -69,8 +69,14 @@
 .icon-pencil2:before {
   content: "\ea87";
 }
+.icon-film:before {
+  content: "\ea94";
+}
 .icon-user:before {
   content: "\eaf2";
+}
+.icon-search:before {
+  content: "\eb07";
 }
 .icon-trash2:before {
   content: "\eb2e";

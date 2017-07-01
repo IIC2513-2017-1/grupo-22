@@ -52,6 +52,8 @@ gem 'httparty', '~> 0.13.7'
 
 gem 'paperclip-cloudinary'
 
+gem "font-awesome-rails"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

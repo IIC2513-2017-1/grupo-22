@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *= require icons
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
@@ -127,6 +128,7 @@ header {
     border-bottom: none;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
+    text-align: center;
   }
 
 body, head{
@@ -578,7 +580,7 @@ a.back, a.back:hover{
 /* tambien para visualización de topics y comentarios */
 .ventana-movil {
   position: absolute;
-  top: 415px;
+  top: 470px;
   right: 13%;
   background-color: rgba(0,0,0,.5);
   border-radius: 20px;
@@ -586,7 +588,7 @@ a.back, a.back:hover{
 }
 
 .fixme {
-
+  clear: both;
 }
 .container-flex{
   display: flex;
@@ -1089,4 +1091,62 @@ li.game-bottom{
 /* video youtube */
 .video {
   text-align: center;
+}
+
+/* Search */
+.search{
+  float: right;
+  margin: 10px;
+  width: 300px;
+}
+
+.search input#search{
+  height: 35px;
+  width: 250px;
+  background: rgba(0,0,0,.35);
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #fff;
+  padding-left: 15px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.search button{
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-top-right: 5px;
+  -moz-border-radius-bottom-right: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+ 
+  border: none;
+  background: #000;
+  height: 35px;
+  width: 50px;
+  color: #FDD700;
+  font-size: 10pt;
+ 
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.search button:hover, .search button:active {
+  cursor:pointer;
+  background-color: #FDD700;
+  color: #000;
+  border: none;
+  text-decoration: none;
+}
+
+button::-moz-focus-inner { 
+  border: 0; 
 }
