@@ -29,10 +29,10 @@
       <th>Name</th>
       <th>ID</th>
       <th>mail</th>
-      <th colspan="1"></th>
+      <th><i class="fa fa-link"></i> Profile</th>
       <% if current_user%>
         <% if current_user.id == @team.user.id %>
-            <th colspan="1"></th>
+            <th><i class="fa fa-trash"></i></th>
         <% end %>
       <% end %>
     </tr>

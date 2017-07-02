@@ -1,10 +1,12 @@
 <h1> Forums </h1>
-
 <div class='lista'>
   <ol>
     <% @foros.each do |f| %>
       <li>
-      <%= link_to f.title, foro_path(f)%>
+      <%= link_to foro_path(f) do%>
+        <%= f.title %>
+        <i class="fa fa-link" style="float: right; margin-right: 5px;"></i>
+        <% end %>
       </li>
     <% end %>
   </ol>

@@ -15,7 +15,7 @@
  *= require_self
  */
 
-*::-moz-focus-inner { 
+*::-moz-focus-inner, *::-webkit-focus-inner, *::focus-inner { 
   border: 0; 
 }
 
@@ -522,7 +522,7 @@ a.back, a.back:hover{
 /* Efectos para listas */
 
 .lista{
-  width: 80%;
+  width: 60%;
   margin: 0  auto;
   font-weight: bolder;
   color: white;
@@ -542,16 +542,22 @@ a.back, a.back:hover{
 }
 
 .lista a{
-    color: white;
+    color: #FFF;
+    background-color: rgba(0,0,0,.4);
     position: relative;
     display: block;
-    padding: .4em .4em .4em 2em;
+    padding: .4em .4em .4em 4.2em;
     *padding: .4em;
     margin: .5em 0;
     text-decoration: none;
     -moz-border-radius: .3em;
     -webkit-border-radius: .3em;
     border-radius: .3em;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
 }
 
 .lista a:visited{
@@ -560,28 +566,54 @@ a.back, a.back:hover{
 }
 
 .lista a:hover {
-    background: #FFD700;
     text-decoration: none;
-    color:black;
+    color: #FDD700;
 }
 .lista a:before{
     content: counter(li);
     counter-increment: li;
     position: absolute;
-    left: -1.3em;
-    top: 50%;
+    left: -1.5em;
+    top: 58%;
     margin-top: -1.3em;
-    background: black;
-    height: 2em;
-    width: 2em;
-    line-height: 2em;
-    border: .2em solid #FFD700;
+    background: #000;
+    height: 2.25em;
+    width: 3em;
+    line-height: 2.25em;
     text-align: center;
-    -moz-border-radius: 2em;
-    -webkit-border-radius: 2em;
-    border-radius: 2em;
     color: #FFD700;
+    -moz-border-top-left-radius: .4em;
+    -webkit-border-top-left-radius: .4em;
+    border-top-left-radius: .4em;
+    -moz-border-bottom-left-radius: .4em;
+    -webkit-border-bottom-left-radius: .4em;
+    border-bottom-left-radius: .4em;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
 }
+
+.lista a i {
+  opacity: 0;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+} 
+
+.lista a:hover i {
+  opacity: 1;
+  color: #FDD700;
+} 
+
+.lista a:hover:before {
+  background-color: #FDD700;
+  color: #000;
+  padding-right: 10px;
+} 
 
 /*Efectos para elemento de creacion comentarios y topics movil*/
 /* tambien para visualización de topics y comentarios */
