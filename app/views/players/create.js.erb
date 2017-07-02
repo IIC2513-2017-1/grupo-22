@@ -1,12 +1,12 @@
 <% if @result %>
 	$(".tabla.container-players").append("<%= j render @player %>");
 	$("#player_<%= @player.id %>").hide();
-	$("#player_<%= @player.id %>").css({"background-color": "#FFD700", "color" : "#000"});
+	$("#player_<%= @player.id %>").css({"color" : "#FDD700"});
 	$("#noticia .notification").html("<%= flash[:notice] %>");
 	$("#alerta .notification").html("");
 	$("#mensaje .notification").html("");
 	$("#player_<%= @player.id %>").fadeIn(800, function(){
-		$("#player_<%= @player.id %>").css({"background-color": "rgba(0,0,0,.3)", "color" : "#FFF"});
+		$("#player_<%= @player.id %>").css({"color" : "#FFF"});
 	});
 
 	var modalBackground = $(".modal-background.player");

@@ -4,10 +4,13 @@ var containerModal = modalBackground.find(">:first-child");
 
 var containerResultados = $(".container-resultados");
 
+containerResultados.html("<%= j render '/tourneys/results' %>");
 $("#match_<%= @match.id %>").replaceWith("<%= j render 'match_tourney_display', match:@match %>")
-$("#match_<%= @match.id %>").css({"background-color": "#FFD700", "color": "#000"});
+$("#match_<%= @match.id %>").css({"color": "#FDD700"});
+$("#result_<%= @match.id %>").css({"color": "#FDD700"});
 setTimeout(function(){
-  $("#match_<%= @match.id %>").css({"background-color": "rgba(0,0,0,.3)", "color" : "#FFF"});
+  $("#match_<%= @match.id %>").css({"color" : "#FFF"});
+  $("#result_<%= @match.id %>").css({"color" : "#FFF"});
 }, 800);
 
 <% if @tourney.format == "Playoffs" %>
@@ -17,9 +20,14 @@ setTimeout(function(){
 <% else %>
 	var containerPositionTable = $(".container-position-table");
 	containerPositionTable.html("<%= j render '/tourneys/position_table' %>");
+	$("tr.position#participant_<%= @match.home_team.id %>").css("color", "#FDD700");
+	$("tr.position#participant_<%= @match.away_team.id %>").css({"color": "#FDD700"});
+	setTimeout(function(){
+  	$("tr.position#participant_<%= @match.away_team.id %>").css({"color" : "#FFF"});
+  	$("tr.position#participant_<%= @match.home_team.id %>").css({"color" : "#FFF"});
+	}, 800);
 <% end %>
 
-containerResultados.html("<%= j render '/tourneys/results' %>");
 modalBackground.fadeOut(300);
 containerModal.css("transform", "scale(0.1)");
 

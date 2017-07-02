@@ -1,5 +1,5 @@
 <% if @result %>
-	$("#participant_<%= @team.id %>").css({"background-color": "#FFD700", "color":"#000"});
+	$("#participant_<%= @team.id %>").css({"color":"#FFD700"});
 	$("#participant_<%= @team.id %>").fadeOut(800, function(){
 		$("#participant_<%= @team.id %>").remove();
 	});

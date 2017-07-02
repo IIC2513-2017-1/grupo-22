@@ -13,9 +13,9 @@
 	if(window.location.pathname == '/users'){
 		$(".tabla.container-users").append("<%= j render 'user', user: @user %>");
 		$("#user_<%= @user.id %>").hide();
-		$("#user_<%= @user.id %>").css("background-color", "#FFD700");
+		$("#user_<%= @user.id %>").css({"background-color": "#FFD700", "color":"#000"});
 		$("#user_<%= @user.id %>").fadeIn(800, function(){
-		$("#user_<%= @user.id %>").css("background", "#f6f6f6");
+		$("#user_<%= @user.id %>").css({"background-color": "inherit", "color" : "#inherit"});
 	});	
 	}
 

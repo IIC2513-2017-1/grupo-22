@@ -61,4 +61,6 @@ class ParticipantsController < ApplicationController
     return teams
   end
 
+  
+
 end

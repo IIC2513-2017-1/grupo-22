@@ -21,7 +21,7 @@
     <% i = 0 %>
     <% pos = 1 %>
     <% participants.each do |participant| %>
-      <tr class="no-link">
+      <tr class="no-link position" id="participant_<%= participant[0].id %>">
         <td><%= pos %></td>
         <td><%= participant[0].name%></td>
         <td><%= participant[1]%></td>

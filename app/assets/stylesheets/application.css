@@ -411,7 +411,6 @@ a.back, a.back:hover{
 
 .tabla tbody tr{
   display: table-row;
-  background: rgba(0,0,0,.3);
 }
 
 .tabla tbody tr:hover{
@@ -420,9 +419,15 @@ a.back, a.back:hover{
   color: #000;
 }
 
-.tabla tbody tr.no-link:hover {
+.tabla tbody tr:nth-child(odd).no-link:hover {
   cursor: default;
   background-color: rgba(0,0,0,.3);
+  color:#FFF;
+}
+
+.tabla tbody tr:nth-child(even).no-link:hover {
+  cursor: default;
+  background-color: rgba(0,0,0,.5);
   color:#FFF;
 }
 
@@ -444,6 +449,14 @@ a.back, a.back:hover{
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.tabla tr:nth-child(even) {
+    background-color: rgba(0,0,0,.5);
+}
+
+.tabla tr:nth-child(odd){ 
+  background: rgba(0,0,0,.3);
 }
 
 /* Efectos de las tablas perfil */

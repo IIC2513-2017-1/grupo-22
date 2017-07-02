@@ -20,7 +20,7 @@
   </thead>
   <tbody>
     <% @tourney.matches.each do |match| %>
-      <tr class="no-link">
+      <tr class="no-link" id="result_<%= match.id %>">
       <% if match.home_team.present? and match.played %>
         <td><%= match.date %></td>
         <td><%= match.home_team.name %></td>
