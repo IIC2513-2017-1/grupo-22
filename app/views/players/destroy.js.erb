@@ -1,5 +1,5 @@
 <% if @result %>
-	$("#player_<%= @player.id %>").css("background-color", "#FFD700");
+	$("#player_<%= @player.id %>").css({"background-color": "#FFD700","color": "#000" });
 	$("#noticia .notification").html("");
 	$("#alerta .notification").html("");
 	$("#mensaje .notification").html("<%= flash[:message] %>");
@@ -15,7 +15,7 @@
 	setTimeout(
   function() 
   {
-    $("#player_<%= @player.id %>").css({"color": "black"});
-    $("#player_<%= @player.id %> td.value#cell-link a").css({"color": "black" });
+    $("#player_<%= @player.id %>").css({"color": "inherit"});
+    $("#player_<%= @player.id %> td.value#cell-link a").css({"color": "inherit" });
   }, 800);
 <% end %>

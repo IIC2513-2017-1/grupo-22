@@ -134,11 +134,11 @@ $(function(){
 
         buttontoken.on('click', function(){
             if($.trim(buttontoken.html())=='Show Token'){
-                token.slideDown("normal");
+                token.css("opacity", "1");
                 buttontoken.html("Hide Token")
             } 
             else {
-                token.slideUp("normal");
+                token.css("opacity", "0");
                 buttontoken.html("Show Token")
             }
         });

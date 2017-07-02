@@ -406,33 +406,36 @@ a.back, a.back:hover{
   border-collapse: collapse;
   width: 90%;
   margin: 0 auto;
-  color: black;
+  color: #FFF;
 }
 
 .tabla tbody tr{
   display: table-row;
-  background: #f6f6f6;
+  background: rgba(0,0,0,.3);
 }
 
 .tabla tbody tr:hover{
   background-color: #FFD700;
   cursor: pointer;
+  color: #000;
 }
 
 .tabla tbody tr.no-link:hover {
-  background-color: #f6f6f6;
   cursor: default;
+  background-color: rgba(0,0,0,.3);
+  color:#FFF;
 }
 
 .tabla thead{
   background: black;
   color: #FFD700;
+  text-align: center;
 }
 
 .tabla td {
   padding: 4px;
   text-align: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgba(255,215,0,.6);;
   max-width: 40px;
 }
 
@@ -506,7 +509,7 @@ a.back, a.back:hover{
 }
 
 .value#cell-link a{
-  color: black;
+  color: inherit;
   padding:0;
   text-decoration: none;
 }
@@ -688,8 +691,9 @@ a.back, a.back:hover{
 }
 
 .fotothumb {
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
 }
 
 /* barra social y barra de usuario */
@@ -1083,12 +1087,18 @@ li.game-bottom{
 }
 
 #token {
-  display:none;
-  color: black;
+  color: #FFF;
   margin-top: 10px;
   border-top: 1px solid #FDD700;
   border-bottom: 1px solid #FDD700;
   text-align: center;
+  background: rgba(0,0,0,.4);
+  opacity:0;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
 
 }
 
@@ -1149,4 +1159,13 @@ li.game-bottom{
   color: #000;
   border: none;
   text-decoration: none;
+}
+
+.not-found {
+  color: #FFF;
+  margin-top: 10px;
+  border-top: 1px solid #FDD700;
+  border-bottom: 1px solid #FDD700;
+  text-align: center;
+  background-color: rgba(0,0,0,.4);
 }

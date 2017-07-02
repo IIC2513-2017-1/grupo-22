@@ -6,7 +6,7 @@ class Player < ApplicationRecord
 
   belongs_to :team
 
-  has_attached_file :photo, :storage => :cloudinary,:styles => { :medium => "200x200>", :thumb => "50x50#" }, :default_public_id => ':style/missing',:default_url => "/default/:style/missing.png", :path => ':id/:style/:filename'
+  has_attached_file :photo, :storage => :cloudinary,:styles => { :medium => "200x200>", :thumb => "30x30#" }, :default_public_id => ':style/missing',:default_url => "/default/:style/missing.png", :path => ':id/:style/:filename'
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
   def self.search(search)

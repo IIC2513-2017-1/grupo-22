@@ -18,7 +18,7 @@ class User < ApplicationRecord
 	has_many :tourneys, dependent: :destroy
 	has_many :teams, dependent: :destroy
 
-	has_attached_file :avatar, :storage => :cloudinary,:styles => { :medium => "200x200>", :thumb => "50x50#" }, :default_public_id => ':style/missing',:default_url => "/default/:style/missing.png", :path => ':id/:style/:filename'
+	has_attached_file :avatar, :storage => :cloudinary,:styles => { :medium => "200x200>", :thumb => "30x30#" }, :default_public_id => ':style/missing',:default_url => "/default/:style/missing.png", :path => ':id/:style/:filename'
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 

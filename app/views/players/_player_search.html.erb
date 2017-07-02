@@ -1,0 +1,14 @@
+<tr data-link="<%= team_player_path(player.team, player)%>" id="player_<%= player.id  %>">
+  <td><span class="icon-go2"></span></td>
+  <td>
+    <% if player.photo.present? %>
+      <%= cl_image_tag(player.photo.url(:thumb)) %>
+    <% else %>
+      <%= image_tag("/default/thumb/missing.png", class:'fotothumb') %>
+    <% end %>
+  </td>
+  <td><%= player.full_name %></td>
+  <td><%= player.team.name %></td>
+  <td><%= player.position %></td>
+  <td><%= player.email %></td>
+</tr>

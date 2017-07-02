@@ -1,18 +1,17 @@
-<h1>Search</h1>
+<h1>Search <i class="fa fa-search"></i></h1>
 <% if @teams.length == 0 and @tourneys.length == 0 and @players.length == 0%>
-  <p>No se encontraron resultados con ese nombre </p>
+  <div class="not-found"><i class="fa fa-frown-o"></i> No se encontraron resultados con ese nombre </div>
 <% end %>
 
+<!-- Teams -->
 <% if @teams.length > 0 %>
-<h2>Teams</h2>
-<br>
+<h2 style="margin-left: 50px;">Teams</h2>
 <table class="tabla">
   <thead>
     <tr>
       <th colspan="1"></th>
       <th>Logo</th>
       <th>Name</th>
-      <th>Description</th>
       <th>Trainer</th>
       <th>Foundation date</th>
       <th>Owner</th>
@@ -20,77 +19,57 @@
   </thead>
   <tbody>
     <% @teams.each do |team| %>
-      <tr data-link="<%= team_path(team)%>">
-        <td><span class="icon-go2"></span></td>
-        <td><%= image_tag(team.logo.url(:thumb), class:'fotothumb') %></td>
-        <td><%= team.name %></td>
-        <td><%= team.description %></td>
-        <td><%= team.trainer %></td>
-        <td><%= team.foundation_date %></td>
-        <td><%= team.user.username %></td>
-      </tr>
+      <%= render 'teams/team_search', team: team %>
     <% end %>
   </tbody>
 </table>
 <br>
 <% end %>
 
+<!-- Tourneys -->
 <% if @tourneys.length > 0 %>
-<h2>Teams</h2>
-<br>
+<h2 style="margin-left: 50px;">Tourneys</h2>
 <table class="tabla">
   <thead>
     <tr>
       <th colspan="1"></th>
-      <th>Logo</th>
       <th>Name</th>
-      <th>Description</th>
-      <th>Trainer</th>
-      <th>Foundation date</th>
-      <th>Owner</th>
+      <th>City</th>
+      <th>Location</th>
+      <th>Ins. Limit Date</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Mail</th>
+      <th>Phone</th>
     </tr>
   </thead>
   <tbody>
-    <% @teams.each do |team| %>
-      <tr data-link="<%= team_path(team)%>">
-        <td><span class="icon-go2"></span></td>
-        <td>
-        <% if team.logo.present? %>
-          <%= cl_image_tag(team.logo.url(:thumb)) %>
-        <% else %>
-          <%= image_tag("/default/thumb/missing.png", class:'fotothumb') %>
-        <% end %>
-        </td>
-        <td><%= team.name %></td>
-        <td><%= team.description %></td>
-        <td><%= team.trainer %></td>
-        <td><%= team.foundation_date %></td>
-        <td><%= team.user.username %></td>
-      </tr>
+    <% @tourneys.each do |tourney| %>
+      <%= render 'tourneys/tourney_search', tourney: tourney %>
     <% end %>
   </tbody>
 </table>
 <br>
 <% end %>
 
+<!-- Players -->
 <% if @players.length > 0 %>
-<h2>Players</h2>
-<br>
+<h2 style="margin-left: 50px;">Players</h2>
 <table class="tabla container-players">
   <thead>
     <tr>
+      <th colspan="1"></th>
       <th>Picture</th>
       <th>Name</th>
-      <th>ID</th>
-      <th>mail</th>
-      <th colspan="1"></th>
+      <th>Team</th>
+      <th>Position</th>
+      <th>Mail</th>
     </tr>
   </thead>
   <tbody>
     <% @players.each do |player| %>
-      <%= render player %>
+      <%= render 'players/player_search', player: player %>
     <% end %>
   </tbody>
 </table>
-<br>
 <% end %>

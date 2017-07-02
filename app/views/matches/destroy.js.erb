@@ -1,5 +1,5 @@
 <% if @result %>
-	$("#match_<%= @match.id %>").css("background-color", "#FFD700");
+	$("#match_<%= @match.id %>").css({"background-color": "#FFD700", "color": "#000"});
 	$("#noticia .notification").html("");
 	$("#alerta .notification").html("");
 	$("#mensaje .notification").html("<%= flash[:message] %>");
@@ -24,7 +24,7 @@
 	setTimeout(
   function() 
   {
-    $("#match_<%= @match.id %>").css({"color": "black"});
-    $("#match_<%= @match.id %> td.value#cell-link a").css({"color": "black" });
+    $("#match_<%= @match.id %>").css({"color": "inherit"});
+    $("#match_<%= @match.id %> td.value#cell-link a").css({"color": "inherit" });
   }, 800);
 <% end %>
