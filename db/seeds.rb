@@ -14,9 +14,10 @@ Match.destroy_all
 Foro.destroy_all
 Player.destroy_all
 
+#Faker::Internet.password(6)
 5.times do
   User.create(full_name: Faker::Name.name, username: Faker::Internet.user_name,
-  email: Faker::Internet.email, password: Faker::Internet.password(6))
+  email: Faker::Internet.email, password: "123123")
 end
 
 12.times do
