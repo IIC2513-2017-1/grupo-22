@@ -9,7 +9,7 @@ class User < ApplicationRecord
  	validates :full_name, presence: true, allow_blank: false
  	validates :username, presence: true, allow_blank: false, uniqueness: true
 
-	validates :token, uniqueness: true
+	#validates :token, uniqueness: true
 
  	has_many :requests_send, foreign_key: 'sender_id', class_name: 'Request'
 	has_many :request_received, foreign_key: 'receiver_id', class_name: 'Request'
@@ -25,9 +25,8 @@ class User < ApplicationRecord
 
 	def generate_token_and_save
 		loop do
-			token = SecureRandom.hex(64)
-			break unless User.find_by(token: token)
-			self.token = token
+			self.token = SecureRandom.hex(64)
+			break unless User.find_by(token: self.token)
 		end
 	end
 
