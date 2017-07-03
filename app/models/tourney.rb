@@ -1,5 +1,5 @@
 class Tourney < ApplicationRecord
-  validates :mail, presence: true, allow_blank: false,format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+  validates :mail, presence: true, allow_blank: false, format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates :name, presence: true, allow_blank: false
   validates :format, inclusion: { in: %w(Playoffs Torneo), message: "%{value} invalid format" }
   validates :description, presence: true, allow_blank: false
@@ -7,21 +7,19 @@ class Tourney < ApplicationRecord
   validates :price, presence: true, allow_blank: false
   validates :prize, presence: true, allow_blank: false
   validates :phone, presence: true, allow_blank: false
-  validates :city, presence: true, allow_blank: false
+  validates :city, inclusion: { in: %w(Santiago Arica Antofagasta La_Serena Coquimbo Rancagua Osorno Puerto_Montt), message: "%{value} invalid format" }
   validates :schedule, presence: true, allow_blank: false
   validate  :validate_end_date_before_start_date
   validate  :validate_ins_date_before_start_date
 
   belongs_to :user
 
-  #has_and_belongs_to_many :teams,  uniqueness: true
   has_many :participants
   has_many :teams, through: :participants
 
   has_many :requests
   has_many :matches, dependent: :destroy
   has_one :foro, dependent: :destroy
-  #has_one :ranking, dependent: :destroy
 
   def self.search(search)
     where("name LIKE ?", "%#{search}%")

@@ -36,3 +36,60 @@ end
   birth_date: Faker::Date.between(40.years.ago, 20.years.ago),
   team_id: Team.all.pluck(:id).sample)
 end
+
+User.create(full_name: "11100111", username: "ROBerto",
+email: "bibubop@uc.com", password: "123456")
+
+Tourney.create(name: "Liga con puntos", description: 'Description', format: 'Torneo',
+location: Faker::Address.street_address,
+inscription_limit_date: Faker::Date.between(25.days.ago, 20.days.ago),
+start_date: Faker::Date.between(20.days.ago, 15.days.ago), end_date: Time.now.to_date,
+user_id: User.find_by(username: "ROBerto").id,
+mail: Faker::Internet.email, price: '0', prize: 'Happiness (?)',phone: '7777777-0',
+schedule: Faker::Time.between(DateTime.now - 1, DateTime.now),
+city: "Santiago")
+
+Foro.create({title: "Foro de Liga con puntos",
+  description: "Descripcion del foro de Liga con puntos", tourney_id: Tourney.first.id})
+
+Tourney.create(name: "Torneo/brackets", description: 'Description', format: 'Playoffs',
+location: Faker::Address.street_address,
+inscription_limit_date: Faker::Date.between(25.days.ago, 20.days.ago),
+start_date: Faker::Date.between(20.days.ago, 15.days.ago), end_date: Time.now.to_date,
+user_id: User.find_by(username: "ROBerto").id,
+mail: Faker::Internet.email, price: 'Your soul (?)', prize: 'Sorrow (?)', phone: '666666-0',
+schedule: Faker::Time.between(DateTime.now - 1, DateTime.now),
+city: "Santiago")
+
+Foro.create({title: "Foro de Torneo/brackets",
+  description: "Descripcion del foro de Torneo/brackets", tourney_id: Tourney.second.id})
+
+Topic.create(title: "1 2 3 Probando...", content: "Tema de prueba",
+foro_id: Foro.first.id, user_id: User.find_by(username: "ROBerto").id)
+
+15.times do
+  Comment.create(user_id: User.all.pluck(:id).sample, topic_id: Topic.all.pluck(:id).sample,
+  content: Faker::Lorem.sentence)
+end
+
+Comment.create(user_id: User.find_by(username: "ROBerto").id,
+topic_id: Topic.first.id, content: "LOL XDDD")
+
+Team.create(name: "Supercampeones", description: 'Animu team', trainer: "Roberto Zedinho",
+foundation_date: Faker::Date.backward(30), user_id: User.find_by(username: "ROBerto").id)
+
+Player.create(full_name: "Oliver Atom",
+birth_date: "1983-10-10",
+position: "Delantero",
+email: "CaptainTsubasa@shonenjump.jp",
+ocupation: "Student",
+leg: "Derecho",
+address: "Somewhere in Japan",
+phone: "(XX)XXX-XXX-XX",
+team_id: Team.find_by(name: "Supercampeones").id)
+
+Tourney.first.teams << Team.all[0..3]
+Tourney.second.teams << Team.all[4..11]
+
+Match.create(date: Date.new(2017, 5, 14), home_team_id: Tourney.first.teams.first.id,
+away_team_id: Tourney.first.teams.second.id, tourney_id: Tourney.first.id)
