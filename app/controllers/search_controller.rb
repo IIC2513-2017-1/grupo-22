@@ -4,10 +4,12 @@ class SearchController < ApplicationController
       @teams = Team.search(params[:search]).order("name DESC")
       @tourneys = Tourney.search(params[:search]).order("name DESC")
       @players = Player.search(params[:search]).order("full_name DESC")
+      @users = User.search(params[:search]).order("full_name DESC")
     else
       @teams = Team.all.order("name DESC")
       @tourneys = Tourney.all.order("name DESC")
       @players = Player.all.order("full_name DESC")
+      @user = User.all.order("full_name DESC")
     end
   end
 end

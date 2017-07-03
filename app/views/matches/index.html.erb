@@ -4,33 +4,42 @@
 	<% if tourney.matches.length > 0 %>
 		<div style="width: 80%;margin: 0 auto;">
 			<%= link_to(tourney_path(tourney)) do %>
-				<h2><span class="icon-go2" style="margin-right: 5px;"></span>Liga <%= tourney.name %></h2>
+				<h2><span class="icon-go2" style="margin-right: 5px;"></span> <%= tourney.name %></h2>
 			<% end %>
 		<table class="tabla">
 		  <thead>
-		    <th>Home Team </th>
-		    <th>Away Team </th>
-		    <th>Date</th>
+		  	<th>Date</th>
+		    <th style="padding-left: 10px; text-align: left;"><i class="fa fa-link"></i> Home Team </th>
+		    <th style="padding-left: 10px; text-align: left;"><i class="fa fa-link"></i> Away Team </th>
+		    <th>Result </th>
 		   </thead>
 			<tbody>
-			<% tourney.matches.each do |match|  %>
+			<% tourney.matches.order(:date).each do |match|  %>
 				<tr class="no-link">
-				<td class="value" id="cell-link">
+				<td><%= match.date %></td>
+				<td class="value" id="cell-link" style="text-align: left;">
 					<%= link_to(team_path(match.home_team)) do %>
 						<span class="icon-go2" style="margin-right: 5px;"></span><%= match.home_team.name %>
 					<% end %>
 				</td>
-				<td class="value" id="cell-link">
+				<td class="value" id="cell-link" style="text-align: left;">
 					<%= link_to(team_path(match.away_team)) do %>
 						<span class="icon-go2" style="margin-right: 5px;"></span><%= match.away_team.name %>
 					<% end %>
-				</td></td>
-				<td><%= match.date %></td>
+				</td>
+				<td>
+					<% if match.played %>
+						<%= '%s : %s' % [match.home_goals, match.away_goals]  %>
+					<% else %>
+						<%= '%s : %s' % ["-", "-"]  %>
+					<% end %>					
+				</td>
 				</tr>
 			<% end %>			
 			</tbody>
 		</table>
 		<br>
+		
 		<hr>
 	  </div>
 	<% end %>

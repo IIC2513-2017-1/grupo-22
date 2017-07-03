@@ -2,12 +2,12 @@
   <td><span class="icon-go2"></span></td>
 	<td>
 	<% if user.avatar.present? %>
-  	<%= cl_image_tag(user.avatar.url(:thumb)) %>
+  	<%= cl_image_tag(user.avatar.url(:thumb), class:'fotothumb') %>
 	<% else %>
   	<%= image_tag("/default/thumb/missing.png", class:'fotothumb') %>
   <% end %>
   </td>
   <td><%= user.full_name %></td>
-  <td><%= user.email %></td>
   <td><%= user.username %></td>
+  <td><%= user.email %></td>
 </tr>

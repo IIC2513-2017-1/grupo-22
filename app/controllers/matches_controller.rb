@@ -4,6 +4,7 @@ class MatchesController < ApplicationController
   before_action :set_tourneys, only: [:index]
 
   def index
+    
   end
 
   def create

@@ -1,29 +1,6 @@
 <h1>Search <i class="fa fa-search"></i></h1>
-<% if @teams.length == 0 and @tourneys.length == 0 and @players.length == 0%>
-  <div class="not-found"><i class="fa fa-frown-o"></i> No se encontraron resultados con ese nombre </div>
-<% end %>
-
-<!-- Teams -->
-<% if @teams.length > 0 %>
-<h2 style="margin-left: 50px;">Teams</h2>
-<table class="tabla">
-  <thead>
-    <tr>
-      <th><i class="fa fa-link"></i></th>
-      <th>Logo</th>
-      <th>Name</th>
-      <th>Trainer</th>
-      <th>Foundation date</th>
-      <th>Owner</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @teams.each do |team| %>
-      <%= render 'teams/team_search', team: team %>
-    <% end %>
-  </tbody>
-</table>
-<br>
+<% if @users.length == 0 and@teams.length == 0 and @tourneys.length == 0 and @players.length == 0%>
+  <div class="not-found"><i class="fa fa-frown-o" style="color: #FDD700; font-size: 17px;"></i> No se encontraron resultados con ese nombre </div>
 <% end %>
 
 <!-- Tourneys -->
@@ -40,12 +17,33 @@
       <th>Start Date</th>
       <th>End Date</th>
       <th>Mail</th>
-      <th>Phone</th>
     </tr>
   </thead>
   <tbody>
     <% @tourneys.each do |tourney| %>
       <%= render 'tourneys/tourney_search', tourney: tourney %>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<% end %>
+
+<!-- Teams -->
+<% if @teams.length > 0 %>
+<h2 style="margin-left: 50px;">Teams</h2>
+<table class="tabla">
+  <thead>
+    <tr>
+      <th><i class="fa fa-link"></i></th>
+      <th>Logo</th>
+      <th>Name</th>
+      <th>Trainer</th>
+      <th>Owner</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teams.each do |team| %>
+      <%= render 'teams/team_search', team: team %>
     <% end %>
   </tbody>
 </table>
@@ -62,13 +60,33 @@
       <th>Picture</th>
       <th>Name</th>
       <th>Team</th>
-      <th>Position</th>
       <th>Mail</th>
     </tr>
   </thead>
   <tbody>
     <% @players.each do |player| %>
       <%= render 'players/player_search', player: player %>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+
+<!-- Users -->
+<% if @users.length > 0 %>
+<h2 style="margin-left: 50px;">Users</h2>
+<table class="tabla container-players">
+  <thead>
+    <tr>
+      <th><i class="fa fa-link"></i></th>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Mail </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <%= render 'users/user', user: user %>
     <% end %>
   </tbody>
 </table>

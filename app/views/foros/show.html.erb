@@ -3,11 +3,17 @@
 		<h1> Forum </h1>
 		<p>
 		  <strong>Title:</strong>
-		  <%= @foro.title %>
+		  Forum of 
+		  <%= link_to(tourney_path(@foro.tourney)) do %>
+      	<span class="icon-go2" style="margin-right: 5px;"></span><%= @foro.tourney.name %>
+    <% end %>
 		</p>
 		<p>
 		  <strong>Description:</strong>
 		  <%= @foro.description %>
+		  <%= link_to(user_path(@foro.tourney.user)) do %>
+      	<span class="icon-go2" style="margin-right: 5px;"></span><%= @foro.tourney.user.username %>
+    	<% end %>
 		</p>
 			<h1>Topics</h1>
 			<div class="container-topics scroll" id="scroll">

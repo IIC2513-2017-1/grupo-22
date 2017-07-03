@@ -210,7 +210,7 @@ h1, h2 {
     padding: 15px 50px;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bolder;
     border-radius: 5px;
 }
@@ -224,7 +224,6 @@ h1, h2 {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
     font-weight: bolder;
     margin: 0;
 }
@@ -718,7 +717,7 @@ a.back, a.back:hover{
   margin-left: 40px;
 }
 
- /* Fotos de perfil*/
+ /* Fotos de perfil y logos*/
 .fotoperfil {
   border: 3px solid #FFD700;
   border-radius: 500px;
@@ -730,9 +729,20 @@ a.back, a.back:hover{
   margin: 0 auto;
 }
 
+.fotologo {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+}
+
 .fotomedium {
   height: 200px;
   width: 200px;
+  border: 3px solid #FFD700;
+  border-radius: 500px;
+  -moz-border-radius: 500px;
+  -webkit-border-radius: 500px;
+  overflow: hidden;
 }
 
 .fotothumb {
@@ -1202,7 +1212,7 @@ li.game-bottom{
   cursor:pointer;
   background-color: #FDD700;
   color: #000;
-  border: none;
+  border: 0;
   text-decoration: none;
 }
 
@@ -1213,4 +1223,8 @@ li.game-bottom{
   border-bottom: 1px solid #FDD700;
   text-align: center;
   background-color: rgba(0,0,0,.4);
+}
+
+input#search:focus {
+  border: 2px solid rgba(255,215,0,.5);
 }

@@ -70,6 +70,7 @@
         <thead>
           <tr>
             <th>Name</th>
+            <th>City</th>
             <th>Format</th>
             <th><i class="fa fa-link"></i> Profile</th>
             <th><i class="fa fa-link"></i> Forum</th>
@@ -79,6 +80,7 @@
           <% @user.tourneys.each do |tourney| %>
             <tr class="no-link">
               <td><%= tourney.name %></td>
+              <td><%= tourney.ciry %></td>
               <td><%= tourney.format %></td>
               <td class="value" id="cell-link">
                 <%= link_to(tourney_path(tourney)) do %>

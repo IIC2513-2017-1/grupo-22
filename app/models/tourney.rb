@@ -22,7 +22,7 @@ class Tourney < ApplicationRecord
   has_one :foro, dependent: :destroy
 
   def self.search(search)
-    where("name LIKE ?", "%#{search}%")
+    where("LOWER(name) LIKE ?", "%#{search.downcase}%")
   end
 
   def validate_end_date_before_start_date

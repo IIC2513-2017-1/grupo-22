@@ -30,4 +30,8 @@ class User < ApplicationRecord
 		end
 	end
 
+	def self.search(search)
+    where("LOWER(full_name) LIKE ?", "%#{search.downcase}%")
+  end
+  
 end

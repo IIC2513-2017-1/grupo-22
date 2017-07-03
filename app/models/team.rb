@@ -15,6 +15,6 @@ class Team < ApplicationRecord
   validates_attachment_content_type :logo, :content_type => /\Aimage\/.*\Z/
 
   def self.search(search)
-    where("name LIKE ?", "%#{search}%")
+    where("LOWER(name) LIKE ?", "%#{search.downcase}%")
   end
 end

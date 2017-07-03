@@ -10,7 +10,7 @@ class Player < ApplicationRecord
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
   def self.search(search)
-    where("full_name LIKE ?", "%#{search}%")
+    where("LOWER(full_name) LIKE ?", "%#{search.downcase}%")
   end
 
 end
