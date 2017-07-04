@@ -16,7 +16,7 @@
  */
 
 *::-moz-focus-inner, *::-webkit-focus-inner, *::focus-inner { 
-  border: 0; 
+  border: none; 
 }
 
 * {
@@ -738,11 +738,6 @@ a.back, a.back:hover{
 .fotomedium {
   height: 200px;
   width: 200px;
-  border: 3px solid #FFD700;
-  border-radius: 500px;
-  -moz-border-radius: 500px;
-  -webkit-border-radius: 500px;
-  overflow: hidden;
 }
 
 .fotothumb {
@@ -1201,11 +1196,11 @@ li.game-bottom{
   color: #FDD700;
   font-size: 10pt;
  
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  -ms-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 .search button:hover, .search button:active {
@@ -1227,4 +1222,24 @@ li.game-bottom{
 
 input#search:focus {
   border: 2px solid rgba(255,215,0,.5);
+}
+
+/* Upload image */
+.upload-image{
+  display: block; 
+  text-align: center;
+}
+.form-group.image {
+  display: inline-block;
+}
+
+.upload-image button{
+  border: none;
+}
+
+.upload-image button:hover,
+.upload-image button:active,
+.upload-image button:focus
+{
+  cursor: pointer;
 }

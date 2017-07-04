@@ -5,7 +5,7 @@ class User < ApplicationRecord
 	before_create :generate_token_and_save
 
  	validates :email, presence: true, uniqueness: true, allow_blank: false,format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
- 	validates :password, presence: true, confirmation: true, allow_blank: false, length: { minimum: 6 }
+ 	validates :password, presence: true, confirmation: true, allow_blank: false, length: { minimum: 6 }, :if => :password
  	validates :full_name, presence: true, allow_blank: false
  	validates :username, presence: true, allow_blank: false, uniqueness: true
 

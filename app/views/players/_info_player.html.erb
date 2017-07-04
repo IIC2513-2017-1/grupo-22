@@ -5,6 +5,12 @@
     <%= image_tag("/default/medium/missing.png", class:'fotomedium') %>
   <% end %>
 </div>
+<% if current_user %>
+  <% if current_user.id == @player.team.user.id %>
+    <br>
+    <%= render 'form_photo', player: @player, team:@player.team %>
+  <% end %>
+<% end %>
 <br><br>
 <table class="perfil">
   <tr>

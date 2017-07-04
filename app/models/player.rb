@@ -8,6 +8,7 @@ class Player < ApplicationRecord
 
   has_attached_file :photo, :storage => :cloudinary,:styles => { :medium => "200x200>", :thumb => "30x30#" }, :default_public_id => ':style/missing',:default_url => "/default/:style/missing.png", :path => ':id/:style/:filename'
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
+  
 
   def self.search(search)
     where("LOWER(full_name) LIKE ?", "%#{search.downcase}%")

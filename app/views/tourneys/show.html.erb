@@ -10,9 +10,11 @@
     <!-- EDIT -->
     <% if current_user %>
       <% if current_user.id == @tourney.user.id %>
-        <%= link_to(edit_tourney_path(@tourney), remote: true) do %>
-          <div class="button-current edit centered"><span class=icon-pencil2></span></div>
-        <% end %>
+        <div style="text-align: center">
+          <%= link_to(edit_tourney_path(@tourney), remote: true) do %>
+            <div class="button-current edit"><span class=icon-pencil2></span></div>
+          <% end %>
+        </div>
       <% end %>
     <% end %>
   </div>

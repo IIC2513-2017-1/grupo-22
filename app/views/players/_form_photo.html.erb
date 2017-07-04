@@ -1,0 +1,10 @@
+<%= form_for([team, player], remote: true,authenticity_token: true) do |f| %>
+	<div class="upload-image">
+		<div class="form-group image">
+		   <%= f.file_field :photo, style:"width: 240px;", title: "Sube una imagen para tu perfil (opcional)" %>
+		</div>
+		<button class="icon button-current edit" type="submit">
+		  <i class="fa fa-upload"></i>
+		</button>
+  </div>
+<% end  %>

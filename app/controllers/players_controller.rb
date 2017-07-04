@@ -20,10 +20,10 @@ class PlayersController < ApplicationController
 
     respond_to do |format|
     if @result = @player.update(player_params)
-      format.html {redirect_to team_player_path(@player.team, @player), notice: "Player updated"}
+      format.html {redirect_to team_player_path(@player.team, @player), notice: "Image updated"}
       format.js {flash.now[:notice] = "Player updated"}
     else
-      format.html {render :edit , alert: "Problem updating player"}
+      format.html {redirect_to team_player_path(@player.team, @player), notice: "An error ocurred."}
       format.js
     end
     end

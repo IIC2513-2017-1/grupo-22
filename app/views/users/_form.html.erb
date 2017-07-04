@@ -19,10 +19,6 @@
     <div class="field" style="text-align: center;">
       <%= f.password_field :password_confirmation, required: true, minlength: 6, placeholder:"Password Confirmation", title: "Confirma contraseña (requerido)" %>
     </div>
-
-    <div class="field" style="text-align: center;">
-      <%= f.file_field :avatar, style:"width: 240px;", title: "Sube una imagen para tu perfil (opcional)" %>
-    </div>
     <br>
     <div class="actions" style="text-align: center;">
       <%= f.submit %>

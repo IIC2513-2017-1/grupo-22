@@ -1,22 +1,33 @@
 <h1> Info </h1>
 <br>
-<div class="fotologo">
-  <% if @team.logo.present? %>
+<% if @team.logo.present? %>
+  <div class="fotologo">
     <%= cl_image_tag(@team.logo.url(:medium)) %>
-  <% else %>
-    <%= image_tag("/default/medium/missing.png", class:'fotomedium') %>
+  </div>
+<% else %>
+  <div class="fotoperfil">
+    <%= image_tag("/default/medium/missing.png", class:'fotomedium' ) %>
+  </div>
+<% end %>
+
+<% if current_user %>
+  <% if current_user.id == @team.user.id %>
+    <br>
+    <%= render 'form_logo', team: @team %>
   <% end %>
-</div>
-<br>
+<% end %>
+<br><br>
 <div class="info-team">
   <%= render 'info_team' %>
 </div>
 <br>
 <% if current_user %>
   <% if current_user.id == @team.user.id %>
-    <%= link_to(edit_team_path(@team),remote:true) do %>
-      <div class="button-current edit centered"><span class=icon-pencil2></span></div>
-    <% end %>
+    <div style="text-align: center">
+      <%= link_to(edit_team_path(@team),remote:true) do %>
+        <div class="button-current edit"><span class=icon-pencil2></span></div>
+      <% end %>
+    </div>
   <% end %>
 <% end %>
 <br>

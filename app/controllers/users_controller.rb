@@ -50,13 +50,18 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    if user_params[:password].blank?
+      user_params.delete :password
+      user_params.delete :password_confirmation
+    end
+
     respond_to do |format|
-      if @result = @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+      if @result = @user.update_attributes(user_params)
+        format.html { redirect_to @user, notice: 'Image was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
         format.js {flash.now[:notice]= "User was successfully updated."}
       else
-        format.html { render :edit }
+        format.html { redirect_to @user, alert: 'An error ocurred.' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
         format.js
       end

@@ -52,7 +52,7 @@ class TeamsController < ApplicationController
         format.json { render :show, status: :ok, location: @team }
         format.js { flash.now[:notice] = 'Team was successfully updated.'}
       else
-        format.html { render :edit }
+        format.html { redirect_to @team, alert: 'An error ocurred.' }
         format.json { render json: @team.errors, status: :unprocessable_entity }
         format.js
       end
