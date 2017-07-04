@@ -14,22 +14,20 @@
         <%= f.select(:leg, ['Izquierdo', 'Derecho']) %>
       </div>
     </div>
-    <div class="field" style="display:inline;">
+    <div class="field">
       <%= f.email_field :email, required: true, placeholder: "Mail" %>
     </div>
-  </div>
-  <div class="middle form">
     <div class="field">
       <%= f.text_field :address, placeholder: "Address" %>
     </div>
+  </div>
+  <div class="right form">
     <div class="field">
       <%= f.text_field :phone, placeholder: "Phone" %>
     </div>
     <div class="field">
       <%= f.date_select :birth_date, placeholder: "Birth Date" %>
     </div>
-  </div>
-  <div class="right form">
     <div class="field">
       <%= f.text_field :ocupation, placeholder: "Ocupation" %>
     </div>
@@ -38,5 +36,5 @@
       <%= f.submit %>
     </div>
   </div>
-</div>
+  </div>
 <% end %>

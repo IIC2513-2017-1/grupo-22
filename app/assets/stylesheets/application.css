@@ -680,12 +680,13 @@ a.back, a.back:hover{
   flex-basis:30%;
   padding: 0px 15px;
   border-right: 2px solid #FFD700;
-  border-left: 2px solid #FFD700;
 }
 
 .right.form{
   flex-basis: 30%;
   margin-left: 15px;
+  border-left: 2px solid #FFD700;
+  padding-left: 30px;
 }
 
 .info {
