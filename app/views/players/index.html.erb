@@ -3,16 +3,17 @@
 <table class="tabla container-players">
   <thead>
     <tr>
+      <th><i class="fa fa-link"></i></th>
       <th>Picture</th>
       <th>Name</th>
-      <th>ID</th>
-      <th>mail</th>
+      <th>Team</th>
+      <th>Mail</th>
       <th colspan="1"></th>
     </tr>
   </thead>
   <tbody>
     <% @players.each do |player| %>
-      <%= render player %>
+      <%= render 'player_search', player:player %>
     <% end %>
   </tbody>
 </table>
