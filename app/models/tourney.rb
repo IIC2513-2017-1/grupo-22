@@ -25,6 +25,18 @@ class Tourney < ApplicationRecord
     where("LOWER(name) LIKE ?", "%#{search.downcase}%")
   end
 
+  def state
+    if Date.today <= inscription_limit_date
+      return "Inscription State"
+    elsif Date.today >= start_date and  Date.today <= end_date
+      return "In Develop"
+    elsif Date.today > end_date
+      return "Finished"
+    else
+      return "About to start"
+    end
+  end
+
   def validate_end_date_before_start_date
     if end_date && start_date
       errors.add(:end_date, "invalid") if end_date < start_date

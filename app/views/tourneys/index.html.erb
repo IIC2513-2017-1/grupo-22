@@ -7,9 +7,7 @@
       <th>Name</th>
       <th>City</th>
       <th>Format</th>
-      <th>Ins. limit date</th>
-      <th>Start date</th>
-      <th>End date</th>
+      <th>State</th>
       <th>Owner</th>
     </tr>
   </thead>
@@ -21,9 +19,15 @@
         <td><%= tourney.name %></td>
         <td><%= tourney.city %></td>
         <td><%= tourney.format %></td>
-        <td><%= tourney.inscription_limit_date %></td>
-        <td><%= tourney.start_date %></td>
-        <td><%= tourney.end_date %></td>
+        <% if tourney.state() =="Inscription State" %>
+          <td class="inscription"><%= tourney.state() %></td>
+        <% elsif tourney.state() == "In Develop" %>
+          <td class="develop"><%= tourney.state() %></td>
+        <% elsif tourney.state() == "Finished" %>
+          <td class="ended"><%= tourney.state() %></td>
+        <% else tourney.state() =="About to start" %>
+          <td class="about-start"><%= tourney.state() %></td>
+        <% end %>        
         <td><%= tourney.user.username %></td>
       </tr>
     <% end %>

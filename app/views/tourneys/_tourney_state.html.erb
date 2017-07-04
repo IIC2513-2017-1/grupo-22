@@ -1,0 +1,22 @@
+<h1 style="display:inline-block">Tourney</h1>
+<div class="cointainer-state">
+<% if Date.today <= tourney.inscription_limit_date %>
+	<div class="tourney-state inscription">
+	  <i class="fa fa-sign-in "></i> <span> Inscription State</span>
+	 </div>
+<% elsif Date.today >= tourney.start_date and  Date.today <= tourney.end_date %>
+	<div class="tourney-state develop">
+	  <i class="fa fa-thumbs-up"></i><span> In Develop</span>
+	</div>
+<% elsif Date.today > tourney.end_date %>
+	<div class="tourney-state ended">
+		<i class="fa fa-ban"></i> <span> Finished</span>
+	</div>
+<% else %>
+	<div class="tourney-state about-start">
+		<i class="fa fa-hourglass-end"></i><span> About to start</span>
+	</div>
+<% end%>
+</div>
+<div class="fixme"></div>
+<br>

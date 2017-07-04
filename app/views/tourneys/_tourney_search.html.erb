@@ -3,8 +3,14 @@
   <td><%= tourney.name %></td>
   <td><%= tourney.city %></td>
   <td><%= tourney.location %></td>
-  <td><%= tourney.inscription_limit_date %></td>
-  <td><%= tourney.start_date %></td>
-  <td><%= tourney.end_date %></td>
+	<% if tourney.state() =="Inscription State" %>
+    <td class="inscription"><%= tourney.state() %></td>
+  <% elsif tourney.state() == "In Develop" %>
+    <td class="develop"><%= tourney.state() %></td>
+  <% elsif tourney.state() == "Finished" %>
+    <td class="ended"><%= tourney.state() %></td>
+  <% else tourney.state() =="About to start" %>
+    <td class="about-start"><%= tourney.state() %></td>
+  <% end %> 
   <td><%= tourney.mail %></td>
 </tr>

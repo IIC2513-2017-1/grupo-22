@@ -1,8 +1,10 @@
 <!-- cONTENT-->
 <div class="container-flex">
   <div class="left-half" id="info">
-    <h1>Tourney</h1>
-    <br>
+    <div class="state">
+      <%= render 'tourney_state', tourney: @tourney%>
+      <br>
+    </div>
     <div class="info-tourney">
       <%= render "info_tourney" %>
     </div>

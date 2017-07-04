@@ -4,11 +4,13 @@
 	$("#mensaje .notification").html("");
 	$(".info-tourney").html( "<%= j render 'info_tourney' %>")
 
+	var state = $(".state");
 	var modalBackground = $(".modal-background.edit-tourney");
 	var containerModal = modalBackground.find(">:first-child");
 	var containerInfo = containerModal.find("div.edit-info-tourney");
 	modalBackground.fadeOut(300);
 	containerModal.css("transform", "scale(0.1)");
+	state.html("<%= j render 'tourney_state', tourney: @tourney %>");
 
 <% else %>
 	containerInfo.html( "<%= j render '/tourneys/form_edit', tourney: @tourney %>")
